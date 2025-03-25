@@ -5,28 +5,14 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-function Popup({ handleMenu }) {
-    const Services = [
-        "Website Development",
-        "SEO (Search Engine Optimization)",
-        "PPC/Google Ads",
-        "Social Media Marketing",
-        "Content Marketing",
-        "Graphic Designing",
-        "App Development",
-        "Other",
-      ]
-    
-    
+function Popup({ closeMenu }) {
       const [formData, setFormData] = useState({
-        fname: '',
-        lname: '',
-        phone: '',
+        name: '',
+            phone: '',
         email: '',
-        company:'',
-        website:'',
-        business:'',
-        service:[],
+        interest:'',
+        hear:'',
+        location:'',
         message: '',
         recaptchaToken: '',
       });
@@ -52,17 +38,17 @@ function Popup({ handleMenu }) {
       const validate = () => {
         const tempErrors = {};
     
-        if (!formData.fname) tempErrors.fname = 'First name is required';
-        // if (!formData.lname) tempErrors.lname = 'Last name is required';
+        if (!formData.name) tempErrors.name = 'Name is required';
+
         if (!formData.phone) tempErrors.phone = 'Phone number is required';
         else if (!/^\+?\d{10,15}$/.test(formData.phone))
           tempErrors.phone = 'Phone number must be valid (e.g., +1234567890)';
         if (!formData.email) tempErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email))
           tempErrors.email = 'Email is invalid';
+        if (!formData.location) tempErrors.location = 'location is required';
       
-        if (!formData.message) tempErrors.message = 'Message is required';
-        if (selectedServices.length === 0) tempErrors.service = 'Please select at least one service.';
+        if (!formData.interest) tempErrors.interest = 'Please Select a Course.';
         if (!formData.recaptchaToken) tempErrors.recaptchaToken = 'Please complete the reCAPTCHA';
     
         setErrors(tempErrors);
@@ -85,8 +71,8 @@ function Popup({ handleMenu }) {
         setIsSubmitting(true);
     
         try {
-          const response = await fetch('https://digital-paaji.onrender.com/send-mail', {
-          // const response = await fetch('http://localhost:8000/send-mail', {
+          // const response = await fetch('https://digital-paaji.onrender.com/send-mail', {
+          const response = await fetch('http://localhost:8000/send-mail', {
     
             method: 'POST',
             headers: {
@@ -108,14 +94,13 @@ function Popup({ handleMenu }) {
             });
             setFormData({
               
-                fname: '',
-                lname: '',
+                name: '',
+               
                 phone: '',
                 email: '',
-                company:'',
-                website:'',
-                business:'',
-                service:[],
+                interest:'',
+                hear:'',
+                location:'',
                 message: '',
                 recaptchaToken: '',
               
@@ -151,8 +136,8 @@ function Popup({ handleMenu }) {
       };
  
   return (
-    <div>
-      <div className="fixed inset-0 bg-[#000000d7] flex justify-center items-center z-50">
+    <div onClick={(e)=>e.stopPropagation()}>
+      <div className="fixed inset-0 bg-[#000000d7] flex justify-center items-center z-50 ">
         <div className="p-1 bg-[#163393d7]">
         <div className=" custom-scrollbar p-8  bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[720px] overflow-scroll xl:w-[900px]  relative"
         // style={{backgroundImage:"url('/Images/popupbg.webp')"}}
@@ -160,7 +145,7 @@ function Popup({ handleMenu }) {
           {/* Close Icon in Top Right Corner */}
           <AiOutlineClose
             className="absolute top-4 right-4 text-2xl cursor-pointer text-gray-600"
-            onClick={handleMenu} // Close the menu when clicking the icon
+            onClick={closeMenu} // Close the menu when clicking the icon
           />
 
 
@@ -186,13 +171,13 @@ function Popup({ handleMenu }) {
           <label className="bungeeHead block lg:text-lg mb-2">NAME *</label>
           <input
             type="text"
-            name="fname"
-            value={formData.fname}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             placeholder="Enter your first name"
             className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
           />
-          {isFormTouched && errors.fname && <p className="text-red-500 text-sm">{errors.fname}</p>}
+          {isFormTouched && errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </div>
 
 
@@ -237,12 +222,12 @@ function Popup({ handleMenu }) {
             rows={1}
             className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
           ></textarea>
-          {/* {isFormTouched && errors.location && <p className="text-red-500 text-sm">{errors.location}</p>} */}
+          {isFormTouched && errors.location && <p className="text-red-500 text-sm">{errors.location}</p>}
         </div>
 
 
 {/* Dropdown for "I'm interested in" */}
-<div className="mt-4">
+<div className="mt-4 ">
   <label className="bungeeHead block lg:text-lg mb-2">I&apos;m interested in*</label>
   <select
     name="interest"
@@ -281,8 +266,8 @@ function Popup({ handleMenu }) {
 <div className="mt-4">
   <label className="bungeeHead block lg:text-lg mb-2">How did you hear about us?*</label>
   <select
-    name="interest"
-    value={formData.interest}
+    name="hear"
+    value={formData.hear}
     onChange={handleChange}
     className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
   >
@@ -293,7 +278,7 @@ function Popup({ handleMenu }) {
     <option value="Referral from a Friend">Referral from a Friend</option>
     <option value="Other">Other</option>
   </select>
-  {isFormTouched && errors.interest && <p className="text-red-500 text-sm">{errors.interest}</p>}
+  {isFormTouched && errors.hear && <p className="text-red-500 text-sm">{errors.hear}</p>}
 </div>
 
 
@@ -311,15 +296,16 @@ function Popup({ handleMenu }) {
             rows={2}
             className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
           ></textarea>
-          {isFormTouched && errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+          {/* {isFormTouched && errors.message && <p className="text-red-500 text-sm">{errors.message}</p>} */}
         </div>
 
 {/* reCAPTCHA */}
-<div className="border-2 border-black overflow-hidden flex justify-center items-center w-full">
-  <div className="w-[280px]"> {/* Adjust width as needed */}
+<div className="md:col-span-2">
+  <div className=" scale-[0.75] sm:scale-100 origin-top-left "> {/* Adjust width as needed */}
     <ReCAPTCHA
       sitekey='6LfoGd8qAAAAANWvQKJiISV63MNjHqqRy54ORMJ-'
       theme='light'
+      
       onChange={(token) => setFormData({ ...formData, recaptchaToken: token })}
     />
     {isFormTouched && errors.recaptchaToken && (

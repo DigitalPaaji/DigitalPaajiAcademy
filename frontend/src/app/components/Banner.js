@@ -6,9 +6,11 @@ import Image from 'next/image';
 function Banner() {
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
+    console.log("Popup khul rahi hai...");
     setIsOpen(true);
   };
   const closeMenu = () => {
+    console.log("Popup bnd ho gyi h...");
     setIsOpen(false);
   };
 
@@ -53,7 +55,7 @@ function Banner() {
         </button> */}
 
         {/* Popup */}
-        {isOpen && <Popup handleMenu={closeMenu} />} 
+        {isOpen && <Popup closeMenu={closeMenu} />} 
       </div>
     </div>
   );
