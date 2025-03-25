@@ -12,7 +12,7 @@ function Popup({ closeMenu }) {
         email: '',
         interest:'',
         hear:'',
-        location:'',
+        qualification:'',
         message: '',
         recaptchaToken: '',
       });
@@ -46,7 +46,8 @@ function Popup({ closeMenu }) {
         if (!formData.email) tempErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email))
           tempErrors.email = 'Email is invalid';
-        if (!formData.location) tempErrors.location = 'location is required';
+        if (!formData.qualification) tempErrors.qualification = 'Please Select your Qualification.';
+
       
         if (!formData.interest) tempErrors.interest = 'Please Select a Course.';
         if (!formData.recaptchaToken) tempErrors.recaptchaToken = 'Please complete the reCAPTCHA';
@@ -100,7 +101,7 @@ function Popup({ closeMenu }) {
                 email: '',
                 interest:'',
                 hear:'',
-                location:'',
+                qualification:'',
                 message: '',
                 recaptchaToken: '',
               
@@ -210,20 +211,26 @@ function Popup({ closeMenu }) {
           {isFormTouched && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
 
-   {/* location */}
-   <div className="">
-          <label className="bungeeHead block lg:text-lg mb-2">
-          Location </label>
-          <textarea
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder="Enter Your location Name"
-            rows={1}
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
-          ></textarea>
-          {isFormTouched && errors.location && <p className="text-red-500 text-sm">{errors.location}</p>}
-        </div>
+{/* Dropdown  */}
+<div className="mt-4">
+  <label className="bungeeHead block lg:text-lg mb-2">Qualification*</label>
+  <select
+    name="hear"
+    value={formData.hear}
+    onChange={handleChange}
+    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+  >
+    <option value="" disabled>Select your Qualification</option>
+    <option value="Google Search">10</option>
+    <option value="Social Media">12</option>
+    <option value="Word of Mouth">Diploma</option>
+    <option value="Referral from a Friend">Graduate</option>
+    <option value="Referral from a Friend">Post Graduate</option>
+
+    <option value="Other">Other</option>
+  </select>
+  {isFormTouched && errors.qualification && <p className="text-red-500 text-sm">{errors.qualification}</p>}
+</div>
 
 
 {/* Dropdown for "I'm interested in" */}
@@ -264,7 +271,7 @@ function Popup({ closeMenu }) {
 </div>
 {/* Dropdown for "How did you hear about us?" */}
 <div className="mt-4">
-  <label className="bungeeHead block lg:text-lg mb-2">How did you hear about us?*</label>
+  <label className="bungeeHead block lg:text-lg mb-2">How did you hear about us?</label>
   <select
     name="hear"
     value={formData.hear}
@@ -287,7 +294,7 @@ function Popup({ closeMenu }) {
         {/* Message */}
         <div className="md:col-span-2">
           <label className="bungeeHead block lg:text-lg mb-2">
-          Please tell us how we can help you? *</label>
+          Please tell us how we can help you? </label>
           <textarea
             name="message"
             value={formData.message}

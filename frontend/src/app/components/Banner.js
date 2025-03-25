@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Popup from './Popup';
 import Image from 'next/image';
+import New from './New';
 
 function Banner() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +16,9 @@ function Banner() {
   };
 
   return (
-    <div className='w-full h-auto relative'>
+    <div className='w-full h-auto relative '>
       <div onClick={openMenu} 
-        className="relative w-full min-h-screen bg-cover flex items-center justify-center" 
+        className="relative w-full min-h-screen bg-cover flex items-center justify-center " 
         style={{ 
           backgroundImage: "url('/Images/bg.webp')", 
           backgroundRepeat: 'repeat',
@@ -42,7 +43,7 @@ function Banner() {
           quality={100}  
           className="block lg:hidden absolute top-0 left-0 cursor-pointer"
         />
-
+<New onClick={openMenu} />
         {/* Enroll Now Button */}
         {/* <button className="absolute top-32 right-8 px-6 py-3 text-white bg-[#163393]  text-lg font-bold rounded-2xl shadow-lg 
           bg-gradient-to-r cursor-pointer
