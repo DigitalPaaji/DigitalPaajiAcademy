@@ -139,12 +139,44 @@ function Popup({ closeMenu }) {
       };
  
   return (
-    <div onClick={(e)=>e.stopPropagation()}>
-      <div className="fixed inset-0 bg-[#000000d7] flex justify-center items-center z-50 ">
-        <div className="p-1 bg-[#163393d7]">
-        <div className=" custom-scrollbar p-8  bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[720px] overflow-scroll xl:w-[900px]  relative"
-        // style={{backgroundImage:"url('/Images/popupbg.webp')"}}
-        >
+    <div onClick={(e)=>e.stopPropagation()}
+    >
+      <div className="poppins fixed inset-0 bg-[#000000d7] flex justify-center items-center z-50 ">
+        <div className="">
+        {/* <div className=" custom-scrollbar p-8  border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[720px] overflow-scroll xl:w-[900px]  relative"
+        style={{backgroundImage:"url('/Images/2.webp')",
+          backgroundRepeat:'repeat',
+          
+        }}
+        > */}
+
+
+<div
+  className="custom-scrollbar p-8 xl:px-8 pt-8 pb-0 border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[730px] overflow-scroll xl:w-[900px] relative"
+  style={{
+    background: `radial-gradient(circle at top left, rgba(22, 51, 147, 0.5), transparent 50%),
+                 radial-gradient(circle at top right, rgba(22, 51, 147, 0.5), transparent 50%),
+                 #ede7db`, // Gradient on top-left & top-right
+  }}
+>
+
+{/* 
+<div
+    style={{
+      position: "absolute",
+      bottom: "10%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: "200px",
+      height: "100px",
+      background: "rgba(22, 51, 147, 0.2)", // Half-circle with less opacity
+      borderRadius: "100px 100px 0 0", // Half-circle shape
+    }}
+  ></div> */}
+
+
+
+  
           {/* Close Icon in Top Right Corner */}
           <AiOutlineClose
             className="absolute top-4 right-4 text-2xl cursor-pointer text-gray-600"
@@ -171,14 +203,14 @@ function Popup({ closeMenu }) {
       >
         {/* First Name */}
         <div>
-          <label className="bungeeHead block lg:text-lg mb-2">NAME *</label>
+          <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">NAME *</label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your first name"
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+            className="bg-[#ede7db]  w-full border px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </div>
@@ -187,42 +219,42 @@ function Popup({ closeMenu }) {
 
         {/* Phone */}
         <div>
-          <label className="bungeeHead block lg:text-lg mb-2">PHONE *</label>
+          <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">PHONE *</label>
           <input
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
             placeholder="+91 2929 29xxx"
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
         </div>
 
         {/* Email */}
         <div>
-          <label className="bungeeHead block lg:text-lg mb-2">EMAIL *</label>
+          <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">EMAIL *</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="youremail@domain.com"
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
 
 {/* Dropdown  */}
-<div className="mt-4">
-  <label className="bungeeHead block lg:text-lg mb-2">Qualification*</label>
+<div className="">
+  <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">Qualification*</label>
   <select
     name="qualification"
     value={formData.qualification}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
   >
-    <option value="" disabled>Select your Qualification</option>
+    <option value="" disabled >Select your Qualification</option>
     <option value="10">10</option>
     <option value="12">12</option>
     <option value="Diploma">Diploma</option>
@@ -237,14 +269,14 @@ function Popup({ closeMenu }) {
 
 {/* Dropdown for "I'm interested in" */}
 <div className="mt-4 ">
-  <label className="bungeeHead block lg:text-lg mb-2">I&apos;m interested in*</label>
+  <label className="block lg:text-lg mb-2 text-[#163393]">I&apos;m interested in*</label>
   <select
     name="interest"
     value={formData.interest}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
   >
-    <option value="" disabled>Select a course</option>
+    <option value="" disabled >Select a course</option>
 
     <optgroup label="SHORT TERM COURSES">
       <option value="Canva Graphic Mastery">Canva Graphic Mastery</option>
@@ -273,14 +305,14 @@ function Popup({ closeMenu }) {
 </div>
 {/* Dropdown for "How did you hear about us?" */}
 <div className="mt-4">
-  <label className="bungeeHead block lg:text-lg mb-2">How did you hear about us?</label>
+  <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">How did you hear about us?</label>
   <select
     name="hear"
     value={formData.hear}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
   >
-    <option value="" disabled>Select an option</option>
+    <option value="" disabled >Select an option</option>
     <option value="Google Search">Google Search</option>
     <option value="Social Media">Social Media</option>
     <option value="Word of Mouth">Word of Mouth</option>
@@ -295,7 +327,7 @@ function Popup({ closeMenu }) {
 
         {/* Message */}
         <div className="md:col-span-2">
-          <label className="bungeeHead block lg:text-lg mb-2">
+          <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">
           Please tell us how we can help you? </label>
           <textarea
             name="message"
@@ -303,7 +335,7 @@ function Popup({ closeMenu }) {
             onChange={handleChange}
             placeholder="Enter Message"
             rows={2}
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
+            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
           ></textarea>
           {/* {isFormTouched && errors.message && <p className="text-red-500 text-sm">{errors.message}</p>} */}
         </div>

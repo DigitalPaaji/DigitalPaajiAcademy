@@ -33,7 +33,7 @@ const AnimatedText = () => {
               transition={{
                 duration: 0.3,
               }}
-              className="text-2xl lg:text-4xl xl:text-5xl font-bold"
+              className="poppins-bold text-2xl lg:text-4xl xl:text-5xl "
             >
               {letter}
             </motion.span>
@@ -44,7 +44,7 @@ const AnimatedText = () => {
         <motion.h1 
           animate={{ color: ["#FFFFFF", "#163393"] }} // Blue <-> White blinking
           transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-          className="text-3xl lg:text-5xl xl:text-6xl font-extrabold lg:mt-2"
+          className="poppins-bold text-3xl lg:text-5xl xl:text-6xl font-extrabold lg:mt-2"
         >
           NOW
         </motion.h1>
