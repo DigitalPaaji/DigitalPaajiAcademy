@@ -47,6 +47,8 @@ function Popup({ closeMenu }) {
         else if (!/\S+@\S+\.\S+/.test(formData.email))
           tempErrors.email = 'Email is invalid';
         if (!formData.qualification) tempErrors.qualification = 'Please Select your Qualification.';
+        if (!formData.hear) tempErrors.hear = 'Please Select an Option';
+
 
       
         if (!formData.interest) tempErrors.interest = 'Please Select a Course.';
@@ -215,17 +217,17 @@ function Popup({ closeMenu }) {
 <div className="mt-4">
   <label className="bungeeHead block lg:text-lg mb-2">Qualification*</label>
   <select
-    name="hear"
-    value={formData.hear}
+    name="qualification"
+    value={formData.qualification}
     onChange={handleChange}
     className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black"
   >
     <option value="" disabled>Select your Qualification</option>
-    <option value="Google Search">10</option>
-    <option value="Social Media">12</option>
-    <option value="Word of Mouth">Diploma</option>
-    <option value="Referral from a Friend">Graduate</option>
-    <option value="Referral from a Friend">Post Graduate</option>
+    <option value="10">10</option>
+    <option value="12">12</option>
+    <option value="Diploma">Diploma</option>
+    <option value="Graduate">Graduate</option>
+    <option value="Post Graduate">Post Graduate</option>
 
     <option value="Other">Other</option>
   </select>
@@ -310,7 +312,7 @@ function Popup({ closeMenu }) {
 <div className="md:col-span-2">
   <div className=" scale-[0.75] sm:scale-100 origin-top-left "> {/* Adjust width as needed */}
     <ReCAPTCHA
-      sitekey='6LfoGd8qAAAAANWvQKJiISV63MNjHqqRy54ORMJ-'
+      sitekey='6Lf6QgArAAAAAChE4REclnrewFklc9miQbkqL_NZ'
       theme='light'
       
       onChange={(token) => setFormData({ ...formData, recaptchaToken: token })}

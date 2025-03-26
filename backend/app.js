@@ -16,7 +16,8 @@ app.use(express.json());
 
 // Email sending route
 app.post("/send-mail", async (req, res) => {
-  const { name, email, phone, location, interest, hear, message, recaptchaToken } = req.body;
+  console.log("Received form data:", req.body);
+  const { name, email, phone, qualification, interest, hear, message, recaptchaToken } = req.body;
 
   // Verify reCAPTCHA Token
 
@@ -24,27 +25,27 @@ app.post("/send-mail", async (req, res) => {
 
 
 
-  // const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  // const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
-  // try {
-  //   const recaptchaResponse = await fetch(recaptchaUrl, {
-  //     method: "POST",
-  //   });
-  //   const recaptchaData = await recaptchaResponse.json();
-  //   const { success } = recaptchaData;
+  try {
+    const recaptchaResponse = await fetch(recaptchaUrl, {
+      method: "POST",
+    });
+    const recaptchaData = await recaptchaResponse.json();
+    const { success } = recaptchaData;
 
-  //   if (!success) {
-  //     return res.status(400).json({
-  //       error: "reCAPTCHA verification failed. Please try again.",
-  //     });
-  //   }
-  // } catch (error) {
-  //   // console.log("reCAPTCHA Response:", recaptchaData);
+    if (!success) {
+      return res.status(400).json({
+        error: "reCAPTCHA verification failed. Please try again.",
+      });
+    }
+  } catch (error) {
+    // console.log("reCAPTCHA Response:", recaptchaData);
 
-  //   console.error("reCAPTCHA verification error:", error);
-  //   return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
-  // }
+    console.error("reCAPTCHA verification error:", error);
+    return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
+  }
 
 
 
@@ -90,8 +91,8 @@ const mailOptions = {
           <td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td>
         </tr>
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Location:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${location}</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Qualification:</strong></td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${qualification}</td>
         </tr>
         <tr>
           <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Course:</strong></td>
@@ -132,15 +133,16 @@ const mailOptions = {
     const whatsappPayload = {
       country_code: "91",
       mobile: phone, // Send message to the provided phone number
-      wid: "6351",
+      wid: "7130",
       type: "interactive",
-      template_name: "website11", // Ensure correct template name
+      template_name: "academy", // Ensure correct template name
       language: {
         policy: "deterministic",
         code: "en" // Use the correct language code for your template
       },
       bodyValues: {
-        "1": name // Mapping template placeholder {1}
+        "1": name,
+        "2": interest
       },
 
     };
