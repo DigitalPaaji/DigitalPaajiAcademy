@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Digital Paaji Academy",
-  description: "Gyaan - Kam Gyaan, Zyada Skills! Focused on practical learning over theory, we help you master real-world skills for success.",
+  description: "Gyaan - Kam , Zyada Skills! Focused on practical learning over theory, we help you master real-world skills for success.",
 };
 
 export default function RootLayout({ children }) {
