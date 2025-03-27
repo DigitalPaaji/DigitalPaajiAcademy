@@ -119,50 +119,67 @@ const mailOptions = {
     console.log("Email sent successfully!");
 
     // WhatsApp API Trigger
-    const whatsappUrl = "http://157.245.105.3/restapi/requestjson.php";
+
+
+
+
+
+
+
+
+    // const whatsappUrl = "http://157.245.105.3/restapi/requestjson.php";
+    // // const whatsappPayload = {
+    // //   country_code: "91",
+    // //   mobile: phone, // Send message to the provided phone number
+    // //   wid: "6351",
+    // //   type: "interactive",
+     
+    // //   bodyValues: {
+    // //     "1": fname // Use "1" to target the first variable in your template
+    // //   }
+    // // };
     // const whatsappPayload = {
     //   country_code: "91",
     //   mobile: phone, // Send message to the provided phone number
-    //   wid: "6351",
+    //   wid: "7130",
     //   type: "interactive",
-     
+    //   template_name: "academy", // Ensure correct template name
+    //   language: {
+    //     policy: "deterministic",
+    //     code: "en" // Use the correct language code for your template
+    //   },
     //   bodyValues: {
-    //     "1": fname // Use "1" to target the first variable in your template
-    //   }
-    // };
-    const whatsappPayload = {
-      country_code: "91",
-      mobile: phone, // Send message to the provided phone number
-      wid: "7130",
-      type: "interactive",
-      template_name: "academy", // Ensure correct template name
-      language: {
-        policy: "deterministic",
-        code: "en" // Use the correct language code for your template
-      },
-      bodyValues: {
-        "1": name,
-        "2": interest
-      },
+    //     "1": name,
+    //     "2": interest
+    //   },
 
-    };
+    // };
        
 
-    const whatsappResponse = await fetch(whatsappUrl, {
-      method: "POST",
-      headers: {
-        Authorization: "Basic 20b1a74e419f290e",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(whatsappPayload),
-    });
+    // const whatsappResponse = await fetch(whatsappUrl, {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: "Basic 20b1a74e419f290e",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(whatsappPayload),
+    // });
 
-    if (!whatsappResponse.ok) {
-      console.error("Failed to send WhatsApp message:", whatsappResponse.statusText);
-    } else {
-      console.log("WhatsApp message sent successfully!");
-    }
+    // if (!whatsappResponse.ok) {
+    //   console.error("Failed to send WhatsApp message:", whatsappResponse.statusText);
+    // } else {
+    //   console.log("WhatsApp message sent successfully!");
+    // }
 
+
+
+
+
+
+
+
+
+    
     res
       .status(200)
       .json({ message: "Your message has been sent successfully!" });

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const AnimatedText = () => {
+const AnimatedText = ({openMenu}) => {
   const registerLetters = "REGISTER";
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -16,7 +16,7 @@ const AnimatedText = () => {
   }, []);
 
   return (
-    <div className="cursor-pointer absolute top-[43%] md:top-[41%] lg:top-[63%] xl:top-[66%] left-[29%] sm:left-[32%] md:left-[40%] lg:left-[19%] xl:left-[24%]">
+    <div onClick={openMenu}   className="cursor-pointer absolute top-[43%] md:top-[41%] lg:top-[63%] xl:top-[66%] left-[29%] sm:left-[32%] md:left-[40%] lg:left-[19%] xl:left-[24%]">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

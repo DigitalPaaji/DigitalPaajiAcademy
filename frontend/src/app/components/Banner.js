@@ -17,7 +17,7 @@ function Banner() {
 
   return (
     <div className='w-full h-auto relative '>
-      <div onClick={openMenu} 
+      <div
         className="relative w-full min-h-screen bg-cover flex items-center justify-center " 
         style={{ 
           backgroundImage: "url('/Images/bg.webp')", 
@@ -32,7 +32,7 @@ function Banner() {
           layout="fill"   
           objectFit="contain"  
           quality={100}  
-          className="hidden lg:block absolute top-0 left-0 cursor-pointer"
+          className="hidden lg:block absolute top-0 left-0"
         />
 
         <Image 
@@ -43,7 +43,7 @@ function Banner() {
           quality={100}  
           className="block lg:hidden absolute top-0 left-0 cursor-pointer"
         />
-<New onClick={openMenu} />
+<New openMenu={openMenu} />
         {/* Enroll Now Button */}
         {/* <button className="absolute top-32 right-8 px-6 py-3 text-white bg-[#163393]  text-lg font-bold rounded-2xl shadow-lg 
           bg-gradient-to-r cursor-pointer

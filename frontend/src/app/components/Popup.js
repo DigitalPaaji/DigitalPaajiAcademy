@@ -305,7 +305,7 @@ function Popup({ closeMenu }) {
 </div>
 {/* Dropdown for "How did you hear about us?" */}
 <div className="mt-4">
-  <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">How did you hear about us?</label>
+  <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">How did you hear about us?*</label>
   <select
     name="hear"
     value={formData.hear}
