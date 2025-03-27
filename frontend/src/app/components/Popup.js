@@ -74,8 +74,8 @@ function Popup({ closeMenu }) {
         setIsSubmitting(true);
     
         try {
-          // const response = await fetch('https://digitalpaajiacademy.onrender.com/send-mail', {
-          const response = await fetch('http://localhost:8000/send-mail', {
+          const response = await fetch('https://digitalpaajiacademy.onrender.com/send-mail', {
+          // const response = await fetch('http://localhost:8000/send-mail', {
     
             method: 'POST',
             headers: {
@@ -111,6 +111,11 @@ function Popup({ closeMenu }) {
             setIsFormTouched(false);
             setSelectedServices([]);
     
+   // Close the popup after a short delay
+   setTimeout(() => {
+    closeMenu();
+  }, 1000); // Wait for 3 seconds before closing the popup
+
           } else {
             toast.error(data.error || 'Something went wrong!', {
               position: 'top-right',
