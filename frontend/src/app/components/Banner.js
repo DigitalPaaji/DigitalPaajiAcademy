@@ -7,11 +7,11 @@ import New from './New';
 function Banner() {
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
-    console.log("Popup khul rahi hai...");
+    // console.log("Popup khul rahi hai...");
     setIsOpen(true);
   };
   const closeMenu = () => {
-    console.log("Popup bnd ho gyi h...");
+    // console.log("Popup bnd ho gyi h...");
     setIsOpen(false);
   };
 
