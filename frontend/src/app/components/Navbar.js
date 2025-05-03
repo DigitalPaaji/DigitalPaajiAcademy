@@ -3,7 +3,7 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div className='px-24 flex items-center justify-between bg-white h-[100px]'>
+    <div className='px-24 flex items-center justify-between h-[100px]'>
       <div className=''>
 <Image alt='' src={'/Images/logo.webp'} width={220} height={220} className='w-full h-14 object-cover' />
       </div>
