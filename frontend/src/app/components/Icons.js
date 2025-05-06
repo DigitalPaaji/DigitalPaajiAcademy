@@ -40,7 +40,7 @@ function Icons() {
               width={200}
               height={200}
               alt="WhatsApp"
-              className="w-16 h-16 cursor-pointer"
+              className="w-12 h-12 cursor-pointer"
             />
           </Link>
 

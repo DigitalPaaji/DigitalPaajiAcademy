@@ -4,13 +4,15 @@
 import About from './components/About';
 import Banner2 from './components/Banner2';
 import Navbar from './components/Navbar'
-
+import Slider from './components/Slider'
 export default function Home() {
   return (
     <div className="min-h-screen">
 {/* <Banner/> */}
 <Navbar/>
 {/* <Banner2/> */}
+<Slider/>
+
 <About/>
     </div>
   );

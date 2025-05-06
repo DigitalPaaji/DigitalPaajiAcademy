@@ -36,10 +36,10 @@ function About() {
   return (
     <div className="mx-6 lg:mx-12 xl:mx-24 py-24 min-h-screen ">
       <div className="text-center mb-20">
-      <h1 className="bungee-shade-regular text-3xl xl:text-6xl font-bold ">
+      <h1 className="bungee-shade-regular text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold ">
           PUNJAB'S MOST PRACTICAL SKILL ACADEMY
         </h1>
-        <p className="poppins-bold text-lg xl:text-2xl text-[#000000dc] underline font-semibold mt-6 ">
+        <p className="poppins-bold text-md xl:text-2xl text-[#000000dc] underline font-semibold mt-6 ">
           Useful & Practical Learning Programs Designed by Industry Experts &
           Working Professionals
         </p>
@@ -57,12 +57,12 @@ function About() {
           </div>
 
           {/* Right Content */}
-          <div className="flex w-full xl:w-1/2 flex-col xl:flex-row  ">
+          <div className="flex w-full xl:w-1/2 flex-col lg:flex-row  ">
             {/* First Column: Bottom Aligned */}
             <div className=" xl:w-1/2 flex flex-col gap-6 justify-end divide-y divide-[#d3771bb4] p-4 ">
               <div 
               ref={(el)=>(boxesRef.current[0] = el)}
-              className="py-4 gap-4 flex items-center flex-wrap justify-center text-center xl:text-left xl:pt-24 2xl:pt-0">
+              className="py-4 gap-4 flex items-center flex-wrap justify-center text-center xl:text-left lg:pt-24 2xl:pt-0">
                 <div className="xl:w-full">
                   <Image
                     alt=""
