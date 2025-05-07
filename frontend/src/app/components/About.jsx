@@ -36,7 +36,7 @@ function About() {
   return (
     <div className="mx-6 lg:mx-12 xl:mx-24 py-24 min-h-screen ">
       <div className="text-center mb-20">
-      <h1 className="bungee-shade-regular text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold ">
+      <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold ">
           PUNJAB'S MOST PRACTICAL SKILL ACADEMY
         </h1>
         <p className="poppins-bold text-md xl:text-2xl text-[#000000dc] underline font-semibold mt-6 ">

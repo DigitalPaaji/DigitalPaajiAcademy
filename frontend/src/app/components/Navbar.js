@@ -127,9 +127,9 @@ function Navbar() {
            ref={btnRef}
            onMouseEnter={handleMouseEnter}
            onMouseLeave={handleMouseLeave}
-           className="relative bg-black text-white p-4 rounded-md z-10 inline-block"
+           className="poppins-bold relative bg-[#000000] text-white p-4 rounded-md z-10 inline-block"
         >
-        <div className="absolute inset-0 top-1.5  left-1.5  rounded-md border-2 border-black w-full h-full z-0"></div>
+        <div className="absolute inset-0 top-1.5  left-1.5  rounded-md border-2 border-[#000000b4] w-full h-full z-0"></div>
 
           Enroll Now
         </Link>

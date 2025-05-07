@@ -18,7 +18,7 @@ export default function BrandShowcase() {
        Reviewed & Recognized by the Best
         </h1> */}
 
-      <div className="flex flex-wrap justify-center xl:gap-24 items-center ">
+      <div className="flex flex-wrap justify-center gap-6 lg:gap-24 xl:gap-24 items-center ">
         {logos.map((logo, index) => (
           <Image
             key={index}
