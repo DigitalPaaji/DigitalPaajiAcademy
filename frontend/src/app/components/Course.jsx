@@ -29,57 +29,59 @@ export default function CoursesHorizontal() {
   const containerRef = useRef(null);
   const cardsWrapperRef = useRef(null);
 
-//   useEffect(() => {
-//     const cardsWrapper = cardsWrapperRef.current;
-//     const container = containerRef.current;
+  useEffect(() => {
+    const cardsWrapper = cardsWrapperRef.current;
+    const container = containerRef.current;
 
-//     const totalWidth = cardsWrapper.scrollWidth;
-//     const containerWidth = container.offsetWidth;
+    const totalWidth = cardsWrapper.scrollWidth;
+    const containerWidth = container.offsetWidth;
 
-//     gsap.to(cardsWrapper, {
-//       x: () => `-${totalWidth - containerWidth / 2}px`,
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: container,
-//         start: 'top top',
-//         end: () => `+=${totalWidth}`,
-//         scrub: true,
-//         pin: true,
-//         anticipatePin: 1,
-//       },
-//     });
+    gsap.to(cardsWrapper, {
+      x: () => `-${totalWidth - containerWidth / 2}px`,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: container,
+        start: 'top top',
+        end: () => `+=${totalWidth}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
 
-//     return () => ScrollTrigger.getAll().forEach(t => t.kill());
-//   }, []);
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, []);
 
 
-useEffect(() => {
-  const cardsWrapper = cardsWrapperRef.current;
-  const container = containerRef.current;
+// useEffect(() => {
+//   const cardsWrapper = cardsWrapperRef.current;
+//   const container = containerRef.current;
 
-  ScrollTrigger.matchMedia({
-    // Only apply GSAP horizontal scroll on md and above
-    "(min-width: 768px)": () => {
-      const totalWidth = cardsWrapper.scrollWidth;
-      const containerWidth = container.offsetWidth;
+//   ScrollTrigger.matchMedia({
+//     // Only apply GSAP horizontal scroll on md and above
+//     "(min-width: 768px)": () => {
+//       const totalWidth = cardsWrapper.scrollWidth;
+//       const containerWidth = container.offsetWidth;
 
-      gsap.to(cardsWrapper, {
-        x: () => `-${totalWidth - containerWidth / 2}px`,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: container,
-          start: 'top top',
-          end: () => `+=${totalWidth}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
-    },
-  });
+//       gsap.to(cardsWrapper, {
+//         x: () => `-${totalWidth - containerWidth / 2}px`,
+//         ease: 'none',
+//         scrollTrigger: {
+//           trigger: container,
+//           start: 'top top',
+//           end: () => `+=${totalWidth}`,
+//           scrub: true,
+//           pin: true,
+//           anticipatePin: 1,
+//         },
+//       });
+//     },
+//   });
 
-  return () => ScrollTrigger.getAll().forEach(t => t.kill());
-}, []);
+//   return () => ScrollTrigger.getAll().forEach(t => t.kill());
+// }, []);
+
+
 
   return (
     <div ref={containerRef} className="mx-6 lg:mx-12 xl:mx-24 py-24 w-full">
@@ -100,7 +102,7 @@ useEffect(() => {
     {courses.map((course, index) => (
       <div
         key={index}
-        className={` poppins-bold  rounded-2xl p-10 shadow-md transition-all duration-300
+        className={`poppins-bold  rounded-2xl p-10 shadow-md transition-all duration-300
         ${index % 2 === 0 ? 'bg-black text-white' : 'bg-white text-black'}
       `}
     // className={`min-w-[80vw] md:min-w-[66%] max-w-[500px] rounded-2xl p-6 shadow-md transition-all duration-300

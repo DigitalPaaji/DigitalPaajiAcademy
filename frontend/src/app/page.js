@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import Slider from './components/Slider'
 import Courses from './components/Courses';
 import Course from './components/Course';
+import Students from './components/Students';
+import Journey from './components/journey';
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -16,6 +18,8 @@ export default function Home() {
 <Slider/>
 
 <About/>
+<Students/>
+<Journey/>
 <Course/>
 {/* <Courses/> */}
     </div>
