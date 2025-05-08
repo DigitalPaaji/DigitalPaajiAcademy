@@ -1,14 +1,47 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function Students() {
+  const videosRef = useRef([])
+
   const videos = [
     '/videos/student1.mp4',
     '/videos/student2.mp4',
     '/videos/student3.mp4',
     '/videos/student4.mp4',
     '/videos/student5.mp4',
-    // Add more as needed
+    // Add more if needed
   ]
+
+  useEffect(() => {
+    videosRef.current.forEach((videoEl, index) => {
+      if (videoEl) {
+        gsap.fromTo(
+          videoEl,
+          {
+            opacity: 0,
+            y: 50,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: videoEl,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            },
+            delay: index * 0.4, // slight stagger
+          }
+        )
+      }
+    })
+  }, [])
 
   return (
     <div className='mx-6 lg:mx-12 xl:mx-24 py-24'>
@@ -17,27 +50,25 @@ function Students() {
         <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
           Hear from Our Learners
         </h3>
-        {/* <div className=' text-base md:text-lg space-y-2 max-w-2xl'>
-          <p>Many learners have launched their own startups after completing our courses.</p>
-          <p>Some have chosen freelancing as a career and are delivering successful projects.</p>
-          <p>Others have taken their skills abroad or used them to scale their family businesses.</p>
-        </div> */}
       </div>
 
       {/* Video Grid */}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6'>
         {videos.map((video, index) => (
           <div
             key={index}
-            className={`overflow-hidden h-[500px] rounded-xl ${
-              index % 2 === 1 ? 'xl:mt-8' : ''
+            ref={el => (videosRef.current[index] = el)}
+            className={`overflow-hidden h-[380px] xl:h-[500px] rounded-2xl ${
+              index % 2 === 1 ? 'md:mt-12' : ''
             }`}
           >
             <video
               src={video}
               controls
               autoPlay
-              className='w-full h-[100%] object-cover rounded-xl'
+              muted
+              loop
+              className='w-full h-full object-cover rounded-xl'
             />
           </div>
         ))}

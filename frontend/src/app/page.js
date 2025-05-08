@@ -8,13 +8,14 @@ import Slider from './components/Slider'
 import Courses from './components/Courses';
 import Course from './components/Course';
 import Students from './components/Students';
-import Journey from './components/journey';
+import Journey from './components/Journey';
 export default function Home() {
   return (
     <div className="min-h-screen">
-{/* <Banner/> */}
 <Navbar/>
-{/* <Banner2/> */}
+{/* <Banner/> */}
+
+<Banner2/>
 <Slider/>
 
 <About/>

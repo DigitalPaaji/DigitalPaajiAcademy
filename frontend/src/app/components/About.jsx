@@ -24,12 +24,12 @@ function About() {
           trigger: card,
           start: "top 80%",
         },
-        duration: 1,
+        duration: 2,
         opacity: 0,
         x: offset[i].x,
         y: offset[i].y,
         ease: "power3.out",
-        delay: i * 0.1,
+        delay: i* 0.3,
       });
     });
   },[])

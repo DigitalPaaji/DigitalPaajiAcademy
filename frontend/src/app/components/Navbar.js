@@ -9,8 +9,8 @@ import gsap from "gsap";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const navbarRef = useRef(null);  // Reference to the navbar
- const btnRef = useRef(null);
+  const navbarRef = useRef(null); // Reference to the navbar
+  const btnRef = useRef(null);
   const borderRef = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Navbar() {
       opacity: 0,
       y: 30,
       duration: 1,
-      ease: 'power3.out',
+      ease: "power3.out",
     });
   }, []);
 
@@ -29,9 +29,9 @@ function Navbar() {
       y: 2,
       scale: 0.98,
       duration: 0.2,
-      ease: 'power2.inOut',
+      ease: "power2.inOut",
     });
-  
+
     // Border ripple
     gsap.fromTo(
       borderRef.current,
@@ -43,29 +43,29 @@ function Navbar() {
         scale: 1.1,
         opacity: 1,
         duration: 0.4,
-        ease: 'power2.out',
+        ease: "power2.out",
       }
     );
   };
-  
+
   const handleMouseLeave = () => {
     // Reset position and scale
     gsap.to(btnRef.current, {
       y: 0,
       scale: 1,
       duration: 0.2,
-      ease: 'power2.inOut',
+      ease: "power2.inOut",
     });
-  
+
     // Reset border
     gsap.to(borderRef.current, {
       scale: 1,
       opacity: 0.5,
       duration: 0.4,
-      ease: 'power2.inOut',
+      ease: "power2.inOut",
     });
   };
-  
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -75,7 +75,7 @@ function Navbar() {
     gsap.fromTo(
       navbarRef.current,
       { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, ease: "power3.out" }
     );
 
     // Sidebar animation
@@ -86,7 +86,11 @@ function Navbar() {
         { x: "0%", duration: 0.5, ease: "power3.out" }
       );
     } else {
-      gsap.to(menuRef.current, { x: "-100%", duration: 0.5, ease: "power3.in" });
+      gsap.to(menuRef.current, {
+        x: "-100%",
+        duration: 0.5,
+        ease: "power3.in",
+      });
     }
   }, [menuOpen]);
 
@@ -122,25 +126,28 @@ function Navbar() {
 
         {/* Enroll Now - Right */}
         <div className=" hidden lg:block">
-        <Link
-           href="/enroll"
-           ref={btnRef}
-           onMouseEnter={handleMouseEnter}
-           onMouseLeave={handleMouseLeave}
-           className="poppins-bold relative bg-[#000000] text-white p-4 rounded-md z-10 inline-block"
-        >
-        <div className="absolute inset-0 top-1.5  left-1.5  rounded-md border-2 border-[#000000b4] w-full h-full z-0"></div>
+          <div className="relative z-20 w-36 h-12 ">
+            {/* Shadow/Base */}
+            <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
-          Enroll Now
-        </Link>
-        
-       
+            {/* Actual Button */}
+            <Link
+              href="/enroll"
+              ref={btnRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="poppins-bold absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
+               active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+            >
+              Enroll Now
+            </Link>
+          </div>
         </div>
 
         {/* Hamburger Icon - Mobile */}
         <div className="lg:hidden">
           <button onClick={toggleMenu} className="text-2xl">
-            {menuOpen ? <LiaTimesSolid  /> : <RxHamburgerMenu  />}
+            {menuOpen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
           </button>
         </div>
       </div>
@@ -152,9 +159,9 @@ function Navbar() {
         style={{ transform: "translateX(-100%)" }}
       > */}
       <div
-  ref={menuRef}
-  className="fixed top-0 left-0 h-screen w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden -translate-x-full"
->
+        ref={menuRef}
+        className="fixed top-0 left-0 h-screen w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden -translate-x-full"
+      >
         <Link href="/">
           <Image
             src="/Images/logo.webp"
