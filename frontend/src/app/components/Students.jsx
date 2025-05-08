@@ -30,7 +30,7 @@ function Students() {
           <div
             key={index}
             className={`overflow-hidden h-[500px] rounded-xl ${
-              index % 2 === 1 ? 'mt-8' : ''
+              index % 2 === 1 ? 'xl:mt-8' : ''
             }`}
           >
             <video
