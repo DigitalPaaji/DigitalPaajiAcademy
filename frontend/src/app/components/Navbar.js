@@ -137,7 +137,7 @@ function Navbar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className="poppins-bold absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
-               active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+               active:translate-x-[4px] active:translate-y-[2px] transition-all duration-100"
             >
               Enroll Now
             </Link>

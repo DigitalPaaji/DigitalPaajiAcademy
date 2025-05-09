@@ -123,9 +123,9 @@ function Journey() {
               </p>
             </div>
           </div>
-          <div className="relative z-20 w-[350px] h-16 ">
+          <div className="relative z-20 w-[350px] h-16 border-red-900 ">
             {/* Shadow/Base */}
-            <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+            <div className="absolute top-[6px] left-[4px]  bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 " />
 
             {/* Actual Button */}
             <Link
@@ -133,7 +133,7 @@ function Journey() {
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="poppins text-lg absolute top-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center justify-center 
+              className="poppins  text-lg absolute top-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center justify-center 
                active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
             >
               CRAFTED BY DIGITAL PAAJI

@@ -17,31 +17,31 @@ function Students() {
     // Add more if needed
   ]
 
-  useEffect(() => {
-    videosRef.current.forEach((videoEl, index) => {
-      if (videoEl) {
-        gsap.fromTo(
-          videoEl,
-          {
-            opacity: 0,
-            y: 50,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: videoEl,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse',
-            },
-            delay: index * 0.4, // slight stagger
-          }
-        )
-      }
-    })
-  }, [])
+  // useEffect(() => {
+  //   videosRef.current.forEach((videoEl, index) => {
+  //     if (videoEl) {
+  //       gsap.fromTo(
+  //         videoEl,
+  //         {
+  //           opacity: 0,
+  //           y: 50,
+  //         },
+  //         {
+  //           opacity: 1,
+  //           y: 0,
+  //           duration: 1,
+  //           ease: "power2.out",
+  //           scrollTrigger: {
+  //             trigger: videoEl,
+  //             start: 'top 80%',
+  //             toggleActions: 'play none none reverse',
+  //           },
+  //           delay: index * 0.4, // slight stagger
+  //         }
+  //       )
+  //     }
+  //   })
+  // }, [])
 
   return (
     <div className='mx-6 lg:mx-12 xl:mx-24 py-24'>
@@ -57,7 +57,7 @@ function Students() {
         {videos.map((video, index) => (
           <div
             key={index}
-            ref={el => (videosRef.current[index] = el)}
+            // ref={el => (videosRef.current[index] = el)}
             className={`overflow-hidden h-[380px] xl:h-[500px] rounded-2xl ${
               index % 2 === 1 ? 'md:mt-12' : ''
             }`}
