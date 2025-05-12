@@ -301,16 +301,16 @@ export default function CoursesHorizontal() {
     <div ref={containerRef} className="mx-0 xl:mx-0 py-24 w-full ">
       <div className="flex items-center flex-col xl:flex-row w-full h-full ">
         {/* Left Side */}
-        <div className="w-full  xl:w-[30%] mx-0 lg:mx-12 xl:mx-24">
+        <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:mx-24 ">
         <h1 className="bungee-shade-regular text-3xl md:text-5xl xl:text-6xl font-bold text-center xl:text-left ">
           PUNJAB'S MOST PRACTICAL SKILL ACADEMY
         </h1>
-              <div className=' text-base md:text-md my-4'>
+              <div className=' text-base md:text-md my-4 mx-8 xl:mx-0'>
           <p>Many learners have launched their own startups after completing our courses. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, ab earum, voluptates minus veniam natus alias quibusdam error fugiat assumenda cupiditate?</p>
           {/* <p>Some have chosen freelancing as a career and are delivering successful projects.</p>
           <p>Others have taken their skills abroad or used them to scale their family businesses.</p> */}
         </div>
-        <div className="relative z-20 w-[350px] h-16 ">
+        <div className="relative z-20 w-[350px] h-16 mx-auto xl:mx-0">
             {/* Shadow/Base */}
             <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
