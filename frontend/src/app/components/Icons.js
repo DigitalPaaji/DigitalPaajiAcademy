@@ -3,34 +3,35 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowUp, FaTimes, FaWhatsapp } from "react-icons/fa";
+import { PiArrowBendRightUpThin } from "react-icons/pi";
 
 function Icons() {
   const [showModal, setShowModal] = useState(false);
 
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div>
       {/* Floating Icons */}
       <div className="flex flex-col items-center justify-center gap-2 fixed bottom-4 right-4 z-[99999999]">
         {/* Scroll to Top Icon */}
-        {/* <div
+        <div
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
           }}
           className="cursor-pointer text-white flex items-center justify-center"
         >
-          <FaArrowUp className="w-9 h-9 p-2 bg-[#cc5f4d] text-white rounded-full" />
-        </div> */}
+          <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-12 h-12 p-2 bg-[rgb(0,0,0)] text-white rounded-full" />
+        </div>
 
         {/* WhatsApp Icon with Modal Trigger */}
-        <div
+        {/* <div
           onMouseEnter={() => setShowModal(true)}
           className="relative"
         >
@@ -44,13 +45,12 @@ function Icons() {
             />
           </Link>
 
-          {/* Modal Popup */}
           {showModal && (
             <div
               className="absolute bottom-4 right-14 bg-white shadow-lg rounded-lg w-60 lg:w-[300px] text-black z-[9999]"
               style={{ backgroundImage: "url(/Images/IconsBG.webp)" }}
             >
-              {/* Header Section with Close Icon */}
+        
               <div className="flex items-center justify-between p-4 bg-[#48ac48d8] rounded-t-lg">
                 <div className="flex items-center gap-2">
                   <div className="w-fit h-12 rounded-full">
@@ -96,7 +96,7 @@ function Icons() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

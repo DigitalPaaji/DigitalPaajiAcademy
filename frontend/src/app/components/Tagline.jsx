@@ -44,13 +44,13 @@ function Tagline() {
         ))}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12  gap-12 p-6 xl:p-24 mx-6 lg:mx-12 xl:mx-24 mt-12">
+      <div className="grid grid-cols-1  xl:grid-cols-12  gap-12 p-6 xl:p-24 mx-6 lg:mx-12 xl:mx-24 mt-12">
            
                 
             <div className="xl:col-span-4 flex flex-col h-full ">
    
 
-                <h1 className="poppins text-xl md:text-xl xl:text-4xl font-bold text-left ">
+                <h1 className="poppins text-3xl md:text-xl xl:text-4xl font-bold md:text-left ">
          100% Practical Learning
         </h1>
               <div className=' text-base md:text-md my-4 text-justify'>
@@ -70,7 +70,7 @@ function Tagline() {
         </div>
         
             <div className="xl:col-span-4 flex flex-col justify-end h-full ">
-        <h1 className="poppins text-3xl md:text-5xl xl:text-5xl font-bold text-center xl:text-left ">
+        <h1 className="poppins text-3xl xl:text-5xl font-bold text-center md:text-left ">
           Our Learning Philosophy 
         </h1>
             <div className=' text-base md:text-md my-4 text-justify'>

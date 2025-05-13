@@ -65,7 +65,7 @@ function Journey() {
     <div className="px-6 lg:px-12 xl:px-24 py-24 ">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Content */}
-        <div className="flex-1">
+        <div className="flex-1 text-center md:text-left">
           <h2 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold mb-12 border-b pb-4 border-black">
             Start Your Journey with Digital Paaji Academy
           </h2>
@@ -76,7 +76,7 @@ function Journey() {
                 width={40}
                 src={"/Images/icon.webp"}
                 height={40}
-                className="w-16 h-16 object-cover"
+                className="w-16 h-16 object-cover mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
                 Not just learning — you're unlocking a launchpad to your future.
@@ -89,7 +89,7 @@ function Journey() {
                 width={40}
                 src={"/Images/icon.webp"}
                 height={40}
-                className="w-16 h-16 object-cover"
+                className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
                 Not just learning — you're unlocking a launchpad to your future.
@@ -102,7 +102,7 @@ function Journey() {
                 width={40}
                 src={"/Images/icon.webp"}
                 height={40}
-                className="w-16 h-16 object-cover"
+                className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
                 Not just learning — you're unlocking a launchpad to your future.
@@ -115,7 +115,7 @@ function Journey() {
                 width={40}
                 src={"/Images/icon.webp"}
                 height={40}
-                className="w-16 h-16 object-cover"
+                className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
                 Not just learning — you're unlocking a launchpad to your future.
@@ -123,7 +123,7 @@ function Journey() {
               </p>
             </div>
           </div>
-          <div className="relative z-20 w-[350px] h-16 border-red-900 ">
+          <div className="relative z-20 w-[280px] md:w-[350px] mx-auto md:mx-0 h-16 border-red-900 ">
             {/* Shadow/Base */}
             <div className="absolute top-[6px] left-[4px]  bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 " />
 

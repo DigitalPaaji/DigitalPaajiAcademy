@@ -10,7 +10,8 @@ import Course from './components/Course';
 import Students from './components/Students';
 import Journey from './components/Journey';
 import Tagline from './components/Tagline';
-import Scroll from './components/Scroll';
+import Scroll from './components/Scroll'
+import Footer from './components/Footer';
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -21,12 +22,15 @@ export default function Home() {
 <Slider/>
 
 <About/>
+<Scroll/>
+
 <Journey/>
 <Course/>
 
 <Students/>
 <Tagline/>
-<Scroll/>
+<Footer/>
+
 
 {/* <Courses/> */}
     </div>

@@ -12,16 +12,17 @@ function Navbar() {
   const navbarRef = useRef(null); // Reference to the navbar
   const btnRef = useRef(null);
   const borderRef = useRef(null);
+    const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    // Entry animation on load
-    gsap.from(btnRef.current, {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }, []);
+  // useEffect(() => {
+  //   // Entry animation on load
+  //   gsap.from(btnRef.current, {
+  //     opacity: 0,
+  //     y: 30,
+  //     duration: 1,
+  //     ease: "power3.out",
+  //   });
+  // }, []);
 
   const handleMouseEnter = () => {
     // Press-in effect (move down slightly)
@@ -29,7 +30,7 @@ function Navbar() {
       y: 2,
       scale: 0.98,
       duration: 0.2,
-      ease: "power2.inOut",
+      ease: "power3.inOut",
     });
 
     // Border ripple
@@ -42,8 +43,8 @@ function Navbar() {
       {
         scale: 1.1,
         opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
+        duration: 0.2,
+        ease: "power3.out",
       }
     );
   };
@@ -54,7 +55,7 @@ function Navbar() {
       y: 0,
       scale: 1,
       duration: 0.2,
-      ease: "power2.inOut",
+      ease: "power3.inOut",
     });
 
     // Reset border
@@ -70,32 +71,33 @@ function Navbar() {
     setMenuOpen((prev) => !prev);
   };
 
+  // GSAP animation for dropdown
   useEffect(() => {
-    // Navbar Animation (fade in)
-    gsap.fromTo(
-      navbarRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, ease: "power3.out" }
-    );
-
-    // Sidebar animation
     if (menuOpen) {
       gsap.fromTo(
-        menuRef.current,
-        { x: "-100%" },
-        { x: "0%", duration: 0.5, ease: "power3.out" }
+        dropdownRef.current,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power3.out", display: "flex" }
       );
     } else {
-      gsap.to(menuRef.current, {
-        x: "-100%",
-        duration: 0.5,
+      gsap.to(dropdownRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.3,
         ease: "power3.in",
+        onComplete: () => {
+          if (dropdownRef.current) {
+            dropdownRef.current.style.display = "none";
+          }
+        },
       });
     }
   }, [menuOpen]);
 
   return (
-    <div ref={navbarRef}>
+    <div
+    //  ref={navbarRef}
+    >
       <div className="flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
         {/* Logo - Left */}
         <Link href="/">
@@ -125,8 +127,8 @@ function Navbar() {
         </ul>
 
         {/* Enroll Now - Right */}
-        <div className=" hidden lg:block">
-          <div className="relative z-20 w-36 h-12 ">
+        <div className=" ">
+          <div className="relative z-20 w-28 lg:w-36 h-12 ">
             {/* Shadow/Base */}
             <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
@@ -158,7 +160,41 @@ function Navbar() {
         className="fixed top-0 left-0 h-full w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden"
         style={{ transform: "translateX(-100%)" }}
       > */}
-      <div
+
+
+
+   
+    <div
+        ref={dropdownRef}
+        className="lg:hidden flex-col items-center gap-6 bg-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
+      >
+        <button onClick={() => scrollToSection("home")}>Home</button>
+        <button onClick={() => scrollToSection("about")}>About Me</button>
+        <button onClick={() => scrollToSection("services")}>Services</button>
+        <button onClick={() => scrollToSection("experience")}>Experience</button>
+        <button onClick={() => scrollToSection("projects")}>Projects</button>
+           <button onClick={()=>{}} className="relative z-20 w-28 lg:w-36 h-12 ">
+            {/* Shadow/Base */}
+            <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+
+            {/* Actual Button */}
+            <Link
+              href="/enroll"
+              ref={btnRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="poppins-bold absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
+               active:translate-x-[4px] active:translate-y-[2px] transition-all duration-100"
+            >
+              Enroll Now
+            </Link>
+          </button>
+  
+
+      </div>
+   
+   
+      {/* <div
         ref={menuRef}
         className="fixed top-0 left-0 h-screen w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden -translate-x-full"
       >
@@ -200,7 +236,11 @@ function Navbar() {
         >
           Enroll Now
         </Link>
-      </div>
+      </div> */}
+
+
+
+      
     </div>
   );
 }
