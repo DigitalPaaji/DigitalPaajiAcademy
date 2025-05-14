@@ -31,6 +31,37 @@ body {
 }
 
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Marquee Container */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+/* Marquee Content */
+.marquee-content {
+  display: flex;
+  animation: marquee 50s linear infinite;
+
+
+}
+
+/* Image Styling */
+.marquee-content img {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+}
+
+
 /* 
 .custom-scrollbar::-webkit-scrollbar {
   width: 2px;

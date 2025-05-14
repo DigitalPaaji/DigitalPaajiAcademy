@@ -111,18 +111,18 @@ function Navbar() {
         </Link>
 
         {/* Center Links - Desktop */}
-        <ul className="hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
+        <ul className="poppins hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
           <li>
-            <Link href="/programs">Programs</Link>
+            <Link href="/">Course Corner</Link>
           </li>
           <li>
-            <Link href="/story">Our Story</Link>
+            <Link href="/story">Paaji Diaries</Link>
           </li>
           <li>
-            <Link href="/mentors">Mentors</Link>
+            <Link href="/vibe">Vibe Check</Link>
           </li>
           <li>
-            <Link href="/tales">Honhar Tales</Link>
+            <Link href="/contact">Join the Tribe</Link>
           </li>
         </ul>
 
@@ -164,34 +164,25 @@ function Navbar() {
 
 
    
-    <div
+    <ul
         ref={dropdownRef}
-        className="lg:hidden flex-col items-center gap-6 bg-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
+        className="poppins lg:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
       >
-        <button onClick={() => scrollToSection("home")}>Home</button>
-        <button onClick={() => scrollToSection("about")}>About Me</button>
-        <button onClick={() => scrollToSection("services")}>Services</button>
-        <button onClick={() => scrollToSection("experience")}>Experience</button>
-        <button onClick={() => scrollToSection("projects")}>Projects</button>
-           <button onClick={()=>{}} className="relative z-20 w-28 lg:w-36 h-12 ">
-            {/* Shadow/Base */}
-            <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+      <li>
+            <Link href="/">Course Corner</Link>
+          </li>
+          <li>
+            <Link href="/story">Paaji Diaries</Link>
+          </li>
+          <li>
+            <Link href="/vibe">Vibe Check</Link>
+          </li>
+          <li>
+            <Link href="/contact">Join the Tribe</Link>
+          </li>
+         
 
-            {/* Actual Button */}
-            <Link
-              href="/enroll"
-              ref={btnRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="poppins-bold absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
-               active:translate-x-[4px] active:translate-y-[2px] transition-all duration-100"
-            >
-              Enroll Now
-            </Link>
-          </button>
-  
-
-      </div>
+      </ul>
    
    
       {/* <div

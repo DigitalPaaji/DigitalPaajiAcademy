@@ -281,8 +281,8 @@ export default function CoursesHorizontal() {
     };
 
   return (
-    <div ref={containerRef} className="mx-0 xl:mx-0 py-24 w-full ">
-      <div className="flex items-center flex-col xl:flex-row w-full h-full ">
+    <div ref={containerRef} className="mx-0 xl:mx-0 my-24 w-full ">
+      <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}
         <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:mx-24 ">
         <h1 className="bungee-shade-regular text-3xl md:text-5xl xl:text-6xl font-bold text-center xl:text-left ">

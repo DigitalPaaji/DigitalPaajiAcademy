@@ -1,5 +1,5 @@
 // import Image from "next/image";
-// import Banner from "./components/Banner";
+import Banner from "./components/Banner";
 // import New from './components/New'
 import About from './components/About';
 import Banner2 from './components/Banner2';
@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 export default function Home() {
   return (
     <div className="min-h-screen">
-<Navbar/>
 {/* <Banner/> */}
 
 <Banner2/>
@@ -29,7 +28,7 @@ export default function Home() {
 
 <Students/>
 <Tagline/>
-<Footer/>
+
 
 
 {/* <Courses/> */}
