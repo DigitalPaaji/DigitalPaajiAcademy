@@ -16,22 +16,22 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <div className=" relative h-[700px] pt-[400px] bg-[#000000]">
+    <div className="  ">
 
-<div className="inline-block  absolute -top-[100px] ">
+<div className="  mx-40 ">
     <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.726002954475!2d76.4027356!3d30.358736000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3910291ec53226d3%3A0xd81cade77ecfa8d3!2sDigital%20Paaji!5e0!3m2!1sen!2sin!4v1735063353416!5m2!1sen!2sin"
             width="600"
             height="450"
             allowFullScreen=""
             loading="lazy"
-            className="w-full h-[300px] object-cover"
+            className="w-full h-[200px] object-cover"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
 </div> 
 
     <div 
-    className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-0 md:p-6 mx-4 md:mx-12 xl:mx-44  ">
+    className="relative py-24 pt-[400px]  bg-[#000000] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-0 md:p-6 px-4 md:px-12 xl:px-44  ">
       {/* Column 1 */}
       <div>
         <Link href={'/'}><Image width={200} height={200} src="/Images/logo.webp" alt="Logo" className="w-52 h-auto object-cover"/></Link>
