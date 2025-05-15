@@ -4,6 +4,7 @@ const nextConfig = {
     images: {
       unoptimized: true, // Required if using Next.js Image component
     },
+    
   };
   
   export default nextConfig;
