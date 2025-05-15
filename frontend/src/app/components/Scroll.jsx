@@ -28,16 +28,16 @@ export default function ScrollMotion() {
       ease: "steps(40)",
     });
 
-    gsap.to('.scroll-text span', {
-      repeat: -1,
-      duration: 1,
-      y: 'random(6, -6)',
-      rotate: 'random(8, -8)',
-      scale: 'random(0.8, 1.1)',
-      ease: 'steps(2)',
-      repeatRefresh: true,
-      stagger: 0.1,
-    });
+    // gsap.to('.scroll-text span', {
+    //   repeat: -1,
+    //   duration: 1,
+    //   y: 'random(6, -6)',
+    //   rotate: 'random(8, -8)',
+    //   scale: 'random(0.8, 1.1)',
+    //   ease: 'steps(2)',
+    //   repeatRefresh: true,
+    //   stagger: 0.1,
+    // });
 
     const scrollAnim = gsap.timeline({
       scrollTrigger: {
@@ -60,14 +60,14 @@ export default function ScrollMotion() {
         },
         '<'
       )
-      .to(
-        '.scroll-text',
-        {
-          y: -30,
-          ease: 'steps(6)',
-        },
-        '<'
-      );
+      // .to(
+      //   '.scroll-text',
+      //   {
+      //     y: -30,
+      //     ease: 'steps(6)',
+        // },
+        // '<'
+      // );
   }, []);
 
   return (

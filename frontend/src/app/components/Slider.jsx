@@ -24,9 +24,9 @@ export default function BrandShowcase() {
             key={index}
             src={logo.src}
             alt={logo.alt}
-            width={120}
-            height={60}
-            className="object-contain grayscale hover:grayscale-0 transition duration-300"
+            width={40}
+            height={40}
+            className="w-32  object-cover grayscale hover:grayscale-0 transition duration-300"
           />
         ))}
       </div>
