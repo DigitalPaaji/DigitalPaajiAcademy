@@ -27,7 +27,7 @@ function Icons() {
           }}
           className="cursor-pointer text-white flex items-center justify-center"
         >
-          <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-12 h-12 p-2 bg-[rgb(0,0,0)] text-white rounded-full" />
+          <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-12 h-12  bg-[rgb(0,0,0)] text-white rounded-full" />
         </div>
 
         {/* WhatsApp Icon with Modal Trigger */}
