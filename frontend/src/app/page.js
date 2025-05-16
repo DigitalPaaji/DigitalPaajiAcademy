@@ -15,7 +15,7 @@ export default function Home() {
 <Slider/>
 
 <About/>
-<Scroll/>
+{/* <Scroll/> */}
 
 <Journey/>
 <Course/>

@@ -32,7 +32,7 @@ function Tagline() {
       ref={sectionRef}
       className="py-24 text-center overflow-hidden   rounded-4xl"
     >
-      <h1 className="laila-bold font-bold text-5xl md:text-7xl leading-tight tracking-tight">
+      <h1 className="laila-bold  text-5xl md:text-7xl leading-tight tracking-tight">
         {words.map((word, index) => (
           <span
             key={index}

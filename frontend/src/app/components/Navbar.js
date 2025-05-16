@@ -116,7 +116,7 @@ function Navbar() {
             <Link href="/">Course Corner</Link>
           </li>
           <li>
-            <Link href="/story">Paaji Diaries</Link>
+            <Link href="/about">Paaji Diaries</Link>
           </li>
           <li>
             <Link href="/vibe">Vibe Check</Link>
@@ -128,7 +128,7 @@ function Navbar() {
 
         {/* Enroll Now - Right */}
         <div className=" ">
-          <div className="relative z-20 w-28 lg:w-36 h-12 ">
+          <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 ">
             {/* Shadow/Base */}
             <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
@@ -172,7 +172,7 @@ function Navbar() {
             <Link href="/">Course Corner</Link>
           </li>
           <li>
-            <Link href="/story">Paaji Diaries</Link>
+            <Link href="/about">Paaji Diaries</Link>
           </li>
           <li>
             <Link href="/vibe">Vibe Check</Link>
