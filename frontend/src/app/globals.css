@@ -81,6 +81,12 @@ body {
   font-weight: 400;
 }
 
+.blur {
+  backdrop-filter: blur(12px); /* Applies the blur */
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  color: black;
+}
 
 
 

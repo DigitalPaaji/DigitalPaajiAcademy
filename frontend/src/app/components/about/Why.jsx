@@ -41,11 +41,40 @@ const items = [
 ];
 
 export default function WhyWeStarted() {
+  const textRef = useRef(null);
+const imageRef = useRef(null);
+
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 1,
+      },
+    });
+
+    tl.fromTo(
+      textRef.current,
+      { x: -100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "power2.out" }
+    ).fromTo(
+      imageRef.current,
+      { x: 100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      "<" // sync start
+    );
+  });
+
+  return () => ctx.revert();
+}, []);
+
   return (
-    <section className="mx-6 lg:mx-12 xl:mx-40 py-24">
+    <section className="mx-6 lg:mx-12 xl:mx-40 py-24 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Left Text Column with Background and Padding */}
-        <div className="bg-white p-6 md:p-10 rounded-xl">
+        <div  ref={textRef} className="bg-white p-6 md:p-10 rounded-xl">
           <h2 className="bungee-shade-regular text-4xl lg:text-6xl font-bold mb-14 text-black">
             We Are Different
           </h2>
@@ -57,7 +86,7 @@ export default function WhyWeStarted() {
         </div>
 
         {/* Right Image Column */}
-        <div className="w-full h-full">
+        <div ref={imageRef} className="w-full h-full">
           <Image
           width={220}
           height={220}
@@ -69,19 +98,17 @@ export default function WhyWeStarted() {
       </div>
 
 
-        <p className="text-lg  my-12 text-justify md:justify-center ">
+        <p className="text-md xl:text-lg  my-12 text-justify md:justify-center ">
         At Digital Paaji Academy, we’re not here to follow the crowd — we’re here to build the next generation of creators, marketers, developers, and leaders. Our journey started with a mission to provide real learning with real results. Over the past year, we’ve trained passionate learners, helped them build strong portfolios, crack client interviews, land freelance gigs, and even launch their own digital ventures. Each student becomes a part of our close-knit community, where personal attention, honest feedback, and practical experience go hand in hand.
          
          We believe in breaking the typical classroom mold. That’s why we focus on hands-on work, live projects, portfolio building, and one-on-one mentoring — not just PDFs and PowerPoint slides. Whether you're from a small town or a big city, if you have the will to grow, we have the tools and team to guide you. Digital Paaji Academy isn’t just an institute — it’s a place where confidence is built, dreams are nurtured, and careers are kickstarted.
           </p>
 
-               <h3 className="bungee-shade-regular font-bold text-xl md:text-5xl leading-tight tracking-tight">
+               <h3 className="bungee-shade-regular font-bold text-3xl md:text-5xl leading-tight tracking-tight">
       
-          <span
-            className="inline-block mx-2"
-          >
+          
            Dream Big. Learn Loud. Build Real. 
-          </span>
+          
   
       </h3>
  
@@ -137,7 +164,7 @@ function StrikeItem({ old, icon, new: newTitle, desc, index }) {
           className="w-10 h-10 object-contain shrink-0 mt-1"
         />
         <div>
-          <p className="poppins text-2xl font-bold">{newTitle}</p>
+          <p className="poppins text-md xl:text-2xl font-bold">{newTitle}</p>
           {/* <p className="mt-1">{desc}</p> */}
         </div>
       </div>

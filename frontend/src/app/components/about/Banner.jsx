@@ -19,25 +19,9 @@ function Banner() {
       // Add more if needed
     ]
 
-    const wordsRef = useRef([]);
-  const sectionRef = useRef(null);
+ 
 
-  useEffect(() => {
-    gsap.from(wordsRef.current, {
-      opacity: 0,
-      y: 30,
-      stagger: 0.2,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%", // when the top of section hits 80% of viewport
-        toggleActions: "play none none none",
-      },
-    });
-  }, []);
-
-  const words = ["Paaji’s ", "vision", "Your ", "growth"];
+ 
   return (
     <div>
 
@@ -50,7 +34,7 @@ function Banner() {
       </div>
 
       {/* Video Grid */}
-      <div className='flex items-center justify-center flex-wrap gap-6'>
+      <div className='flex items-center justify-center flex-wrap xl:flex-nowrap gap-6'>
         {videos.map((video, index) => (
           <div
             key={index}
@@ -80,37 +64,19 @@ function Banner() {
     ">
       <div className=" flex items-center justify-center">
         <div className="text-center ">
-          <h3 className="laila-bold font-bold text-5xl md:text-6xl leading-tight tracking-tight">
-        {words.map((word, index) => (
-          <span
-            key={index}
-            ref={(el) => (wordsRef.current[index] = el)}
-            className="inline-block mx-2"
-          >
-            {word}
-          </span>
-        ))}
+          <h3 className="laila-bold font-bold text-4xl md:text-6xl leading-tight tracking-tight">
+Paaji's Mission Your Growth
       </h3>
-          <p className="text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
+          <p className="text-md xl:text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
          <strong> We were running a digital agency from last 16 years </strong> — building websites, running ads, managing brands. But one day, a college student asked us if he could learn from us. Then another. Then another.
 
           We realized — <strong>talent is everywhere, but guidance isn’t.</strong> That’s when Digital Paaji Academy was born.
 
     Paaji didn’t want to just build brands — he wanted to build people too.
           </p>
-               {/* <h3 className="laila-regular font-bold text-xl md:text-3xl leading-tight tracking-tight">
-      
-          <span
-            className="inline-block mx-2"
-          >
-           Not everything is taught on a whiteboard.
-          </span>
-  
-      </h3> */}
-         <p  className="text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
-       {/* Because learning is not just about skills — it's about confidence.
-These small moments give you the real feel of being in the digital field.
-And honestly? They’re the ones that stay with you longest. */}
+          
+         <p  className="text-md xl:text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
+       
 Right from Day 1, our learners are diving into real-world challenges, guided by mentors who’ve actually worked in the field—not just talked about it.
 
 From solving actual client problems to building their own mini-projects, we’re setting the foundation for something big. And trust us — this is just the beginning.

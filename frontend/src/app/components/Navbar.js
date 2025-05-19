@@ -29,7 +29,7 @@ function Navbar() {
     gsap.to(btnRef.current, {
       y: 2,
       scale: 0.98,
-      duration: 0.2,
+      duration: 0,
       ease: "power3.inOut",
     });
 
@@ -95,10 +95,10 @@ function Navbar() {
   }, [menuOpen]);
 
   return (
-    <div
-    //  ref={navbarRef}
-    >
-      <div className="flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
+    <div className=" w-full "
+  //  ref={navbarRef}
+  >
+      <div className="backdrop-blur-md bg-white/20 text-black z-[999] flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
         {/* Logo - Left */}
         <Link href="/">
           <Image
@@ -130,7 +130,7 @@ function Navbar() {
         <div className=" ">
           <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 ">
             {/* Shadow/Base */}
-            <div className="absolute top-[6px] left-[4px] bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+            <div className="absolute top-[6px] left-[4px] hover:pt-4 bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
             {/* Actual Button */}
             <Link
