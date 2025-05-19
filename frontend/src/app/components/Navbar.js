@@ -134,9 +134,7 @@ function Navbar() {
           <li>
             <Link href="/vibe">Vibe Check</Link>
           </li>
-          <li>
-            <Link href="/contact">Join the Tribe</Link>
-          </li>
+        
         </ul>
 
         {/* Enroll Now - Right */}
@@ -190,9 +188,7 @@ function Navbar() {
           <li>
             <Link href="/vibe">Vibe Check</Link>
           </li>
-          <li>
-            <Link href="/contact">Join the Tribe</Link>
-          </li>
+         
          
 
       </ul>

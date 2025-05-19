@@ -92,9 +92,7 @@ function Footer() {
           <li className=" ">
             <Link href="/vibe">Vibe Check</Link>
           </li>
-          <li className=" ">
-            <Link href="/contact">Join the Tribe</Link>
-          </li>
+      
           
    
         </ul>
