@@ -146,7 +146,7 @@ function Popup({ closeMenu }) {
   return (
     <div onClick={(e)=>e.stopPropagation()}
     >
-      <div className="poppins fixed inset-0 bg-[#000000d7] flex justify-center items-center z-50 ">
+      <div className="poppins fixed inset-0 bg-[#000000d7] flex justify-center items-center z-[99999] ">
         <div className="">
         {/* <div className=" custom-scrollbar p-8  border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[720px] overflow-scroll xl:w-[900px]  relative"
         style={{backgroundImage:"url('/Images/2.webp')",

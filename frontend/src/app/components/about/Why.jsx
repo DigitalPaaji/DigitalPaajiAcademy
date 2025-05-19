@@ -75,7 +75,7 @@ useEffect(() => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Left Text Column with Background and Padding */}
         <div  ref={textRef} className="bg-white p-6 md:p-10 rounded-xl">
-          <h2 className="bungee-shade-regular text-4xl lg:text-6xl font-bold mb-14 text-black">
+          <h2 className="bungee-shade-regular text-5xl lg:text-6xl font-bold mb-14 text-black">
             We Are Different
           </h2>
           <div className="space-y-8">
@@ -104,7 +104,7 @@ useEffect(() => {
          We believe in breaking the typical classroom mold. That’s why we focus on hands-on work, live projects, portfolio building, and one-on-one mentoring — not just PDFs and PowerPoint slides. Whether you're from a small town or a big city, if you have the will to grow, we have the tools and team to guide you. Digital Paaji Academy isn’t just an institute — it’s a place where confidence is built, dreams are nurtured, and careers are kickstarted.
           </p>
 
-               <h3 className="bungee-shade-regular font-bold text-3xl md:text-5xl leading-tight tracking-tight">
+               <h3 className="bungee-shade-regular font-bold text-4xl md:text-5xl leading-tight tracking-tight">
       
           
            Dream Big. Learn Loud. Build Real. 

@@ -34,7 +34,7 @@ function Banner() {
       </div>
 
       {/* Video Grid */}
-      <div className='flex items-center justify-center flex-wrap xl:flex-nowrap gap-6'>
+      <div className='flex items-center justify-center flex-wrap lg:flex-nowrap gap-6'>
         {videos.map((video, index) => (
           <div
             key={index}

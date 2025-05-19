@@ -5,6 +5,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
+import Popup from "./Popup";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,19 @@ function Navbar() {
   const navbarRef = useRef(null); // Reference to the navbar
   const btnRef = useRef(null);
   const borderRef = useRef(null);
-    const dropdownRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+ const [isOpen, setIsOpen] = useState(false);
+  const openMenu = () => {
+    // console.log("Popup khul rahi hai...");
+    setIsOpen(true);
+  };
+  const closeMenu = () => {
+    // console.log("Popup bnd ho gyi h...");
+    setIsOpen(false);
+  };
+
+
 
   // useEffect(() => {
   //   // Entry animation on load
@@ -133,16 +146,16 @@ function Navbar() {
             <div className="absolute top-[6px] left-[4px] hover:pt-4 bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
             {/* Actual Button */}
-            <Link
-              href="/enroll"
+            <button
+              onClick={()=>openMenu()}
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="poppins-bold absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
+              className="poppins-bold cursor-pointer absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
                active:translate-x-[4px] active:translate-y-[2px] transition-all duration-100"
             >
               Enroll Now
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -229,7 +242,7 @@ function Navbar() {
         </Link>
       </div> */}
 
-
+{isOpen && <Popup closeMenu={closeMenu} />} 
 
       
     </div>
