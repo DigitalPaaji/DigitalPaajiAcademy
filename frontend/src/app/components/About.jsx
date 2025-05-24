@@ -10,29 +10,42 @@ gsap.registerPlugin(ScrollTrigger);
 function About() {
   const boxesRef = useRef([]);
   
-  useEffect(()=>{
-    boxesRef.current.forEach((card, i) => {
-      const offset = [
-        { x: 100, y: -100 }, // top-left
-        { x: 100, y: -100 },  // top-right
-        { x: -100, y: 100 },  // bottom-left
-        { x: 100, y: 100 }    // bottom-right
-      ];
+useEffect(() => {
+  boxesRef.current.forEach((card, i) => {
+    const offset = [
+      { x: 100, y: -100 },
+      { x: 100, y: -100 },
+      { x: -100, y: 100 },
+      { x: 100, y: 100 },
+    ];
 
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-        },
-        duration: 2,
-        opacity: 0,
-        x: offset[i].x,
-        y: offset[i].y,
-        ease: "power3.out",
-        delay: i* 0.3,
-      });
+   
+    gsap.set(card, {
+      opacity: 0,
+      x: offset[i].x,
+      y: offset[i].y,
     });
-  },[])
+
+   
+    gsap.to(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        once: true,
+      },
+      duration: 2,
+      opacity: 1,
+      x: 0,
+      y: 0,
+      ease: "power3.out",
+      delay: i * 0.3,
+    });
+  });
+
+  
+  ScrollTrigger.refresh();
+}, []);
+
   return (
     <div className="poppins mx-6 lg:mx-12 xl:mx-24 py-24 min-h-screen ">
       <div className="text-center mb-20">
