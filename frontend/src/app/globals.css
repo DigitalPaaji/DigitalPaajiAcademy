@@ -134,7 +134,9 @@ body {
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #ddd;
 } 
-
+html{
+  scroll-behavior: smooth;
+}
 
 
 

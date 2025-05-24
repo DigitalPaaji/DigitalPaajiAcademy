@@ -58,7 +58,7 @@ function About() {
 
           {/* Right Content */}
           <div className="flex w-full xl:w-1/2 flex-col lg:flex-row  ">
-            {/* First Column: Bottom Aligned */}
+             {/* First Column: Bottom Aligned */}
             <div className=" xl:w-1/2 flex flex-col gap-6 justify-end divide-y divide-[#d3771bb4] p-4 ">
               <div 
               ref={(el)=>(boxesRef.current[0] = el)}

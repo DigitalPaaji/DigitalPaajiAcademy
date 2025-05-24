@@ -27,15 +27,15 @@ function Navbar() {
 
 
 
-  // useEffect(() => {
-  //   // Entry animation on load
-  //   gsap.from(btnRef.current, {
-  //     opacity: 0,
-  //     y: 30,
-  //     duration: 1,
-  //     ease: "power3.out",
-  //   });
-  // }, []);
+  useEffect(() => {
+    // Entry animation on load
+    gsap.from(btnRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }, []);
 
   const handleMouseEnter = () => {
     // Press-in effect (move down slightly)
@@ -126,7 +126,7 @@ function Navbar() {
         {/* Center Links - Desktop */}
         <ul className="poppins hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
           <li>
-            <Link href="/">Course Corner</Link>
+            <Link href="/#course-corner" >Course Corner</Link>
           </li>
           <li>
             <Link href="/about">Paaji Diaries</Link>
@@ -180,7 +180,7 @@ function Navbar() {
         className="poppins lg:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
       >
       <li>
-            <Link href="/">Course Corner</Link>
+            <Link href="/#course-corner" >Course Corner</Link>
           </li>
           <li>
             <Link href="/about">Paaji Diaries</Link>

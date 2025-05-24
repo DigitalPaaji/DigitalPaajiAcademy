@@ -13,7 +13,7 @@ function Students() {
     '/videos/student2.mp4',
     '/videos/student3.mp4',
     '/videos/student4.mp4',
-    // '/videos/student5.mp4',
+    '/videos/student5.mp4',
     // Add more if needed
   ]
 
@@ -58,7 +58,7 @@ function Students() {
           <div
             key={index}
             // ref={el => (videosRef.current[index] = el)}
-            className={`overflow-hidden w-[120px] sm:w-[250px] md:w-[200px] lg: xl:w-full h-[250px] md:h-[380px] xl:h-[500px]  ${
+            className={`overflow-hidden w-[120px] sm:w-[250px] md:w-[200px] lg: xl:w-full h-[250px] md:h-[380px]  xl:h-[550px] rounded-xl ${
               index % 2 === 1 ? 'lg:mt-12' : ''
             }`}
           >

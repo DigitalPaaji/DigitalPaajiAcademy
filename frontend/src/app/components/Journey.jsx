@@ -9,15 +9,7 @@ function Journey() {
   const btnRef = useRef(null);
   const borderRef = useRef(null);
 
-  useEffect(() => {
-    // Entry animation on load
-    gsap.from(btnRef.current, {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }, []);
+
 
   const handleMouseEnter = () => {
     // Press-in effect (move down slightly)

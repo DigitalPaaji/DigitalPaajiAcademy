@@ -20,17 +20,17 @@ function Footer() {
   return (
     <div 
 
-    className="relative z-50 overflow-hidden bg-black h-auto py-24 md:h-auto">
+    className="relative z-50 overflow-hidden bg-black h-auto py-24 md:h-auto ">
 
 <div className="marquee-container absolute bottom-0 lg:-bottom-6 overflow-hidden whitespace-nowrap">
-  <div className="marquee-content animate-footerBg flex mt-[1100px] md:mt-[700px] xl:mt-[100px]">
+  <div className="marquee-content animate-footerBg flex md:mt-[700px] xl:mt-[100px]">
      <Image  width={200} height={200} src="/Images/footerBG.webp" alt="Background" className="w-full h-auto opacity-15" />
      <Image  width={200} height={200} src="/Images/footerBG.webp" alt="Background" className="w-full h-auto opacity-15" />
   </div>
 </div>
 
     <div 
-    className="relative z-50 grid grid-cols-1 md:grid-cols-3  xl:grid-cols-4 place-content-center gap-10 xl:gap-0 md:p-6 mx-4 md:mx-12 xl:mx-24  py-24 ">
+    className="relative z-50 lg:mb-20 grid grid-cols-1 md:grid-cols-3  xl:grid-cols-4 place-content-center gap-10 xl:gap-0 md:p-6 mx-4 md:mx-12 xl:mx-24  py-24 ">
       {/* Column 1 */}
       <div className="ml-2 md:mx-auto px-6 xl:px-0">
         <Link href={'/'}><Image width={200} height={200} src="/Images/logo.webp" alt="Logo" className="w-40 h-auto object-cover"/></Link>
@@ -84,7 +84,7 @@ function Footer() {
 
 
           <li className=" ">
-            <Link href="/">Course Corner</Link>
+            <Link href="/#course-corner" >Course Corner</Link>
           </li>
           <li className=" ">
             <Link href="/about">Paaji Diaries</Link>
