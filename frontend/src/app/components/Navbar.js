@@ -35,6 +35,7 @@ function Navbar() {
       duration: 1,
       ease: "power3.out",
     });
+    
   }, []);
 
   const handleMouseEnter = () => {
@@ -108,10 +109,10 @@ function Navbar() {
   }, [menuOpen]);
 
   return (
-    <div className=" w-full "
+    <div className=" w-full  z-[99999999999]"
   //  ref={navbarRef}
   >
-      <div className="backdrop-blur-md bg-white/20 text-black z-[999] flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
+      <div className="backdrop-blur-md bg-gradient-to-b from-[#e1bc978a] via-[#ffffff80] to-[#ffffff80] text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
         {/* Logo - Left */}
         <Link href="/">
           <Image
@@ -149,8 +150,10 @@ function Navbar() {
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="poppins-bold cursor-pointer absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
-               active:translate-x-[4px] active:translate-y-[2px] transition-all duration-100"
+              className="
+               
+              poppins-bold cursor-pointer absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
+               "
             >
               Enroll Now
             </button>
@@ -158,8 +161,8 @@ function Navbar() {
         </div>
 
         {/* Hamburger Icon - Mobile */}
-        <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-2xl">
+        <div className="lg:hidden ">
+          <button onClick={toggleMenu} className="text-2xl cursor-pointer">
             {menuOpen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
           </button>
         </div>
@@ -180,13 +183,13 @@ function Navbar() {
         className="poppins lg:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
       >
       <li>
-            <Link href="/#course-corner" >Course Corner</Link>
+            <Link href="/#course-corner" onClick={() => setMenuOpen(!menuOpen)} >Course Corner</Link>
           </li>
           <li>
-            <Link href="/about">Paaji Diaries</Link>
+            <Link href="/about" onClick={() => setMenuOpen(!menuOpen)} >Paaji Diaries</Link>
           </li>
           <li>
-            <Link href="/vibe">Vibe Check</Link>
+            <Link href="/vibe" onClick={() => setMenuOpen(!menuOpen)} >Vibe Check</Link>
           </li>
          
          

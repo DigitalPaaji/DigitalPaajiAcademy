@@ -72,9 +72,9 @@ useEffect(() => {
 
   return (
     <section className="mx-6 lg:mx-12 xl:mx-40 py-24 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="flex flex-wrap-reverse lg:flex-nowrap gap-10 items-center">
         {/* Left Text Column with Background and Padding */}
-        <div  ref={textRef} className="bg-white p-6 md:p-10 rounded-xl">
+        <div  ref={textRef} className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-xl">
           <h2 className="bungee-shade-regular text-5xl lg:text-6xl font-bold mb-14 text-black">
             We Are Different
           </h2>
@@ -86,7 +86,7 @@ useEffect(() => {
         </div>
 
         {/* Right Image Column */}
-        <div ref={imageRef} className="w-full h-full">
+        <div ref={imageRef} className="w-full lg:w-1/2 h-full">
           <Image
           width={220}
           height={220}

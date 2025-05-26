@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Script from "next/script";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,7 @@ function Tagline() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+      let ctx = gsap.context(() => {
     gsap.from(wordsRef.current, {
       opacity: 0,
       y: 30,
@@ -23,6 +25,11 @@ function Tagline() {
         toggleActions: "play none none none",
       },
     });
+      }, sectionRef);
+    ScrollTrigger.refresh();
+     return () => {
+    ctx.revert();
+  };
   }, []);
 
   const words = ["Gyaan", "कम,", "Skills", "ज़्यादा"];
@@ -44,7 +51,10 @@ function Tagline() {
         ))}
       </h1>
 
-      <div className="grid grid-cols-1  xl:grid-cols-12  gap-12 p-6 xl:p-24 mx-6 lg:mx-12 xl:mx-24 mt-12">
+ 
+
+
+      <div className="grid grid-cols-1 xl:grid-cols-12  gap-12 p-6 xl:p-24 mx-6 lg:mx-12 xl:mx-24 mt-12">
            
                 
             <div className="xl:col-span-4 flex flex-col h-full ">
@@ -62,12 +72,43 @@ function Tagline() {
         </div>
 
 
-        </div>
+        </div> 
+         <div className="xl:col-span-4 w-full   ">
+     
+ <div className="relative flex  lg:w-[500px] mx-auto lg:my-12 my-24 pt-4 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+  
+       <div className="absolute top-10 right-0 ">
+             <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-9 h-9  bg-[rgb(0,0,0)] text-white rounded-full" />
+          </div>
+  
+  
+    <Script src="https://cdn.lightwidget.com/widgets/lightwidget.js" strategy="lazyOnload" />
+    <iframe
+      src="//lightwidget.com/widgets/274cd1d5e85b5d64ab83d8a915b867d5.html"
+      scrolling="no"
+      // allowTransparency="true"
+      className="w-full h-full border-0"
+      style={{ overflow: 'hidden' }}
+    ></iframe>
 
 
-           <div className="xl:col-span-4 w-full h-[500px]  rounded-xl">
+
+
+
+   
+  </div>
+  </div>
+
+         
+         
+         
+         
+         
+         
+         
+ {/* <div className="xl:col-span-4 w-full h-[500px]  rounded-xl">
             <Image src={'/Images/phone.webp'} alt="" width={440} height={440} className="w-full h-[100%] object-contain"/>
-        </div>
+        </div>  */}
         
             <div className="xl:col-span-4 flex flex-col justify-end h-full ">
         <h1 className="poppins text-3xl xl:text-5xl font-bold text-center md:text-left ">
@@ -87,6 +128,7 @@ function Tagline() {
         </div>
      
       </div>
+
     </section>
   );
 }

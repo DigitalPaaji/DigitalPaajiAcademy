@@ -222,6 +222,7 @@ export default function CoursesHorizontal() {
     });
 
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
+    
   }, []);
 
     const btnRef = useRef(null);
@@ -271,7 +272,7 @@ export default function CoursesHorizontal() {
     };
 
   return (
-    <div  id="course-corner" ref={containerRef} className="scroll-mt-24 mx-0 xl:mx-0 my-24 w-full ">
+    <div  id="course-corner" ref={containerRef} className="scroll-mt-24 mx-0 xl:mx-0 py-24 w-full ">
       <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}
         <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:mx-24 ">
