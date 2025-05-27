@@ -14,9 +14,7 @@ const logos = [
 export default function BrandShowcase() {
   return (
     <div className=" mx-6 lg:mx-12 xl:mx-24 py-24 text-center">
-       {/* <h1 className=" text-3xl sm:text-4xl md:text-5xl xl:text-5xl font-bold mb-12 ">
-       Reviewed & Recognized by the Best
-        </h1> */}
+   
 
       <div className="flex flex-wrap justify-center gap-6 lg:gap-24 xl:gap-24 items-center ">
         {logos.map((logo, index) => (

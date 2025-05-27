@@ -22,11 +22,11 @@ function Popup({ closeMenu }) {
       const [isFormTouched, setIsFormTouched] = useState(false);
       const [selectedServices, setSelectedServices] = useState([]);
     
-    const handleCheckoxChange = (service)=>{
-      setSelectedServices((prev)=>
-      prev.includes(service) ? prev.filter((s)=>s!==service) : [...prev, service]
-    );
-    };
+    // const handleCheckoxChange = (service)=>{
+    //   setSelectedServices((prev)=>
+    //   prev.includes(service) ? prev.filter((s)=>s!==service) : [...prev, service]
+    // );
+    // };
     
       // Handle input changes
       const handleChange = (e) => {
@@ -58,12 +58,11 @@ function Popup({ closeMenu }) {
         return Object.keys(tempErrors).length === 0;
       };
     
-      // Handle form submission
+
       const handleSubmit = async (e) => {
         e.preventDefault();
         setIsFormTouched(true);
     
-      // Ensure selectedServices is included in formData
       const updatedFormData = { ...formData, service: selectedServices };
     
       setFormData(updatedFormData); // Update state
@@ -75,7 +74,7 @@ function Popup({ closeMenu }) {
     
         try {
           const response = await fetch('https://digitalpaajiacademy.onrender.com/send-mail', {
-          // const response = await fetch('http://localhost:8000/send-mail', {
+         
     
             method: 'POST',
             headers: {
@@ -111,10 +110,9 @@ function Popup({ closeMenu }) {
             setIsFormTouched(false);
             setSelectedServices([]);
     
-   // Close the popup after a short delay
    setTimeout(() => {
     closeMenu();
-  }, 1000); // Wait for 3 seconds before closing the popup
+  }, 1000); 
 
           } else {
             toast.error(data.error || 'Something went wrong!', {
@@ -148,44 +146,21 @@ function Popup({ closeMenu }) {
     >
       <div className="poppins fixed inset-0 bg-[#000000d7] flex justify-center items-center z-[99999] ">
         <div className="">
-        {/* <div className=" custom-scrollbar p-8  border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[720px] overflow-scroll xl:w-[900px]  relative"
-        style={{backgroundImage:"url('/Images/2.webp')",
-          backgroundRepeat:'repeat',
-          
-        }}
-        > */}
-
-
-<div
+    <div
   className="custom-scrollbar p-8 xl:px-8 pt-8 pb-0 border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[500px] xl:h-[730px] overflow-scroll xl:w-[900px] relative"
   style={{
     background: `radial-gradient(circle at top left, rgba(22, 51, 147, 0.5), transparent 50%),
                  radial-gradient(circle at top right, rgba(22, 51, 147, 0.5), transparent 50%),
-                 #ede7db`, // Gradient on top-left & top-right
+                 #ede7db`,
   }}
 >
 
-{/* 
-<div
-    style={{
-      position: "absolute",
-      bottom: "10%",
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "200px",
-      height: "100px",
-      background: "rgba(22, 51, 147, 0.2)", // Half-circle with less opacity
-      borderRadius: "100px 100px 0 0", // Half-circle shape
-    }}
-  ></div> */}
-
-
 
   
-          {/* Close Icon in Top Right Corner */}
+         
           <AiOutlineClose
             className="absolute top-4 right-4 text-2xl cursor-pointer text-gray-600"
-            onClick={closeMenu} // Close the menu when clicking the icon
+            onClick={closeMenu}
           />
 
 
@@ -198,15 +173,12 @@ function Popup({ closeMenu }) {
 
 <div className="">
       <ToastContainer style={{ zIndex: 999999999 }} />
-      {/* <h3 className="bungeeHead mb-10 text-[30px] text-[#cc5f4d] xl:text-[40px]">
-        Let&apos;s get in touch
-      </h3> */}
-
+    
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
         onSubmit={handleSubmit}
       >
-        {/* First Name */}
+
         <div>
           <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">NAME *</label>
           <input
@@ -221,8 +193,6 @@ function Popup({ closeMenu }) {
         </div>
 
 
-
-        {/* Phone */}
         <div>
           <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">PHONE *</label>
           <input
@@ -236,7 +206,7 @@ function Popup({ closeMenu }) {
           {isFormTouched && errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
         </div>
 
-        {/* Email */}
+
         <div>
           <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">EMAIL *</label>
           <input
@@ -250,7 +220,7 @@ function Popup({ closeMenu }) {
           {isFormTouched && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
 
-{/* Dropdown  */}
+
 <div className="">
   <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">Qualification*</label>
   <select
@@ -272,7 +242,7 @@ function Popup({ closeMenu }) {
 </div>
 
 
-{/* Dropdown for "I'm interested in" */}
+
 <div className="mt-4 ">
   <label className="block lg:text-lg mb-2 text-[#163393]">I&apos;m interested in*</label>
   <select
@@ -308,7 +278,7 @@ function Popup({ closeMenu }) {
   </select>
   {isFormTouched && errors.interest && <p className="text-red-500 text-sm">{errors.interest}</p>}
 </div>
-{/* Dropdown for "How did you hear about us?" */}
+
 <div className="mt-4">
   <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">How did you hear about us?*</label>
   <select
@@ -330,7 +300,7 @@ function Popup({ closeMenu }) {
 
 
 
-        {/* Message */}
+   
         <div className="md:col-span-2">
           <label className="bungeeHead block lg:text-lg mb-2 text-[#163393]">
           Please tell us how we can help you? </label>
@@ -342,7 +312,7 @@ function Popup({ closeMenu }) {
             rows={2}
             className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
           ></textarea>
-          {/* {isFormTouched && errors.message && <p className="text-red-500 text-sm">{errors.message}</p>} */}
+         
         </div>
 
 {/* reCAPTCHA */}

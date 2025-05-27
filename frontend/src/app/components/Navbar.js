@@ -10,25 +10,22 @@ import Popup from "./Popup";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const navbarRef = useRef(null); // Reference to the navbar
+  const navbarRef = useRef(null); 
   const btnRef = useRef(null);
   const borderRef = useRef(null);
   const dropdownRef = useRef(null);
 
  const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
-    // console.log("Popup khul rahi hai...");
     setIsOpen(true);
   };
   const closeMenu = () => {
-    // console.log("Popup bnd ho gyi h...");
     setIsOpen(false);
   };
 
 
 
   useEffect(() => {
-    // Entry animation on load
     gsap.from(btnRef.current, {
       opacity: 0,
       y: 30,
@@ -39,7 +36,6 @@ function Navbar() {
   }, []);
 
   const handleMouseEnter = () => {
-    // Press-in effect (move down slightly)
     gsap.to(btnRef.current, {
       y: 2,
       scale: 0.98,
@@ -47,7 +43,6 @@ function Navbar() {
       ease: "power3.inOut",
     });
 
-    // Border ripple
     gsap.fromTo(
       borderRef.current,
       {
@@ -64,7 +59,6 @@ function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    // Reset position and scale
     gsap.to(btnRef.current, {
       y: 0,
       scale: 1,
@@ -72,7 +66,6 @@ function Navbar() {
       ease: "power3.inOut",
     });
 
-    // Reset border
     gsap.to(borderRef.current, {
       scale: 1,
       opacity: 0.5,
@@ -85,7 +78,6 @@ function Navbar() {
     setMenuOpen((prev) => !prev);
   };
 
-  // GSAP animation for dropdown
   useEffect(() => {
     if (menuOpen) {
       gsap.fromTo(
@@ -110,10 +102,8 @@ function Navbar() {
 
   return (
     <div className=" w-full  z-[99999999999]"
-  //  ref={navbarRef}
   >
       <div className="backdrop-blur-md bg-gradient-to-b from-[#e1bc978a] via-[#ffffff80] to-[#ffffff80] text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
-        {/* Logo - Left */}
         <Link href="/">
           <Image
             src="/Images/logo.webp"
@@ -124,7 +114,6 @@ function Navbar() {
           />
         </Link>
 
-        {/* Center Links - Desktop */}
         <ul className="poppins hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
           <li>
             <Link href="/#course-corner" >Course Corner</Link>
@@ -168,13 +157,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Sidebar Menu - Mobile */}
-      {/* <div
-        ref={menuRef}
-        className="fixed top-0 left-0 h-full w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden"
-        style={{ transform: "translateX(-100%)" }}
-      > */}
-
+     
 
 
    
@@ -197,50 +180,7 @@ function Navbar() {
       </ul>
    
    
-      {/* <div
-        ref={menuRef}
-        className="fixed top-0 left-0 h-screen w-4/5 bg-white shadow-2xl p-6 flex flex-col gap-8 text-md z-40 lg:hidden -translate-x-full"
-      >
-        <Link href="/">
-          <Image
-            src="/Images/logo.webp"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="w-36 h-16 object-contain"
-          />
-        </Link>
-        <ul className="space-y-6 ">
-          <li>
-            <Link href="/programs" onClick={toggleMenu}>
-              Programs
-            </Link>
-          </li>
-          <li>
-            <Link href="/story" onClick={toggleMenu}>
-              Our Story
-            </Link>
-          </li>
-          <li>
-            <Link href="/mentors" onClick={toggleMenu}>
-              Mentors
-            </Link>
-          </li>
-          <li>
-            <Link href="/tales" onClick={toggleMenu}>
-              Honhar Tales
-            </Link>
-          </li>
-        </ul>
-        <Link
-          href="/enroll"
-          onClick={toggleMenu}
-          className="bg-white w-fit text-center px-4 py-4 rounded-xl border-2 border-r-4 border-b-4 border-black"
-        >
-          Enroll Now
-        </Link>
-      </div> */}
-
+  
 {isOpen && <Popup closeMenu={closeMenu} />} 
 
       

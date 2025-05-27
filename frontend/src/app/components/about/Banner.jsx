@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function Banner() {
-    const videosRef = useRef([])
+    // const videosRef = useRef([])
   
     const videos = [
       '/Images/about2.webp',
@@ -26,12 +26,7 @@ function Banner() {
     <div>
 
       <div className='mx-6 lg:mx-12 xl:mx-24 '>
-      {/* Text Row */}
-      <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8'>
-        {/* <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
-          Hear from Our Learners
-        </h3> */}
-      </div>
+   
 
       {/* Video Grid */}
       <div className='flex items-center justify-center flex-wrap lg:flex-nowrap gap-6'>

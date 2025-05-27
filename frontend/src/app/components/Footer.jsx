@@ -1,28 +1,21 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
-import { AiFillPhone, AiOutlineMail, AiFillEnvironment } from "react-icons/ai";
-import {
-  TbBrandInstagram,
-  TbBrandTwitterFilled,
-  TbBrandYoutubeFilled,
-} from "react-icons/tb";
+import { AiFillPhone, AiFillEnvironment } from "react-icons/ai";
+
 import Image from "next/image";
-import { BsInstagram, BsMailbox, BsYoutube } from "react-icons/bs";
+import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { IoMail } from "react-icons/io5";
 
 function Footer() {
   return (
     <div 
 
-    className="relative z-50 overflow-hidden bg-black h-auto py-24 md:h-auto ">
+    className="relative z-50 overflow-hidden bg-black h-auto py-12 md:py-24 md:h-auto ">
 
-<div className="marquee-container absolute bottom-0 lg:-bottom-6 overflow-hidden whitespace-nowrap">
+<div className="marquee-container hidden md:block md:absolute bottom-0 lg:-bottom-6 overflow-hidden whitespace-nowrap">
   <div className="marquee-content animate-footerBg flex md:mt-[700px] xl:mt-[100px]">
      <Image  width={200} height={200} src="/Images/footerBG.webp" alt="Background" className="w-full h-auto opacity-15" />
      <Image  width={200} height={200} src="/Images/footerBG.webp" alt="Background" className="w-full h-auto opacity-15" />
@@ -140,6 +133,12 @@ function Footer() {
         </div>
       </div>
     </div>
+{/* 
+    <div className="relative z-50 bg-black text-white poppins  flex flex-wrap items-center justify-between p-4">
+      <div className="">@2025 Digital Paaji Academy</div>
+      <div>BACKED BY Digital Paaji</div>
+
+    </div> */}
     </div>
   );
 }

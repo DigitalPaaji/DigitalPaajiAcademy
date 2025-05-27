@@ -281,14 +281,11 @@ export default function CoursesHorizontal() {
         </h1>
               <div className=' text-base md:text-md my-4 mx-8 xl:mx-0'>
           <p>Many learners have launched their own startups after completing our courses. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, ab earum, voluptates minus veniam natus alias quibusdam error fugiat assumenda cupiditate?</p>
-          {/* <p>Some have chosen freelancing as a career and are delivering successful projects.</p>
-          <p>Others have taken their skills abroad or used them to scale their family businesses.</p> */}
+        
         </div>
         <div className="relative z-20 w-[280px] md:w-[350px] h-16 mx-auto xl:mx-0">
-            {/* Shadow/Base */}
             <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
-            {/* Actual Button */}
             <Link
               href="/enroll"
               ref={btnRef}
@@ -303,7 +300,6 @@ export default function CoursesHorizontal() {
           </div>
         </div>
 
-        {/* Right Side */}
         <div className="w-full  xl:w-[70%] h-[700px] relative overflow-hidden">
   <div
     ref={cardsWrapperRef}

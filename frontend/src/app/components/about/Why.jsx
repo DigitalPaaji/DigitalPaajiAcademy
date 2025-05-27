@@ -11,31 +11,26 @@ const items = [
     old: "Boring lectures",
     icon: "/Images/icon.webp",
     new: "Real Case Studies & Projects",
-    desc: "Because experience beats memorization every single time.",
   },
   {
     old: "Copy-paste tutorials",
     icon: "/Images/icon.webp",
     new: "Hands-on Building & Collaboration",
-    desc: "Students actually build stuff and get their hands dirty from Day 1.",
   },
   {
     old: "Certificates with no skill",
     icon: "/Images/icon.webp",
     new: "Real Proof of Work",
-    desc: "They leave with portfolios that impress, not just PDFs.",
   },
    {
     old: "Boring lectures",
     icon: "/Images/icon.webp",
     new: "Real Case Studies & Projects",
-    desc: "Because experience beats memorization every single time.",
   },
   {
     old: "Copy-paste tutorials",
     icon: "/Images/icon.webp",
     new: "Hands-on Building & Collaboration",
-    desc: "Students actually build stuff and get their hands dirty from Day 1.",
   },
 
 ];
@@ -63,7 +58,7 @@ useEffect(() => {
       imageRef.current,
       { x: 100, opacity: 0 },
       { x: 0, opacity: 1, duration: 1, ease: "power2.out" },
-      "<" // sync start
+      "<" 
     );
   });
 
@@ -73,7 +68,6 @@ useEffect(() => {
   return (
     <section className="mx-6 lg:mx-12 xl:mx-40 py-24 overflow-hidden">
       <div className="flex flex-wrap-reverse lg:flex-nowrap gap-10 items-center">
-        {/* Left Text Column with Background and Padding */}
         <div  ref={textRef} className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-xl">
           <h2 className="bungee-shade-regular text-5xl lg:text-6xl font-bold mb-14 text-black">
             We Are Different
@@ -85,7 +79,6 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Right Image Column */}
         <div ref={imageRef} className="w-full lg:w-1/2 h-full">
           <Image
           width={220}
@@ -141,12 +134,11 @@ function StrikeItem({ old, icon, new: newTitle, desc, index }) {
       );
     }, textRef);
 
-    return () => ctx.revert(); // Cleans up GSAP animation
+    return () => ctx.revert(); 
   }, [index]);
 
   return (
     <div>
-      {/* Strike-through Line Animation */}
       <p ref={textRef} className="relative text-xl font-medium w-fit">
         <span>{old}</span>
         <span
@@ -156,7 +148,6 @@ function StrikeItem({ old, icon, new: newTitle, desc, index }) {
         />
       </p>
 
-      {/* Icon + New Text Description */}
       <div className="mt-2 flex items-center gap-4">
         <img
           src={icon}
@@ -165,7 +156,7 @@ function StrikeItem({ old, icon, new: newTitle, desc, index }) {
         />
         <div>
           <p className="poppins text-md xl:text-2xl font-bold">{newTitle}</p>
-          {/* <p className="mt-1">{desc}</p> */}
+        
         </div>
       </div>
     </div>

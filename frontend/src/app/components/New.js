@@ -10,8 +10,7 @@ const AnimatedText = ({openMenu}) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % registerLetters.length);
-    }, 300); // Adjust timing for smooth transition
-
+    }, 300); 
     return () => clearInterval(interval);
   }, []);
 
@@ -23,12 +22,12 @@ const AnimatedText = ({openMenu}) => {
         transition={{ duration: 0.2, ease: "easeOut" }}
         className="text-center"
       >
-        {/* REGISTER - Letter by Letter Animation */}
+        
         <div className="flex justify-center space-x-1">
           {registerLetters.split("").map((letter, index) => (
             <motion.span
               key={index}
-              initial={{ color: "#163393" }} // Default color (blue)
+              initial={{ color: "#163393" }} 
               animate={{ color: index === activeIndex ? "#FFFFFF" : "#163393" }} // Active letter white, others blue
               transition={{
                 duration: 0.3,
@@ -40,7 +39,6 @@ const AnimatedText = ({openMenu}) => {
           ))}
         </div>
 
-        {/* NOW - Blinking Effect */}
         <motion.h1 
           animate={{ color: ["#FFFFFF", "#163393"] }} // Blue <-> White blinking
           transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
