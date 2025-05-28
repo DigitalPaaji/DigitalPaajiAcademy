@@ -137,13 +137,24 @@ function Form() {
             }
           };
   return (
-    <div className='mx-6 lg:mx-12 xl:mx-40 py-24 flex items-center justify-center gap-12 flex-wrap '>
-      <div className='w-full xl:w-1/2 p-6'>
-
+    <div className='mx-6 lg:mx-12 xl:mx-0 flex items-center justify-center gap-12 flex-wrap xl:flex-nowrap '>
+      <div className="w-full lg:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-24">
+        <h1 className="bungee-shade-regular text-center mx-auto lg:mx-0 font-bold text-4xl md:text-6xl xl:text-8xl  lg:text-left">
+          Don't Be Shy, <br /> Say Hi!
+        </h1>
+        <p className="poppins text-md mt-2 text-center lg:text-left ">
+          Not just learning — you're unlocking a launchpad to your future. Let's
+          turn skills into success. Want to be part of the fun? Join us and make
+          every Friday unforgettable. Because at Paaji Academy, you don't just
+          learn - you live the vibe.
+        </p>
       </div>
-      <div className='w-full xl:w-1/2 p-6'>
+      <div className='w-full xl:w-1/2 p-6 lg:p-24  '>
+            <h3 className="poppins text-5xl font-semibold">
+                  Contact us
+                  </h3>
         <form
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10"
         onSubmit={handleSubmit}
       >
 
@@ -155,7 +166,7 @@ function Form() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your first name"
-            className="bg-[#ede7db]  w-full border px-4 py-2 focus:outline-none border-black font-normal"
+            className="  w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </div>
@@ -169,7 +180,7 @@ function Form() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+91 2929 29xxx"
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+            className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
         </div>
@@ -183,7 +194,7 @@ function Form() {
             value={formData.email}
             onChange={handleChange}
             placeholder="youremail@domain.com"
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+            className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
           />
           {isFormTouched && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
@@ -195,7 +206,7 @@ function Form() {
     name="qualification"
     value={formData.qualification}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+    className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
   >
     <option value="" disabled >Select your Qualification</option>
     <option value="10">10</option>
@@ -217,7 +228,7 @@ function Form() {
     name="interest"
     value={formData.interest}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+    className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
   >
     <option value="" disabled >Select a course</option>
 
@@ -253,7 +264,7 @@ function Form() {
     name="hear"
     value={formData.hear}
     onChange={handleChange}
-    className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+    className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
   >
     <option value="" disabled >Select an option</option>
     <option value="Google Search">Google Search</option>
@@ -278,7 +289,7 @@ function Form() {
             onChange={handleChange}
             placeholder="Enter Message"
             rows={2}
-            className="bg-[#ede7db] w-full border px-4 py-2 focus:outline-none border-black font-normal"
+            className=" w-full border-b px-4 py-2 focus:outline-none border-black font-normal"
           ></textarea>
          
         </div>
@@ -300,11 +311,11 @@ function Form() {
 
 
         {/* Submit Button */}
-        <div className="flex flex-col gap-4 items-center">
+        <div className=" flex flex-col gap-4 items-center">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="text-lg font-medium w-full md:w-fit  text-white px-6 py-4 rounded-md hover:transition duration-300"
+            className="text-lg font-medium bg-black w-full  text-white px-6 py-4 rounded-md hover:transition duration-300"
           >
             <span>{isSubmitting ? 'Sending...' : 'Submit'}</span>
           </button>
