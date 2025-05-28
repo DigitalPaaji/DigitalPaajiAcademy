@@ -103,7 +103,7 @@ function Navbar() {
   return (
     <div className=" w-full  z-[99999999999]"
   >
-      <div className="backdrop-blur-md bg-gradient-to-b from-[#e1bc978a] via-[#ffffff80] to-[#ffffff80] text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
+      <div className="backdrop-blur-md bg-gradient-to-b from-[#e1bc978a] via-[#e1bc978a] to-[#ffffff80] text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
         <Link href="/">
           <Image
             src="/Images/logo.webp"
@@ -123,6 +123,9 @@ function Navbar() {
           </li>
           <li>
             <Link href="/vibe">Vibe Check</Link>
+          </li>
+             <li>
+            <Link href="/contact">Need Help?</Link>
           </li>
         
         </ul>
