@@ -277,10 +277,12 @@ export default function CoursesHorizontal() {
         {/* Left Side */}
         <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:mx-24 ">
         <h1 className="bungee-shade-regular text-3xl md:text-5xl xl:text-6xl font-bold text-center xl:text-left ">
-          PUNJAB'S MOST PRACTICAL SKILL ACADEMY
+          CAREER HUSTLE? WE'VE GOT THE COURSES
+
         </h1>
               <div className=' text-base md:text-md my-4 mx-8 xl:mx-0'>
-          <p>Many learners have launched their own startups after completing our courses. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, ab earum, voluptates minus veniam natus alias quibusdam error fugiat assumenda cupiditate?</p>
+          <p>At Digital Paaji Academy, our specialized programs in digital marketing, graphic design, video editing, SEO and web development are designed to make you industry-ready. Our hands-on, mentor-led courses give you the tools to succeed.
+</p>
         
         </div>
         <div className="relative z-20 w-[280px] md:w-[350px] h-16 mx-auto xl:mx-0">

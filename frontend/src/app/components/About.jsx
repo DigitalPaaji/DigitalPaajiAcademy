@@ -50,11 +50,11 @@ useEffect(() => {
     <div className="poppins mx-6 lg:mx-12 xl:mx-24 py-24 min-h-screen ">
       <div className="text-center mb-20">
       <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold ">
-          PUNJAB'S MOST PRACTICAL SKILL ACADEMY
+          PUNJAB'S BEST DIGITAL MARKETING ACADEMY
         </h1>
         <p className="poppins-bold text-md xl:text-2xl text-[#000000dc] underline font-semibold mt-6 ">
-          Useful & Practical Learning Programs Designed by Industry Experts &
-          Working Professionals
+         Meet the Best Minds Behind the Magic: Our Skilled Instructors at Digital Paaji Academy
+
         </p>
       </div>
 
@@ -87,10 +87,11 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold ">
-                  Skill Development
+                  Fuel Your Skills with Pro Mentors
                   </h3>
                   <p className="mt-2 text-sm">
-                  Our courses are designed to equip you with essential, industry-standard skills that prepare you for real-world challenges. Focused on practical applications, we ensure you gain the proficiency needed to succeed in the workplace.
+                 At Digital Paaji Academy, your growth begins with those who’ve already walked the path. Paaji’s instructors don’t just teach - we mentor. Each lesson is crafted to develop in-demand skills across various digital marketing courses.
+
 
 
                   </p>{" "}
@@ -111,10 +112,11 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold ">
-                  Skill Development
+                  Mentors So Good, Even Our Certificates Blush
                   </h3>
                   <p className="mt-2 text-sm">
-                  Our courses are designed to equip you with essential, industry-standard skills that prepare you for real-world challenges. Focused on practical applications, we ensure you gain the proficiency needed to succeed in the workplace.
+                   Our certifications reflect more than course completion - they represent the knowledge, mentorship, and hands-on experience delivered by leaders. Having a certificate from our Academy means you've been trained and guided by best professionals.
+
 
 
                   </p>{" "}
@@ -142,10 +144,12 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold">
-                  Expert Trainers
+                  Projects So Real, You'll Think It's Monday
                   </h3>
                   <p className="mt-2 text-sm">
-                  Our instructors are seasoned professionals with extensive experience in their respective fields. They bring real-world expertise to the classroom, providing you with valuable insights that go beyond textbook learning.
+                   Every teacher at Digital Paaji Academy ensures learning isn’t just theoretical. We guide you through hands-on projects that copy real-world scenarios - encouraging teamwork, critical thinking, and real-time problem solving.
+
+
                   </p>{" "}
                 </div>
               </div>
@@ -164,10 +168,11 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold">
-                  Career Preparation
+                  Your Mentor's Mentor? Probably One of Ours
                   </h3>
                   <p className="mt-2 text-sm">
-                  Our focus is not only on skill development but also on preparing you for a successful career. With our practical approach and industry connections, we ensure that you are well-prepared for job opportunities, whether freelance or full-time.
+                  Paaji's instructors are professionals and seasoned experts who bring years of real-world experience into every session. From handling marketing campaigns to developing graphics, we provide insider insights and live case studies.
+
 
 
                   </p>{" "}

@@ -59,7 +59,8 @@ function Journey() {
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left">
           <h2 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold mb-12 border-b pb-4 border-black">
-            Start Your Journey with Digital Paaji Academy
+          Shaping the Next Generation of Digital Leaders
+
           </h2>
           <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-start">
@@ -71,8 +72,8 @@ function Journey() {
                 className="w-16 h-16 object-cover mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
-                Not just learning — you're unlocking a launchpad to your future.
-                Let's turn skills into success.
+              At Digital Paaji Academy, we believe every student has the potential to achieve something great with the right mentorship.
+
               </p>
             </div>
             <div className="flex flex-col justify-start">
@@ -84,8 +85,8 @@ function Journey() {
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
-                Not just learning — you're unlocking a launchpad to your future.
-                Let's turn skills into success.
+                From your first day, you'll dive into interactive lessons, live sessions, and challenges that mirror real industry scenarios.
+
               </p>
             </div>
             <div className="flex flex-col justify-start">
@@ -97,8 +98,8 @@ function Journey() {
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
-                Not just learning — you're unlocking a launchpad to your future.
-                Let's turn skills into success.
+               Every step of your journey is designed to build not just skills, but a strong portfolio, industry exposure, and readiness.
+
               </p>
             </div>
             <div className="flex flex-col justify-start">
@@ -110,8 +111,8 @@ function Journey() {
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
               <p className="poppins text-md mt-2 ">
-                Not just learning — you're unlocking a launchpad to your future.
-                Let's turn skills into success.
+               Our students gain hands-on experience in tools, technologies, and strategies used by top companies today. 
+
               </p>
             </div>
           </div>

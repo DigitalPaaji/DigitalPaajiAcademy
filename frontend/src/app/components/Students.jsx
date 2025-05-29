@@ -26,6 +26,9 @@ function Students() {
         <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-center lg:text-left ">
           Hear from Our Learners
         </h3>
+        <p>
+          From landing jobs to launching freelance careers, our learners share how the Digital Paaji Academy experience helped them grow personally and professionally. 
+        </p>
       </div>
 
       {/* Video Grid */}
