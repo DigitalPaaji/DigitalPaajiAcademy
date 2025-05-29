@@ -125,7 +125,7 @@ function Navbar() {
             <Link href="/vibe">Vibe Check</Link>
           </li>
              <li>
-            <Link href="/contact">Need Help?</Link>
+            <Link href="/contact">Talk to Paaji</Link>
           </li>
         
         </ul>
