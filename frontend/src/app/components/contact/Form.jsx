@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from 'react-google-recaptcha';
+import Image from 'next/image';
+import Link from 'next/link';
 function Form() {
       const [formData, setFormData] = useState({
             name: '',
@@ -137,22 +139,80 @@ function Form() {
             }
           };
   return (
-    <div className='mx-6 lg:mx-12 xl:mx-0 flex items-center justify-center gap-12 flex-wrap xl:flex-nowrap '>
-      <div className="w-full lg:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-24">
-        <h1 className="bungee-shade-regular text-center mx-auto lg:mx-0 font-bold text-4xl md:text-6xl xl:text-8xl  lg:text-left">
+    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12 flex-wrap xl:flex-nowrap py-24 xl:py-0'>
+      <div className="w-full xl:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-12 xl:pl-24">
+        <h1 className="bungee-shade-regular text-center mx-auto lg:mx-0 font-bold text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl  lg:text-left">
           Don't Be Shy, <br /> Say Hi!
         </h1>
-        <p className="poppins text-md mt-2 text-center lg:text-left ">
+        <p className=" text-md mt-2 text-left ">
           Not just learning — you're unlocking a launchpad to your future. Let's
           turn skills into success. Want to be part of the fun? Join us and make
           every Friday unforgettable. Because at Paaji Academy, you don't just
           learn - you live the vibe.
         </p>
+
+        <div className="flex mt-4 flex-col md:flex-row items-start md:items-center justify-start gap-4"
+          >
+            <Image
+              alt=""
+              src="/Images/icon.webp"
+              width={48}
+              height={48}
+              className="w-10 lg:w-16 h-10 lg:h-16"
+            />
+            <div>
+              <p className="laila-bold text-2xl  text-start">VISIT US</p>
+              <p className="text-md  text-left ">
+         Our Friendly team is there to help. <br/> <strong>
+
+hello@digitalpaaji.com
+         </strong>
+        </p>
+            </div>
+          </div>
+            <div className="flex mt-4 flex-col md:flex-row items-start md:items-center justify-start gap-4"
+          >
+            <Image
+              alt=""
+              src="/Images/icon.webp"
+              width={48}
+              height={48}
+              className="w-10 lg:w-16 h-10 lg:h-16"
+            />
+            <div>
+              <p className="laila-bold text-2xl  text-start">CALL US</p>
+              <p className=" text-md  text-left ">
+         Our Friendly team is there to help. <br/> <strong>
+
++91 86996 40752
+         </strong>
+        </p>
+            </div>
+          </div>
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-start gap-4 mt-4"
+          >
+            <Image
+              alt=""
+              src="/Images/icon.webp"
+              width={48}
+              height={48}
+              className="w-10 lg:w-16 h-10 lg:h-16"
+            />
+            <div>
+              <p className="laila-bold text-2xl  text-start">चैट WITH US</p>
+              <p className=" text-md  text-left ">
+         Our Friendly team is there to help. <br/> <strong>
+
+hello@digitalpaaji.com
+         </strong>
+        </p>
+            </div>
+          </div>
       </div>
-      <div className='w-full xl:w-1/2 p-6 lg:p-24  '>
-            <h3 className="poppins text-5xl font-semibold">
+      <div className='w-full xl:w-1/2 p-6 p-6 lg:p-12 xl:p-24  '>
+            {/* <h3 className=" text-5xl font-semibold">
                   Contact us
-                  </h3>
+                  </h3> */}
         <form
         className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10"
         onSubmit={handleSubmit}
@@ -311,15 +371,38 @@ function Form() {
 
 
         {/* Submit Button */}
-        <div className=" flex flex-col gap-4 items-center">
-          <button
+        {/* <div className=" flex flex-col gap-4 items-center"> */}
+          {/* <button
             type="submit"
             disabled={isSubmitting}
             className="text-lg font-medium bg-black w-full  text-white px-6 py-4 rounded-md hover:transition duration-300"
           >
             <span>{isSubmitting ? 'Sending...' : 'Submit'}</span>
+           */}
+          
+               <button
+                 type="submit"
+            disabled={isSubmitting}
+       
+                className="relative z-20 cursor-pointer w-[200px] md:w-[350px] mx-auto md:mx-0 h-16 border-red-900 ">
+            {/* Shadow/Base */}
+            <div className="absolute top-[6px] left-[4px]  bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 cursor-pointer " />
+
+            {/* Actual Button */}
+            <div
+             
+              className="poppins  text-lg absolute top-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center justify-center 
+               active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+            >
+{isSubmitting ? 'Sending...' : 'Submit'}
+            </div>
           </button>
-        </div>
+
+
+
+          
+          {/* </button> */}
+        {/* </div> */}
       </form>
       </div>
     </div>
