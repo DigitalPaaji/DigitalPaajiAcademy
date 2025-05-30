@@ -18,9 +18,10 @@ export default function Home() {
 {/* <Scroll/> */}
 
 <Journey/>
+
+<Students />
 <Course/>
 
-{/* <Students/> */}
 <Tagline/>
 
 

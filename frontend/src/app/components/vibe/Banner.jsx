@@ -5,10 +5,8 @@ export default function HoverCard() {
         We Make Boring Things Interesting
       </h1>
       <p className="poppins text-md mt-2 text-center lg:w-[800px]">
-        Not just learning — you're unlocking a launchpad to your future. Let's
-        turn skills into success. Want to be part of the fun? Join us and make
-        every Friday unforgettable. Because at Paaji Academy, you don't just
-        learn - you live the vibe.
+    Let's be honest - most online courses are dull. Monotone lectures, outdated slides, and zero real-world connection. At Digital Paaji Academy, we flipped the script, we don’t just teach digital marketing. We entertain, engage, and ignite curiosity among our students so that they can learn more properly and with enthusiasm.
+
       </p>
     </div>
   );

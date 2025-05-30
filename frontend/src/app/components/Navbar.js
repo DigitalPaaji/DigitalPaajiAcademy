@@ -178,7 +178,9 @@ function Navbar() {
             <Link href="/vibe" onClick={() => setMenuOpen(!menuOpen)} >Vibe Check</Link>
           </li>
          
-         
+             <li>
+            <Link href="/contact">Talk to Paaji</Link>
+          </li>
 
       </ul>
    

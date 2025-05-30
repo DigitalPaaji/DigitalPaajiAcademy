@@ -59,13 +59,13 @@ function Tagline() {
 
           <div className="flex flex-col justify-start items-start gap-4 ">
             <h1 className="poppins text-3xl xl:text-5xl font-bold text-left">
-              Our Learning Philosophy
+             Not Your Typical Academy
             </h1>
 
             <div className="flex flex-col gap-4 mt-6 ">
               {[
                 {
-                  title: "100% Practical Learning",
+                  title: "Industry-Backed Projects",
                   desc: "Real projects. Real results.",
                 },
                 {
@@ -73,7 +73,7 @@ function Tagline() {
                   desc: "Doubts? Ask anytime.",
                 },
                 {
-                  title: "Structured Curriculum",
+                  title: "Certification with Credibility",
                   desc: "Clear roadmap from beginner to pro.",
                 },
                 {
@@ -81,8 +81,16 @@ function Tagline() {
                   desc: "Learn, interact, grow together.",
                 },
                 {
-                  title: "Interview Preparation",
-                  desc: "Resume to HR rounds, we’ve got you.",
+                  title: "Structured Curriculum",
+                  desc: "Resume to HR rounds, we've got you.",
+                },
+                   {
+                  title: "Mock Interviews",
+                  desc: "Clear roadmap from beginner to pro.",
+                },
+                {
+                  title: "Placement Assistance",
+                  desc: "Learn, interact, grow together.",
                 },
               ].map((item, index) => (
                 <div
@@ -133,14 +141,11 @@ function Tagline() {
 
         <div className="cols-span-1 2xl:col-span-4 flex flex-col justify-end h-full ">
           <h1 className="poppins text-3xl xl:text-5xl font-bold text-left ">
-            Our Learning Philosophy
+            From Learning to Earning
           </h1>
           <div className=" text-base md:text-md my-4 text-justify">
             <p>
-              Our programs are designed to focus on hands-on experience with
-              real-world projects, so you gain practical skills that matter. Our
-              programs are designed to focus on hands-on experience with
-              real-world projects, so you gain practical skills that matter.
+             At Digital Paaji Academy, we don't believe in one-size-fits-all education. We're not just an academy, we're your launchpad to a real career. Every course is built to equip you with real skills and real results. Learn the skills that employers actually pay for - no fluff, just real value.
             </p>
           </div>
         </div>

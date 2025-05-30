@@ -144,10 +144,10 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold">
-                  Projects So Real, You'll Think It's Monday
+                  Work on Real Projects, Not Just Homework
                   </h3>
                   <p className="mt-2 text-sm">
-                   Every teacher at Digital Paaji Academy ensures learning isn’t just theoretical. We guide you through hands-on projects that copy real-world scenarios - encouraging teamwork, critical thinking, and real-time problem solving.
+                  Forget boring assignments! At Digital Paaji Academy, you'll get to work on actual client projects. This means you learn by doing real marketing campaigns that matter, so you’re ready for the real world right away.
 
 
                   </p>{" "}
@@ -168,10 +168,10 @@ useEffect(() => {
                 </div>
                 <div>
                   <h3 className="poppins-bold text-[#000000ec] text-xl font-semibold">
-                  Your Mentor's Mentor? Probably One of Ours
+                  Work Like a Pro, Even Before You Graduate
                   </h3>
                   <p className="mt-2 text-sm">
-                  Paaji's instructors are professionals and seasoned experts who bring years of real-world experience into every session. From handling marketing campaigns to developing graphics, we provide insider insights and live case studies.
+                Why wait to start your career? Our mentors give you hands-on experience with live campaigns and professional tools. You’ll build skills and confidence just like a true digital marketer — before you even finish the course!
 
 
 

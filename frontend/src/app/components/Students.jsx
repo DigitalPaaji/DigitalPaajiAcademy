@@ -20,19 +20,26 @@ function Students() {
 
 
   return (
-    <div className='mx-6 lg:mx-12 xl:mx-24 py-24'>
+    <div 
+    
+    className='mx-6 lg:mx-12 xl:mx-24 py-24'>
       {/* Text Row */}
-      <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8'>
-        <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-center lg:text-left ">
+      <div className='flex flex-col  justify-between items-start mb-16 gap-8'>
+        <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold leading-tight text-center lg:text-left ">
           Hear from Our Learners
         </h3>
         <p>
           From landing jobs to launching freelance careers, our learners share how the Digital Paaji Academy experience helped them grow personally and professionally. 
+        <br />
+        <br />
+        <strong className='poppins text-2xl '>Real stories, Real results, Real impact</strong>
         </p>
       </div>
 
       {/* Video Grid */}
-      <div className='flex items-center justify-center flex-wrap lg:flex-nowrap gap-6'>
+      <div 
+      
+      className='flex items-center justify-center flex-wrap lg:flex-nowrap gap-6'>
         {videos.map((video, index) => (
           <div
             key={index}
