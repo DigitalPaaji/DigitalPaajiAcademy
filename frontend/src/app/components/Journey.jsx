@@ -139,7 +139,7 @@ function Journey() {
         </div>
 
         {/* Right Image */}
-        <div className="w-full xl:w-[50%] md:h-[450px] xl:h-[800px]">
+        <div className="w-full xl:w-[50%] h-fit xl:h-[800px]">
           {/* <img
             src="/Images/journey/team.webp"
             alt="Sample"

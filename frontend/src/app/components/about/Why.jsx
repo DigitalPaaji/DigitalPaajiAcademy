@@ -80,21 +80,30 @@ useEffect(() => {
         </div>
 
         <div ref={imageRef} className="w-full lg:w-1/2 h-full">
-          <Image
+          {/* <Image
           width={220}
           height={220}
-            src="/Images/about2.webp"
+            src="/Images/journey/team.webp"
             alt="Why we started illustration"
             className="w-full h-auto object-cover rounded-xl"
-          />
+          /> */}
+           <video
+  src="/Images/journey/team.webm"
+  loading="lazy"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-full object-cover"
+/>
         </div>
       </div>
 
 
         <p className="text-md xl:text-lg  my-12 text-justify md:justify-center ">
-        At Digital Paaji Academy, we’re not here to follow the crowd — we’re here to build the next generation of creators, marketers, developers, and leaders. Our journey started with a mission to provide real learning with real results. Over the past year, we’ve trained passionate learners, helped them build strong portfolios, crack client interviews, land freelance gigs, and even launch their own digital ventures. Each student becomes a part of our close-knit community, where personal attention, honest feedback, and practical experience go hand in hand.
+        At Digital Paaji Academy, we're not here to follow the crowd — we're here to build the next generation of creators, marketers, developers, and leaders. Our journey started with a mission to provide real learning with real results. Over the past year, we've trained passionate learners, helped them build strong portfolios, crack client interviews, land freelance gigs, and even launch their own digital ventures. Each student becomes a part of our close-knit community, where personal attention, honest feedback, and practical experience go hand in hand.
          
-         We believe in breaking the typical classroom mold. That’s why we focus on hands-on work, live projects, portfolio building, and one-on-one mentoring — not just PDFs and PowerPoint slides. Whether you're from a small town or a big city, if you have the will to grow, we have the tools and team to guide you. Digital Paaji Academy isn’t just an institute — it’s a place where confidence is built, dreams are nurtured, and careers are kickstarted.
+         We believe in breaking the typical classroom mold. That's why we focus on hands-on work, live projects, portfolio building, and one-on-one mentoring — not just PDFs and PowerPoint slides. Whether you're from a small town or a big city, if you have the will to grow, we have the tools and team to guide you. Digital Paaji Academy isn't just an institute — it's a place where confidence is built, dreams are nurtured, and careers are kickstarted.
           </p>
 
                <h3 className="bungee-shade-regular font-bold text-4xl md:text-5xl leading-tight tracking-tight">

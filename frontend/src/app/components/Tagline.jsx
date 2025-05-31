@@ -39,7 +39,7 @@ function Tagline() {
       ref={sectionRef}
       className="py-24 text-center overflow-hidden   rounded-4xl"
     >
-      <h1 className="  text-5xl md:text-7xl leading-tight tracking-tight">
+      <h1 className="  text-3xl md:text-7xl leading-tight tracking-tight">
         {words.map((word, index) => (
           <span
             key={index}
@@ -53,12 +53,12 @@ function Tagline() {
         ))}
       </h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-12  gap-12 p-6 2xl:p-24 mx-6 lg:mx-12 2xl:mx-24 mt-12">
+      <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-12  gap-12 p-6 2xl:p-24 mx-6 lg:mx-12 2xl:mx-24 mt-12">
         <div className="cols-span-1 2xl:col-span-4 flex flex-col h-full ">
 
 
           <div className="flex flex-col justify-start items-start gap-4 ">
-            <h1 className="poppins text-3xl xl:text-5xl font-bold text-left">
+            <h1 className="bungee-shade-regular text-5xl xl:text-5xl font-bold text-left">
              Not Your Typical Academy
             </h1>
 
@@ -105,7 +105,7 @@ function Tagline() {
                     className="w-10 lg:w-12 h-10 lg:h-12"
                   />
                   <div>
-                    <p className="text-xl  text-start font-semibold">{item.title}</p>
+                    <p className="text-xl  text-start lg:font-semibold">{item.title}</p>
                   </div>
                 </div>
               ))}
@@ -116,7 +116,7 @@ function Tagline() {
        
        
         <div className="cols-span-1 2xl:col-span-4 w-full  overflow-hidden ">
-          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 bg-white rounded-2xl shadow-2xl h-[782px] overflow-hidden border border-gray-200">
+          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 h-fit md:h-[900px] xl:h-[820px] overflow-hidden ">
             {/* <div className="absolute top-10 right-0 ">
               <Image
                 src={"/Images/arrow.gif"}
@@ -135,7 +135,7 @@ function Tagline() {
   loop
   muted
   playsInline
-  className="w-full h-[100%] object-cover"
+  className="w-full h-[100%] object-contain rounded-xl xl:object-cover"
 />
            
            

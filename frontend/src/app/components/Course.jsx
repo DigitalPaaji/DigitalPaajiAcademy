@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import { CiClock2 } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
 import { MdViewModule } from "react-icons/md";
 import { FcOnlineSupport } from "react-icons/fc"; 
+import Popup from "./Popup";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -212,8 +214,16 @@ const courses = [
 ];
 
 export default function CoursesHorizontal() {
+    const [menuOpen, setMenuOpen] = useState(false);
   const containerRef = useRef(null);
   const cardsWrapperRef = useRef(null);
+ const [isOpen, setIsOpen] = useState(false);
+  const openMenu = () => {
+    setIsOpen(true);
+  };
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const cardsWrapper = cardsWrapperRef.current;
@@ -311,7 +321,7 @@ export default function CoursesHorizontal() {
       <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}
         <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:ml-24 ">
-          <h1 className="bungee-shade-regular text-3xl md:text-5xl xl:text-7xl font-bold text-center xl:text-left ">
+          <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold text-center xl:text-left ">
             CAREER HUSTLE? WE'VE GOT THE COURSES
           </h1>
           <div className=" text-base md:text-md my-4 mx-8 xl:mx-0">
@@ -322,19 +332,20 @@ export default function CoursesHorizontal() {
               courses give you the tools to succeed.
             </p>
           </div>
-          <div className="relative z-20 w-[280px] md:w-[350px] h-16 mx-auto xl:mx-0">
+          <div className="relative z-20 w-full md:w-[350px] h-16 mx-auto xl:mx-0">
             <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
             <Link
               href="/enroll"
               ref={btnRef}
+               onClick={()=>openMenu()}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="poppins text-lg absolute top-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center gap-3 justify-center 
+              className="poppins text-lg absolute top-0 pl-4 md:pl-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center gap-3 justify-center 
                active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
             >
               {/* <BsArrowRight/>{" "} */}
-              Crafted by Digital Paaji Academy
+              Enroll Now
             </Link>
           </div>
         </div>
@@ -432,6 +443,8 @@ export default function CoursesHorizontal() {
           </button> */}
         </div>
       </div>
+{isOpen && <Popup closeMenu={closeMenu} />} 
+
     </div>
   );
 }

@@ -11,9 +11,9 @@ function Banner() {
     // const videosRef = useRef([])
   
     const videos = [
-      '/Images/about2.webp',
-      '/Images/about2.webp',
-      '/Images/about2.webp',
+      '/Images/about/paaji1.webp',
+      '/Images/about/paaji2.webp',
+      '/Images/about/paaji3.webp',
       // '/Images/about2.webp',
   
       // Add more if needed
@@ -65,9 +65,9 @@ Paaji's Mission Your Growth
           <p className="text-md xl:text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
          <strong> We were running a digital agency from last 16 years </strong> — building websites, running ads, managing brands. But one day, a college student asked us if he could learn from us. Then another. Then another.
 
-          We realized — <strong>talent is everywhere, but guidance isn’t.</strong> That’s when Digital Paaji Academy was born.
+          We realized — <strong>talent is everywhere, but guidance isn't.</strong> That’s when Digital Paaji Academy was born.
 
-    Paaji didn’t want to just build brands — he wanted to build people too.
+    Paaji didn't want to just build brands — he wanted to build people too.
           </p>
           
          <p  className="text-md xl:text-lg  my-6 text-justify md:justify-center 2xl:mx-40">
