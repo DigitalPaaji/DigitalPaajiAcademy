@@ -1,6 +1,6 @@
 export default function HoverCard() {
   return (
-    <div className="relative w-full h-[400px] md:h-[650px] min-h-screen overflow-hidden">
+    <div className="relative w-full h-auto md:h-[650px] xl:min-h-screen overflow-hidden">
       <video
         src="/Images/banner.mp4"
         loading="lazy"
@@ -8,7 +8,7 @@ export default function HoverCard() {
         muted
         loop
         playsInline
-        className="w-full h-[100%] object-cover"
+        className="w-full h-[100%] object-contain md:object-cover"
       />
     </div>
   );

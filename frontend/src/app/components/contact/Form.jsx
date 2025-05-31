@@ -139,9 +139,9 @@ function Form() {
             }
           };
   return (
-    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12 flex-wrap xl:flex-nowrap py-24 xl:py-0'>
+    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12  xl:gap-0 flex-wrap xl:flex-nowrap py-24 xl:py-0'>
       <div className="w-full xl:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-12 xl:pl-24">
-        <h1 className="bungee-shade-regular text-center mx-auto lg:mx-0 font-bold text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl  lg:text-left">
+        <h1 className="bungee-shade-regular font-bold text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl  text-left">
           Don't Be Shy, <br /> Say Hi!
         </h1>
         <p className=" text-md mt-2 text-left ">
@@ -153,7 +153,7 @@ function Form() {
           >
             <Image
               alt=""
-              src="/Images/icon.webp"
+              src="/Images/location.webp"
               width={48}
               height={48}
               className="w-10 lg:w-16 h-10 lg:h-16"
@@ -164,8 +164,7 @@ function Form() {
          We're always happy to see you! Drop by and connect with our friendly team.
 
  <br/> <strong>
-
-hello@digitalpaaji.com
+2nd Floor, kissan Market, 78, Sirhind Rd, near Hemkunt Petrol Pump, Harinder Nagar, Patiala, Punjab 147001
          </strong>
         </p>
             </div>
@@ -174,7 +173,7 @@ hello@digitalpaaji.com
           >
             <Image
               alt=""
-              src="/Images/icon.webp"
+              src="/Images/call.webp"
               width={48}
               height={48}
               className="w-10 lg:w-16 h-10 lg:h-16"
@@ -195,7 +194,7 @@ hello@digitalpaaji.com
           >
             <Image
               alt=""
-              src="/Images/icon.webp"
+              src="/Images/chat.webp"
               width={48}
               height={48}
               className="w-10 lg:w-16 h-10 lg:h-16"

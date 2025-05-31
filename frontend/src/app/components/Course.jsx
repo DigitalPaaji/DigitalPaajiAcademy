@@ -8,7 +8,6 @@ import { CiClock2 } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
 import { MdViewModule } from "react-icons/md";
 import { FcOnlineSupport } from "react-icons/fc"; 
-import Popup from "./Popup";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -214,16 +213,9 @@ const courses = [
 ];
 
 export default function CoursesHorizontal() {
-    const [menuOpen, setMenuOpen] = useState(false);
   const containerRef = useRef(null);
   const cardsWrapperRef = useRef(null);
- const [isOpen, setIsOpen] = useState(false);
-  const openMenu = () => {
-    setIsOpen(true);
-  };
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+
 
   useEffect(() => {
     const cardsWrapper = cardsWrapperRef.current;
@@ -238,7 +230,7 @@ export default function CoursesHorizontal() {
       scrollTrigger: {
         trigger: container,
         start: () => "top top",
-        end: () => `+=${totalWidth - containerWidth}`,
+        end: () => `+=${totalWidth - containerWidth }`,
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -316,7 +308,7 @@ export default function CoursesHorizontal() {
     <div
       id="course-corner"
       ref={containerRef}
-      className="scroll-mt-24 mx-0 xl:mx-0 py-24 w-full "
+      className=" mx-0 xl:mx-0 my-24 w-full overflow-hidden"
     >
       <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}
@@ -324,7 +316,7 @@ export default function CoursesHorizontal() {
           <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold text-center xl:text-left ">
             CAREER HUSTLE? WE'VE GOT THE COURSES
           </h1>
-          <div className=" text-base md:text-md my-4 mx-8 xl:mx-0">
+          <div className=" text-base md:text-md my-4 mx-8 xl:mx-0 text-center xl:text-left">
             <p>
               At Digital Paaji Academy, our specialized programs in digital
               marketing, graphic design, video editing, SEO and web development
@@ -332,13 +324,12 @@ export default function CoursesHorizontal() {
               courses give you the tools to succeed.
             </p>
           </div>
-          <div className="relative z-20 w-full md:w-[350px] h-16 mx-auto xl:mx-0">
+          <div className="relative z-20 w-full md:w-[350px] h-16 mx-auto xl:mx-0 ">
             <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
 
             <Link
-              href="/enroll"
+              href="/contact"
               ref={btnRef}
-               onClick={()=>openMenu()}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className="poppins text-lg absolute top-0 pl-4 md:pl-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center gap-3 justify-center 
@@ -350,7 +341,7 @@ export default function CoursesHorizontal() {
           </div>
         </div>
 
-        <div className="w-full  xl:w-[70%] h-[900px] relative overflow-hidden ">
+        <div className="w-full  xl:w-[70%] h-[650px] relative overflow-hidden ">
           <div
             ref={cardsWrapperRef}
             className="absolute top-1/2 -translate-y-1/2 flex gap-x-6 w-max"
@@ -378,7 +369,7 @@ export default function CoursesHorizontal() {
                 </p>
                 <p className="text-sm mt-1 text-gray-400">{course.craftedBy}</p>
 
-                <div className="flex items-center justify-between ">
+                <div className="flex items-center justify-start gap-4 md:justify-between ">
                   <div
                     className="mt-3 space-y-1 text-lg flex items-center justify-start gap-2"
                     style={{ fontWeight: "500" }}
@@ -443,7 +434,6 @@ export default function CoursesHorizontal() {
           </button> */}
         </div>
       </div>
-{isOpen && <Popup closeMenu={closeMenu} />} 
 
     </div>
   );

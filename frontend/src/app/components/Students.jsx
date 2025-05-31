@@ -25,7 +25,7 @@ function Students() {
     className='mx-6 lg:mx-12 xl:mx-24 py-24'>
       {/* Text Row */}
       <div className='flex flex-col  justify-between items-start mb-16 gap-8'>
-        <h3 className="bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold leading-tight text-center lg:text-left ">
+        <h3 className="bungee-shade-regular text-5xl md:text-5xl xl:text-7xl font-bold leading-tight text-center lg:text-left ">
           Hear from Our Learners
         </h3>
         <p>

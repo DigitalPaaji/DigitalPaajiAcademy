@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Script from "next/script";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,33 +64,41 @@ function Tagline() {
             <div className="flex flex-col gap-4 mt-6 ">
               {[
                 {
+                  icon:'/Images/tag/1.webp',
                   title: "Industry-Backed Projects",
                   desc: "Real projects. Real results.",
                 },
                 {
+                  icon:'/Images/tag/2.webp',
+
                   title: "One-on-One Mentorship",
                   desc: "Doubts? Ask anytime.",
                 },
                 {
+                  icon:'/Images/tag/3.webp',
+                  
                   title: "Certification with Credibility",
                   desc: "Clear roadmap from beginner to pro.",
                 },
                 {
+                  icon:'/Images/tag/4.webp',
+                  
                   title: "Live Group Discussions",
                   desc: "Learn, interact, grow together.",
                 },
                 {
+                  icon:'/Images/tag/5.webp',
+                  
                   title: "Structured Curriculum",
-                  desc: "Resume to HR rounds, we've got you.",
+                  desc: "Not just from theory, but through real-life inspiration.",
                 },
                    {
-                  title: "Mock Interviews",
-                  desc: "Clear roadmap from beginner to pro.",
+                  icon:'/Images/tag/6.webp',
+                  
+                    title: "Mock Interviews",
+                  desc: "Resume to HR rounds, we've got you.",
                 },
-                {
-                  title: "Placement Assistance",
-                  desc: "Learn, interact, grow together.",
-                },
+              
               ].map((item, index) => (
                 <div
                   key={index}
@@ -99,13 +106,15 @@ function Tagline() {
                 >
                   <Image
                     alt=""
-                    src="/Images/icon.webp"
+                    src={item.icon}
                     width={48}
                     height={48}
                     className="w-10 lg:w-12 h-10 lg:h-12"
                   />
                   <div>
                     <p className="text-xl  text-start lg:font-semibold">{item.title}</p>
+                    <p className="  text-start ">{item.desc}</p>
+
                   </div>
                 </div>
               ))}
@@ -135,7 +144,7 @@ function Tagline() {
   loop
   muted
   playsInline
-  className="w-full h-[100%] object-contain rounded-xl xl:object-cover"
+  className="w-full h-[100%] object-contain rounded-xl "
 />
            
            

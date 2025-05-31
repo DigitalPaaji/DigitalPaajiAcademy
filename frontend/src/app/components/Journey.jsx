@@ -120,13 +120,11 @@ function Journey() {
               </p>
             </div>
           </div>
-          <div className="relative z-20 w-[280px] md:w-[350px] mx-auto md:mx-0 h-16 border-red-900 ">
-            {/* Shadow/Base */}
+          {/* <div className="relative z-20 w-[280px] md:w-[350px] mx-auto md:mx-0 h-16 border-red-900 ">
             <div className="absolute top-[6px] left-[4px]  bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 " />
 
-            {/* Actual Button */}
             <Link
-              href="/enroll"
+              href="/contact"
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -135,7 +133,7 @@ function Journey() {
             >
               CRAFTED BY DIGITAL PAAJI
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Image */}
