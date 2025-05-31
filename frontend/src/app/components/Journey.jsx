@@ -55,9 +55,9 @@ function Journey() {
   };
   return (
     <div className="px-6 lg:px-12 xl:px-24 py-24 ">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="flex flex-col xl:flex-row items-center justify-center gap-12">
         {/* Left Content */}
-        <div className="flex-1 text-center md:text-left">
+        <div className=" w-full xl:w-[50%] text-center md:text-left">
           <h2 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold mb-12 border-b pb-4 border-black">
           Shaping the Next Generation of Digital Leaders
 
@@ -66,8 +66,9 @@ function Journey() {
             <div className="flex flex-col justify-start">
               <Image
                 alt=""
+                loading="lazy"
                 width={40}
-                src={"/Images/icon.webp"}
+                src={"/Images/journey/1.webp"}
                 height={40}
                 className="w-16 h-16 object-cover mx-auto md:mx-0"
               />
@@ -78,9 +79,10 @@ function Journey() {
             </div>
             <div className="flex flex-col justify-start">
               <Image
+              loading="lazy"
                 alt=""
                 width={40}
-                src={"/Images/icon.webp"}
+                src={"/Images/journey/2.webp"}
                 height={40}
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
@@ -92,8 +94,9 @@ function Journey() {
             <div className="flex flex-col justify-start">
               <Image
                 alt=""
+                loading="lazy"
                 width={40}
-                src={"/Images/icon.webp"}
+                src={"/Images/journey/3.webp"}
                 height={40}
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
@@ -104,9 +107,10 @@ function Journey() {
             </div>
             <div className="flex flex-col justify-start">
               <Image
+              loading="lazy"
                 alt=""
                 width={40}
-                src={"/Images/icon.webp"}
+                src={"/Images/journey/4.webp"}
                 height={40}
                 className="w-16 h-16 object-cover  mx-auto md:mx-0"
               />
@@ -135,12 +139,24 @@ function Journey() {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 w-full xl:w-1/2 md:h-[450px] xl:h-[550px]">
-          <img
-            src="/Images/about2.webp"
+        <div className="w-full xl:w-[50%] md:h-[450px] xl:h-[800px]">
+          {/* <img
+            src="/Images/journey/team.webp"
             alt="Sample"
-            className=" w-full h-[100%] object-contain "
-          />
+            className=" w-full h-[100%] object-cover "
+          /> */}
+
+              <video
+  src="/Images/journey/team.webm"
+  loading="lazy"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-full object-cover"
+/>
+
+
         </div>
       </div>
     </div>

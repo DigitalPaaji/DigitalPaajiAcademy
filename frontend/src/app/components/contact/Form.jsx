@@ -145,10 +145,8 @@ function Form() {
           Don't Be Shy, <br /> Say Hi!
         </h1>
         <p className=" text-md mt-2 text-left ">
-          Not just learning — you're unlocking a launchpad to your future. Let's
-          turn skills into success. Want to be part of the fun? Join us and make
-          every Friday unforgettable. Because at Paaji Academy, you don't just
-          learn - you live the vibe.
+         Not just learning - you're unlocking a launchpad to your future. Let's turn skills into success. Want to be part of the fun? Join us and make every Friday unforgettable. Because at Paaji Academy, you don't just learn - you live the vibe. Surround yourself with creators, coders, and go-getters who push you to level up. From classroom to career - we’ve got your journey covered.
+
         </p>
 
         <div className="flex mt-4 flex-col md:flex-row items-start md:items-center justify-start gap-4"
@@ -163,7 +161,9 @@ function Form() {
             <div>
               <p className="laila-bold text-2xl  text-start">VISIT US</p>
               <p className="text-md  text-left ">
-         Our Friendly team is there to help. <br/> <strong>
+         We're always happy to see you! Drop by and connect with our friendly team.
+
+ <br/> <strong>
 
 hello@digitalpaaji.com
          </strong>
@@ -182,7 +182,9 @@ hello@digitalpaaji.com
             <div>
               <p className="laila-bold text-2xl  text-start">CALL US</p>
               <p className=" text-md  text-left ">
-         Our Friendly team is there to help. <br/> <strong>
+        Have questions? Our warm and helpful team is just a call away.
+
+ <br/> <strong>
 
 +91 86996 40752
          </strong>
@@ -201,7 +203,8 @@ hello@digitalpaaji.com
             <div>
               <p className="laila-bold text-2xl  text-start">चैट WITH US</p>
               <p className=" text-md  text-left ">
-         Our Friendly team is there to help. <br/> <strong>
+         Prefer to type it out? We're just a message away and ready to help.
+ <br/> <strong>
 
 hello@digitalpaaji.com
          </strong>

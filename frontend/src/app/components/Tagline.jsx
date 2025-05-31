@@ -112,9 +112,12 @@ function Tagline() {
             </div>
           </div>
         </div>
+       
+       
+       
         <div className="cols-span-1 2xl:col-span-4 w-full  overflow-hidden ">
-          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-            <div className="absolute top-10 right-0 ">
+          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 bg-white rounded-2xl shadow-2xl h-[782px] overflow-hidden border border-gray-200">
+            {/* <div className="absolute top-10 right-0 ">
               <Image
                 src={"/Images/arrow.gif"}
                 width={40}
@@ -122,9 +125,21 @@ function Tagline() {
                 alt=""
                 className="w-9 h-9  bg-[rgb(0,0,0)] text-white rounded-full"
               />
-            </div>
+            </div> */}
 
-            <Script
+           
+              <video
+  src="/Images/insta.webm"
+  loading="lazy"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-[100%] object-cover"
+/>
+           
+           
+            {/* <Script
               src="https://cdn.lightwidget.com/widgets/lightwidget.js"
               strategy="lazyOnload"
             />
@@ -134,21 +149,34 @@ function Tagline() {
               // allowTransparency="true"
               className="w-full h-full border-0"
               style={{ overflow: "hidden" }}
-            ></iframe>
+            ></iframe> */}
+
+
+
           </div>
 
         </div>
 
-        <div className="cols-span-1 2xl:col-span-4 flex flex-col justify-end h-full ">
-          <h1 className="poppins text-3xl xl:text-5xl font-bold text-left ">
-            From Learning to Earning
-          </h1>
-          <div className=" text-base md:text-md my-4 text-justify">
-            <p>
-             At Digital Paaji Academy, we don't believe in one-size-fits-all education. We're not just an academy, we're your launchpad to a real career. Every course is built to equip you with real skills and real results. Learn the skills that employers actually pay for - no fluff, just real value.
-            </p>
-          </div>
-        </div>
+
+
+
+    <div className="cols-span-1 2xl:col-span-4 flex flex-col justify-end h-full">
+  <h1 className="poppins text-3xl xl:text-5xl font-bold text-left">
+    From Learning to Earning
+  </h1>
+  <div className="text-base md:text-md my-4 text-justify">
+    <p>
+      At <strong>Digital Paaji Academy</strong>, we're not just teaching — we're living the digital life loud and clear. Our vibrant presence on platforms like Instagram proves we practice what we preach. From trending reels to behind-the-scenes glimpses, we show up every day with value, creativity, and consistency.
+    </p>
+    <p className="mt-4">
+      We're <strong>Socially Loud</strong> — active, relevant, and constantly engaging with the real digital world. Our students learn by seeing us in action, building brands, managing campaigns, and going viral — not just from theory, but through real-life inspiration.
+    </p>
+    <p className="mt-2">
+      🎥 Swipe through our Instagram screen recordings and stories to see how we create content that connects — and how you’ll learn to do the same.
+    </p>
+  </div>
+</div>
+
       </div>
     </section>
   );

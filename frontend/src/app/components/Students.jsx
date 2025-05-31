@@ -29,10 +29,13 @@ function Students() {
           Hear from Our Learners
         </h3>
         <p>
-          From landing jobs to launching freelance careers, our learners share how the Digital Paaji Academy experience helped them grow personally and professionally. 
+          From landing jobs to launching freelance careers, our learners share how the Digital Paaji Academy experience helped them grow personally and professionally. Our expert instructors go beyond theory. They focus on real-world problem-solving, professional communication, and personality development — making sure you're not just industry-ready, but future-ready.
+        Whether it's cracking their first client project, clearing an interview, building a portfolio from scratch, or becoming confident speakers — our learners continue to break barriers and set new standards for success.
+
         <br />
         <br />
         <strong className='poppins text-2xl '>Real stories, Real results, Real impact</strong>
+   
         </p>
       </div>
 
@@ -50,6 +53,7 @@ function Students() {
           >
             <video
               src={video}
+              loading="lazy"
               controls
               autoPlay
               muted

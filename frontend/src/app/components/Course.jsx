@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { CiClock2 } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
+import { MdViewModule } from "react-icons/md";
+import { FcOnlineSupport } from "react-icons/fc"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -377,7 +379,7 @@ export default function CoursesHorizontal() {
                     className="mt-3 space-y-1 text-lg flex items-center justify-start gap-2"
                     style={{ fontWeight: "500" }}
                   >
-                    <p>📚</p>
+                    <p><MdViewModule /> </p>
                     <strong>{course.modules}</strong>
                   </div>
                 </div>
@@ -385,7 +387,7 @@ export default function CoursesHorizontal() {
                   className="mt-3 space-y-1 text-lg flex items-center justify-start gap-2"
                   style={{ fontWeight: "500" }}
                 >
-                  <p>🏫 </p>
+                  <p><FcOnlineSupport /> </p>
                   <strong>{course.type}</strong>
                 </div>
 

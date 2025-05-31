@@ -59,14 +59,19 @@ useEffect(() => {
       </div>
 
       <div className="flex items-center flex-wrap justify-center ">
-        <div className="flex flex-wrap xl:flex-nowrap  rounded-lg w-full overflow-hidden gap-12 xl:gap-6 2xl:gap-0">
+        <div className="flex flex-wrap xl:flex-nowrap w-full overflow-hidden gap-12 ">
           {/* Left Image */}
-          <div className=" w-full xl:w-1/2 md:h-[550px] xl:h-[650px]">
-            <img
-              src="/Images/about2.webp"
-              alt="Sample"
-              className=" w-full h-[100%] object-contain "
-            />
+          <div className=" w-full xl:w-1/2 h-auto xl:h-[650px]">
+          <video
+  src="/Images/about/staff.webm"
+  loading="lazy"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-full object-cover"
+/>
+
           </div>
 
           {/* Right Content */}
@@ -79,10 +84,10 @@ useEffect(() => {
                 <div className="xl:w-full">
                   <Image
                     alt=""
-                    src={"/Images/icon.webp"}
+                    src={"/Images/about/1.webp"}
                     width={80}
                     height={80}
-                    className="w-20 h-20"
+                    className="w-16 h-16"
                   />
                 </div>
                 <div>
@@ -104,10 +109,10 @@ useEffect(() => {
                 <div className="xl:w-full">
                   <Image
                     alt=""
-                    src={"/Images/icon.webp"}
+                    src={"/Images/about/2.webp"}
                     width={80}
                     height={80}
-                    className="w-20 h-20"
+                    className="w-16 h-16"
                   />
                 </div>
                 <div>
@@ -136,10 +141,10 @@ useEffect(() => {
                 <div className="xl:w-full">
                   <Image
                     alt=""
-                    src={"/Images/icon.webp"}
+                    src={"/Images/about/3.webp"}
                     width={80}
                     height={80}
-                    className="w-20 h-20"
+                    className="w-16 h-16"
                   />
                 </div>
                 <div>
@@ -160,10 +165,10 @@ useEffect(() => {
                 <div className="xl:w-full">
                   <Image
                     alt=""
-                    src={"/Images/icon.webp"}
+                    src={"/Images/about/4.webp"}
                     width={80}
                     height={80}
-                    className="w-20 h-20"
+                    className="w-16 h-16"
                   />
                 </div>
                 <div>

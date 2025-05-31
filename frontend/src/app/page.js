@@ -16,11 +16,11 @@ export default function Home() {
 
 <About/>
 {/* <Scroll/> */}
+<Course/>
 
 <Journey/>
 
 <Students />
-<Course/>
 
 <Tagline/>
 
