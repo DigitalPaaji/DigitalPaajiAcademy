@@ -9,28 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 const items = [
   {
     old: "Boring lectures",
-    icon: "/Images/icon.webp",
+    icon: "/Images/about/a.webp",
     new: "Real Case Studies & Projects",
   },
   {
     old: "Copy-paste tutorials",
-    icon: "/Images/icon.webp",
+    icon: "/Images/about/b.webp",
     new: "Hands-on Building & Collaboration",
   },
   {
     old: "Certificates with no skill",
-    icon: "/Images/icon.webp",
-    new: "Real Proof of Work",
+    icon: "/Images/about/c.webp",
+    new: "Client-Ready Portfolio with Real Work",
   },
    {
-    old: "Boring lectures",
-    icon: "/Images/icon.webp",
-    new: "Real Case Studies & Projects",
+    old: "Tracing logos in Photoshop",
+    icon: "/Images/about/d.webp",
+    new: "Practical Graphic Design with Real Brand Briefs",
   },
   {
-    old: "Copy-paste tutorials",
-    icon: "/Images/icon.webp",
-    new: "Hands-on Building & Collaboration",
+    old: "Pre-recorded YouTube-style lectures",
+    icon: "/Images/about/e.webp",
+    new: "Mentorship from Industry Experts",
   },
 
 ];

@@ -9,11 +9,11 @@ function Students() {
   const videosRef = useRef([])
 
   const videos = [
-    '/videos/student1.mp4',
-    '/videos/student2.mp4',
-    '/videos/student3.mp4',
-    '/videos/student4.mp4',
-    '/videos/student5.mp4',
+    '/Images/student1.mp4',
+    '/Images/student2.mp4',
+    '/Images/student3.mp4',
+    '/Images/student4.mp4',
+    // '/Images/student5.mp4',
     // Add more if needed
   ]
 
@@ -55,9 +55,9 @@ function Students() {
               src={video}
               loading="lazy"
               controls
-              autoPlay
-              muted
-              loop
+              // autoPlay
+              // muted
+              // loop
               className='w-full h-full object-cover'
             />
           </div>

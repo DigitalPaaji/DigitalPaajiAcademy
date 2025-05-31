@@ -181,7 +181,7 @@ function Tagline() {
       We're <strong>Socially Loud</strong> — active, relevant, and constantly engaging with the real digital world. Our students learn by seeing us in action, building brands, managing campaigns, and going viral — not just from theory, but through real-life inspiration.
     </p>
     <p className="mt-2">
-      🎥 Swipe through our Instagram screen recordings and stories to see how we create content that connects — and how you’ll learn to do the same.
+       Swipe through our Instagram screen recordings and stories to see how we create content that connects — and how you’ll learn to do the same.
     </p>
   </div>
 </div>
