@@ -4,7 +4,7 @@ import Form from "../components/contact/Form";
 function Contact(){
     return(
         <div>
-            <Form/>
+            <Form  className="relative z-[50] pt-[200px]"/>
         </div>
     )
 }

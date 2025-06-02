@@ -101,9 +101,9 @@ function Navbar() {
   }, [menuOpen]);
 
   return (
-    <div className=" w-full  z-[99999999999]"
+    <div className="absolute top-0 w-full  z-[99999999999] backdrop-blur-md bg-gradient-to-b from-[#000000c5] via-[#0000006c] to-transparent "
   >
-      <div className="backdrop-blur-md bg-gradient-to-b from-[#e1bc978a] via-[#e1bc978a] to-[#ffffff80] text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
+      <div className="text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
         <Link href="/">
           <Image
             src="/Images/logo.webp"
@@ -114,7 +114,7 @@ function Navbar() {
           />
         </Link>
 
-        <ul className="poppins hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
+        <ul className="poppins-bold text-white hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
           <li>
             <Link href="/#course-corner" >Course Corner</Link>
           </li>

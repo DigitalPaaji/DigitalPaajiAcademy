@@ -107,7 +107,7 @@ function Footer() {
         >
           <li className="  flex items-center gap-2">
             <AiFillPhone className="text-[#ff850d]" />
-            <Link href="tel:8699640752">+91 86996 40752</Link>
+            <Link href="tel:7814536643">+91 78145 36643</Link>
           </li>
           <li className="  flex items-center gap-2">
             <IoMail  className="text-[#ff850d]" />

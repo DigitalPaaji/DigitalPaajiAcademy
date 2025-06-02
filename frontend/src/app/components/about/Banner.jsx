@@ -59,7 +59,7 @@ function Banner() {
     ">
       <div className=" flex items-center justify-center">
         <div className="text-center ">
-          <h3 className="laila-bold font-bold text-4xl md:text-6xl leading-tight tracking-tight">
+          <h3 className="protest font-bold text-4xl md:text-6xl leading-tight tracking-tight">
 Paaji's Mission Your Growth
       </h3>
           <p className="text-md xl:text-lg  my-6 text-justify md:justify-center 2xl:mx-40">

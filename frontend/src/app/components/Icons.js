@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import React from "react";
-import { MdLocalPhone } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa6";
 
 function Icons() {
  
@@ -30,16 +30,20 @@ function Icons() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-2 fixed bottom-16 right-4 z-[99999999]">
-        <a
-        href="tel:+919876545678"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
-          className="cursor-pointer text-white rounded-full flex items-center justify-center"
-        >
-          <MdLocalPhone  className="w-9 h-9 p-2  bg-[rgba(0,0,0,0.89)]  rounded-full   text-white " />
-        </a>
+      <a
+  href="https://wa.me/917814536643"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="cursor-pointer text-white rounded-full flex items-center justify-center"
+>
+   <Image
+    src="/Images/whIcon.gif"
+    width={20}
+    height={20}
+    alt=""
+    className="w-11 h-11 rounded-full object-cover"
+  />
+</a>
 
       </div>
     </div>

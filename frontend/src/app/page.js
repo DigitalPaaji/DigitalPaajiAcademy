@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen">
 {/* <Banner/> */}
 
-<Banner2/>
+<Banner2 className="relative z-[50] pt-[200px]"/>
 <Slider/>
 
 <About/>

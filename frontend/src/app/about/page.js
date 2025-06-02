@@ -6,7 +6,7 @@ function page() {
     <div>
   
 
-      <Banner/>
+      <Banner className="relative z-[50] pt-[200px]"/>
       <Why/>
     </div>
   )

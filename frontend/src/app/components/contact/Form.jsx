@@ -188,7 +188,7 @@ function Form() {
 
  <br/> <strong>
 
-+91 86996 40752
++91 78145 36643
          </strong>
         </p>
             </div>
