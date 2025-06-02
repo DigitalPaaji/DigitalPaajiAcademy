@@ -63,7 +63,7 @@ useEffect(() => {
           {/* Left Image */}
           <div className=" w-full xl:w-1/2 h-auto xl:h-[650px]">
           <video
-  src="/Images/about/staff.webm"
+  src="/Images/about/cstaff.mp4"
   loading="lazy"
   autoPlay
   loop

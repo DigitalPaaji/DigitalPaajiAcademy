@@ -47,7 +47,7 @@ function Students() {
           <div
             key={index}
             // ref={el => (videosRef.current[index] = el)}
-            className={`overflow-hidden w-[250px] md:w-[200px] lg: xl:w-full h-[550px] rounded-xl ${
+            className={`overflow-hidden w-[250px] md:w-[200px] lg: xl:w-full h-[550px] 2xl:h-[690px] rounded-xl ${
               index % 2 === 1 ? 'lg:mt-12' : ''
             }`}
           >

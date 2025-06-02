@@ -2,7 +2,7 @@ export default function HoverCard() {
   return (
     <div className="relative w-full h-auto md:h-[650px] xl:min-h-screen overflow-hidden">
       <video
-        src="/Images/banner.mp4"
+        src="/Images/cbanner.mp4"
         loading="lazy"
         autoPlay
         muted

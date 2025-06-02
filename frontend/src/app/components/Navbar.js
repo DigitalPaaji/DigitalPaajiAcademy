@@ -179,7 +179,7 @@ function Navbar() {
           </li>
          
              <li>
-            <Link href="/contact">Talk to Paaji</Link>
+            <Link href="/contact"  onClick={() => setMenuOpen(!menuOpen)}>Talk to Paaji</Link>
           </li>
 
       </ul>
