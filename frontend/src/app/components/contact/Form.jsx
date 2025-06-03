@@ -140,7 +140,7 @@ function Form() {
             }
           };
   return (
-    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12  xl:gap-0 flex-wrap xl:flex-nowrap py-24 xl:py-0'>
+    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12  xl:gap-0 flex-wrap xl:flex-nowrap py-24 xl:py-0 mt-[100px] '>
            <ToastContainer style={{ zIndex: 999999999 }} />
      
       <div className="w-full xl:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-12 xl:pl-24">
