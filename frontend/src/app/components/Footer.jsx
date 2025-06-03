@@ -26,7 +26,7 @@ function Footer() {
     className="relative z-50 lg:mb-20 grid grid-cols-1 md:grid-cols-3  xl:grid-cols-4 place-content-center gap-10 xl:gap-0 md:p-6 mx-4 md:mx-12 xl:mx-24  py-24 ">
       {/* Column 1 */}
       <div className="ml-2 md:mx-auto px-6 xl:px-0">
-        <Link href={'/'}><Image width={200} height={200} src="/Images/logo.webp" alt="Logo" className="w-40 h-auto object-cover"/></Link>
+        <Link href={'/'}><Image width={200} height={200} src="/Images/whitelogo.webp" alt="Logo" className="w-40 h-auto object-cover"/></Link>
         <ul className="mt-6 gap-2 flex items-center justify-start">
           <li>
             <Link href="https://www.instagram.com/digital.paajii/" target="_blank">

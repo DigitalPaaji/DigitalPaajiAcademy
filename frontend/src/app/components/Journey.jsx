@@ -137,21 +137,24 @@ function Journey() {
         </div>
 
         {/* Right Image */}
-        <div className="w-full xl:w-[50%] h-fit xl:h-[800px]">
+        <div className="w-full xl:w-[50%] h-[250px] md:h-[500px] lg:h-[700px] xl:h-full">
           {/* <img
             src="/Images/journey/team.webp"
             alt="Sample"
             className=" w-full h-[100%] object-cover "
           /> */}
 
-              <video
-  src="/Images/journey/team.webm"
+              <Image
+  src="/Images/about/team.webp"
   loading="lazy"
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="w-full h-full object-cover"
+  // autoPlay
+  // loop
+  // muted
+  // playsInline
+  alt=""
+  width={440}
+  height={440}
+  className="w-full h-[100%] object-cover lg:object-cover"
 />
 
 

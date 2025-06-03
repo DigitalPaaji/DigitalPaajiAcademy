@@ -16,7 +16,7 @@ export default function BrandShowcase() {
     <div className=" mx-6 lg:mx-12 xl:mx-24 py-12 lg:py-24 text-center">
    
 
-      <div className="flex flex-wrap justify-center gap-6 lg:gap-24 xl:gap-24 items-start lg:items-center ">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-24 xl:gap-24 items-start lg:items-center ">
         {logos.map((logo, index) => (
           <Image
             key={index}

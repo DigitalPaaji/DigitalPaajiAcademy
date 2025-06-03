@@ -25,7 +25,7 @@ function Banner() {
   return (
     <div>
 
-      <div className='mx-6 lg:mx-12 xl:mx-24 '>
+      <div className='mx-6 lg:mx-12 xl:mx-24 mt-[150px]'>
    
 
       {/* Video Grid */}

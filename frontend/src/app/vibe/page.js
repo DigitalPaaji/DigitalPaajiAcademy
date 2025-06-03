@@ -4,7 +4,7 @@ import Content from '../components/vibe/Content'
 function page() {
   return (
     <div>
-      <Banner className="relative z-[50] pt-[200px]"/>
+      <Banner />
       <Content/>
     </div>
   )

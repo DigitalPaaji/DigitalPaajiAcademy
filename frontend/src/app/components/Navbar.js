@@ -100,32 +100,110 @@ function Navbar() {
     }
   }, [menuOpen]);
 
+
+  const [isHovering, setIsHovering] = useState(false);
+
+   const handleMouseHover = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseHoverLeave = () => {
+    setIsHovering(false);
+  }
   return (
-    <div className="absolute top-0 w-full  z-[99999999999] backdrop-blur-md bg-gradient-to-b from-[#000000c5] via-[#0000006c] to-transparent "
+    <div className="absolute top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/80 via-black/60 to-black/0"
   >
       <div className="text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
-        <Link href="/">
+     
+     
+     
+        <Link href={"/"}
+          className="relative flex items-center justify-start gap-2 w-fit xl:w-[250px]"
+          onMouseEnter={handleMouseHover}
+          onMouseLeave={handleMouseHoverLeave}
+        >
+           <div
+              className="hidden xl:block w-16 h-auto overflow-hidden cursor-pointer transition-all duration-400"
+              onMouseEnter={() => handleMouseHover("logo2")}
+            >
+              <Image width={200} height={200} src="/favicon.webp" alt="logo" className="w-16 h-16 object-cover" />
+            </div>
+            <div
+              className="block xl:hidden overflow-hidden cursor-pointer"
+              onMouseEnter={() => handleMouseEnter("logo2")}
+            >
+              <Image width={200} height={200} src="/Images/whitelogo.webp" alt="logo" className="w-[9rem] h-[3rem] object-contain"/>
+            </div>
+
+           
+          {/* xl screen Logo */}
+          {/* <Link href={"/"} className="">
+            <div
+              className="hidden xl:block w-16 h-auto overflow-hidden cursor-pointer transition-all duration-400"
+              onMouseEnter={() => handleMouseHover("logo2")}
+            >
+              <Image width={200} height={200} src="/favicon.webp" alt="logo" className="w-12 h-12 object-cover" />
+            </div>
+          </Link> */}
+
+          
+          <div
+            className={`hidden xl:flex items-center justify-center overflow-hidden transition-[width] duration-1000 ease-in-out h-[3rem] ${
+              isHovering ? "w-[140px] object-contain" : "w-0"
+            }`}
+          >
+            <Image width={200} height={200}
+              src="/Images/whitelogo.webp"
+              alt="logo2"
+              className=" w-full h-[100%]"
+            />
+          </div>
+      </Link>
+
+
+
+
+        {/* <Link href="/">
           <Image
-            src="/Images/logo.webp"
+            src="/Images/whitelogo.webp"
             alt="Logo"
             width={100}
             height={100}
             className="w-full h-12 object-cover"
           />
-        </Link>
+        </Link> */}
 
-        <ul className="poppins-bold text-white hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
+        <ul className="poppins text-white hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
           <li>
-            <Link href="/#course-corner" >Course Corner</Link>
+            <Link href="/#course-corner" 
+            className="relative inline-block group"
+            >
+              <span> Course Corner
+                </span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
+                  </span></Link>
           </li>
           <li>
-            <Link href="/about">Paaji Diaries</Link>
+            <Link href="/about" className="relative inline-block group">
+             <span> Paaji Diaries
+                </span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
+                  </span>
+                  </Link>
           </li>
           <li>
-            <Link href="/vibe">Vibe Check</Link>
+            <Link href="/vibe" className="relative inline-block group">
+            <span>    Vibe Check
+                </span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
+                  </span>
+         </Link>
           </li>
              <li>
-            <Link href="/contact">Talk to Paaji</Link>
+            <Link href="/contact" className="relative inline-block group"> <span>Talk to Paaji
+                </span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
+                  </span></Link>
           </li>
         
         </ul>
@@ -154,7 +232,7 @@ function Navbar() {
 
         {/* Hamburger Icon - Mobile */}
         <div className="lg:hidden ">
-          <button onClick={toggleMenu} className="text-2xl cursor-pointer">
+          <button onClick={toggleMenu} className="text-2xl cursor-pointer text-white">
             {menuOpen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
           </button>
         </div>

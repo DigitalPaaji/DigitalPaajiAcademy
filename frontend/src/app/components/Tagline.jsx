@@ -52,7 +52,7 @@ function Tagline() {
         ))}
       </h1>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-12  gap-12 p-6 2xl:p-24 mx-6 lg:mx-12 2xl:mx-24 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-12  gap-12 p-6 2xl:p-24 mx-6 lg:mx-12 2xl:mx-24 mt-12">
         <div className="cols-span-1 2xl:col-span-4 flex flex-col h-full ">
 
 
@@ -124,8 +124,8 @@ function Tagline() {
        
        
        
-        <div className="cols-span-1 2xl:col-span-4 w-full  overflow-hidden ">
-          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 h-fit md:h-[900px] xl:h-[820px] overflow-hidden ">
+        <div className="cols-span-1  2xl:col-span-4 w-full  overflow-hidden ">
+          <div className="relative flex  w-full mx-auto lg:my-12 my-24 pt-4 h-fit md:h-[700px] lg:h-[820px] overflow-hidden ">
             {/* <div className="absolute top-10 right-0 ">
               <Image
                 src={"/Images/arrow.gif"}
@@ -144,7 +144,7 @@ function Tagline() {
   loop
   muted
   playsInline
-  className="w-full h-[100%] object-contain rounded-xl "
+  className="w-full h-[100%] object-contain lg:object-cover rounded-xl "
 />
            
            

@@ -1,23 +1,34 @@
 'use client';
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { PiPlayCircleThin } from "react-icons/pi";
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Students() {
-  const videosRef = useRef([])
+  const videoRefs = useRef([])
+  const [isPlaying, setIsPlaying] = useState({})
 
   const videos = [
     '/Images/student1.mp4',
     '/Images/student2.mp4',
     '/Images/student3.mp4',
     '/Images/student4.mp4',
-    // '/Images/student5.mp4',
-    // Add more if needed
   ]
 
+  const handlePlayPause = (index)=>{
+    const video = videoRefs.current[index];
+    if(!video) return;
+    if(video.paused){
+      video.play();
+      setIsPlaying((prev)=>({...prev,[index]:true}))
+    }else{
+      video.pause();
+      setIsPlaying((prev)=>({...prev,[index]:false}))
 
+    }
+  }
 
   return (
     <div 
@@ -42,22 +53,30 @@ function Students() {
       {/* Video Grid */}
       <div 
       
-      className='flex items-center justify-center flex-wrap lg:flex-nowrap gap-6'>
+      className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center justify-items-center  gap-6'>
         {videos.map((video, index) => (
           <div
             key={index}
             // ref={el => (videosRef.current[index] = el)}
-            className={`overflow-hidden w-[250px] md:w-[200px] lg: xl:w-full h-[550px] 2xl:h-[690px] rounded-xl ${
+            className={`relative group overflow-hidden w-full h-[550px] 2xl:h-[690px] rounded-xl ${
               index % 2 === 1 ? 'lg:mt-12' : ''
             }`}
           >
+            {!isPlaying[index] && (
+              <button onClick={()=>handlePlayPause(index)}
+               className="absolute z-10 inset-0 flex items-center justify-center bg-black/40 hover:bg-black/0 transition duration-300"
+               ><PiPlayCircleThin  className='w-20 h-20 text-gray-200'/></button>
+            )}
             <video
               src={video}
+              ref={(el)=>(videoRefs.current[index] = el)}
               loading="lazy"
-              controls
+              onClick={()=> handlePlayPause(index)}
+              controls={false}
               // autoPlay
               // muted
-              // loop
+              playsInline
+              loop
               className='w-full h-full object-cover'
             />
           </div>
