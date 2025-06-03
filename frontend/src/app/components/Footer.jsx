@@ -29,14 +29,14 @@ function Footer() {
         <Link href={'/'}><Image width={200} height={200} src="/Images/whitelogo.webp" alt="Logo" className="w-40 h-auto object-cover"/></Link>
         <ul className="mt-6 gap-2 flex items-center justify-start">
           <li>
-            <Link href="https://www.instagram.com/digital.paajii/" target="_blank">
+            <Link href="https://www.instagram.com/digitalpaajiacademy?igsh=MXB2amhiaDZybmNiYw==" target="_blank">
               <BsInstagram
                 className="zoom text-white w-5 h-5"
               />
             </Link>
           </li>
           <li>
-            <Link href="https://www.facebook.com/digital.paajii" target="_blank">
+            <Link href="https://www.facebook.com/share/1K7V9LaqMb/" target="_blank">
               <FaFacebook
                 className="zoom text-white w-5 h-5"
               />

@@ -154,7 +154,7 @@ function Journey() {
   alt=""
   width={440}
   height={440}
-  className="w-full h-[100%] object-cover lg:object-cover"
+  className="w-full h-[100%] object-cover xl:object-contain"
 />
 
 

@@ -95,7 +95,7 @@ useEffect(() => {
                   Fuel Your Skills with Pro Mentors
                   </h3>
                   <p className="mt-2 text-sm">
-                 At Digital Paaji Academy, your growth begins with those who’ve already walked the path. Paaji’s instructors don’t just teach - we mentor. Each lesson is crafted to develop in-demand skills across various digital marketing courses.
+                 At Digital Paaji Academy, your growth begins with those who've already walked the path. Paaji's instructors don't just teach - we mentor. Each lesson is crafted to develop in-demand skills across various digital marketing courses.
 
 
 
@@ -152,7 +152,7 @@ useEffect(() => {
                   Work on Real Projects, Not Just Homework
                   </h3>
                   <p className="mt-2 text-sm">
-                  Forget boring assignments! At Digital Paaji Academy, you'll get to work on actual client projects. This means you learn by doing real marketing campaigns that matter, so you’re ready for the real world right away.
+                  Forget boring assignments! At Digital Paaji Academy, you'll get to work on actual client projects. This means you learn by doing real marketing campaigns that matter, so you're ready for the real world right away.
 
 
                   </p>{" "}
@@ -176,7 +176,7 @@ useEffect(() => {
                   Work Like a Pro, Even Before You Graduate
                   </h3>
                   <p className="mt-2 text-sm">
-                Why wait to start your career? Our mentors give you hands-on experience with live campaigns and professional tools. You’ll build skills and confidence just like a true digital marketer — before you even finish the course!
+                Why wait to start your career? Our mentors give you hands-on experience with live campaigns and professional tools. You'll build skills and confidence just like a true digital marketer — before you even finish the course!
 
 
 
