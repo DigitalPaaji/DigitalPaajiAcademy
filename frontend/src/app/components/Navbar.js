@@ -7,21 +7,19 @@ import Image from "next/image";
 import gsap from "gsap";
 import Popup from "./Popup";
 
-function Navbar() {
+function Navbar({openPopup}) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-  const navbarRef = useRef(null); 
   const btnRef = useRef(null);
   const borderRef = useRef(null);
   const dropdownRef = useRef(null);
 
- const [isOpen, setIsOpen] = useState(false);
-  const openMenu = () => {
-    setIsOpen(true);
-  };
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+//  const [isOpen, setIsOpen] = useState(false);
+  // const openMenu = () => {
+  //   setIsOpen(true);
+  // };
+  // const closeMenu = () => {
+  //   setIsOpen(false);
+  // };
 
 
 
@@ -216,7 +214,7 @@ function Navbar() {
 
             {/* Actual Button */}
             <button
-              onClick={()=>openMenu()}
+              onClick={()=>openPopup()}
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -264,7 +262,7 @@ function Navbar() {
    
    
   
-{isOpen && <Popup closeMenu={closeMenu} />} 
+{/* {isOpen && <Popup closeMenu={closeMenu} className=""/>}  */}
 
       
     </div>

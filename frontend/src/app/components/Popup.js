@@ -144,10 +144,10 @@ function Popup({ closeMenu }) {
   return (
     <div onClick={(e)=>e.stopPropagation()}
     >
-      <div className="poppins fixed inset-0 bg-[#000000d7] flex justify-center items-center z-[99999] ">
+      <div className="poppins fixed inset-0 bg-[#000000c2] flex justify-center items-center z-[100000000000] ">
         <div className="">
     <div
-  className="custom-scrollbar p-8  xl:px-8 pt-8 pb-0 border-2 border-black bg-[#ede7db] rounded-lg w-[300px] sm:w-[300px] h-[500px] md:w-[600px] md:h-[640px] 2xl:h-[730px] overflow-scroll xl:w-[900px] relative"
+  className="custom-scrollbar p-8  xl:px-8 pt-8 pb-0 border-2 border-black bg-[#ede7db] rounded-lg w-[300px] md:w-[690px] h-[500px] md:h-full overflow-scroll lg:w-[900px] relative"
   style={{
     background: `radial-gradient(circle at top left, rgba(22, 51, 147, 0.5), transparent 50%),
                  radial-gradient(circle at top right, rgba(22, 51, 147, 0.5), transparent 50%),

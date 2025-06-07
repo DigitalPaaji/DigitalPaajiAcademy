@@ -6,6 +6,7 @@ function ReelCollage() {
     { src: "/Images/vibe/3.mp4" }, 
     { src: "/Images/vibe/2.mp4" },
        { src: "/Images/vibe/1.mp4" },
+    { src: "/Images/vibe/0.mp4" }, 
  
     { src: "/Images/vibe/5.mp4" },
     { src: "/Images/vibe/6.mp4" },

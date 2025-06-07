@@ -1,7 +1,7 @@
 import "./globals.css";
 import Icons from "./components/Icons";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import NavPage from "./components/NavPage";
 
 
 
@@ -11,7 +11,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
     <html lang="en">
        <head>
@@ -21,7 +20,8 @@ export default function RootLayout({ children }) {
 
       <body 
       >
-<Navbar/>
+<NavPage />
+
 
         {children}
         <Icons/>

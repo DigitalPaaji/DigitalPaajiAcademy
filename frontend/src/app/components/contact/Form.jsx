@@ -140,11 +140,11 @@ function Form() {
             }
           };
   return (
-    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12  xl:gap-0 flex-wrap xl:flex-nowrap py-24 xl:py-0 mt-[100px] '>
+    <div className='mx-6 xl:mx-0 flex items-center justify-center gap-12  xl:gap-0 flex-wrap xl:flex-nowrap py-24 xl:py-0 xl:mt-[60px] '>
            <ToastContainer style={{ zIndex: 999999999 }} />
      
       <div className="w-full xl:w-1/2 flex flex-col gap-6 items-start text-left p-6 lg:pl-12 xl:pl-24">
-        <h1 className="bungee-shade-regular font-bold text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl  text-left">
+        <h1 className="bungee-shade-regular font-bold text-5xl sm:text-5xl md:text-6xl 2xl:text-8xl  text-left">
           Don't Be Shy, <br /> Say Hi!
         </h1>
         <p className=" text-md mt-2 text-left ">
