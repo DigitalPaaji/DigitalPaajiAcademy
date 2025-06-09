@@ -1,0 +1,312 @@
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+// import { paajiResponses } from "./PaajiResponses";
+// import {paajiResponsesHindi} from './Hindi'
+
+export default function VoiceAssistant() {
+  const [chatHistory, setChatHistory] = useState([])
+  const [listening, setListening] = useState(false);
+  const [language, setLanguage] = useState('hi')
+  const recognitionRef = useRef(null);
+  const [transcript, setTranscript] = useState("");
+  const [spokenResponse, setSpokenResponse] = useState("");
+  const timeoutIdRef = useRef(null);
+  const stopListeningTimeoutRef = useRef(null);
+  const lastActivityTimeRef = useRef(Date.now());
+  const [isRecognizing, setIsRecognizing] = useState(false);
+
+
+    const stopSpeaking = (text)=>{
+        if(speechSynthesis.speaking || speechSynthesis.pending){
+            speechSynthesis.cancel()
+        }
+    }
+
+
+  const PaajiSpeaking = (text) =>{
+    stopSpeaking();
+    setSpokenResponse(text);
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voices = speechSynthesis.getVoices();
+    const preferredLang = language === "hi" ?"hi":"hi";
+
+      // Known female voices for better control
+  const knownFemaleVoices = {
+    hi: ["Google हिन्दी", "Microsoft Heera"],
+    en: ["Microsoft Heera","Google UK English Female", "Microsoft Zira", "Google US English"]
+  };
+
+
+     // First try matching known good female voices
+     const preferredVoice =
+     voices.find(
+       (v) =>
+         v.lang.toLowerCase().includes(preferredLang) &&
+         knownFemaleVoices[preferredLang].some((name) =>
+           v.name.toLowerCase().includes(name.toLowerCase())
+         )
+     ) ||
+     voices.find(
+       (v) =>
+         v.lang.toLowerCase().includes(preferredLang) &&
+         v.name.toLowerCase().includes("female")
+     ) ||
+     voices.find((v) => v.lang.toLowerCase().includes(preferredLang)) ||
+     voices.find((v) => v.name.toLowerCase().includes("female")) ||
+     voices[0];
+
+  if (preferredVoice) {
+    utterance.voice = preferredVoice;
+    utterance.lang = preferredVoice.lang;
+  } else {
+    utterance.lang = preferredLang === "hi" ? "hi-IN" : "hi-IN";
+  }
+
+  utterance.rate = 1;
+    utterance.onstart = () => {
+    lastActivityTimeRef.current = Date.now(); // reset on start
+   clearTimeout(timeoutIdRef.current);
+clearTimeout(stopListeningTimeoutRef.current);
+  };
+
+  utterance.onend = () => {
+  const recognition = recognitionRef.current;
+  // resetInactivityTimer();
+  if (listening && recognition && !isRecognizing) {
+    recognition.start();
+  }
+};
+
+
+  speechSynthesis.speak(utterance);
+  }
+
+  // Inactivity message before stopping
+// const handleInactivity = () => {
+//  const now = Date.now();
+//   const timeSinceLastActivity = now - lastActivityTimeRef.current;
+//    if (timeSinceLastActivity < 30000) {
+//     resetInactivityTimer(); // skip this round
+//     return;
+//   }
+//     PaajiSpeaking(
+//       language === "hi"
+//         ? "Main samajh sakti hoon ki shayad aapko thoda samay chahiye, jo bilkul theek hai. Kya aapko kisi khaas cheez ke baare mein jaanna hai ya kisi tarah ki madad chahiye? Jab bhi aap ready ho, bina jhijhak mujhe bataiye."
+//         : "I understand you may need a moment, and that's absolutely fine. Is there anything specific you’d like to know or any help you need? Feel free to let me know when you're ready."
+//     );
+
+    
+//     setTimeout(() => {
+//       stopListeningTimeoutRef.current = setTimeout(() => {
+//         stopListening();
+//       }, 15000); // Stop after 15s
+//     }, 15000);
+//   };
+  
+// Reset inactivity timer
+// const resetInactivityTimer = () => {
+//    lastActivityTimeRef.current = Date.now();
+//     clearTimeout(timeoutIdRef.current);
+//     clearTimeout(stopListeningTimeoutRef.current);
+//     timeoutIdRef.current = setTimeout(handleInactivity, 30000); // 30 sec
+//   };
+
+
+  const greetUser = () => {
+    PaajiSpeaking(
+      language === "hi"
+        ? "नमस्ते! मैं PaajiBot हूँ Digital Paaji से, और मैं यहाँ आपकी मदद के लिए हूँ। आज मैं आपके लिए क्या कर सकती हूँ?"
+        : "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
+    );
+  };
+
+
+  const handleResponse = async (text) =>{
+
+
+   
+
+    // const reply = generatePaajiReply(text);
+    // if(reply){
+    //     PaajiSpeaking(reply);
+    // }else{  
+      try {
+        // Call the GPT fallback API
+        const res = await fetch("/api/ask-paaji", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query: text ,
+            history:chatHistory,
+            lang:language,
+          }),
+        });
+  
+        const data = await res.json();
+        const dynamicReply = data?.response || (language === "hi"
+          ? "Arre, mujhe lagta hai ki iske baare mein abhi mujhe thoda aur seekhna hoga! Aap hamari team se baat karein — woh aapki madad zaroor karenge!"
+          : "Ah, looks like I don't have the info for that right now! But no worries, you can reach out to our team — they’ve got you covered!");
+        
+  
+        PaajiSpeaking(dynamicReply);
+        setChatHistory((prev)=>{
+         const updated = [ ...prev,
+          {role:"user",content:text},
+          {role:"assistant",content:dynamicReply}]
+          return updated.slice(-10)
+      })
+      } catch (error) {
+        console.error("Error fetching AI Reply:", error);
+        PaajiSpeaking(language === "hi"
+          ? "Maaf kijiye, abhi kuch problem ho gayi hai."
+          : "Sorry, I couldn't fetch a proper reply right now.");
+      }
+    // }
+  }
+
+  const stopListening = ()=>{
+    const recognition = recognitionRef.current;
+    if(recognition){
+        recognition.stop();
+
+    }
+    setTranscript('');
+    setListening(false);
+   clearTimeout(timeoutIdRef.current);
+clearTimeout(stopListeningTimeoutRef.current);
+  }
+
+  useEffect(()=>{
+    if(typeof window !== "undefined" && speechSynthesis.onvoiceschanged !== undefined ){
+      speechSynthesis.onvoiceschanged = ()=>{
+        speechSynthesis.getVoices();
+      }
+    }
+  },[])
+
+  useEffect(() => {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Your browser does not support Speech Recognition.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = language === "hi" ? "hi-IN" : "en-IN";
+    recognition.interimResults = false;
+    recognition.continuous = true;
+    recognition.onresult = (event) => {
+        const lastResult = event.results[event.results.length - 1];
+        const spokenText = lastResult[0].transcript;
+        setTranscript((prev) => prev + " " + spokenText);
+        handleResponse(spokenText);
+
+    };
+    recognition.onerror = (event) => {
+      console.log("error occured : ", event.error);
+    };
+    recognition.onstart = () => {
+      setIsRecognizing(true);
+    };
+
+   recognition.onend = () => {
+  console.log("Speech recognition ended...");
+  setIsRecognizing(false);
+
+  if (listening) {
+    // Restart only when safe
+    if (!isRecognizing && !speechSynthesis.speaking) {
+      recognition.start();
+    } else {
+      // Retry after a short delay
+      setTimeout(() => {
+        if (listening && !isRecognizing && !speechSynthesis.speaking) {
+          recognition.start();
+        }
+      }, 1000); // delay prevents overlap
+    }
+  }
+};
+
+
+
+
+
+    recognitionRef.current = recognition;
+
+    const cleanupOnHideOrUnload = ()=>{
+        stopListening();
+        stopSpeaking();
+         clearTimeout(timeoutIdRef.current);
+clearTimeout(stopListeningTimeoutRef.current);
+    };
+    window.addEventListener('visibilitychange',()=>{
+        if(document.hidden) cleanupOnHideOrUnload();
+    })
+
+    window.addEventListener("beforeunload", cleanupOnHideOrUnload)
+    window.addEventListener("pagehide", cleanupOnHideOrUnload)
+
+  return () => {
+  cleanupOnHideOrUnload();  // full cleanup
+  window.removeEventListener('visibilitychange', cleanupOnHideOrUnload);
+  window.removeEventListener('beforeunload', cleanupOnHideOrUnload);
+  window.removeEventListener('pagehide', cleanupOnHideOrUnload);
+};
+
+  }, []);
+
+  const toggleListening = () => {
+const recognition = recognitionRef.current;
+    if(!recognition) return;
+
+    if(!listening){
+        if (!isRecognizing) {
+    recognition.start();
+  }
+        setListening(true);
+        greetUser();
+        // resetInactivityTimer();
+
+    }else{
+        recognition.stop();
+        stopSpeaking();
+        setTranscript('');                                                          
+        setListening(false);
+        clearTimeout(timeoutIdRef.current);
+clearTimeout(stopListeningTimeoutRef.current);
+
+    }
+  };
+
+  return (
+    <div className="">
+      {/* Language Selector */}
+      {/* <select
+        value={language}
+        onChange={(e) => setLanguage(e.target.value)}
+        className="mb-4 p-2 border border-gray-500"
+      >
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select> */}
+
+      <button
+        onClick={toggleListening}
+        className={`${
+          listening ? "text-red-600" : "text-black"
+        } bg-white  p-2 border-black border-2 rounded-xl`}
+      >
+        {listening ? "End" : "Talk"}
+      </button>
+{/*  
+      {transcript && (
+        <p className="mt-4 text-lg text-center">
+          <strong>You said:</strong> {transcript}
+        </p>
+      )} */}
+    </div>
+  );
+}

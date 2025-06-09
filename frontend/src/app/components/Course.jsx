@@ -308,7 +308,7 @@ export default function CoursesHorizontal() {
     <div
       id="course-corner"
       ref={containerRef}
-      className=" mx-0 xl:mx-0 my-24 w-full overflow-hidden"
+      className=" mx-0 xl:mx-0 my-12 pt-[100px] w-full overflow-hidden"
     >
       <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}

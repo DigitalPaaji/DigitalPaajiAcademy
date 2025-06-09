@@ -109,7 +109,7 @@ function Navbar({openPopup}) {
     setIsHovering(false);
   }
   return (
-    <div className="absolute top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/80 via-black/60 to-black/0"
+    <div className="fixed  top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/80 via-black/60 to-black/0"
   >
       <div className="text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
      
