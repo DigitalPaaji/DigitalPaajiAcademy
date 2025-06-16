@@ -16,7 +16,7 @@ function Icons() {
 
   return (
     <div>
-      {/* <div className="flex flex-col items-center justify-center gap-2 fixed bottom-4 right-4 z-[99999999]">
+      <div className="flex flex-col items-center justify-center gap-2 fixed bottom-28 right-4 z-[99999999]">
         <div
           onClick={(e) => {
             e.preventDefault();
@@ -24,13 +24,13 @@ function Icons() {
           }}
           className="cursor-pointer text-white flex items-center justify-center"
         >
-          <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-8 h-8  bg-[rgb(0,0,0)] text-white rounded-full" />
+          <Image src={'/Images/arrow.gif'} width={40} height={40} alt="" className="w-7 h-7  bg-[rgb(0,0,0)] text-white rounded-full" />
         </div>
 
         
-      </div> */}
+      </div>
 
-      {/* <div className="flex flex-col items-center justify-center gap-2 fixed bottom-16 right-4 z-[99999999]">
+      <div className="flex flex-col items-center justify-center gap-2 fixed bottom-16 right-4 z-[99999999]">
       <a
   href="https://wa.me/917814536643"
   target="_blank"
@@ -46,7 +46,7 @@ function Icons() {
   />
 </a>
 
-      </div> */}
+      </div>
        <div className="flex flex-col items-center justify-center gap-2 fixed bottom-4 right-4 z-[99999999]">
      <VoiceAssistant/>
 

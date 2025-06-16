@@ -2,9 +2,9 @@
 const nextConfig = {
     output: 'export', // Enables `next export`
     images: {
-      unoptimized: true, // Required if using Next.js Image component
-    },
-    
+      unoptimized: true,
+      domains: ['https://digitalpaajiacademy.com/'],
+    }    
   };
   
   export default nextConfig;
