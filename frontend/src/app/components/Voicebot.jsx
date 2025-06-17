@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 // import { paajiResponses } from "./PaajiResponses";
 // import {paajiResponsesHindi} from './Hindi'
 import { CiMicrophoneOn } from "react-icons/ci";
+import { FaRegCommentDots } from "react-icons/fa6";
+import { RxCross2 } from "react-icons/rx";
 
 export default function VoiceAssistant() {
   const [chatHistory, setChatHistory] = useState([])
@@ -16,6 +18,9 @@ export default function VoiceAssistant() {
   const stopListeningTimeoutRef = useRef(null);
   const lastActivityTimeRef = useRef(Date.now());
   const [isRecognizing, setIsRecognizing] = useState(false);
+const [isProcessing, setIsProcessing] = useState(false);
+const [isSpeaking, setIsSpeaking] = useState(false);
+
 
 
     const stopSpeaking = (text)=>{
@@ -28,6 +33,7 @@ export default function VoiceAssistant() {
   const PaajiSpeaking = (text) =>{
     stopSpeaking();
     setSpokenResponse(text);
+    setIsSpeaking(true)
     const utterance = new SpeechSynthesisUtterance(text);
     const voices = speechSynthesis.getVoices();
     const preferredLang = language === "hi" ?"hi":"hi";
@@ -72,6 +78,7 @@ clearTimeout(stopListeningTimeoutRef.current);
   };
 
   utterance.onend = () => {
+    setIsSpeaking(false)
   const recognition = recognitionRef.current;
   // resetInactivityTimer();
   if (listening && recognition && !isRecognizing) {
@@ -124,14 +131,11 @@ clearTimeout(stopListeningTimeoutRef.current);
 
 
   const handleResponse = async (text) =>{
-
-
-   
-
-    // const reply = generatePaajiReply(text);
-    // if(reply){
-    //     PaajiSpeaking(reply);
-    // }else{  
+  setIsProcessing(true); 
+  // const reply = generatePaajiReply(text);
+  // if(reply){
+  //     PaajiSpeaking(reply);
+  // }else{  
       try {
         // Call the GPT fallback API
         const res = await fetch("/api/ask-paaji", {
@@ -156,13 +160,15 @@ clearTimeout(stopListeningTimeoutRef.current);
          const updated = [ ...prev,
           {role:"user",content:text},
           {role:"assistant",content:dynamicReply}]
-          return updated.slice(-10)
+          return updated.slice(-6)
       })
       } catch (error) {
         console.error("Error fetching AI Reply:", error);
         PaajiSpeaking(language === "hi"
           ? "Maaf kijiye, abhi kuch problem ho gayi hai."
           : "Sorry, I couldn't fetch a proper reply right now.");
+      }finally{
+        setIsProcessing(false)
       }
     // }
   }
@@ -261,6 +267,7 @@ clearTimeout(stopListeningTimeoutRef.current);
   }, []);
 
   const toggleListening = () => {
+    
 const recognition = recognitionRef.current;
     if(!recognition) return;
 
@@ -274,6 +281,7 @@ const recognition = recognitionRef.current;
 
     }else{
         recognition.stop();
+        setIsSpeaking(false)
         stopSpeaking();
         setTranscript('');                                                          
         setListening(false);
@@ -286,15 +294,44 @@ clearTimeout(stopListeningTimeoutRef.current);
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
- 
+  {/* {transcript && (
+        <p className="mt-4 text-lg text-center text-white">
+          <strong>You said:</strong> {transcript}
+        </p>
+      )} */}
       <button
         onClick={toggleListening}
         className={`${
-          listening ? "text-red-600" : "text-white animate-pulse"
+          listening ? "text-white" : isProcessing?"text-yellow-400 animate-pulse" : "text-white animate-pulse"
         }  flex items-center justify-center gap-2 cursor-pointer`}
       >
-        {listening ? "End" : "Click to talk"}
-        <CiMicrophoneOn className="w-[20px] h-[20px]"/>{" "}
+        {isSpeaking? "" : listening ? isProcessing? "Processing... " : "" : "Click to talk"}
+        {isSpeaking ? (
+    // <FaRegCommentDots className="w-[20px] h-[20px]" />
+   
+   <Image alt="" src={'/Images/audio.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
+  ) : 
+   listening ? isProcessing? 
+     (
+   <Image alt="" src={'/Images/load.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
+   )
+    :
+   (
+   <Image alt="" src={'/Images/mic.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
+   )
+   : 
+  
+  (
+    <CiMicrophoneOn className="w-[20px] h-[20px]" /> 
+  )}
+  {" "}
+    <p className={`${isSpeaking? "p-[1px]" : listening ? isProcessing? "p-[1px]" : "p-[1px]" : "p-0"} text-white bg-red-600  rounded-full`}>
+      {isSpeaking? 
+      <RxCross2   className="w-6 h-6 "/>
+      : listening ? isProcessing?       <RxCross2   className="w-6 h-6 "/>
+ :       <RxCross2   className="w-6 h-6 "/>
+ : ""}
+      </p>
 
       </button>
             <a
@@ -312,12 +349,8 @@ clearTimeout(stopListeningTimeoutRef.current);
         />
       </a>
 
-{/*  
-      {transcript && (
-        <p className="mt-4 text-lg text-center">
-          <strong>You said:</strong> {transcript}
-        </p>
-      )} */}
+ 
+     
     </div>
   );
 }
