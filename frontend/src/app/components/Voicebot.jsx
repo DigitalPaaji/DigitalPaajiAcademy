@@ -1,7 +1,9 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 // import { paajiResponses } from "./PaajiResponses";
 // import {paajiResponsesHindi} from './Hindi'
+import { CiMicrophoneOn } from "react-icons/ci";
 
 export default function VoiceAssistant() {
   const [chatHistory, setChatHistory] = useState([])
@@ -282,25 +284,34 @@ clearTimeout(stopListeningTimeoutRef.current);
   };
 
   return (
-    <div className="">
+    <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
-      {/* <select
-        value={language}
-        onChange={(e) => setLanguage(e.target.value)}
-        className="mb-4 p-2 border border-gray-500"
-      >
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-      </select> */}
-
+ 
       <button
         onClick={toggleListening}
         className={`${
-          listening ? "text-red-600" : "text-black"
-        } bg-white  p-2 border-black border-2 rounded-xl`}
+          listening ? "text-red-600" : "text-white animate-pulse"
+        }  flex items-center justify-center gap-2 cursor-pointer`}
       >
-        {listening ? "End" : "Talk"}
+        {listening ? "End" : "Click to talk"}
+        <CiMicrophoneOn className="w-[20px] h-[20px]"/>{" "}
+
       </button>
+            <a
+        href="https://wa.me/917814536643"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="cursor-pointer text-white rounded-full flex items-center justify-center"
+      >
+         <Image
+          src="/Images/whIcon.gif"
+          width={20}
+          height={20}
+          alt=""
+          className="w-8 h-8 rounded-full object-cover"
+        />
+      </a>
+
 {/*  
       {transcript && (
         <p className="mt-4 text-lg text-center">

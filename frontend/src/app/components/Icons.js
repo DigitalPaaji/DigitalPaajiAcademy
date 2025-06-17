@@ -16,7 +16,7 @@ function Icons() {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center gap-2 fixed bottom-28 right-4 z-[99999999]">
+      {/* <div className="flex flex-col items-center justify-center gap-2 fixed bottom-28 right-4 z-[99999999]">
         <div
           onClick={(e) => {
             e.preventDefault();
@@ -28,9 +28,9 @@ function Icons() {
         </div>
 
         
-      </div>
+      </div> */}
 
-      <div className="flex flex-col items-center justify-center gap-2 fixed bottom-16 right-4 z-[99999999]">
+      {/* <div className="flex flex-col items-center justify-center gap-2 fixed bottom-16 right-4 z-[99999999]">
       <a
   href="https://wa.me/917814536643"
   target="_blank"
@@ -46,8 +46,8 @@ function Icons() {
   />
 </a>
 
-      </div>
-       <div className="flex flex-col items-center justify-center gap-2 fixed bottom-4 right-4 z-[99999999]">
+      </div> */}
+       <div className="flex flex-col items-center justify-center gap-2 fixed bottom-4 right-0 z-[99999999]">
      <VoiceAssistant/>
 
       </div>
