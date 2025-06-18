@@ -21,7 +21,7 @@ body {
 /* Rubik Doodle Shadow */
 @font-face {
   font-family: 'Rubik Doodle Shadow';
-  src: url('/fonts/RubikDoodleShadow-Regular.ttf') format('truetype');
+  src: url('/fonts/RubikDoodleShadow-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -30,14 +30,14 @@ body {
 /* Laila */
 @font-face {
   font-family: 'Laila';
-  src: url('/fonts/Laila-Regular.ttf') format('truetype');
+  src: url('/fonts/Laila-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Laila';
-  src: url('/fonts/Laila-Bold.ttf') format('truetype');
+  src: url('/fonts/Laila-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -46,14 +46,14 @@ body {
 /* Poppins */
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  src: url('/fonts/Poppins-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  src: url('/fonts/Poppins-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

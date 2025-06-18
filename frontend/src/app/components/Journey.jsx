@@ -54,7 +54,7 @@ function Journey() {
     });
   };
   return (
-    <div className="px-6 lg:px-12 xl:px-24 py-24 ">
+    <div className="px-6 lg:px-12 xl:px-24 pt-24 xl:py-24 ">
       <div className="flex flex-col xl:flex-row items-center justify-center gap-12">
         {/* Left Content */}
         <div className=" w-full xl:w-[50%] text-center md:text-left">
@@ -137,7 +137,7 @@ function Journey() {
         </div>
 
         {/* Right Image */}
-        <div className="w-full xl:w-[50%] h-[250px] md:h-[500px] lg:h-[700px] xl:h-full">
+        <div className="w-full xl:w-[50%] h-auto xl:h-full">
           {/* <img
             src="/Images/journey/team.webp"
             alt="Sample"
@@ -154,7 +154,7 @@ function Journey() {
   alt=""
   width={440}
   height={440}
-  className="w-full h-[100%] object-cover xl:object-contain"
+  className="w-full h-[100%] object-contain xl:object-contain"
 />
 
 
