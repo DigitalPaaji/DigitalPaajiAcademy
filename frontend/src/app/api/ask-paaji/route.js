@@ -24,7 +24,7 @@ Warm phrases यूज़ करें: [यूज़र के सवाल क
 - ज़रूरत से ज़्यादा information या over-explaining ना करें  
 - अगर कोई सीखने से जुड़ी query पूछे, तो उसे appreciate करें और अच्छा feel कराएं  
 - Learning वाली queries के लिए Digital Paaji Academy का ज़िक्र करें:  
-  > हम courses offer करते हैं — Digital Marketing, Graphic Designing, Video Editing, Website Development — online और offline दोनों mode में।  
+  > Hum course-s offer karte hain — digital marke-ting, graphic de-zine-ing, video edit-ing, aur website development — online aur offline dono mode mein.  
   > ज़्यादा जानकारी के लिए Patiala वाले हमारे office आइए या visit करें digitalpaajiacademy.com
 
 **Address:** 2nd Floor, Kissan Market, 78, Sirhind Rd, near Hemkunt Petrol Pump, Harinder Nagar, Patiala, Punjab 147001  
@@ -83,10 +83,19 @@ Digital Paaji ek full-service agency hai — graphic designing, video editing, d
 
     const data = await response.json();
 
-    if (!response.ok) {
-      console.error("OpenRouter API error:", data);
-      return new Response(JSON.stringify({ response: null }), { status: 500 });
-    }
+if (!response.ok) {
+  if (data.error?.message?.includes("Insufficient funds")) {
+    return new Response(JSON.stringify({ response: "Service temporarily unavailable. Please try again later." }), {
+      status: 429,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  return new Response(JSON.stringify({ response: "Something went wrong." }), {
+    status: 500,
+    headers: { "Content-Type": "application/json" },
+  });
+}
 
        return new Response(JSON.stringify({ response: data.choices[0].message.content }), {
       status: 200,

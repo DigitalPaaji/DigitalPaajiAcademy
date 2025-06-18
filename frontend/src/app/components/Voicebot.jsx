@@ -247,6 +247,7 @@ clearTimeout(stopListeningTimeoutRef.current);
 
     const cleanupOnHideOrUnload = ()=>{
         stopListening();
+        setIsSpeaking(false)
         stopSpeaking();
          clearTimeout(timeoutIdRef.current);
 clearTimeout(stopListeningTimeoutRef.current);
