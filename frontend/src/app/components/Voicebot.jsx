@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CiMicrophoneOn } from "react-icons/ci";
 import { FaRegCommentDots } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function VoiceAssistant() {
   const [chatHistory, setChatHistory] = useState([])
@@ -305,7 +306,7 @@ clearTimeout(stopListeningTimeoutRef.current);
           listening ? "text-white" : isProcessing?"text-yellow-400 animate-pulse" : "text-white animate-pulse"
         }  flex items-center justify-center gap-2 cursor-pointer`}
       >
-        {isSpeaking? "" : listening ? isProcessing? "Processing... " : "" : "Click to talk"}
+        {isSpeaking? "" : listening ? isProcessing? "" : "" : "Click to talk"}
         {isSpeaking ? (
     // <FaRegCommentDots className="w-[20px] h-[20px]" />
    
@@ -313,7 +314,12 @@ clearTimeout(stopListeningTimeoutRef.current);
   ) : 
    listening ? isProcessing? 
      (
-   <Image alt="" src={'/Images/load.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
+   <DotLottieReact
+      src="https://lottie.host/038ba804-bb12-4d0b-beec-426153a23d0f/ZbItyRZZuU.lottie"
+      loop
+      className="w-7 h-7 rounded-full bg-white "
+      autoplay
+    />
    )
     :
    (
