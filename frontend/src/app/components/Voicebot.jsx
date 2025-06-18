@@ -139,7 +139,7 @@ clearTimeout(stopListeningTimeoutRef.current);
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("/api/ask-paaji", {
+        const res = await fetch("http://localhost:8000/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -151,6 +151,7 @@ clearTimeout(stopListeningTimeoutRef.current);
         });
   
         const data = await res.json();
+        console.log("Received from backend:", data);
         const dynamicReply = data?.response || (language === "hi"
           ? "Arre, mujhe lagta hai ki iske baare mein abhi mujhe thoda aur seekhna hoga! Aap hamari team se baat karein — woh aapki madad zaroor karenge!"
           : "Ah, looks like I don't have the info for that right now! But no worries, you can reach out to our team — they’ve got you covered!");
