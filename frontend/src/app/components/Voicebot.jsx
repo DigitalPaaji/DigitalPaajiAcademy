@@ -93,7 +93,7 @@ useEffect(()=>{
 
   utterance.rate = 1;
     utterance.onstart = () => {
-  console.log("utterance started...");
+  // console.log("utterance started...");
    
   };
 
@@ -133,7 +133,7 @@ useEffect(()=>{
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
+        const res = await fetch("http://localhost:8000/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -145,7 +145,7 @@ useEffect(()=>{
         });
   
         const data = await res.json();
-        console.log("Received from backend:", data);
+        // console.log("Received from backend:", data);
         const dynamicReply = data?.response || (
            "looks like I don't have the info for that right now! But no worries,  Aap hamari team se baat karein — woh aapki madad zaroor karenge!");
         
@@ -159,9 +159,9 @@ const formatForSpeaking = (text) => {
 
 const cleaned = formatForSpeaking(dynamicReply);
 PaajiSpeaking(cleaned);
-  console.log(text);
+  // console.log(text);
         
-  console.log(dynamicReply);
+  // console.log(dynamicReply);
 
         setChatHistory((prev)=>{
          const updated = [ ...prev,
@@ -222,13 +222,13 @@ PaajiSpeaking(cleaned);
       console.log("error occured : ", event.error);
     };
     recognition.onstart = () => {
-  console.log("Speech recognition started...");
+  // console.log("Speech recognition started...");
 
       setIsRecognizing(true);
     };
 
  recognition.onend = () => {
-  console.log("Speech recognition ended...");
+  // console.log("Speech recognition ended...");
   setIsRecognizing(false);
 
   if (listening) {
@@ -236,7 +236,7 @@ PaajiSpeaking(cleaned);
       if (!isRecognizing && !speechSynthesis.speaking) {
         try {
           recognition.start();
-          console.log("Recognition restarted");
+          // console.log("Recognition restarted");
         } catch (err) {
           console.error("Restart error:", err);
         }
@@ -305,11 +305,11 @@ const recognition = recognitionRef.current;
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
- {transcript && (
+ {/* {transcript && (
         <p className="mt-4 text-lg text-center text-white">
           <strong>You said:</strong> {transcript}
         </p>
-      )} 
+      )}  */}
       <button
         onClick={toggleListening}
         className={`${
