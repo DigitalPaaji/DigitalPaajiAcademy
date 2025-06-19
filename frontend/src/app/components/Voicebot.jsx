@@ -15,13 +15,33 @@ export default function VoiceAssistant() {
   const recognitionRef = useRef(null);
   const [transcript, setTranscript] = useState("");
   const [spokenResponse, setSpokenResponse] = useState("");
-  const timeoutIdRef = useRef(null);
-  const stopListeningTimeoutRef = useRef(null);
-  const lastActivityTimeRef = useRef(Date.now());
+ 
   const [isRecognizing, setIsRecognizing] = useState(false);
 const [isProcessing, setIsProcessing] = useState(false);
 const [isSpeaking, setIsSpeaking] = useState(false);
 
+
+
+useEffect(()=>{
+  const warmUpBackend = async ()=>{
+    try{
+      await fetch("http://localhost:8000/api/ask-paaji",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+        },body:JSON.stringify({
+          query:"hi",
+          history:[],
+          language:"hi"
+        })
+      })
+      console.log("Backend warmed up");
+    } catch(err){
+      console.error("backend warm-up failed: ",err)
+    }
+  }
+  warmUpBackend()
+},[])
 
 
     const stopSpeaking = (text)=>{
@@ -66,24 +86,27 @@ const [isSpeaking, setIsSpeaking] = useState(false);
 
   if (preferredVoice) {
     utterance.voice = preferredVoice;
-    utterance.lang = preferredVoice.lang;
+    utterance.lang = 'hi-IN';
   } else {
-    utterance.lang = preferredLang === "hi" ? "hi-IN" : "hi-IN";
+    utterance.lang = preferredLang === "hi" ? "en-IN" : "en-IN";
   }
 
   utterance.rate = 1;
     utterance.onstart = () => {
-    lastActivityTimeRef.current = Date.now(); // reset on start
-   clearTimeout(timeoutIdRef.current);
-clearTimeout(stopListeningTimeoutRef.current);
+  console.log("utterance started...");
+   
   };
 
   utterance.onend = () => {
     setIsSpeaking(false)
   const recognition = recognitionRef.current;
-  // resetInactivityTimer();
+
   if (listening && recognition && !isRecognizing) {
-    recognition.start();
+      setTimeout(() => {
+      if (!speechSynthesis.speaking) {
+        recognition.start();
+      }
+    }, 500); // Add slight delay before restarting
   }
 };
 
@@ -91,42 +114,13 @@ clearTimeout(stopListeningTimeoutRef.current);
   speechSynthesis.speak(utterance);
   }
 
-  // Inactivity message before stopping
-// const handleInactivity = () => {
-//  const now = Date.now();
-//   const timeSinceLastActivity = now - lastActivityTimeRef.current;
-//    if (timeSinceLastActivity < 30000) {
-//     resetInactivityTimer(); // skip this round
-//     return;
-//   }
-//     PaajiSpeaking(
-//       language === "hi"
-//         ? "Main samajh sakti hoon ki shayad aapko thoda samay chahiye, jo bilkul theek hai. Kya aapko kisi khaas cheez ke baare mein jaanna hai ya kisi tarah ki madad chahiye? Jab bhi aap ready ho, bina jhijhak mujhe bataiye."
-//         : "I understand you may need a moment, and that's absolutely fine. Is there anything specific you’d like to know or any help you need? Feel free to let me know when you're ready."
-//     );
-
-    
-//     setTimeout(() => {
-//       stopListeningTimeoutRef.current = setTimeout(() => {
-//         stopListening();
-//       }, 15000); // Stop after 15s
-//     }, 15000);
-//   };
-  
-// Reset inactivity timer
-// const resetInactivityTimer = () => {
-//    lastActivityTimeRef.current = Date.now();
-//     clearTimeout(timeoutIdRef.current);
-//     clearTimeout(stopListeningTimeoutRef.current);
-//     timeoutIdRef.current = setTimeout(handleInactivity, 30000); // 30 sec
-//   };
 
 
   const greetUser = () => {
     PaajiSpeaking(
-      language === "hi"
-        ? "नमस्ते! मैं PaajiBot हूँ Digital Paaji से, और मैं यहाँ आपकी मदद के लिए हूँ। आज मैं आपके लिए क्या कर सकती हूँ?"
-        : "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
+    
+        "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
+     
     );
   };
 
@@ -139,7 +133,7 @@ clearTimeout(stopListeningTimeoutRef.current);
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("http://localhost:8000/api/ask-paaji", {
+        const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -152,12 +146,23 @@ clearTimeout(stopListeningTimeoutRef.current);
   
         const data = await res.json();
         console.log("Received from backend:", data);
-        const dynamicReply = data?.response || (language === "hi"
-          ? "Arre, mujhe lagta hai ki iske baare mein abhi mujhe thoda aur seekhna hoga! Aap hamari team se baat karein — woh aapki madad zaroor karenge!"
-          : "Ah, looks like I don't have the info for that right now! But no worries, you can reach out to our team — they’ve got you covered!");
+        const dynamicReply = data?.response || (
+           "looks like I don't have the info for that right now! But no worries,  Aap hamari team se baat karein — woh aapki madad zaroor karenge!");
         
-  
-        PaajiSpeaking(dynamicReply);
+const formatForSpeaking = (text) => {
+  return text
+    .replace(/(\d+\.\s*|•\s*|\*\s*)/g, '.....') // remove 1. 2. etc.
+    .replace(/\n/g, '... ') // Convert newlines into longer pause
+    .replace(/  +/g, ' ')   // remove extra spaces
+    .trim();
+};
+
+const cleaned = formatForSpeaking(dynamicReply);
+PaajiSpeaking(cleaned);
+  console.log(text);
+        
+  console.log(dynamicReply);
+
         setChatHistory((prev)=>{
          const updated = [ ...prev,
           {role:"user",content:text},
@@ -166,13 +171,12 @@ clearTimeout(stopListeningTimeoutRef.current);
       })
       } catch (error) {
         console.error("Error fetching AI Reply:", error);
-        PaajiSpeaking(language === "hi"
-          ? "Maaf kijiye, abhi kuch problem ho gayi hai."
-          : "Sorry, I couldn't fetch a proper reply right now.");
+        PaajiSpeaking(
+           "Sorry, I couldn't fetch a proper reply right now.");
       }finally{
         setIsProcessing(false)
       }
-    // }
+
   }
 
   const stopListening = ()=>{
@@ -183,8 +187,7 @@ clearTimeout(stopListeningTimeoutRef.current);
     }
     setTranscript('');
     setListening(false);
-   clearTimeout(timeoutIdRef.current);
-clearTimeout(stopListeningTimeoutRef.current);
+  
   }
 
   useEffect(()=>{
@@ -204,12 +207,13 @@ clearTimeout(stopListeningTimeoutRef.current);
     }
 
     const recognition = new SpeechRecognition();
-    recognition.lang = language === "hi" ? "hi-IN" : "en-IN";
+    recognition.lang = language === "hi" ? "en-IN" : "en-IN";
     recognition.interimResults = false;
     recognition.continuous = true;
     recognition.onresult = (event) => {
         const lastResult = event.results[event.results.length - 1];
         const spokenText = lastResult[0].transcript;
+       stopSpeaking(); // 🔴 ADD THIS LINE: stop bot if user starts talking
         setTranscript((prev) => prev + " " + spokenText);
         handleResponse(spokenText);
 
@@ -218,27 +222,33 @@ clearTimeout(stopListeningTimeoutRef.current);
       console.log("error occured : ", event.error);
     };
     recognition.onstart = () => {
+  console.log("Speech recognition started...");
+
       setIsRecognizing(true);
     };
 
-   recognition.onend = () => {
+ recognition.onend = () => {
   console.log("Speech recognition ended...");
   setIsRecognizing(false);
 
   if (listening) {
-    // Restart only when safe
-    if (!isRecognizing && !speechSynthesis.speaking) {
-      recognition.start();
-    } else {
-      // Retry after a short delay
-      setTimeout(() => {
-        if (listening && !isRecognizing && !speechSynthesis.speaking) {
+    const retryRecognition = () => {
+      if (!isRecognizing && !speechSynthesis.speaking) {
+        try {
           recognition.start();
+          console.log("Recognition restarted");
+        } catch (err) {
+          console.error("Restart error:", err);
         }
-      }, 1000); // delay prevents overlap
-    }
+      } else {
+        setTimeout(retryRecognition, 1000); // Retry after 1s
+      }
+    };
+
+    setTimeout(retryRecognition, 1000); // Initial retry after 1s
   }
 };
+
 
 
 
@@ -249,9 +259,9 @@ clearTimeout(stopListeningTimeoutRef.current);
     const cleanupOnHideOrUnload = ()=>{
         stopListening();
         setIsSpeaking(false)
+        setIsRecognizing(false)
         stopSpeaking();
-         clearTimeout(timeoutIdRef.current);
-clearTimeout(stopListeningTimeoutRef.current);
+   
     };
     window.addEventListener('visibilitychange',()=>{
         if(document.hidden) cleanupOnHideOrUnload();
@@ -280,16 +290,14 @@ const recognition = recognitionRef.current;
   }
         setListening(true);
         greetUser();
-        // resetInactivityTimer();
-
     }else{
-        recognition.stop();
+        // recognition.stop();
         setIsSpeaking(false)
         stopSpeaking();
+        stopListening()
         setTranscript('');                                                          
         setListening(false);
-        clearTimeout(timeoutIdRef.current);
-clearTimeout(stopListeningTimeoutRef.current);
+        
 
     }
   };
@@ -297,11 +305,11 @@ clearTimeout(stopListeningTimeoutRef.current);
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
-  {/* {transcript && (
+ {transcript && (
         <p className="mt-4 text-lg text-center text-white">
           <strong>You said:</strong> {transcript}
         </p>
-      )} */}
+      )} 
       <button
         onClick={toggleListening}
         className={`${
