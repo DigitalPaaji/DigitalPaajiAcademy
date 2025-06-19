@@ -25,7 +25,7 @@ const [isSpeaking, setIsSpeaking] = useState(false);
 useEffect(()=>{
   const warmUpBackend = async ()=>{
     try{
-      await fetch("http://localhost:8000/api/ask-paaji",{
+      await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji",{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
@@ -133,7 +133,7 @@ useEffect(()=>{
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("http://localhost:8000/api/ask-paaji", {
+        const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
