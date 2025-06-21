@@ -339,7 +339,7 @@ const [isSpeaking, setIsSpeaking] = useState(false);
 useEffect(()=>{
   const warmUpBackend = async ()=>{
     try{
-      await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji",{
+      await fetch("http://localhost:8000/api/ask-paaji",{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
@@ -450,8 +450,10 @@ utterance.onend = () => {
 
   const greetUser = () => {
     PaajiSpeaking(
-    
-        "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
+ "Gupshup with Paaji mein aapka swagat hai . Let's talk learning - with a twist!  How can I assist you today?"
+
+
+        // "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
      
     );
   };
@@ -466,7 +468,7 @@ utterance.onend = () => {
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
+        const res = await fetch("http://localhost:8000/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -578,13 +580,33 @@ useEffect(() => {
 
   recognitionRef.current = recognition;
 
-  // Cleanup function
-  return () => {
-    stopListening();
+
+
+   const cleanup = () => {
+       setIsSpeaking(false)
+        stopSpeaking();
+        stopListening()
+        setTranscript('');                                                          
+        setListening(false);
+    };
+
+    window.addEventListener("visibilitychange", () => {
+      if (document.hidden) cleanup();
+    });
+    window.addEventListener("beforeunload", cleanup);
+    window.addEventListener("pagehide", cleanup);
+
+    return () => {
+      cleanup();
+      window.removeEventListener("visibilitychange", cleanup);
+      window.removeEventListener("beforeunload", cleanup);
+      window.removeEventListener("pagehide", cleanup);
+          stopListening();
     setIsSpeaking(false);
     setIsRecognizing(false);
     stopSpeaking();
-  };
+    };
+ 
 }, []);
 
 
