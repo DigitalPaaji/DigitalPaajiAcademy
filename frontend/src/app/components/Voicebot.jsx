@@ -1,316 +1,3 @@
-// "use client";
-// import Image from "next/image";
-// import React, { useEffect, useRef, useState } from "react";
-// import { CiMicrophoneOn } from "react-icons/ci";
-// import { FaRegCommentDots } from "react-icons/fa6";
-// import { RxCross2 } from "react-icons/rx";
-// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
-// export default function VoiceAssistant() {
-//   const [chatHistory, setChatHistory] = useState([]);
-//   const [listening, setListening] = useState(false);
-//   const [language, setLanguage] = useState("hi");
-//   const recognitionRef = useRef(null);
-//   const [transcript, setTranscript] = useState("");
-//   const [spokenResponse, setSpokenResponse] = useState("");
-//   const [isRecognizing, setIsRecognizing] = useState(false);
-//   const [isProcessing, setIsProcessing] = useState(false);
-//   const [isSpeaking, setIsSpeaking] = useState(false);
-
-//   useEffect(() => {
-//     const warmUpBackend = async () => {
-//       try {
-//         await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
-//           method: "POST",
-//           headers: { "Content-Type": "application/json" },
-//           body: JSON.stringify({ query: "hi", history: [], language: "hi" }),
-//         });
-//         console.log("✅ Backend warmed up");
-//       } catch (err) {
-//         console.error("❌ Backend warm-up failed:", err);
-//       }
-//     };
-//     warmUpBackend();
-//   }, []);
-
-//   const stopSpeaking = () => {
-//     if (speechSynthesis.speaking || speechSynthesis.pending) {
-//       speechSynthesis.cancel();
-//       console.log("🛑 Speech stopped");
-//     }
-//   };
-
-//   const PaajiSpeaking = (text) => {
-//     stopSpeaking();
-//     setSpokenResponse(text);
-//     setIsSpeaking(true);
-
-//     const utterance = new SpeechSynthesisUtterance(text);
-//     const voices = speechSynthesis.getVoices();
-//     const preferredLang = language === "hi" ? "hi" : "en";
-
-//     const knownFemaleVoices = {
-//       hi: ["Google हिन्दी", "Microsoft Heera"],
-//       en: ["Google UK English Female", "Microsoft Zira"],
-//     };
-
-//     const preferredVoice =
-//       voices.find(
-//         (v) =>
-//           v.lang.toLowerCase().includes(preferredLang) &&
-//           knownFemaleVoices[preferredLang].some((name) =>
-//             v.name.toLowerCase().includes(name.toLowerCase())
-//           )
-//       ) || voices.find((v) => v.lang.toLowerCase().includes(preferredLang)) || voices[0];
-
-//     if (preferredVoice) {
-//       utterance.voice = preferredVoice;
-//     }
-//     utterance.lang = preferredLang === "hi" ? "hi-IN" : "en-IN";
-//     utterance.rate = 1;
-
-//     utterance.onstart = () => {
-//       console.log("🔊 Speech started");
-//     };
-
-//     utterance.onend = () => {
-//       setIsSpeaking(false);
-//       console.log("🟢 Speech ended");
-//       if (listening) startRecognitionSafely();
-//     };
-
-//     speechSynthesis.speak(utterance);
-//   };
-
-//   const greetUser = () => {
-//     PaajiSpeaking("Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?");
-//   };
-
-//   const handleResponse = async (text) => {
-//     setIsProcessing(true);
-//     try {
-//       const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({
-//           query: text,
-//           history: chatHistory,
-//           lang: language,
-//         }),
-//       });
-//       const data = await res.json();
-//       const dynamicReply =
-//         data?.response ||
-//         "Looks like I don't have the info right now. Please contact our team.";
-
-//       const cleaned = dynamicReply
-//         .replace(/(\d+\.\s*|•\s*|\*\s*)/g, ".....")
-//         .replace(/\n/g, "... ")
-//         .replace(/  +/g, " ")
-//         .trim();
-
-//       PaajiSpeaking(cleaned);
-//       setChatHistory((prev) =>
-//         [...prev, { role: "user", content: text }, { role: "assistant", content: dynamicReply }].slice(-6)
-//       );
-//     } catch (error) {
-//       console.error("❌ Error fetching AI reply:", error);
-//       PaajiSpeaking("Sorry, I couldn't fetch a reply right now.");
-//     } finally {
-//       setIsProcessing(false);
-//     }
-//   };
-
-// const stopListening = () => {
-//   const recognition = recognitionRef.current;
-//   if (recognition) {
-//     try {
-//       if (isRecognizing) {
-//         recognition.stop(); // ✅ Stop gracefully if running
-//         console.log("🛑 Recognition stopped");
-//       } else {
-//         console.log("ℹ️ Recognition not running, no need to stop.");
-//       }
-//     } catch (e) {
-//       console.warn("⚠️ Recognition stop error:", e);
-//     }
-//   }
-//   setTranscript("");
-//   setListening(false);
-//   setIsRecognizing(false);
-// };
-
-
-//   const startRecognitionSafely = () => {
-//     const recognition = recognitionRef.current;
-//     if (!recognition) return;
-
-//     if (!speechSynthesis.speaking && !speechSynthesis.pending && !isRecognizing) {
-//       try {
-//         recognition.start();
-//         console.log("🎤 Recognition started manually");
-//       } catch (e) {
-//         console.error("❌ Error restarting recognition:", e);
-//       }
-//     }
-//   };
-
-//     useEffect(()=>{
-//     if(typeof window !== "undefined" && speechSynthesis.onvoiceschanged !== undefined ){
-//       speechSynthesis.onvoiceschanged = ()=>{
-//         speechSynthesis.getVoices();
-//       }
-//     }
-//   },[])
-
-
-//   useEffect(() => {
-//     const SpeechRecognition =
-//       window.SpeechRecognition || window.webkitSpeechRecognition;
-
-//     if (!SpeechRecognition) {
-//       alert("Speech Recognition not supported in this browser.");
-//       return;
-//     }
-
-//     const recognition = new SpeechRecognition();
-//     recognition.lang = "en-IN";
-//     recognition.interimResults = false;
-//     recognition.continuous = true;
-
-//     recognition.onstart = () => {
-//       setIsRecognizing(true);
-//       console.log("✅ onstart: recognizing = true");
-//     };
-
-//     recognition.onend = () => {
-//       setIsRecognizing(false);
-//       console.log("❌ onend: recognizing = false");
-//       if (listening) setTimeout(startRecognitionSafely, 1000);
-//     };
-
-//     recognition.onerror = (e) => {
-//       console.error("⚠️ Recognition error:", e.error);
-//     };
-
-//     recognition.onresult = (event) => {
-//       const result = event.results[event.results.length - 1];
-//       const userSpeech = result[0].transcript.trim();
-//       console.log("🎙️ You said:", userSpeech);
-//       stopSpeaking();
-//       setTranscript((prev) => prev + " " + userSpeech);
-//       handleResponse(userSpeech);
-//     };
-
-//     recognitionRef.current = recognition;
-
-//     const cleanup = () => {
-//       stopListening();
-//       stopSpeaking();
-//     };
-
-//     window.addEventListener("visibilitychange", () => {
-//       if (document.hidden) cleanup();
-//     });
-//     window.addEventListener("beforeunload", cleanup);
-//     window.addEventListener("pagehide", cleanup);
-
-//     return () => {
-//       cleanup();
-//       window.removeEventListener("visibilitychange", cleanup);
-//       window.removeEventListener("beforeunload", cleanup);
-//       window.removeEventListener("pagehide", cleanup);
-//     };
-//   }, []);
-
-//   const toggleListening = () => {
-//     const recognition = recognitionRef.current;
-//     if (!recognition) return;
-
-//     if (!listening) {
-//       setListening(true);
-//       if (!isRecognizing) {
-//         startRecognitionSafely();
-//       }
-//       greetUser();
-//     } else {
-//       stopSpeaking();
-//       stopListening();
-//     }
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
-//       <button
-//         onClick={toggleListening}
-//         className={`${
-//           listening
-//             ? "text-white"
-//             : isProcessing
-//             ? "text-yellow-400 animate-pulse"
-//             : "text-white animate-pulse"
-//         } flex items-center justify-center gap-2 cursor-pointer`}
-//       >
-//         {!isSpeaking && !listening && "Click to talk"}
-
-//         {isSpeaking ? (
-//           <Image
-//             alt=""
-//             src={"/Images/audio.gif"}
-//             width={20}
-//             height={20}
-//             className="w-7 h-7 rounded-full"
-//           />
-//         ) : listening ? (
-//           isProcessing ? (
-//             <DotLottieReact
-//               src="https://lottie.host/038ba804-bb12-4d0b-beec-426153a23d0f/ZbItyRZZuU.lottie"
-//               loop
-//               className="w-7 h-7 rounded-full bg-white"
-//               autoplay
-//             />
-//           ) : (
-//             <Image
-//               alt=""
-//               src={"/Images/mic.gif"}
-//               width={20}
-//               height={20}
-//               className="w-7 h-7 rounded-full"
-//             />
-//           )
-//         ) : (
-//           <CiMicrophoneOn className="w-[20px] h-[20px]" />
-//         )}
-
-//         {(isSpeaking || listening || isProcessing) && (
-//           <p className="p-[1px] text-white bg-red-600 rounded-full">
-//             <RxCross2 className="w-6 h-6" />
-//           </p>
-//         )}
-//       </button>
-
-//       <a
-//         href="https://wa.me/917814536643"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//         className="cursor-pointer text-white rounded-full flex items-center justify-center"
-//       >
-//         <Image
-//           src="/Images/whIcon.gif"
-//           width={20}
-//           height={20}
-//           alt=""
-//           className="w-8 h-8 rounded-full object-cover"
-//         />
-//       </a>
-//     </div>
-//   );
-// }
-
-
-
-
-
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
@@ -450,7 +137,7 @@ utterance.onend = () => {
 
   const greetUser = () => {
     PaajiSpeaking(
- "Gupshup with Paaji mein aapka swagat hai . Let's talk learning - with a twist!  How can I assist you today?"
+ "Welcome to Gupshup with Paaji . Let's talk learning - with a twist!  How can I assist you today?"
 
 
         // "Hello, I'm PaajiBot from Digital Paaji, How can I assist you today?"
@@ -610,28 +297,47 @@ useEffect(() => {
 }, []);
 
 
-  const toggleListening = () => {
+//   const toggleListening = () => {
     
-const recognition = recognitionRef.current;
-    if(!recognition) return;
+// const recognition = recognitionRef.current;
+//     if(!recognition) return;
 
-    if(!listening){
-        if (!isRecognizing) {
-    recognition.start();
-  }
-        setListening(true);
-        greetUser();
-    }else{
-        // recognition.stop();
-        setIsSpeaking(false)
-        stopSpeaking();
-        stopListening()
-        setTranscript('');                                                          
-        setListening(false);
+//     if(!listening){
+//         if (!isRecognizing) {
+//     recognition.start();
+//   }
+//         setListening(true);
+//         greetUser();
+//     }else{
+//         // recognition.stop();
+//         setIsSpeaking(false)
+//         stopSpeaking();
+//         stopListening()
+//         setTranscript('');                                                          
+//         setListening(false);
         
 
-    }
-  };
+//     }
+//   };
+const startListening = () => {
+  const recognition = recognitionRef.current;
+  if (!recognition || isRecognizing) return;
+
+  recognition.start();
+  setListening(true);
+  greetUser(); // Optional: play welcome message
+};
+
+const stopEverything = () => {
+  const recognition = recognitionRef.current;
+  if (recognition) recognition.stop();
+
+  stopSpeaking();
+  stopListening();
+  setIsSpeaking(false);
+  setTranscript('');
+  setListening(false);
+};
 
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
@@ -641,46 +347,51 @@ const recognition = recognitionRef.current;
           <strong>You said:</strong> {transcript}
         </p>
       )}  */}
-      <button
-        onClick={toggleListening}
-        className={`${
-          listening ? "text-white" : isProcessing?"text-yellow-400 animate-pulse" : "text-white animate-pulse"
-        }  flex items-center justify-center gap-2 cursor-pointer`}
-      >
-        {!isSpeaking && !listening && "Click to talk"}
-        {isSpeaking ? (
-    // <FaRegCommentDots className="w-[20px] h-[20px]" />
-   
-   <Image alt="" src={'/Images/audio.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
-  ) : 
-   listening ? isProcessing? 
-     (
-   <DotLottieReact
-      src="https://lottie.host/038ba804-bb12-4d0b-beec-426153a23d0f/ZbItyRZZuU.lottie"
-      loop
-      className="w-7 h-7 rounded-full bg-white "
-      autoplay
-    />
-   )
-    :
-   (
-   <Image alt="" src={'/Images/mic.gif'} width={20} height={20} className="w-7 h-7 rounded-full" />
-   )
-   : 
-  
-  (
-    <CiMicrophoneOn className="w-[20px] h-[20px]" /> 
-  )}
-  {" "}
-    <p className={`${isSpeaking? "p-[1px]" : listening ? isProcessing? "p-[1px]" : "p-[1px]" : "p-0"} text-white bg-red-600  rounded-full`}>
-      {isSpeaking? 
-      <RxCross2   className="w-6 h-6 "/>
-      : listening ? isProcessing?       <RxCross2   className="w-6 h-6 "/>
- :       <RxCross2   className="w-6 h-6 "/>
- : ""}
-      </p>
+     <button
+  onClick={!listening ? startListening : undefined}
+  className={`${
+    listening
+      ? "text-white"
+      : isProcessing
+      ? "text-yellow-400 animate-pulse"
+      : "text-white animate-pulse"
+  } flex items-center justify-center gap-2 cursor-pointer`}
+>
+  {/* Text */}
+  {!isSpeaking && !listening && "Click to talk"}
 
-      </button>
+  {/* Icon */}
+  {isSpeaking ? (
+    <Image alt="" src={"/Images/audio.gif"} width={20} height={20} className="w-7 h-7 rounded-full" />
+  ) : listening ? (
+    isProcessing ? (
+      <DotLottieReact
+        src="https://lottie.host/038ba804-bb12-4d0b-beec-426153a23d0f/ZbItyRZZuU.lottie"
+        loop
+        autoplay
+        className="w-7 h-7 rounded-full bg-white"
+      />
+    ) : (
+      <Image alt="" src={"/Images/mic.gif"} width={20} height={20} className="w-7 h-7 rounded-full" />
+    )
+  ) : (
+    <CiMicrophoneOn className="w-[20px] h-[20px]" />
+  )}
+
+  {/* Cross button */}
+  {listening || isSpeaking ? (
+    <span
+      onClick={(e) => {
+        e.stopPropagation(); // prevent outer button click
+        stopEverything();
+      }}
+      className="p-[1px] text-white bg-red-600 rounded-full"
+    >
+      <RxCross2 className="w-6 h-6" />
+    </span>
+  ) : null}
+</button>
+
             <a
         href="https://wa.me/917814536643"
         target="_blank"
