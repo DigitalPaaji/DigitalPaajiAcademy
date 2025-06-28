@@ -3,6 +3,7 @@ const express = require("express");
 // const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const transcribe = require('./routes/transcribe')
 const askPaaji = require('./routes/askPaaji')
 
 const app = express();
@@ -12,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use('/api',askPaaji)
+app.use('/api2',transcribe)
+
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
 

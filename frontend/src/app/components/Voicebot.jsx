@@ -123,7 +123,12 @@ utterance.onend = () => {
   // console.log("🟢 Speech ended...");
   // if (listening) {
   //   setTimeout(() => {
-      startRecognitionSafely();
+      if (listening && recognitionRef.current) {
+        console.log("🔁 Starting listening again after speaking...");
+         recognitionRef.current.start();
+  // const recorder = recognitionRef.current;
+  // recorder && recorder.start(); // restart recording after reply
+}
   //   }, 500);
   // }
 };
@@ -219,82 +224,186 @@ PaajiSpeaking(cleaned);
     }
   },[])
 
-useEffect(() => {
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-    alert("Your browser does not support Speech Recognition.");
-    return;
-  }
+// useEffect(() => {
+//   const SpeechRecognition =
+//     window.SpeechRecognition || window.webkitSpeechRecognition;
+//   if (!SpeechRecognition) {
+//     alert("Your browser does not support Speech Recognition.");
+//     return;
+//   }
 
-  const recognition = new SpeechRecognition();
-  recognition.lang = language === "hi" ? "hi-IN" : "en-IN"; // Ensure correct language
-  recognition.interimResults = false;
-  recognition.continuous = true; // Ensure continuous recognition
+//   const recognition = new SpeechRecognition();
+//   recognition.lang = language === "hi" ? "hi-IN" : "en-IN"; // Ensure correct language
+//   recognition.interimResults = false;
+//   recognition.continuous = true; // Ensure continuous recognition
 
-  recognition.onresult = (event) => {
-    const lastResult = event.results[event.results.length - 1];
-    const spokenText = lastResult[0].transcript;
-    stopSpeaking(); // Stop bot if user starts talking
-    setTranscript((prev) => prev + " " + spokenText);
-    handleResponse(spokenText);
-  };
+//   recognition.onresult = (event) => {
+//     const lastResult = event.results[event.results.length - 1];
+//     const spokenText = lastResult[0].transcript;
+//     stopSpeaking(); // Stop bot if user starts talking
+//     setTranscript((prev) => prev + " " + spokenText);
+//     handleResponse(spokenText);
+//   };
 
-  recognition.onerror = (event) => {
-    // console.log("⚠️ Recognition error:", event.error);
-    // Optionally restart recognition on error
-    if (listening) {
-      setTimeout(() => {
-        startRecognitionSafely();
-      }, 1000);
-    }
-  };
+//   recognition.onerror = (event) => {
+//     // console.log("⚠️ Recognition error:", event.error);
+//     // Optionally restart recognition on error
+//     if (listening) {
+//       setTimeout(() => {
+//         startRecognitionSafely();
+//       }, 1000);
+//     }
+//   };
 
-  recognition.onstart = () => {
-    setIsRecognizing(true);
-    // console.log("✅ onstart: isRecognizing = true");
-  };
+//   recognition.onstart = () => {
+//     setIsRecognizing(true);
+//     // console.log("✅ onstart: isRecognizing = true");
+//   };
 
-  recognition.onend = () => {
-    setIsRecognizing(false);
-    // console.log("❌ onend: isRecognizing = false");
-    if (listening) {
-      setTimeout(() => {
-        startRecognitionSafely(); // Restart recognition
-      }, 1000); // Retry safely after end
-    }
-  };
+//   recognition.onend = () => {
+//     setIsRecognizing(false);
+//     // console.log("❌ onend: isRecognizing = false");
+//     if (listening) {
+//       setTimeout(() => {
+//         startRecognitionSafely(); // Restart recognition
+//       }, 1000); // Retry safely after end
+//     }
+//   };
 
-  recognitionRef.current = recognition;
+//   recognitionRef.current = recognition;
 
 
 
-   const cleanup = () => {
-       setIsSpeaking(false)
-        stopSpeaking();
-        stopListening()
-        setTranscript('');                                                          
-        setListening(false);
-    };
+//    const cleanup = () => {
+//        setIsSpeaking(false)
+//         stopSpeaking();
+//         stopListening()
+//         setTranscript('');                                                          
+//         setListening(false);
+//     };
 
-    window.addEventListener("visibilitychange", () => {
-      if (document.hidden) cleanup();
-    });
-    window.addEventListener("beforeunload", cleanup);
-    window.addEventListener("pagehide", cleanup);
+//     window.addEventListener("visibilitychange", () => {
+//       if (document.hidden) cleanup();
+//     });
+//     window.addEventListener("beforeunload", cleanup);
+//     window.addEventListener("pagehide", cleanup);
 
-    return () => {
-      cleanup();
-      window.removeEventListener("visibilitychange", cleanup);
-      window.removeEventListener("beforeunload", cleanup);
-      window.removeEventListener("pagehide", cleanup);
-          stopListening();
-    setIsSpeaking(false);
-    setIsRecognizing(false);
-    stopSpeaking();
-    };
+//     return () => {
+//       cleanup();
+//       window.removeEventListener("visibilitychange", cleanup);
+//       window.removeEventListener("beforeunload", cleanup);
+//       window.removeEventListener("pagehide", cleanup);
+//           stopListening();
+//     setIsSpeaking(false);
+//     setIsRecognizing(false);
+//     stopSpeaking();
+//     };
  
+// }, []);
+
+
+
+useEffect(() => {
+  let silenceTimer;
+  let mediaRecorder;
+  let audioChunks = [];
+0
+  const setupMedia = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+
+      mediaRecorder.ondataavailable = (e) => {
+        console.log("chunk received"); // add this
+        audioChunks.push(e.data);
+      };
+mediaRecorder.onstop = async () => {
+  const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+  audioChunks = [];
+
+  const formData = new FormData();
+  formData.append("file", audioBlob);
+
+  try {
+    const res = await fetch("http://localhost:8000/api2/transcribe", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+    console.log("Transcription Response:", data);
+
+  const finalTranscript = data.transcript?.trim();
+
+if (finalTranscript) {
+  setTranscript(finalTranscript);
+  await handleResponse(finalTranscript);
+} else {
+  if (!chatHistory.length) {
+    // If it's the first interaction after greeting, just retry
+    console.log("⏳ Waiting for user to speak...");
+    recognitionRef.current?.start(); // Retry listening
+  } else {
+    PaajiSpeaking("Kya aap dubara bolenge? Samajh nahi aaya.");
+  }
+}
+
+  } catch (err) {
+    console.error("Transcription error:", err);
+    PaajiSpeaking("Kuch galti ho gayi samajhne mein.");
+  }
+};
+
+
+let firstTime = true;
+
+recognitionRef.current = {
+  start: () => {
+    console.log("🎙 Recording started");
+    audioChunks = [];
+    mediaRecorder.start();
+    setListening(true);
+
+    if (firstTime) {
+      greetUser(); // Only once at beginning
+      firstTime = false;
+    }
+
+    // Auto-stop after 3 seconds silence
+    silenceTimer = setInterval(() => {
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        console.log("⏸ Detected silence — stopping...");
+        mediaRecorder.stop();
+        clearInterval(silenceTimer);
+      }
+    }, 3000);
+  },
+  stop: () => {
+    console.log("🛑 Manual stop");
+    if (mediaRecorder && mediaRecorder.state !== "inactive") {
+      mediaRecorder.stop();
+    }
+    clearInterval(silenceTimer);
+    setListening(false);
+    firstTime = true;
+  }
+};
+
+
+    } catch (err) {
+      console.error("Mic permission error:", err);
+      PaajiSpeaking("Mic access is needed to talk.");
+    }
+  };
+
+  setupMedia();
+
+  return () => {
+    stopListening();
+    stopSpeaking();
+  };
 }, []);
+
 
 
 //   const toggleListening = () => {
@@ -319,19 +428,29 @@ useEffect(() => {
 
 //     }
 //   };
-const startListening = () => {
-  const recognition = recognitionRef.current;
-  if (!recognition || isRecognizing) return;
 
-  recognition.start();
-  setListening(true);
-  greetUser(); // Optional: play welcome message
+
+
+const startListening = () => {
+  // const recognition = recognitionRef.current;
+  // if (!recognition || isRecognizing) return;
+
+  // recognition.start();
+  // setListening(true);
+
+
+  const recorder = recognitionRef.current;
+  if (recorder) {
+    recorder.start();
+  }
+
 };
 
 const stopEverything = () => {
-  const recognition = recognitionRef.current;
-  if (recognition) recognition.stop();
-
+  // const recognition = recognitionRef.current;
+  // if (recognition) recognition.stop();
+  const recorder = recognitionRef.current;
+  if (recorder) recorder.stop();
   stopSpeaking();
   stopListening();
   setIsSpeaking(false);
@@ -342,11 +461,11 @@ const stopEverything = () => {
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
- {/* {transcript && (
+{transcript && (
         <p className="mt-4 text-lg text-center text-white">
           <strong>You said:</strong> {transcript}
         </p>
-      )}  */}
+      )}  
      <button
   onClick={!listening ? startListening : undefined}
   className={`${
