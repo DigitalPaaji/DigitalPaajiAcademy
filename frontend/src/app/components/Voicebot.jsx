@@ -350,7 +350,7 @@ if (finalTranscript) {
 
   } catch (err) {
     console.error("Transcription error:", err);
-    PaajiSpeaking("Kuch galti ho gayi samajhne mein.");
+    // PaajiSpeaking("");
   }
 };
 
@@ -461,11 +461,11 @@ const stopEverything = () => {
   return (
     <div className=" flex items-center justify-center  px-4 py-2 border-white bg-black border-2 rounded-full gap-2">
       {/* Language Selector */}
-{transcript && (
+{/* {transcript && (
         <p className="mt-4 text-lg text-center text-white">
           <strong>You said:</strong> {transcript}
         </p>
-      )}  
+      )}   */}
      <button
   onClick={!listening ? startListening : undefined}
   className={`${

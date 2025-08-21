@@ -171,7 +171,7 @@ function Navbar({openPopup}) {
           />
         </Link> */}
 
-        <ul className="poppins text-white hidden lg:flex space-x-8 font-medium text-md xl:text-lg">
+        <ul className="poppins text-white hidden xl:flex space-x-6 font-medium text-base xl:text-md">
           <li>
             <Link href="/#course-corner" 
             className="relative inline-block group"
@@ -192,6 +192,14 @@ function Navbar({openPopup}) {
           <li>
             <Link href="/vibe" className="relative inline-block group">
             <span>    Vibe Check
+                </span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
+                  </span>
+         </Link>
+          </li>
+                 <li>
+            <Link href="/result" className="relative inline-block group">
+            <span>   Student Certificates
                 </span>
                 <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff850d] transition-[width] duration-300 group-hover:w-full">
                   </span>
@@ -229,7 +237,7 @@ function Navbar({openPopup}) {
         </div>
 
         {/* Hamburger Icon - Mobile */}
-        <div className="lg:hidden ">
+        <div className="xl:hidden ">
           <button onClick={toggleMenu} className="text-2xl cursor-pointer text-white">
             {menuOpen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
           </button>
@@ -242,7 +250,7 @@ function Navbar({openPopup}) {
    
     <ul
         ref={dropdownRef}
-        className="poppins lg:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
+        className="poppins xl:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium hidden"
       >
       <li>
             <Link href="/#course-corner" onClick={() => setMenuOpen(!menuOpen)} >Course Corner</Link>
@@ -253,10 +261,14 @@ function Navbar({openPopup}) {
           <li>
             <Link href="/vibe" onClick={() => setMenuOpen(!menuOpen)} >Vibe Check</Link>
           </li>
-         
              <li>
             <Link href="/contact"  onClick={() => setMenuOpen(!menuOpen)}>Talk to Paaji</Link>
           </li>
+            <li>
+            <Link href="/result" onClick={() => setMenuOpen(!menuOpen)} >Student Certificates</Link>
+          </li>
+         
+          
 
       </ul>
    
