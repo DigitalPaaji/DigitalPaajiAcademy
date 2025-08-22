@@ -2,6 +2,7 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import Image from "next/image";
 
 // Dummy JSON data (4 students)
 const students = [
@@ -71,8 +72,8 @@ export default function CertificatePage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h1 className="text-2xl font-bold mb-6">🎓 Student Certificate Verification</h1>
+    <div className="flex flex-col items-center justify-center  p-6 my-40">
+      <h1 className="poppins text-md xl:text-2xl font-bold mb-6">Student Certificate Verification</h1>
 
       <div className="flex gap-2">
         <input
@@ -80,29 +81,33 @@ export default function CertificatePage() {
           placeholder="Enter Student Code"
           value={code}
           onChange={(e) => setCode(e.target.value)}
-          className="border px-4 py-2 rounded-lg w-64"
+          className="border px-4 py-2 rounded-lg w-64 focus:outline-none"
         />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg"
-        >
-          Search
-        </button>
+<button
+  onClick={handleSearch}
+  className="relative overflow-hidden text-lg w-full md:w-auto
+             bg-gradient-to-r from-[#020813] to-[#061022] 
+             text-white px-6 py-2 rounded-lg shadow-md 
+             transition-all duration-500 ease-out 
+             hover:scale-105  cursor-pointer"
+>
+  Search
+</button>
+
       </div>
 
-      {error && <p className="text-red-500 mt-4">{error}</p>}
+      {error && <p className="text-red-800 mt-4">{error}</p>}
 
       {student && (
-        <div className="mt-6 p-4 bg-white shadow rounded-lg w-full max-w-lg text-center">
-          <h2 className="text-xl font-semibold">{student.name}</h2>
-          <p>Father&apos;s Name: {student.fatherName}</p>
-          <p>Course: {student.course}</p>
-          <p>Duration: {student.duration}</p>
-          <img
+        <div className="mt-6 p-4 shadow rounded-lg w-full max-w-4xl text-end">
+      
+          <Image
+          width={440}
+          height={440}
             id="certificate-img"
             src={student.certificate}
             alt="Certificate"
-            className="mt-4 w-full rounded-lg"
+            className="mt-4 w-full h-auto object-cover rounded-lg"
           />
           <button
             onClick={downloadPDF}

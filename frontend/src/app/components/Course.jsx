@@ -324,21 +324,35 @@ export default function CoursesHorizontal() {
               courses give you the tools to succeed.
             </p>
           </div>
-          <div className="relative z-20 w-full md:w-[350px] h-16 mx-auto xl:mx-0 ">
-            <div className="absolute top-[6px] left-[4px] bg-white border-2 border-white w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+         
+         
+         <div className="relative z-20 w-full md:w-[350px] h-16 mx-auto xl:mx-0 group">
+  {/* Shadow/Base */}
+  <div
+    className="absolute top-[6px] left-[4px] 
+    bg-white border-2 border-white 
+    w-full h-full rounded-md 
+    transition-all duration-300 
+    group-hover:top-[4px] group-hover:left-[3px]"
+  />
 
-            <Link
-              href="/contact"
-              ref={btnRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="poppins text-lg absolute top-0 pl-4 md:pl-0 left-0 w-full h-full bg-black text-white rounded-md flex items-center gap-3 justify-center 
-               active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
-            >
-              {/* <BsArrowRight/>{" "} */}
-              Enroll Now
-            </Link>
-          </div>
+  {/* Actual Button */}
+  <Link
+    href="/contact"
+    ref={btnRef}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    className="poppins text-lg absolute top-0 left-0 pl-4 md:pl-0
+      w-full h-full bg-black text-white rounded-md 
+      flex items-center gap-3 justify-center 
+      transition-all duration-150 
+      group-hover:top-[0px] group-hover:left-[0px]
+      active:translate-x-[2px] active:translate-y-[2px]"
+  >
+    Enroll Now
+  </Link>
+</div>
+
         </div>
 
         <div className="w-full  xl:w-[70%] h-[650px] relative overflow-hidden ">

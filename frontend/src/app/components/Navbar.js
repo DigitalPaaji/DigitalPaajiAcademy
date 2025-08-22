@@ -147,7 +147,7 @@ function Navbar({openPopup}) {
           
           <div
             className={`hidden xl:flex items-center justify-center overflow-hidden transition-[width] duration-1000 ease-in-out h-[3rem] ${
-              isHovering ? "w-[140px] object-contain" : "w-0"
+              isHovering ? "w-32 object-cover" : "w-0"
             }`}
           >
             <Image width={200} height={200}
@@ -171,7 +171,7 @@ function Navbar({openPopup}) {
           />
         </Link> */}
 
-        <ul className="poppins text-white hidden xl:flex space-x-6 font-medium text-base xl:text-md">
+        <ul className="poppins text-white hidden xl:flex space-x-8 font-medium text-base xl:text-md">
           <li>
             <Link href="/#course-corner" 
             className="relative inline-block group"
@@ -215,26 +215,36 @@ function Navbar({openPopup}) {
         </ul>
 
         {/* Enroll Now - Right */}
-        <div className=" ">
-          <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 ">
-            {/* Shadow/Base */}
-            <div className="absolute top-[6px] left-[4px] hover:pt-4 bg-black border-2 border-[#000000b4] w-full h-full rounded-md transition-all duration-100 pointer-events-none" />
+     {/* Enroll Now - Right */}
+<div className="">
+  <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 group">
+    {/* Shadow/Base */}
+    <div
+      className="absolute top-[6px] left-[4px] 
+      bg-black border-2 border-[#000000b4] 
+      w-full h-full rounded-md 
+      transition-all duration-150 
+   group-hover:top-[4px] group-hover:left-[3px]"
+    />
 
-            {/* Actual Button */}
-            <button
-              onClick={()=>openPopup()}
-              ref={btnRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="
-               
-              poppins-bold cursor-pointer absolute top-0 left-0 w-full h-full bg-white text-black rounded-md flex items-center justify-center 
-               "
-            >
-              Enroll Now
-            </button>
-          </div>
-        </div>
+    {/* Actual Button */}
+    <button
+      onClick={() => openPopup()}
+      ref={btnRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="
+        poppins-bold cursor-pointer absolute top-0 left-0 
+        w-full h-full bg-white text-black rounded-md 
+        flex items-center justify-center 
+        transition-all duration-150 
+        group-hover:top-[2px] group-hover:left-[2px]"
+    >
+      Enroll Now
+    </button>
+  </div>
+</div>
+
 
         {/* Hamburger Icon - Mobile */}
         <div className="xl:hidden ">

@@ -44,8 +44,8 @@ useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textRef.current,
-        start: "top 40%",
-        end: "bottom 40%",
+        start: "top 70%",
+        end: "bottom 100%",
         scrub: 1,
       },
     });
