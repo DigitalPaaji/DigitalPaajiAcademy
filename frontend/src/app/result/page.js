@@ -3,40 +3,36 @@ import { useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import AnimatedButton from "../components/AnimatedButton";
 
 // Dummy JSON data (4 students)
 const students = [
+
+
   {
-    code: "STU001",
-    name: "Aman Sharma",
-    fatherName: "Rajesh Sharma",
-    course: "Full Stack Development",
-    duration: "6 Months",
-    certificate: "/Images/certificate.webp",
+    code: "PTA/DM/25/001",
+    certificate: "/Images/1.jpg",
   },
   {
-    code: "STU002",
-    name: "Simran Kaur",
-    fatherName: "Harpreet Singh",
-    course: "Digital Marketing",
-    duration: "3 Months",
-    certificate: "/Images/certificate.webp",
+    code: "PTA/DM/25/002",
+    
+    certificate: "/Images/2.jpg",
   },
   {
-    code: "STU003",
-    name: "Rahul Verma",
-    fatherName: "Suresh Verma",
-    course: "Data Analysis",
-    duration: "4 Months",
-    certificate: "/Images/certificate.webp",
+    code: "PTA/DM/25/003",
+   
+    certificate: "/Images/3.jpg",
   },
   {
-    code: "STU004",
-    name: "Priya Mehta",
-    fatherName: "Anil Mehta",
-    course: "UI/UX Design",
-    duration: "5 Months",
-    certificate: "/Images/certificate.webp",
+    code: "PTA/DM/25/004",
+
+    certificate: "/Images/4.jpg",
+  },
+    {
+    code: "PTA/GD/25/001",
+   
+    certificate: "/Images/5.jpg",
   },
 ];
 
@@ -73,19 +69,19 @@ export default function CertificatePage() {
 
   return (
     <div className="flex flex-col items-center justify-center  p-6 my-40">
-      <h1 className="poppins text-md xl:text-2xl font-bold mb-6">Student Certificate Verification</h1>
+      <h1 className="poppins text-2xl text-center xl:text-3xl font-bold mb-6">Student Certificate Verification</h1>
 
-      <div className="flex gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         <input
           type="text"
           placeholder="Enter Student Code"
           value={code}
           onChange={(e) => setCode(e.target.value)}
-          className="border px-4 py-2 rounded-lg w-64 focus:outline-none"
+          className="border px-4 py-2 rounded-lg focus:outline-none"
         />
 <button
   onClick={handleSearch}
-  className="relative overflow-hidden text-lg w-full md:w-auto
+  className="relative overflow-hidden text-lg w-auto
              bg-gradient-to-r from-[#020813] to-[#061022] 
              text-white px-6 py-2 rounded-lg shadow-md 
              transition-all duration-500 ease-out 
@@ -96,25 +92,38 @@ export default function CertificatePage() {
 
       </div>
 
-      {error && <p className="text-red-800 mt-4">{error}</p>}
+      {error && <p className="text-red-800 mt-4 text-center ">{error}</p>}
 
       {student && (
-        <div className="mt-6 p-4 shadow rounded-lg w-full max-w-4xl text-end">
+        <div className="mt-6 w-full max-w-4xl text-end">
       
-          <Image
-          width={440}
-          height={440}
-            id="certificate-img"
-            src={student.certificate}
-            alt="Certificate"
-            className="mt-4 w-full h-auto object-cover rounded-lg"
-          />
-          <button
+ <motion.div
+  initial={{ height: 0, opacity: 0 }}
+  animate={{ height: "auto", opacity: 1 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="overflow-hidden"
+>
+  <Image
+    width={440}
+    height={440}
+    id="certificate-img"
+    src={student.certificate}
+    alt="Certificate"
+    className="w-full h-auto lg:h-[700px] object-contain rounded-lg"
+  />
+</motion.div>
+              {/* Enroll Now Button */}
+
+ <AnimatedButton downloadPDF={downloadPDF} />
+
+
+         
+          {/* <button
             onClick={downloadPDF}
             className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg"
           >
             Download PDF
-          </button>
+          </button> */}
         </div>
       )}
     </div>
