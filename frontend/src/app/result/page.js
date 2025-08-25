@@ -1,48 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AnimatedButton from "../components/AnimatedButton";
 
-// Dummy JSON data (4 students)
-const students = [
-
-
-  {
-    code: "PTA/DM/25/001",
-    certificate: "/Images/1.jpg",
-  },
-  {
-    code: "PTA/DM/25/002",
-    
-    certificate: "/Images/2.jpg",
-  },
-  {
-    code: "PTA/DM/25/003",
-   
-    certificate: "/Images/3.jpg",
-  },
-  {
-    code: "PTA/DM/25/004",
-
-    certificate: "/Images/4.jpg",
-  },
-    {
-    code: "PTA/GD/25/001",
-   
-    certificate: "/Images/5.jpg",
-  },
-];
-
 export default function CertificatePage() {
+  const [students, setStudents] = useState([]);
   const [code, setCode] = useState("");
   const [student, setStudent] = useState(null);
   const [error, setError] = useState("");
 
+  // ✅ Fetch students.json from public/data
+  useEffect(() => {
+    fetch("/Students.json")
+      .then((res) => res.json())
+      .then((data) => setStudents(data))
+      .catch(() => {
+        toast.error("⚠️ Failed to load student data");
+      });
+  }, []);
+
   const handleSearch = () => {
-    const found = students.find((s) => s.code === code.trim().toUpperCase());
+    const found = students.find(
+      (s) => s.code.toUpperCase() === code.trim().toUpperCase()
+    );
     if (found) {
       setStudent(found);
       setError("");
@@ -59,17 +44,21 @@ export default function CertificatePage() {
     const canvas = await html2canvas(input, { useCORS: true });
     const imgData = canvas.toDataURL("image/png");
 
-    const pdf = new jsPDF("landscape", "mm", "a4"); // landscape for certificates
-    const imgWidth = 297; // A4 width in mm
+    const pdf = new jsPDF("landscape", "mm", "a4");
+    const imgWidth = 297;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
     pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
     pdf.save(`${student.code}_certificate.pdf`);
+    toast.success("Certificate downloaded successfully!");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  p-6 my-40">
-      <h1 className="poppins text-2xl text-center xl:text-3xl font-bold mb-6">Student Certificate Verification</h1>
+    <div className="flex flex-col items-center justify-center p-6 my-40">
+      <ToastContainer position="top-right" style={{ zIndex: 99999 }} autoClose={3000} />
+      <h1 className="poppins text-2xl text-center xl:text-3xl font-bold mb-6">
+        Student Certificate Verification
+      </h1>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
         <input
@@ -79,51 +68,38 @@ export default function CertificatePage() {
           onChange={(e) => setCode(e.target.value)}
           className="border px-4 py-2 rounded-lg focus:outline-none"
         />
-<button
-  onClick={handleSearch}
-  className="relative overflow-hidden text-lg w-auto
+        <button
+          onClick={handleSearch}
+          className="relative overflow-hidden text-lg w-auto
              bg-gradient-to-r from-[#020813] to-[#061022] 
              text-white px-6 py-2 rounded-lg shadow-md 
              transition-all duration-500 ease-out 
-             hover:scale-105  cursor-pointer"
->
-  Search
-</button>
-
+             hover:scale-105 cursor-pointer"
+        >
+          Search
+        </button>
       </div>
 
-      {error && <p className="text-red-800 mt-4 text-center ">{error}</p>}
+      {error && <p className="text-red-800 mt-4 text-center">{error}</p>}
 
       {student && (
         <div className="mt-6 w-full max-w-4xl text-end">
-      
- <motion.div
-  initial={{ height: 0, opacity: 0 }}
-  animate={{ height: "auto", opacity: 1 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  className="overflow-hidden"
->
-  <Image
-    width={440}
-    height={440}
-    id="certificate-img"
-    src={student.certificate}
-    alt="Certificate"
-    className="w-full h-auto lg:h-[700px] object-contain rounded-lg"
-  />
-</motion.div>
-              {/* Enroll Now Button */}
-
- <AnimatedButton downloadPDF={downloadPDF} />
-
-
-         
-          {/* <button
-            onClick={downloadPDF}
-            className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg"
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="overflow-hidden"
           >
-            Download PDF
-          </button> */}
+            <Image
+              width={440}
+              height={440}
+              id="certificate-img"
+              src={student.certificate}
+              alt="Certificate"
+              className="w-full h-auto lg:h-[700px] object-contain rounded-lg"
+            />
+          </motion.div>
+          <AnimatedButton downloadPDF={downloadPDF} />
         </div>
       )}
     </div>
