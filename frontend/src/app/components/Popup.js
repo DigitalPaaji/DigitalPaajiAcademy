@@ -75,7 +75,7 @@ function Popup({ closeMenu }) {
         setIsSubmitting(true);
     
         try {
-          const response = await fetch('https://digitalpaajiacademy.onrender.com/send-mail', {
+          const response = await fetch('http://localhost:8000/send-mail', {
          
     
             method: 'POST',
