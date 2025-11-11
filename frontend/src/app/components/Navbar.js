@@ -5,13 +5,14 @@ import { LiaTimesSolid } from "react-icons/lia";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
-import Popup from "./Popup";
+// import { usePathname } from 'next/navigation';
 
 function Navbar({openPopup}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const btnRef = useRef(null);
   const borderRef = useRef(null);
   const dropdownRef = useRef(null);
+  //  const pathname = usePathname();
 
 //  const [isOpen, setIsOpen] = useState(false);
   // const openMenu = () => {
@@ -22,6 +23,11 @@ function Navbar({openPopup}) {
   // };
 
 
+  // useEffect(() => {
+  //   if (pathname === '/enroll-now') {
+  //     openPopup();
+  //   }
+  // }, [pathname, openPopup]);
 
   useEffect(() => {
     gsap.from(btnRef.current, {

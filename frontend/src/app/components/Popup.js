@@ -4,8 +4,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useRouter } from "next/navigation";
 
 function Popup({ closeMenu }) {
+    const router = useRouter();
       const [formData, setFormData] = useState({
         name: '',
             phone: '',
@@ -160,7 +162,10 @@ function Popup({ closeMenu }) {
          
           <AiOutlineClose
             className="absolute top-4 right-4 text-2xl cursor-pointer text-gray-600"
-            onClick={closeMenu}
+                    onClick={() => {
+                closeMenu();       // close popup
+                router.push('/');  // ✅ navigate to home
+              }}
           />
 
 
