@@ -59,13 +59,22 @@ app.post("/send-mail", async (req, res) => {
  // Proceed to send the email if reCAPTCHA is successful
   try {
     // Create a transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail", 
-      auth: {
-        user: process.env.EMAIL, 
-        pass: process.env.PASSWORD,
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   service: "gmail", 
+    //   auth: {
+    //     user: process.env.EMAIL, 
+    //     pass: process.env.PASSWORD,
+    //   },
+    // });
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // true for 465, false for 587
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
+  },
+});
 
 // Email options
 const mailOptions = {
