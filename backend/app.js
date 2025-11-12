@@ -58,25 +58,13 @@ app.post("/send-mail", async (req, res) => {
   }
  // Proceed to send the email if reCAPTCHA is successful
   try {
-    // Create a transporter
-    // const transporter = nodemailer.createTransport({
-    //   service: "gmail", 
-    //   auth: {
-    //     user: process.env.EMAIL, 
-    //     pass: process.env.PASSWORD,
-    //   },
-    // });
-// Create a transporter using Brevo SMTP
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST, // smtp-relay.brevo.com
-  port: process.env.SMTP_PORT, // 587
-  secure: false, // Brevo uses STARTTLS
-  auth: {
-    user: process.env.SMTP_USER, // your Brevo email
-    pass: process.env.SMTP_PASS, // your Brevo SMTP key
-  },
-});
-
+    const transporter = nodemailer.createTransport({
+      service: "gmail", 
+      auth: {
+        user: process.env.EMAIL, 
+        pass: process.env.PASSWORD,
+      },
+    });
 
 
 // Email options
