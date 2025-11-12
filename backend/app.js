@@ -66,15 +66,18 @@ app.post("/send-mail", async (req, res) => {
     //     pass: process.env.PASSWORD,
     //   },
     // });
+// Create a transporter using Brevo SMTP
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true, // true for 465, false for 587
+  host: process.env.SMTP_HOST, // smtp-relay.brevo.com
+  port: process.env.SMTP_PORT, // 587
+  secure: false, // Brevo uses STARTTLS
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    user: process.env.SMTP_USER, // your Brevo email
+    pass: process.env.SMTP_PASS, // your Brevo SMTP key
   },
 });
+
+
 
 // Email options
 const mailOptions = {
