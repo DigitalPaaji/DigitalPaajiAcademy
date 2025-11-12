@@ -22,6 +22,8 @@ app.use('/api2',transcribe)
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
 
+app.get("/", (req, res) => res.send("Backend is running"));
+
 // Email sending route
 app.post("/send-mail", async (req, res) => {
   console.log("Received form data:", req.body);
@@ -54,17 +56,7 @@ app.post("/send-mail", async (req, res) => {
     console.error("reCAPTCHA verification error:", error);
     return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
   }
-
-
-
-
-
-
-
-
-
-
-  // Proceed to send the email if reCAPTCHA is successful
+ // Proceed to send the email if reCAPTCHA is successful
   try {
     // Create a transporter
     const transporter = nodemailer.createTransport({
