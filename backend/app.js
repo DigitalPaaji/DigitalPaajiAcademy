@@ -83,98 +83,132 @@ const mailOptions = {
   to: process.env.receiverEMAIL,
   subject: `New Contact Form Submission from ${name}`,
   html: `
-  <div style="font-family: Arial, sans-serif; background: #FAF8EA; padding: 15px; width: 100%; box-sizing: border-box;">
-
+  <div style="font-family: Arial, sans-serif; background: #FAF8EA; padding: 20px; margin: 0;">
+    
+    <!-- Card Wrapper -->
     <div style="
-      max-width: 600px;
-      margin: auto;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 20px;
+      max-width: 600px; 
+      background: #ffffff; 
+      margin: auto; 
+      padding: 20px; 
+      border-radius: 10px; 
       border: 1px solid #e5e5e5;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      word-break: break-word;
-      overflow-wrap: break-word;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     ">
 
-      <!-- Heading -->
-      <div style="text-align: center; margin-bottom: 20px;">
-        <h2 style="
-          margin: 0;
-          font-size: 22px;
-          font-weight: bold;
-          color: #B67032;
-          word-break: break-word;
+      <!-- Title -->
+      <h2 style="
+        text-align: center; 
+        color: #B67032; 
+        font-size: 22px; 
+        margin-bottom: 20px;
+      ">
+        New Contact Form Submission
+      </h2>
+
+      <!-- Row -->
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Name:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        ">${name}</p>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Email:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         ">
-          New Contact Form Submission
-        </h2>
-        <p style="color: #444; font-size: 14px; margin-top: 8px;">
-          A new inquiry has been submitted through Digital Paaji.
+          <a href="mailto:${email}" style="color:#B67032; text-decoration:none;">${email}</a>
         </p>
       </div>
 
-      <!-- Table -->
-      <table style="width: 100%; border-collapse: collapse; font-size: 15px; word-break: break-word;">
-        
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Name:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px;">${name}</td>
-        </tr>
-        
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Email:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">
-            <a href="mailto:${email}" style="color: #B67032; text-decoration:none; word-break: break-word;">
-              ${email}
-            </a>
-          </td>
-        </tr>
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Phone:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        ">${phone}</p>
+      </div>
 
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Phone:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${phone}</td>
-        </tr>
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Qualification:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        ">${qualification}</p>
+      </div>
 
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Qualification:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${qualification}</td>
-        </tr>
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Course:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        ">${interest}</p>
+      </div>
 
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Course:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${interest}</td>
-        </tr>
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Leads From:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        ">${hear}</p>
+      </div>
 
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333;">Lead Source:</td>
-          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${hear}</td>
-        </tr>
-
-        <tr>
-          <td style="padding: 10px; font-weight: bold; color: #333; vertical-align: top;">Message:</td>
-          <td style="
-            padding: 10px;
-            background: #fafafa;
-            border-radius: 6px;
-            white-space: normal;
-            line-height: 1.5;
-            word-break: break-word;
-            overflow-wrap: break-word;
-          ">
-            ${message}
-          </td>
-        </tr>
-      </table>
+      <div style="margin-bottom: 16px;">
+        <strong style="color:#333; font-size:15px;">Message:</strong>
+        <p style="
+          margin:6px 0 0 0; 
+          background:#fafafa;
+          padding:10px; 
+          border-radius:6px; 
+          color:#555;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+        ">${message}</p>
+      </div>
 
       <!-- Footer -->
-      <div style="text-align: center; margin-top: 25px;">
-        <p style="color: #B67032; font-size: 16px; font-weight: bold; margin: 0;">Digital Paaji</p>
-        <p style="font-size: 13px; color: #777; margin-top: 4px;">
-          Digital Marketing Academy • Patiala
-        </p>
+      <div style="text-align:center; margin-top:25px;">
+        <p style="color:#B67032; font-weight:bold; font-size:15px; margin:0;">Digital Paaji</p>
+        <p style="color:#999; font-size:12px; margin-top:4px;">Digital Marketing Academy • Patiala</p>
       </div>
 
     </div>
+
   </div>
 `,
 
