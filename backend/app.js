@@ -83,43 +83,48 @@ const mailOptions = {
   to: process.env.receiverEMAIL,
   subject: `New Contact Form Submission from ${name}`,
   html: `
-  <div style="font-family: Arial, sans-serif; background: #FAF8EA; padding: 20px; margin: 0; width: 100%; box-sizing: border-box;">
-    
-    <!-- Card Container -->
+  <div style="font-family: Arial, sans-serif; background: #FAF8EA; padding: 15px; width: 100%; box-sizing: border-box;">
+
     <div style="
-      max-width: 600px; 
-      background: #fff; 
-      margin: auto; 
-      border-radius: 10px; 
-      padding: 25px; 
-      border: 1px solid #e6e6e6;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      word-break: break-word;
+      overflow-wrap: break-word;
     ">
 
-      <!-- Header -->
+      <!-- Heading -->
       <div style="text-align: center; margin-bottom: 20px;">
         <h2 style="
-          color: #B67032; 
-          margin: 0; 
-          font-size: 24px;
+          margin: 0;
+          font-size: 22px;
           font-weight: bold;
+          color: #B67032;
+          word-break: break-word;
         ">
           New Contact Form Submission
         </h2>
-        <p style="color: #444; margin-top: 8px;">A new lead has contacted you through Digital Paaji</p>
+        <p style="color: #444; font-size: 14px; margin-top: 8px;">
+          A new inquiry has been submitted through Digital Paaji.
+        </p>
       </div>
 
-      <!-- Info Table -->
-      <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+      <!-- Table -->
+      <table style="width: 100%; border-collapse: collapse; font-size: 15px; word-break: break-word;">
+        
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Name:</td>
-          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${name}</td>
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px;">${name}</td>
         </tr>
-
+        
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Email:</td>
-          <td style="padding: 10px; background:#fafafa; border-radius:6px;">
-            <a href="mailto:${email}" style="color: #B67032; text-decoration:none;">
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">
+            <a href="mailto:${email}" style="color: #B67032; text-decoration:none; word-break: break-word;">
               ${email}
             </a>
           </td>
@@ -127,43 +132,44 @@ const mailOptions = {
 
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Phone:</td>
-          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${phone}</td>
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${phone}</td>
         </tr>
 
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Qualification:</td>
-          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${qualification}</td>
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${qualification}</td>
         </tr>
 
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Course:</td>
-          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${interest}</td>
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${interest}</td>
         </tr>
 
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333;">Lead Source:</td>
-          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${hear}</td>
+          <td style="padding: 10px; background: #fafafa; border-radius: 6px; word-break: break-word;">${hear}</td>
         </tr>
 
         <tr>
           <td style="padding: 10px; font-weight: bold; color: #333; vertical-align: top;">Message:</td>
           <td style="
-            padding: 10px; 
-            background:#fafafa; 
-            border-radius:6px; 
-            color:#555; 
-            white-space: pre-wrap;
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 6px;
+            white-space: normal;
             line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: break-word;
           ">
             ${message}
           </td>
         </tr>
       </table>
 
-      <!-- Signature -->
+      <!-- Footer -->
       <div style="text-align: center; margin-top: 25px;">
-        <p style="color: #B67032; font-size: 16px; font-weight: bold;">Digital Paaji</p>
-        <p style="font-size: 13px; color: #888;">
+        <p style="color: #B67032; font-size: 16px; font-weight: bold; margin: 0;">Digital Paaji</p>
+        <p style="font-size: 13px; color: #777; margin-top: 4px;">
           Digital Marketing Academy • Patiala
         </p>
       </div>
