@@ -26,7 +26,7 @@ const [isSpeaking, setIsSpeaking] = useState(false);
 useEffect(()=>{
   const warmUpBackend = async ()=>{
     try{
-      await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji",{
+      await fetch("https://api.digitalpaajiacademy.com/api/ask-paaji",{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
@@ -160,7 +160,7 @@ utterance.onend = () => {
   // }else{  
       try {
         // Call the GPT fallback API
-        const res = await fetch("https://digitalpaajiacademy.onrender.com/api/ask-paaji", {
+        const res = await fetch("https://api.digitalpaajiacademy.com/api/ask-paaji", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -325,7 +325,7 @@ mediaRecorder.onstop = async () => {
   formData.append("file", audioBlob);
 
   try {
-    const res = await fetch("https://digitalpaajiacademy.onrender.com/api2/transcribe", {
+    const res = await fetch("https://api.digitalpaajiacademy.com/api2/transcribe", {
       method: "POST",
       body: formData,
     });

@@ -13,7 +13,7 @@ function NavPage() {
 
   // ✅ Automatically open popup when route is /enroll-now
   useEffect(() => {
-    if (pathname === '/enroll-now') {
+    if (pathname === '/enrollnow') {
       openPopup();
     }
   }, [pathname]);

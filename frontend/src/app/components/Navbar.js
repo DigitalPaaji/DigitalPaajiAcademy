@@ -234,8 +234,9 @@ function Navbar({openPopup}) {
     />
 
     {/* Actual Button */}
-    <button
-      onClick={() => openPopup()}
+    <Link
+    href={"/enrollnow"}
+      // onClick={() => openPopup()}
       ref={btnRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -247,7 +248,7 @@ function Navbar({openPopup}) {
         group-hover:top-[2px] group-hover:left-[2px]"
     >
       Enroll Now
-    </button>
+    </Link>
   </div>
 </div>
 
