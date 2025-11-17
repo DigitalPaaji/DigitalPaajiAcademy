@@ -83,44 +83,135 @@ const mailOptions = {
   to: process.env.receiverEMAIL,
   subject: `New Contact Form Submission from ${name}`,
   html: `
-    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; word-wrap: break-word; overflow-wrap: break-word;">
-      <h2 style="color: #007bff; text-align: center; word-wrap: break-word;">New Contact Form Submission</h2>
-      <p style="font-size: 16px; word-wrap: break-word;">You have received a new message:</p>
-      <table style="width: 100%; border-collapse: collapse; word-wrap: break-word; overflow-wrap: break-word;">
+  <div style="font-family: Arial, sans-serif; background: #FAF8EA; padding: 20px; margin: 0; width: 100%; box-sizing: border-box;">
+    
+    <!-- Card Container -->
+    <div style="
+      max-width: 600px; 
+      background: #fff; 
+      margin: auto; 
+      border-radius: 10px; 
+      padding: 25px; 
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    ">
+
+      <!-- Header -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2 style="
+          color: #B67032; 
+          margin: 0; 
+          font-size: 24px;
+          font-weight: bold;
+        ">
+          New Contact Form Submission
+        </h2>
+        <p style="color: #444; margin-top: 8px;">A new lead has contacted you through Digital Paaji</p>
+      </div>
+
+      <!-- Info Table -->
+      <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${name}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Name:</td>
+          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${name}</td>
         </tr>
-      
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Email:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd; word-break: break-all;"><a href="mailto:${email}" style="color: #007bff;">${email}</a></td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Email:</td>
+          <td style="padding: 10px; background:#fafafa; border-radius:6px;">
+            <a href="mailto:${email}" style="color: #B67032; text-decoration:none;">
+              ${email}
+            </a>
+          </td>
         </tr>
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Phone:</td>
+          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${phone}</td>
         </tr>
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Qualification:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${qualification}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Qualification:</td>
+          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${qualification}</td>
         </tr>
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Course:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${interest}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Course:</td>
+          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${interest}</td>
         </tr>
-      
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Leads From:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${hear}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333;">Lead Source:</td>
+          <td style="padding: 10px; color: #555; background:#fafafa; border-radius:6px;">${hear}</td>
         </tr>
+
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd; vertical-align: top;"><strong>Message:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd; word-wrap: break-word; overflow-wrap: break-word;">${message}</td>
+          <td style="padding: 10px; font-weight: bold; color: #333; vertical-align: top;">Message:</td>
+          <td style="
+            padding: 10px; 
+            background:#fafafa; 
+            border-radius:6px; 
+            color:#555; 
+            white-space: pre-wrap;
+            line-height: 1.5;
+          ">
+            ${message}
+          </td>
         </tr>
       </table>
-      <p style="text-align: center; margin-top: 20px;"><strong>Digital Paaji</strong></p>
+
+      <!-- Signature -->
+      <div style="text-align: center; margin-top: 25px;">
+        <p style="color: #B67032; font-size: 16px; font-weight: bold;">Digital Paaji</p>
+        <p style="font-size: 13px; color: #888;">
+          Digital Marketing Academy • Patiala
+        </p>
+      </div>
+
     </div>
-  `,
+  </div>
+`,
+
+  
+  // html: `
+  //   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; word-wrap: break-word; overflow-wrap: break-word;">
+  //     <h2 style="color: #007bff; text-align: center; word-wrap: break-word;">New Contact Form Submission</h2>
+  //     <p style="font-size: 16px; word-wrap: break-word;">You have received a new message:</p>
+  //     <table style="width: 100%; border-collapse: collapse; word-wrap: break-word; overflow-wrap: break-word;">
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${name}</td>
+  //       </tr>
+      
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Email:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; word-break: break-all;"><a href="mailto:${email}" style="color: #007bff;">${email}</a></td>
+  //       </tr>
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td>
+  //       </tr>
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Qualification:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${qualification}</td>
+  //       </tr>
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Course:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${interest}</td>
+  //       </tr>
+      
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Leads From:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${hear}</td>
+  //       </tr>
+  //       <tr>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; vertical-align: top;"><strong>Message:</strong></td>
+  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; word-wrap: break-word; overflow-wrap: break-word;">${message}</td>
+  //       </tr>
+  //     </table>
+  //     <p style="text-align: center; margin-top: 20px;"><strong>Digital Paaji</strong></p>
+  //   </div>
+  // `,
 };
 
 
