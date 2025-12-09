@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 const courses = [
   {
     title: "Digital Marketing Fundamentals",
-    status: "Batch Full, Admissions Closed",
+    status: "Now Live",
     launch: "Current Batch",
     duration: "10 Weeks",
     modules: "12 Modules",
@@ -35,21 +35,31 @@ const courses = [
   },
   {
     title: "Graphic Designing Course",
-    status: "Launching Soon",
+    status: "Refreshed Recently",
     launch: "Upcoming Batch",
     duration: "8 Weeks",
     modules: "5 Modules",
     type: "Offline Training",
     mentors: "2+ Performance Experts",
-    classes: "18+ Classes",
+    classes: "28+ Classes",
     craftedBy: "Crafted by Digital Paaji - We Mind Your Business",
     extras: [
-      "Canva",
-      "Logo Design",
-      "Banner Design",
-      "Social Media Creatives",
-      "Brand Design",
-      "Brochure Design",
+      "Introduction to Photoshop",
+      "Tools Mastery (Basics)",
+      "Layers & Layer Management",
+      "Selection & Masking (Advanced)",
+      "Retouching & Manipulation",
+      "Working With Text",
+            " Filters & Smart Objects",
+      "Image Adjustments",
+      "Compositing & Photo Manipulation",
+      "Social Media Design",
+      "Print Design",
+      "Advanced Tools & Automation",
+      "Branding & Mockups",
+      "Final Exam & Certification",
+      "Real Projects (Portfolio Building)",
+      " Final Exam & Certification"
     ],
   },
   {
@@ -308,11 +318,11 @@ export default function CoursesHorizontal() {
     <div
       id="course-corner"
       ref={containerRef}
-      className=" mx-0 xl:mx-0 my-12 pt-[100px] w-full overflow-hidden"
+      className="   pt-[100px]  w-full overflow-hidden"
     >
-      <div className="flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
+      <div className=" flex items-center flex-wrap-reverse xl:flex-nowrap w-full h-full ">
         {/* Left Side */}
-        <div className="w-full  xl:w-[30%] mx-6 lg:mx-12 xl:ml-24 ">
+        <div className="w-full  xl:w-[30%] mx-6 mt-12 xl:mt-0 lg:mx-12 xl:ml-24 ">
           <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold text-center xl:text-left ">
             CAREER HUSTLE? WE'VE GOT THE COURSES
           </h1>
@@ -355,10 +365,10 @@ export default function CoursesHorizontal() {
 
         </div>
 
-        <div className="w-full  xl:w-[70%] h-[650px] relative overflow-hidden ">
+        <div className="w-full  xl:w-[70%] h-[60vh] xl:h-[70vh]  relative overflow-hidden ">
           <div
             ref={cardsWrapperRef}
-            className="absolute top-1/2 -translate-y-1/2 flex gap-x-6 w-max"
+            className="absolute top-1/2 -translate-y-1/2 flex gap-x-6 w-max left-6"
           >
             {courses.map((course, index) => (
               <div
@@ -407,11 +417,13 @@ export default function CoursesHorizontal() {
                   <strong>{course.type}</strong>
                 </div>
 
-                <ul className="poppins mt-3 list-disc list-inside text-md space-y-1">
-                  {course.extras.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+         <div className="max-h-40 overflow-y-auto pr-2 styled-scrollbar">
+  <ul className="poppins mt-3 list-disc list-inside text-md space-y-1">
+    {course.extras.map((item, i) => (
+      <li key={i}>{item}</li>
+    ))}
+  </ul>
+</div>
 
                 <div
                   className="mt-3 space-y-1 text-lg flex items-center justify-start gap-2"
