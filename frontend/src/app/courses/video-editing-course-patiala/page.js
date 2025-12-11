@@ -4,8 +4,8 @@ import InnerBanner from '@/app/components/InnerBanner'
 
 function page() {
   return (
-    <div className='text-black text-7xl min-h-screen pt-[100px]'>
-<InnerBanner heading='Video Editing Course'/>
+    <div className='text-black bg-[#e2cab2] pt-[100px]  text-7xl min-h-screen '>
+<InnerBanner heading='Video Editing Course' />
 <Modules/>
 
 

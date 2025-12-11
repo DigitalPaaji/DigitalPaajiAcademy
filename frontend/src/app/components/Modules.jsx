@@ -4,11 +4,231 @@ import Link from "next/link";
 import React from "react";
 
 function AddOn() {
+
+  const modules = [
+    {
+      "title": "MODULE 1: Introduction to Video Editing",
+      "icon": "/Images/course/m1.png",
+      "points": [
+        "What is video editing",
+        "Types of editing: cinematic, vlog, reels",
+        "FPS, resolution, bitrate basics",
+        "Video formats (MP4, MOV, ProRes)",
+        "Understanding codecs"
+      ]
+    },
+    {
+      "title": "MODULE 2: Adobe Premiere Pro Workspace & Basics",
+      "icon": "/Images/course/m2.png",
+      "points": [
+        "Interface overview",
+        "Importing media",
+        "Timeline navigation",
+        "Keyboard shortcuts for faster editing",
+        "Understanding sequence settings"
+      ]
+    },
+    {
+      "title": "MODULE 3: Basic Editing Tools",
+      "icon": "/Images/course/m3.png",
+      "points": [
+        "Razor, Slip, Slide, Ripple, Rolling edits",
+        "Trimming techniques",
+        "Markers & workspace",
+        "Multi-track editing",
+        "Linking & unlinking video/audio"
+      ]
+    },
+    {
+      "title": "MODULE 4: Audio Editing + Sound Design",
+      "icon": "/Images/course/m4.png",
+      "points": [
+        "Audio levels, keyframes",
+        "Reducing noise",
+        "Using Essential Sound panel",
+        "Adding SFX, whooshes, cinematic hits",
+        "Syncing audio with video"
+      ]
+    },
+    {
+      "title": "MODULE 5: Color Correction & Grading",
+      "icon": "/Images/course/m5.png",
+      "points": [
+        "Lumetri Color panel",
+        "Exposure, contrast, temperature, tint",
+        "LUTs: how to use professionally",
+        "Cinematic color grading workflow",
+        "Skin tone correction"
+      ]
+    },
+    {
+      "title": "MODULE 6: Text, Titles & Graphics",
+      "icon": "/Images/course/m6.png",
+      "points": [
+        "Essential Graphics panel",
+        "Lower thirds",
+        "Title animation",
+        "Kinetic typography basics",
+        "Creating templates for reuse"
+      ]
+    },
+    {
+      "title": "MODULE 7: Transitions (Basic to Advanced)",
+      "icon": "/Images/course/m7.png",
+      "points": [
+        "Cut-on-action",
+        "Match cuts",
+        "Speed ramping (smooth 60fps ramp)",
+        "Morph cut",
+        "Custom transitions",
+        "Luma fade",
+        "Glitch & zoom transitions"
+      ]
+    },
+    {
+      "title": "MODULE 8: Effects & Motion",
+      "icon": "/Images/course/m8.png",
+      "points": [
+        "Scale, Position, Rotation",
+        "Keyframing",
+        "Motion blur",
+        "Warp Stabilizer",
+        "Green screen editing (Ultra Key)",
+        "Nesting clips"
+      ]
+    },
+    {
+      "title": "MODULE 9: Exporting for All Platforms",
+      "icon": "/Images/course/m9.png",
+      "points": [
+        "YouTube, Instagram Reel, FB settings",
+        "High-quality export",
+        "Low-size export (client-friendly)",
+        "VBR vs CBR bitrate",
+        "Best codecs (H.264 / H.265)"
+      ]
+    },
+    {
+      "title": "MODULE 10: After Effects – Introduction",
+      "icon": "/Images/course/m10.png",
+      "points": [
+        "Interface & workflow",
+        "Compositions & layers",
+        "Importing from Premiere (Dynamic Link)",
+        "Keyframes: spatial & temporal",
+        "Graph editor basics"
+      ]
+    },
+    {
+      "title": "MODULE 11: Text Animation Masterclass",
+      "icon": "/Images/course/m11.png",
+      "points": [
+        "Write-on text animation",
+        "Typewriter effect",
+        "Kinetic typography",
+        "Callouts & infographics",
+        "Lower third animations"
+      ]
+    },
+    {
+      "title": "MODULE 12: Motion Graphics",
+      "icon": "/Images/course/m12.png",
+      "points": [
+        "Shape layers",
+        "Line animations",
+        "Logo animation",
+        "Icon animation",
+        "Animated transitions",
+        "Using parenting & pick whip"
+      ]
+    },
+    {
+      "title": "MODULE 13: Visual Effects (VFX Essentials)",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Tracking (point, planar, mocha basics)",
+        "Screen replacement",
+        "Object removal",
+        "Camera Shake effects",
+        "Light leaks & overlays",
+        "Green screen keying (Keylight 1.2)"
+      ]
+    },
+    {
+      "title": "MODULE 14: Advanced After Effects Techniques",
+      "icon": "/Images/course/m14.png",
+      "points": [
+        "Expressions (wiggle, loop, delay)",
+        "3D layers",
+        "Camera & lights",
+        "Parallax animation",
+        "Fake 3D text"
+      ]
+    },
+    {
+      "title": "MODULE 15: Premiere Pro + After Effects Integration",
+      "icon": "/Images/course/m15.png",
+      "points": [
+        "Dynamic Link workflow",
+        "Editing in Premiere, animating in AE",
+        "Replacements & final render pipeline",
+        "Building reusable templates for clients"
+      ]
+    },
+    {
+      "title": "MODULE 16: Content Creation Special Module",
+      "icon": "/Images/course/m16.png",
+      "points": [
+        "Editing YouTube vlogs",
+        "Short-form content (reels/tiktok)",
+        "Wedding highlights",
+        "Corporate videos",
+        "Event recaps",
+        "Cinematic B-roll editing"
+      ]
+    },
+    {
+      "title": "MODULE 17: Real Projects (Portfolio Building)",
+      "icon": "/Images/course/m17.png",
+      "points": [
+        "3 YouTube videos",
+        "5 Instagram reels",
+        "1 cinematic montage",
+        "1 wedding highlight sample",
+        "1 logo animation",
+        "1 full motion graphics ad",
+        "1 special effects clip (tracking / screen replace)"
+      ]
+    },
+    {
+      "title": "MODULE 18: Final Exam + Certification",
+      "icon": "/Images/course/m18.png",
+      "points": [
+        "Full video project",
+        "Motion graphics task",
+        "Export & delivery workflow test",
+        "Feedback & certification"
+      ]
+    }
+  ]
+
+
   return (
-    <div className=" ">
-      <div className="text-center mt-24 mx-4 md:mx-12 lg:mx-32 xl:mx-72 ">
+    <div className="relative bg-white">
+
+           <div
+          className="absolute top-0 inset-0 opacity-30 "
+          style={{
+            backgroundImage: "url(/Images/course/bg.png)",
+
+          }}
+        ></div>
+    <div 
+    className=" bg-linear-to-b from-[#e9872457] via-transparent to-[#e9872457]"
+    >
+      <div className="text-center py-24 px-4 md:px-12 lg:px-32 xl:px-72 ">
         <h2 className="  bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold text-center ">
-Learning Roadmap
+          Learning Roadmap
         </h2>
 
         <p
@@ -20,142 +240,58 @@ Learning Roadmap
       </div>
 
       <div className="relative text-center mx-4 md:mx-12 lg:mx-32 xl:mx-72 my-6 ">
-        <div
-          className="absolute inset-0  opacity-20"
-          style={{
-            backgroundImage: "url(/Images/checkBG.webp)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "grayscale(100%) brightness(1.2)",
-          }}
-        ></div>
-        <div className="relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  ">
-            <div className="p-2 lg:p-8">
-              <div className="mx-auto w-20 h-auto">
-                <Image
-                        width={200}
-        height={200}
-                  src="/Images/seo/3.webp"
-                  alt="img"
-                  className=" w-full h-auto object-cover"
-                />
-              </div>
-              <div className="">
-                <h3 className=" p-4 text-2xl text-[#2e2d2d]">
-                  Research on Keywords
-                </h3>
-              </div>
-              <div className="text-center">
-                <p className="  text-base text-center ">
-                Finding potential client&apos;s search queries through keyword research is essential for SEO strategy. Digital Paaji employs a methodical technique, scrutinising search traffic, rivalry, and user intention to generate precise keywords. To target high-volume searches and specialist queries, we divide keywords into two categories: short-tail and long-tail. A well-rounded strategy guarantees both volume and high-quality traffic. Competitive analysis supports the preservation of industrial competitiveness by pointing up disparities in competitors&apos; rankings.{" "}
-                </p>
-              </div>
-            </div>
 
-            <div className="">
-              <div className="p-2 lg:p-8">
-                <div className="mx-auto w-20 h-auto">
-                  <Image
-                          width={200}
-        height={200}
-                    src="/Images/seo/1.webp"
-                    alt="img"
-                    className=" w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="">
-                  <h3 className=" p-4 text-2xl text-[#2e2d2d]">
-                  Page Optimization
-                  </h3>
-                </div>
-                <div className="text-center">
-                  <p className="  text-base text-center ">
-                  The practice of improving a webpage&apos;s content, title tags, meta descriptions, and internal links is known as on-page SEO. A well-organised internal linking system, keyword-rich title tags, and pertinent, high-quality material are all components of Digital Paaji&apos;s content optimization strategy. These components contribute to increased traffic and conversions by enhancing user experience, search engine rankings, and total website traffic.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="">
-              <div className="p-2 lg:p-8">
-                <div className="mx-auto w-20 h-auto">
-                  <Image
-                          width={200}
-        height={200}
-                    src="/Images/seo/2.webp"
-                    alt="img"
-                    className=" w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="">
-                  <h3 className=" p-4 text-2xl text-[#2e2d2d]">
-                  Technical Search Engine Optimization
-                  </h3>
-                </div>
-                <div className="text-center">
-                  <p className="  text-base text-center ">
-                  Enhancing a website&apos;s crawlability and indexability is a critical procedure that is achieved through technical SEO. It entails using schema markup, mobile optimization, and site speed optimization. Search engines favour and provide a better user experience on pages that load quickly. Schema markup increases search engine visibility and comprehension, while mobile optimization guarantees smooth operation across all devices.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2    mt-8">
-            <div className="">
-              <div className="p-2 lg:p-8">
-                <div className="mx-auto w-20 h-auto">
-                  <Image
-                          width={200}
-        height={200}
-                    src="/Images/seo/1.webp"
-                    alt="img"
-                    className=" w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="">
-                  <h3 className=" p-4 text-2xl text-[#2e2d2d]">
-                  Local Search Engine Optimization
-                  </h3>
-                </div>
-                <div className="text-center">
-                  <p className="  text-base text-center ">
-                  To assist companies in becoming more visible to local clients, Digital Paaji provides local SEO services. They encourage happy customers to submit reviews, ensure listings are consistent across internet directories like Yelp, TripAdvisor, and the Yellow Pages, and enhance Google My Business profiles. This increases visibility on search engines and fosters confidence, drawing in local clients and increasing sales.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="">
-              <div className="p-2 lg:p-8">
-                <div className="mx-auto w-20 h-auto">
-                  <Image
-                          width={200}
-        height={200}
-                    src="/Images/seo/3.webp"
-                    alt="img"
-                    className=" w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="">
-                  <h3 className=" p-4 text-2xl text-[#2e2d2d]">
-                  Content Promotion
-                  </h3>
-                </div>
-                <div className="text-center">
-                  <p className="  text-base text-center ">
-                  The main goal of Digital Paaji is producing excellent content for effective SEO tactics. In order to raise their search engine rankings, draw viewers in, and build backlinks, our experts provide blog articles, infographics, and videos. Consistently updated blog entries address queries from readers, infographics simplify complicated concepts, and video content narrates brand tales while increasing traffic and optimising search engine optimization.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <div className="text-center mt-12">
-            <Link  href="tel:+918699640752" className="px-4 py-4 border-2 rounded-xl border-black bg-[#006E7F] hover:bg-[#cc5f4d] text-white font-medium text-base underline ">
-              Get Started Today
-            </Link>
-          </div> */}
-        </div>
+  <div className="relative z-10">
+    
+<div className="grid grid-cols-1 xl:grid-cols-2">
+  {modules.map((item, index) => (
+    <div key={index} className="p-2 lg:p-8 flex flex-col flex-wrap">
+      
+      {/* Icon */}
+    <div className="w-1/2 h-auto ">
+
+  
+        <img
+          src={item.icon}
+          alt={item.title}
+          className="w-full  h-auto object-cover"
+        />
+    </div>
+<div>
+
+      {/* Title */}
+      <h3 className=" text-2xl text-black text-start">
+        {item.title}
+      </h3>
+
+      {/* Points */}
+      <ul className="text-base md:text-lg space-y-2 ">
+        {item.points.map((point, i) => (
+          <li key={i} className="flex items-start gap-2 text-left">
+            {/* Bullet Icon */}
+            <Image
+              src="/Images/course/point.png" // ← change icon path if needed
+              width={22}
+              height={22}
+              alt="check"
+              className="  mt-1"
+            />
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+</div>
+
+    </div>
+  ))}
+</div>
+
+
+  
+    </div>
       </div>
     </div>
+     </div>
   );
 }
 
