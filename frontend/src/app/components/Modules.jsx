@@ -1,3 +1,6 @@
+
+
+
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -214,19 +217,27 @@ function AddOn() {
 
 
   return (
-    <div className="relative bg-white">
+    <div className="relative  overflow-hidden">
 
            <div
-          className="absolute top-0 inset-0 opacity-30 "
+          className="absolute top-0 inset-0 opacity-20 "
           style={{
             backgroundImage: "url(/Images/course/bg.png)",
 
           }}
         ></div>
+                   <img
+        className="absolute top-0 left-0 w-full h-auto  opacity-10"
+       src='/Images/course/web.png'
+       alt=""/>     
+                <img
+        className="absolute bottom-0 right-0 w-full h-auto  opacity-10"
+       src='/Images/course/web.png'
+       alt=""/>
     <div 
-    className=" bg-linear-to-b from-[#e9872457] via-transparent to-[#e9872457]"
+    className=" bg-linear-to-b from-[#e9872436] py-24 via-transparent to-[#e9872428]"
     >
-      <div className="text-center py-24 px-4 md:px-12 lg:px-32 xl:px-72 ">
+     {/* <div className="text-center py-24 px-4 md:px-12 lg:px-32 xl:px-72 ">
         <h2 className="  bungee-shade-regular text-4xl md:text-5xl xl:text-7xl font-bold text-center ">
           Learning Roadmap
         </h2>
@@ -237,15 +248,15 @@ function AddOn() {
         >
          Here at Digital Paaji, we provide an extensive array of SEO services aimed at increasing your online presence and search engine rankings.
         </p>
-      </div>
+      </div>*/}
 
-      <div className="relative text-center mx-4 md:mx-12 lg:mx-32 xl:mx-72 my-6 ">
+      <div className="relative text-center px-4 md:px-12 xl:px-32  ">
 
   <div className="relative z-10">
     
-<div className="grid grid-cols-1 xl:grid-cols-2">
+<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  place-items-center">
   {modules.map((item, index) => (
-    <div key={index} className="p-2 lg:p-8 flex flex-col flex-wrap">
+    <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
     <div className="w-1/2 h-auto ">
@@ -257,17 +268,17 @@ function AddOn() {
           className="w-full  h-auto object-cover"
         />
     </div>
-<div>
+<div className=" text-start">
 
       {/* Title */}
-      <h3 className=" text-2xl text-black text-start">
+      <h3 className=" text-2xl text-black">
         {item.title}
       </h3>
 
       {/* Points */}
-      <ul className="text-base md:text-lg space-y-2 ">
+      <ul className="text-base md:text-lg space-y-2  ">
         {item.points.map((point, i) => (
-          <li key={i} className="flex items-start gap-2 text-left">
+          <li key={i} className="flex items-start  gap-2 text-left">
             {/* Bullet Icon */}
             <Image
               src="/Images/course/point.png" // ← change icon path if needed
