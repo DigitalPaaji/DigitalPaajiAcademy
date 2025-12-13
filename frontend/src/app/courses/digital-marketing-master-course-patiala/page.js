@@ -1,5 +1,5 @@
 import React from 'react'
-import Modules from '../../components/courses/video'
+import Modules from '../../components/courses/dm'
 import InnerBanner from '@/app/components/InnerBanner'
 
 export const metadata = {
@@ -13,6 +13,9 @@ function page() {
     <div className='text-black  pt-[100px]  text-7xl min-h-screen  '>
 <InnerBanner heading='Video Editing Course' />
 <Modules/>
+
+
+
     </div>
   )
 }

@@ -217,7 +217,7 @@ function AddOn() {
 
 
   return (
-    <div className="relative  overflow-hidden">
+    <div className="relative   bg-white">
 
            <div
           className="absolute top-0 inset-0 opacity-20 "
@@ -271,9 +271,9 @@ function AddOn() {
 <div className=" text-start">
 
       {/* Title */}
-      <h3 className=" text-2xl text-black">
+      <h2 className=" text-2xl text-black">
         {item.title}
-      </h3>
+      </h2>
 
       {/* Points */}
       <ul className="text-base md:text-lg space-y-2  ">
@@ -286,7 +286,7 @@ function AddOn() {
               height={22}
               alt="check"
               className="  mt-1"
-            />
+            />                                                            
             <span>{point}</span>
           </li>
         ))}

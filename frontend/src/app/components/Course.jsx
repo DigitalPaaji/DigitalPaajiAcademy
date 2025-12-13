@@ -14,7 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const courses = [
     {
-    title: "Video Editing Course",
+
+    
+      link:'/courses/video-editing-course-patiala',
+      title: "Video Editing Course",
     status: "Enhanced Curriculum - Fresh Content Added ",
     launch: "Newly Launched",
     duration: "12 Weeks",
@@ -46,7 +49,9 @@ const courses = [
     ],
   },
     {
-    title: "Digital Marketing Specialist",
+    
+      link:'/courses/digital-marketing-specialist-course-patiala',
+      title: "Digital Marketing Specialist",
     status: "New Batch Live",
     launch: "All-New Edition",
     duration: "16 Weeks",
@@ -66,7 +71,9 @@ const courses = [
     ],
   },
     {
-    title: "Graphic Designing Course",
+    
+      link:'/courses/graphic-designing-course-patiala',
+      title: "Graphic Designing Course",
     status: "Refreshed Recently",
     launch: "Upcoming Batch",
     duration: "8 Weeks",
@@ -96,7 +103,9 @@ const courses = [
   },
 
       {
-    title: "Web Design & Development Course",
+    
+        link:'/courses/web-design-and-development-course-patiala',
+        title: "Web Design & Development Course",
     status: "Newly Launched",
     launch: "New Batch Live",
     duration: "12 Weeks",
@@ -126,6 +135,8 @@ extras: [
 ],
   },
   {
+    
+    link:'/courses/digital-marketing-fundamentals-course-patiala',
     title: "Digital Marketing Fundamentals",
     status: "Now Live",
     launch: "Current Batch",
@@ -146,6 +157,8 @@ extras: [
     ],
   },
   {
+    
+    link:'/courses/digital-marketing-master-course-patiala',
     title: "Digital Marketing Master",
     status: "Enhanced Curriculum",
     launch: "Upcoming Batch",
@@ -166,6 +179,8 @@ extras: [
     ],
   },
   {
+    
+    link:'/courses/digital-marketing-professional-course-patiala',
     title: "Digital Marketing Professional",
     status: "Upgraded Learning Path",
     launch: "Updated for 2025",
@@ -187,6 +202,8 @@ extras: [
     ],
   },
   {
+    
+    link:'/courses/performance-marketing-specialization-course-patiala',
     title: "Performance Marketing Specialization",
     status: "New & Improved",
     launch: "Upcoming Batch",
@@ -205,6 +222,8 @@ extras: [
     ],
   },
   {
+    
+    link:'/courses/social-media-marketing-mastery-course-patiala',
     title: "Social Media Marketing Mastery",
     status: "Now Live",
     launch: "Current Batch",
@@ -224,6 +243,8 @@ extras: [
     ],
   },
   {
+    
+    link:'/courses/search-engine-optimization-mastery-course-patiala',
     title: "Search Engine Optimization Mastery",
     status: "New Upgrade Added",
     launch: "Upcoming Batch",
@@ -244,7 +265,9 @@ extras: [
     ],
   },
   {
-    title: "Advanced Annual Diploma in Digital Marketing",
+    
+    link:'/courses/ai-based-digital-marketing-course-patiala',
+    title: "AI Based Digital Marketing Course",
     status: "Upgraded Learning Path",
     launch: "2025 Edition",
     duration: "48 Weeks",
@@ -443,7 +466,8 @@ export default function CoursesHorizontal() {
             className="absolute top-1/2 -translate-y-1/2 flex gap-x-6 w-max left-6"
           >
             {courses.map((course, index) => (
-              <div
+              <Link
+              href={`${course.link}`}
                 key={index}
                 ref={index === courses.length - 1 ? lastCourseRef : null}
                 className={`poppins-bold  rounded-2xl p-10 shadow-md transition-all duration-300 
@@ -511,7 +535,7 @@ export default function CoursesHorizontal() {
                   <p><CiClock2 /> </p>
                   <strong>{course.classes}</strong>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           {/* <button onClick={scrollToLastCourse} className="w-full flex items-end justify-end">
