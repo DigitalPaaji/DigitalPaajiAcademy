@@ -74,7 +74,7 @@ function Form() {
             setIsSubmitting(true);
         
             try {
-              const response = await fetch('https://api.digitalpaajiacademy.com/send-mail', {
+              const response = await fetch('https://api.digitalpaajiacademy.com/academy/send-mail', {
              
         
                 method: 'POST',
