@@ -264,7 +264,7 @@ function AddOn() {
   
         <img
           src={item.icon}
-          alt={item.title}
+        alt={''}
           className="w-full  h-auto object-cover"
         />
     </div>

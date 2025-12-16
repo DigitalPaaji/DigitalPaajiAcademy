@@ -71,13 +71,14 @@ function InnerBanner({ heading}) {
        src='/Images/course/2.png'
        alt=""/>
           <img
-        className="absolute top-24 right-[20%]  w-32 h-auto object-left"
-       src='/Images/course/3.png'
+        className="absolute bottom-32 left-80 w-60 lg:w-[200px] h-auto object-left"
+       src='/Images/course/video/m5.png'
        alt=""/>
           <img
-        className="absolute bottom-32 left-80 w-60 lg:w-[200px] h-auto object-left"
-       src='/Images/course/m5.png'
+        className="absolute top-24 right-[20%]  w-32 h-auto object-left"
+       src='/Images/course/3.png'
        alt=""/>*/}
+       
    <img
         className="absolute bottom-0 rotate-45 right-0 opacity-20 w-full h-auto object-left"
        src='/Images/course/web.png'

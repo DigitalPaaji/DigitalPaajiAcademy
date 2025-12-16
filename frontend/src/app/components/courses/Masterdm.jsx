@@ -163,6 +163,159 @@ function AddOn() {
         "Installing Google Analytics On Website"
       ]
     },
+       {
+      "title": "Module 14: Online Advertising & Google Ads",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Introduction to Paid Marketing & GA",
+        "Bidding, Auctions and Budget",
+        "Account & Billing Setup",
+        "Google Ads - Search Campaign (Live Creation)",
+        "Keyword Research, Campaign, Adgroup, Conversion Tracking Setup",
+        "Google Ad Campaign Case Study (Real Estate)",
+
+      ]
+    },   {
+      "title": "Module 15: Display Advertising",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Display vs Search Ads – Difference",
+        "Google Display Ad Campaigns",
+        "Targeting Methods",
+        "Most Popular Display Ad Sizes",
+        "Display Campaign Creation – Live Walkthrough",
+        "Display Campaign Best Practices",
+
+      ]
+    },   {
+      "title": "Module 16: Video Advertising",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Introduction to Video Ads",
+        "Video Ad Types",
+        "Video Ad Campaign Types",
+        "Bidding, Budget, Network & Inventory Options",
+        "Video Campaign Targeting Options",
+      ]
+    },   {
+      "title": "Module 17: Remarketing & Rebranding",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "How Remarketing Improves ROI",
+        "Types of Remarketing Audience",
+        "Essentials Components of Remarketing",
+        "Remarketing – Top Case Studies",
+        "Setting Up Google Remarketing Tag",
+        "Creating Different Lists with GA",
+        "Display & Video Remarketing Campaign – Live Walkthrough",
+        "Google Search Remarketing",
+        "Facebook & Instagram Remarketing"
+      ]
+    },   {
+      "title": "Module 18: Email Marketing",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Importance of Email Marketing",
+        "Usage, ROI, Objectives, Email Benefits",
+        "Top Email Marketing Tools",
+        "Key Features of a Good Email Tool",
+        "Step-by-Step Guide for Email Marketing",
+        "Types of Marketing Emailers",
+        "Email Writing Best Practices",
+        "Email Marketing Strategy Creation",
+        "Email List Building Tools"
+      ]
+    },   {
+      "title": "Module 19: Inbound Marketing",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Inbound vs. Outbound Marketing",
+        "Audience Identification",
+        "Buyer Touch Point Analysis",
+        "Top Content Types for Each Buyer Stage",
+        "Where to Distribute Content",
+        "How to Generate Content Ideas",
+        "Creating Content Idea Sheet",
+        "Content Repurposing"
+      ]
+    },   {
+      "title": "Module 20: Web Content Writing",
+      "icon": "/Images/course/m13.jpg",
+      "points": [
+        "Essentials of Content Writing",
+        "Content Writing for Business Sites",
+        "Top Tools for Content Research",
+        "Top Tools for Content Writing",
+        "AI-Based Tools for Content Writing",
+        "Conversational Writing for Social Media",
+        "Ecommerce Content Writing","Content Writing vs. Copywriting",
+        "Copywriting Best Practices","Creating Ad Copies","Writing for Landing Pages","Funnel Copywriting – WhatsApp & Newsletters"
+      ]
+    }, 
+    {
+      "title": "MODULE 21: Blogging, Adsense & Affiliate Marketing",
+      "icon": "/Images/course/m18.png",
+      "points": [
+   "Blog Planning & Strategy",
+  "Setting Up Your Blog in WordPress",
+  "Email Marketing Setup For Your Blog",
+  "SEO For Your Blog",
+  "Monetizing Your Blog With Affiliates, Adsense & Collabs",
+  "Top 15 Content Planning & Production Tools For Your Blogs",
+  "Creating & Disseminating Your 1st Blog Post",
+  "Blog Success Blueprint"
+      ]
+    },  
+   {
+  "title": "MODULE 22: Selling On Amazon & Market Places",
+  "icon": "/Images/course/m22.jpg",
+  "points": [
+    "How to Create Amazon Account",
+    "Product Listing – Best Practices",
+    "Pricing and Payments",
+    "Order Management and Shipping",
+    "Amazon Ads",
+    "Listing Beyond Amazon – Best Practices"
+  ]
+},
+{
+  "title": "MODULE 23: Earning As A Freelancer / Starting Agency",
+  "icon": "/Images/course/m23.jpg",
+  "points": [
+    "Top Freelancing Platforms",
+    "Building Business / Freelancer Profile",
+    "Live Walkthrough: How to Grab Projects",
+    "How to Price Your Services",
+    "Small Agency / Freelancer Lead Generation Case Studies"
+  ]
+},
+
+        {
+      "title": "MODULE 24: AI Powered Digital Marketing",
+      "icon": "/Images/course/m18.png",
+      "points": [
+   "What is AI-Based Digital Marketing?",
+  "Applications of AI in Digital Marketing",
+  "ChatGPT & Prompt Engineering",
+  "AI for Content & Copywriting",
+  "AI Video & Audio Creation",
+  "AI Branding & Design",
+  "AI Marketing & Outreach",
+      ]
+    },
+    {
+      "title": "MODULE 25: Interview Process and Preparation",
+      "icon": "/Images/course/m18.png",
+      "points": [
+   "Advanced Masterclasses by Indusrty Experts",
+  "Portfolio Creation with Dedicated Career Mentor",
+  "3 Bonus Earning Courses",
+  "2 Month Industrial Internship with LOR",
+  "Access to DigiPerformer Online Community Forum",
+  "Video Advertising",
+  "Certification and Interview Preparation",
+      ]
+    },
   ]
 
 
@@ -214,7 +367,7 @@ function AddOn() {
   
         <img
           src={item.icon}
-         alt={''}
+  alt={''}
           className="w-full  h-auto object-cover"
         />
     </div> */}
@@ -231,7 +384,7 @@ function AddOn() {
           <li key={i} className="flex items-start  gap-2 text-left">
             {/* Bullet Icon */}
             <Image
-              src="/Images/course/point.png"
+              src="/Images/course/point.png" // ← change icon path if needed
               width={22}
               height={22}
               alt="check"

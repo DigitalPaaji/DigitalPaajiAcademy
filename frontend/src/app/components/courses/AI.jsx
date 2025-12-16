@@ -11,7 +11,7 @@ function AddOn() {
   const modules = [
     {
       "title": "Marketing Foundation",
-      "icon": "/Images/course/m1.png",
+      "icon": "/Images/course/video/m1.png",
       "points": [
         "History of Marketing",
         "Traditional vs Digital Marketing",
@@ -21,7 +21,7 @@ function AddOn() {
     },
     {
       "title": "Kickstart Your Journey in Digital Marketing",
-      "icon": "/Images/course/m2.png",
+      "icon": "/Images/course/video/m2.png",
       "points": [
         "The Current Opportunity",
         "Digital Marketing Channels",
@@ -31,7 +31,7 @@ function AddOn() {
     },
     {
       "title": "Digital Consumer Behaviour",
-      "icon": "/Images/course/m3.png",
+      "icon": "/Images/course/video/m3.png",
       "points": [
         "Digital Consumer Journey",
         "Understanding Online Business Goals",
@@ -40,7 +40,7 @@ function AddOn() {
     },
     {
       "title": "Digital Visiblity Strategy",
-      "icon": "/Images/course/m4.png",
+      "icon": "/Images/course/video/m4.png",
       "points": [
         "Website Planning",
         " Local VisibilityStrategy",
@@ -50,7 +50,7 @@ function AddOn() {
     },
     {
       "title": "Online Lead Strategy",
-      "icon": "/Images/course/m5.png",
+      "icon": "/Images/course/video/m5.png",
       "points": [
         "Need of online Advertising",
         "Types of Online Ads",
@@ -61,7 +61,7 @@ function AddOn() {
     },
     {
       "title": "Transform Your Brand with Powerful Graphic Design",
-      "icon": "/Images/course/m6.png",
+      "icon": "/Images/course/video/m6.png",
       "points": [
         "Graphic Design Fundamentals",
         "Designing- Marketing Kits",
@@ -72,7 +72,7 @@ function AddOn() {
     },
     {
       "title": "Proven Video Marketing Strategies + How to Launch a Powerful YouTube Channel",
-      "icon": "/Images/course/m7.png",
+      "icon": "/Images/course/video/m7.png",
       "points": [
         "Video Creation Strategy",
         "Importance of Video Marketing •",
@@ -86,7 +86,7 @@ function AddOn() {
     },
     {
       "title": "Master the Art of Website Design with Powerful UI/UX Principles",
-      "icon": "/Images/course/m8.png",
+      "icon": "/Images/course/video/m8.png",
       "points": [
       "Buying Domain & Hosting",
   "Understanding cPanel",
@@ -100,7 +100,7 @@ function AddOn() {
     },
     {
       "title": "Introduction to Social Media Mastery",
-      "icon": "/Images/course/m9.png",
+      "icon": "/Images/course/video/m9.png",
       "points": [
         "Introduction to social media marketing with Case Study",
         "Social Media Gameplan: Tools, Tips & Growth Hacks",
@@ -109,7 +109,7 @@ function AddOn() {
     },
     {
       "title": "Building Brands on Facebook",
-      "icon": "/Images/course/m10.png",
+      "icon": "/Images/course/video/m10.png",
       "points": [
          "The Power of Facebook for Digital Marketing Success",
   "Facebook Profile vs Page vs Group",
@@ -127,7 +127,7 @@ function AddOn() {
     },
     {
       "title": "Harnessing the Power of X Marketing",
-      "icon": "/Images/course/m11.png",
+      "icon": "/Images/course/video/m11.png",
       "points": [
        "Introduction to X",
   "Setting Up an Optimized X Profile",
@@ -139,7 +139,7 @@ function AddOn() {
     },
     {
       "title": "Mastering LinkedIn & LinkedIn Marketing",
-      "icon": "/Images/course/m12.png",
+      "icon": "/Images/course/video/m12.png",
       "points": [
           "Build a Powerful LinkedIn Presence to Attract Jobs & Projects",
   "Introduction to LinkedIn",
@@ -151,7 +151,7 @@ function AddOn() {
     },
     {
       "title": "Mastering Instagram for Digital Marketing",
-      "icon": "/Images/course/m13.jpg",
+      "icon": "/Images/course/video/m13.jpg",
       "points": [
         "Instagram Profile Optimization",
   "Instagram Competitor & Brand Audit",
@@ -165,7 +165,7 @@ function AddOn() {
     },
     {
       "title": "Landing Page Strategies That Work",
-      "icon": "/Images/course/m14.png",
+      "icon": "/Images/course/video/m14.png",
       "points": [
          "Key Elements of a Landing Page",
   "User Flow Designing",
@@ -177,7 +177,7 @@ function AddOn() {
     },
     {
       "title": "Meta Advertising (Instagram & Facebook)",
-      "icon": "/Images/course/m15.png",
+      "icon": "/Images/course/video/m15.png",
       "points": [
         "Meta Ads: From Beginner to Advanced",
   "Meta Ads Ecosystem",
@@ -191,7 +191,7 @@ function AddOn() {
     },
     {
       "title": "Search Engine Optimization Introduction to SEO",
-      "icon": "/Images/course/m16.png",
+      "icon": "/Images/course/video/m16.png",
       "points": [
        "What Is a Search Engine?",
   "Types of SEO",
@@ -211,7 +211,7 @@ function AddOn() {
     },
     {
       "title": "Google Analytics & Ga4",
-      "icon": "/Images/course/m17.png",
+      "icon": "/Images/course/video/m17.png",
       "points": [
         "what is Google Analytics 4",
         "Google Analytics Hierarchy Overview",
@@ -222,7 +222,7 @@ function AddOn() {
     },
     {
       "title": "Google Ads Complete Guide ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Google Search Ads",
   "Bing Ads",
@@ -244,7 +244,7 @@ function AddOn() {
     ,
     {
       "title": "Email Marketing ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Strategic Significance of Email Marketing",
   "Core Objectives and Strategic Benefits of Remarketing",
@@ -258,7 +258,7 @@ function AddOn() {
     },
     {
       "title": "Quora Marketing ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
   "Overview of Quora for Brand Visibility",
   "Creating and Optimizing Quora Profiles",
@@ -273,7 +273,7 @@ function AddOn() {
     },
     {
       "title": "Pinterest Marketing",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
      "Pinterest as a Visual Search Engine",
   "Setting Up a Business Profile and Boards",
@@ -285,7 +285,7 @@ function AddOn() {
     },
     {
       "title": "Growth Hacking  ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
      "Introduction to Growth Hacking",
   "Understanding the AARRR Framework",
@@ -297,7 +297,7 @@ function AddOn() {
     },
     {
       "title": "Online Reputation Managment",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
     "Introduction to Online Reputation Management (ORM)",
   "Key Elements of Reputation Management",
@@ -313,7 +313,7 @@ function AddOn() {
     },
     {
       "title": "Inbound Marketing ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Inbound Marketing vs Outbound Marketing",
   "Audience Profiling and Buyer Persona Mapping",
@@ -327,7 +327,7 @@ function AddOn() {
     },
     {
       "title": "Web Content Writing ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
      "Key Fundamentals of Content Writing",
   "Content Writing for Business Websites",
@@ -345,7 +345,7 @@ function AddOn() {
     },
     {
       "title": "Selling On Amazon & Market Places  ",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
  "Prerequisites for Creating an Amazon Seller Account",
   "Product Listing Best Practices",
@@ -357,7 +357,7 @@ function AddOn() {
     },
     {
       "title": "Starting an Agency",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Leading Freelancing Platforms",
   "Crafting a Compelling Freelancer/Business Profile",
@@ -369,7 +369,7 @@ function AddOn() {
     },
     {
       "title": "Blogging, Adsense & Affiliate Marketing",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Blog Planning & Strategy",
   "Setting Up Your Blog in WordPress",
@@ -383,7 +383,7 @@ function AddOn() {
     },
     {
       "title": "AI Powered Digital Marketing",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "What is AI-Based Digital Marketing?",
   "Applications of AI in Digital Marketing",
@@ -396,7 +396,7 @@ function AddOn() {
     },
     {
       "title": "Interview Process and Preparation",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
    "Advanced Masterclasses by Indusrty Experts",
   "Portfolio Creation with Dedicated Career Mentor",
@@ -454,15 +454,15 @@ function AddOn() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    <div className="w-1/2 h-auto ">
+    {/* <div className="w-1/2 h-auto ">
 
   
         <img
           src={item.icon}
-          alt={item.title}
+         alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div>
+    </div> */}
 <div className=" text-start">
 
       {/* Title */}

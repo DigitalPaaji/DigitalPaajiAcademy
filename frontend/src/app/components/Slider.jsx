@@ -21,7 +21,7 @@ export default function BrandShowcase() {
           <Image
             key={index}
             src={logo.src}
-            alt={logo.alt}
+            alt={''}
             width={40}
             height={40}
             className="w-26 h-20 lg:h-auto  lg:w-32  object-contain lg:object-cover grayscale hover:grayscale-0 transition duration-300"

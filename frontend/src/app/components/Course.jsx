@@ -136,8 +136,8 @@ extras: [
   },
   {
     
-    link:'/courses/digital-marketing-fundamentals-course-patiala',
-    title: "Digital Marketing Fundamentals",
+    link:'/courses/digital-marketing-foundation-course-patiala',
+    title: "Digital Marketing Foundation",
     status: "Now Live",
     launch: "Current Batch",
     duration: "10 Weeks",
@@ -176,29 +176,6 @@ extras: [
       "Social Media Optimization",
       "Remarketing & Rebranding",
       "AI Powered Digital Marketing",
-    ],
-  },
-  {
-    
-    link:'/courses/digital-marketing-professional-course-patiala',
-    title: "Digital Marketing Professional",
-    status: "Upgraded Learning Path",
-    launch: "Updated for 2025",
-    duration: "32 Weeks",
-    modules: "18 Modules",
-    type: "Offline And Online Training",
-    mentors: "3+ Expert Mentors",
-    classes: "32+ Classes",
-    craftedBy: "Crafted by Digital Paaji - We Mind Your Business",
-    extras: [
-      "Digital Marketing Foundation",
-      "Online Lead Generation",
-      "Graphic Design & Content Writing",
-      "Website Creation, Content Writing & SEO",
-      "Social Media Optimization",
-      "Remarketing & Rebranding",
-      "AI Powered Digital Marketing",
-      "E-commerce & D2C Marketing",
     ],
   },
   {
