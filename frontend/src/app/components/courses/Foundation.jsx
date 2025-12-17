@@ -11,7 +11,7 @@ function Foundation() {
   const modules = [
    {
     "title": "MODULE 01: Digital Marketing Ecosystem",
-    "icon": "/Images/course/m1.png",
+    "icon": "/Images/course/dmspecialist/2.png",
     "points": [
       "The Current Opportunity",
       "Digital Marketing Channels",
@@ -20,7 +20,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 02: Computers & Internet Basics",
-    "icon": "/Images/course/m2.png",
+    "icon": "/Images/course/dmspecialist/1.png",
     "points": [
       "Computers & Internet Basics",
       "Networking Terms & Concepts",
@@ -31,7 +31,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 03: Google Workspace Mastery",
-    "icon": "/Images/course/m3.png",
+    "icon": "/Images/course/dmspecialist/3.png",
     "points": [
       "Gmail Customization",
       "Google Docs",
@@ -42,7 +42,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 04: SEO (Search Engine Optimization)",
-    "icon": "/Images/course/m4.png",
+    "icon": "/Images/course/dmspecialist/12.png",
     "points": [
       "SEO Keyword Research",
       "On-Page SEO",
@@ -52,7 +52,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 05: Digital Graphics Creation",
-    "icon": "/Images/course/m5.png",
+    "icon": "/Images/course/dmspecialist/13.png",
     "points": [
       "Basics of Banner Creation",
       "Resume Creation in Canva",
@@ -62,7 +62,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 06: Social Media Optimization",
-    "icon": "/Images/course/m6.png",
+    "icon": "/Images/course/dmspecialist/6.png",
     "points": [
       "What is Social Media & Why Care",
       "Facebook for Business Marketing",
@@ -72,7 +72,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 07: Video Creation & Editing",
-    "icon": "/Images/course/m7.png",
+    "icon": "/Images/course/dmspecialist/7.png",
     "points": [
       "Video Script & Shooting",
       "Explainer Video Creation",
@@ -84,7 +84,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 08: Online Advertising",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/11.png",
     "points": [
       "Introduction to Ad Types",
       "Types of Bidding",
@@ -95,7 +95,7 @@ function Foundation() {
   },
    {
     "title": "MODULE 09: Communicative English",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/eng.png",
     "points": [
       "Importance of Communication",
       "Communicating in English (Necessity or Worthless)",
@@ -105,7 +105,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 10: Introduction to Tenses",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/tenses.png",
     "points": [
       "Understanding Tenses and Their Usage",
       "Sentence Structuring Using Correct Tense Forms",
@@ -114,7 +114,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 11: Communication Activities & Role Plays",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/1.png",
     "points": [
       "Extempore Speeches",
       "Role Plays Based on Situations",
@@ -125,7 +125,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 12: Corporate Grooming",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/team.png",
     "points": [
       "Body Language",
       "Dressing Etiquettes – Dressing as per the Occasion",
@@ -136,7 +136,7 @@ function Foundation() {
   },
   {
     "title": "MODULE 13: Interview Preparation",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/graphic/15.png",
     "points": [
       "Resume Building",
       "Mock Interview Session",
@@ -189,7 +189,7 @@ function Foundation() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    {/* <div className="w-1/2 h-auto ">
+    <div className="w-1/2 h-auto ">
 
   
         <img
@@ -197,7 +197,7 @@ function Foundation() {
             alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div> */}
+    </div>
 <div className=" text-start">
 
       {/* Title */}

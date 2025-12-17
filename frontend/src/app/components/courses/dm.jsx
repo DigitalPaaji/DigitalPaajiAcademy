@@ -11,7 +11,7 @@ function AddOn() {
   const modules = [
     {
       "title": "MODULE 1: Marketing Foundation",
-      "icon": "/Images/course/m1.png",
+      "icon": "/Images/course/dmspecialist/1.png",
       "points": [
         "History of Marketing",
         "Traditional vs. Digital Marketing",
@@ -20,7 +20,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 2: Digital Marketing Ecosystem",
-      "icon": "/Images/course/m2.png",
+      "icon": "/Images/course/dmspecialist/2.png",
       "points": [
         "The Current Opportunity",
         "Digital Marketing Channels",
@@ -30,7 +30,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 3: Digital Consumer Behaviour",
-      "icon": "/Images/course/m3.png",
+      "icon": "/Images/course/dmspecialist/3.png",
       "points": [
         "Digital Consumer Journey",
         "Understanding Online Business Goals",
@@ -39,7 +39,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 4: Digital Visibility Strategy",
-      "icon": "/Images/course/m4.png",
+      "icon": "/Images/course/dmspecialist/4.png",
       "points": [
         "Website Planning",
         "Local Visibility",
@@ -49,7 +49,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 5: Online Lead Strategy",
-      "icon": "/Images/course/m5.png",
+      "icon": "/Images/course/dmspecialist/5.png",
       "points": [
         "Need of Online Advertising",
         "Types of Online Ads",
@@ -60,7 +60,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 6: Graphic Designing For Business",
-      "icon": "/Images/course/m6.png",
+      "icon": "/Images/course/dmspecialist/6.png",
       "points": [
         "Graphic Design Fundamentals",
         "Designing- Marketing Kits",
@@ -71,7 +71,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 7: Video Marketing For Business",
-      "icon": "/Images/course/m7.png",
+      "icon": "/Images/course/dmspecialist/7.png",
       "points": [
         "Video Creation Strategy",
         "Importance of Video Marketing",
@@ -86,7 +86,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 8: Building Your Business Website",
-      "icon": "/Images/course/m8.png",
+      "icon": "/Images/course/dmspecialist/8.png",
       "points": [
         "Buying Domain & Hosting",
         "Understanding C-panel",
@@ -100,7 +100,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 9: Introduction to Social Media",
-      "icon": "/Images/course/m9.png",
+      "icon": "/Images/course/dmspecialist/9.png",
       "points": [
         "Social Media Marketing Concept",
         "Exploring Social Media Channels",
@@ -113,7 +113,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 10: Landing Page Optimization",
-      "icon": "/Images/course/m10.png",
+      "icon": "/Images/course/dmspecialist/10.png",
       "points": [
         "Things to Know when planning a Lead Generation Campaign",
         "Key Elements of a Landing Page",
@@ -126,7 +126,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 11: Facebook & Instagram Advertising",
-      "icon": "/Images/course/m11.png",
+      "icon": "/Images/course/dmspecialist/11.png",
       "points": [
         "Introduction to Facebook & IG Ads Importance",
         "Types of Ads- Image, Video, Carousel, Story etc.",
@@ -140,7 +140,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 12: Introduction to SEO",
-      "icon": "/Images/course/m12.png",
+      "icon": "/Images/course/dmspecialist/12.png",
       "points": [
         "Google Search Console Tool",
         "SEO Keyword Research",
@@ -152,7 +152,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 13: Web Analytics & Traffic Reporting",
-      "icon": "/Images/course/m13.jpg",
+      "icon": "/Images/course/dmspecialist/13.png",
       "points": [
         "Introduction to Web Analytics",
         "Introduction to Google Analytics",
@@ -209,7 +209,7 @@ function AddOn() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    {/* <div className="w-1/2 h-auto ">
+    <div className="w-1/2 h-auto ">
 
   
         <img
@@ -217,7 +217,7 @@ function AddOn() {
          alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div> */}
+    </div>
 <div className=" text-start">
 
       {/* Title */}
