@@ -89,12 +89,12 @@ function InnerBanner({ heading}) {
         {heading}
       </h1>
                <div className=" text-base md:text-md my-4 mx-8 xl:mx-0 text-center xl:text-left">
-            <p>
+            {/* <p>
               At Digital Paaji Academy, our specialized programs in digital
               marketing, graphic design, video editing, SEO and web development
               are designed to make you industry-ready. Our hands-on, mentor-led
               courses give you the tools to succeed.
-            </p>
+            </p> */}
           </div>
             <div className="relative z-20 w-32 h-16 mx-auto xl:mx-0  group">
     {/* Shadow/Base */}

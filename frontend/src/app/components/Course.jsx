@@ -437,7 +437,7 @@ export default function CoursesHorizontal() {
 
         </div>
 
-        <div className="w-full  xl:w-[70%] h-[60vh] xl:h-[70vh]  relative overflow-hidden ">
+        <div className="w-full xl:w-[70%] h-[70vh]  relative overflow-hidden ">
           <div
             ref={cardsWrapperRef}
             className="absolute top-1/2 -translate-y-1/2 flex gap-x-6 w-max left-6"

@@ -12,7 +12,7 @@ function AddOn() {
    [
   {
     "title": "MODULE 1: Marketing Foundation",
-    "icon": "/Images/course/m1.png",
+    "icon": "/Images/course/dmspecialist/13.png",
     "points": [
       "History of Marketing",
       "Traditional vs. Digital Marketing"
@@ -20,7 +20,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 2: Digital Marketing Ecosystem",
-    "icon": "/Images/course/m2.png",
+    "icon": "/Images/course/dmspecialist/2.png",
     "points": [
       "The Current Opportunity",
       "Digital Marketing Channels",
@@ -29,7 +29,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 3: Digital Consumer Behaviour",
-    "icon": "/Images/course/m3.png",
+    "icon": "/Images/course/dmspecialist/3.png",
     "points": [
       "Digital Consumer Journey",
       "Understanding Online Business Goals"
@@ -37,7 +37,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 4: Online Lead Strategy",
-    "icon": "/Images/course/m4.png",
+    "icon": "/Images/course/dmspecialist/4.png",
     "points": [
       "Need of Online Advertising",
       "Types of Online Ads",
@@ -47,7 +47,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 5: Landing Page Optimization",
-    "icon": "/Images/course/m5.png",
+    "icon": "/Images/course/dmspecialist/8.png",
     "points": [
       "Things to Know when Planning a Lead Generation Campaign",
       "Key Elements of a Landing Page",
@@ -60,7 +60,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 6: Facebook & Instagram Advertising",
-    "icon": "/Images/course/m6.png",
+    "icon": "/Images/course/dmspecialist/9.png",
     "points": [
       "Introduction to Facebook & Instagram Ads Importance",
       "Types of Ads – Image, Video, Carousel, Story, etc.",
@@ -74,7 +74,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 7: Online Advertising & Google Ads",
-    "icon": "/Images/course/m7.png",
+    "icon": "/Images/course/dmspecialist/10.png",
     "points": [
       "Introduction to Paid Marketing & Google Ads",
       "Types of Campaigns",
@@ -92,7 +92,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 8: Display Advertising",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/1.png",
     "points": [
       "Display vs Search Ads – Difference",
       "Google Display Ad Campaigns",
@@ -104,7 +104,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 9: Video Advertising",
-    "icon": "/Images/course/m9.png",
+    "icon": "/Images/course/dmspecialist/7.png",
     "points": [
       "Introduction to Video Ads",
       "Video Ad Types",
@@ -115,7 +115,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 10: Remarketing & Rebranding",
-    "icon": "/Images/course/m10.png",
+    "icon": "/Images/course/dmspecialist/15.png",
     "points": [
       "How Remarketing Improves ROI",
       "Types of Remarketing Audience",
@@ -175,7 +175,7 @@ function AddOn() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    {/* <div className="w-1/2 h-auto ">
+<div className="w-1/2 h-auto ">
 
   
         <img
@@ -183,7 +183,7 @@ function AddOn() {
           alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div> */}
+    </div>
 <div className=" text-start">
 
       {/* Title */}

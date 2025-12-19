@@ -12,7 +12,7 @@ function AddOn() {
  [
   {
     "title": "MODULE 1: Marketing Foundation",
-    "icon": "/Images/course/m1.png",
+    "icon": "/Images/course/dmspecialist/1.png",
     "points": [
       "History of Marketing",
       "Traditional vs. Digital Marketing"
@@ -20,7 +20,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 2: Digital Marketing Ecosystem",
-    "icon": "/Images/course/m2.png",
+    "icon": "/Images/course/dmspecialist/15.png",
     "points": [
       "The Current Opportunity",
       "Digital Marketing Channels",
@@ -29,7 +29,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 3: Digital Consumer Behaviour",
-    "icon": "/Images/course/m3.png",
+    "icon": "/Images/course/dmspecialist/3.png",
     "points": [
       "Digital Consumer Journey",
       "Understanding Online Business Goals"
@@ -37,7 +37,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 4: Building Your Business Website",
-    "icon": "/Images/course/m4.png",
+    "icon": "/Images/course/dmspecialist/8.png",
     "points": [
       "Buying Domain & Hosting",
       "Understanding cPanel",
@@ -51,7 +51,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 5: Introduction to SEO",
-    "icon": "/Images/course/m5.png",
+    "icon": "/Images/course/dmspecialist/4.png",
     "points": [
       "Search Engine & Its Functions",
       "Why SEO",
@@ -62,7 +62,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 6: SEO Keyword Research",
-    "icon": "/Images/course/m6.png",
+    "icon": "/Images/course/dmspecialist/5.png",
     "points": [
       "What is Keyword",
       "Types of Keywords",
@@ -72,7 +72,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 7: On Page SEO – Content Optimization",
-    "icon": "/Images/course/m7.png",
+    "icon": "/Images/course/dmspecialist/6.png",
     "points": [
       "Importance of SEO Content",
       "Keywords Density & Proximity in Content",
@@ -83,7 +83,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 8: On Page SEO – Technical & HTML",
-    "icon": "/Images/course/m8.png",
+    "icon": "/Images/course/dmspecialist/10.png",
     "points": [
       "Title Tag",
       "Description Tags",
@@ -95,7 +95,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 9: Local SEO",
-    "icon": "/Images/course/m9.png",
+    "icon": "/Images/course/dmspecialist/12.png",
     "points": [
       "Google Business Profile Optimization",
       "Classified Optimization",
@@ -104,7 +104,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 10: Google Search Console Tool",
-    "icon": "/Images/course/m10.png",
+    "icon": "/Images/course/dmspecialist/14.png",
     "points": [
       "Setting Up Search Console",
       "Key GSC Reports",
@@ -114,7 +114,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 11: Off Page SEO – Link Building Techniques",
-    "icon": "/Images/course/m11.png",
+    "icon": "/Images/course/dmspecialist/2.png",
     "points": [
       "Types of Links",
       "Back Link Analysis",
@@ -170,7 +170,7 @@ function AddOn() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    {/* <div className="w-1/2 h-auto ">
+<div className="w-1/2 h-auto ">
 
   
         <img
@@ -178,7 +178,7 @@ function AddOn() {
           alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div> */}
+    </div>
 <div className=" text-start">
 
       {/* Title */}

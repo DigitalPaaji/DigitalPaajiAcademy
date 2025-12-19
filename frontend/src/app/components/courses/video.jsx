@@ -11,7 +11,7 @@ function AddOn() {
   const modules = [
     {
       "title": "MODULE 1: Introduction to Video Editing",
-      "icon": "/Images/course/m1.png",
+      "icon": "/Images/course/video/m1.png",
       "points": [
         "What is video editing",
         "Types of editing: cinematic, vlog, reels",
@@ -22,7 +22,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 2: Adobe Premiere Pro Workspace & Basics",
-      "icon": "/Images/course/m2.png",
+      "icon": "/Images/course/video/m2.png",
       "points": [
         "Interface overview",
         "Importing media",
@@ -33,7 +33,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 3: Basic Editing Tools",
-      "icon": "/Images/course/m3.png",
+      "icon": "/Images/course/video/m3.png",
       "points": [
         "Razor, Slip, Slide, Ripple, Rolling edits",
         "Trimming techniques",
@@ -44,7 +44,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 4: Audio Editing + Sound Design",
-      "icon": "/Images/course/m4.png",
+      "icon": "/Images/course/video/m4.png",
       "points": [
         "Audio levels, keyframes",
         "Reducing noise",
@@ -55,7 +55,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 5: Color Correction & Grading",
-      "icon": "/Images/course/m5.png",
+      "icon": "/Images/course/video/m5.png",
       "points": [
         "Lumetri Color panel",
         "Exposure, contrast, temperature, tint",
@@ -66,7 +66,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 6: Text, Titles & Graphics",
-      "icon": "/Images/course/m6.png",
+      "icon": "/Images/course/video/m6.png",
       "points": [
         "Essential Graphics panel",
         "Lower thirds",
@@ -77,7 +77,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 7: Transitions (Basic to Advanced)",
-      "icon": "/Images/course/m7.png",
+      "icon": "/Images/course/video/m7.png",
       "points": [
         "Cut-on-action",
         "Match cuts",
@@ -90,7 +90,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 8: Effects & Motion",
-      "icon": "/Images/course/m8.png",
+      "icon": "/Images/course/video/m8.png",
       "points": [
         "Scale, Position, Rotation",
         "Keyframing",
@@ -102,7 +102,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 9: Exporting for All Platforms",
-      "icon": "/Images/course/m9.png",
+      "icon": "/Images/course/video/m9.png",
       "points": [
         "YouTube, Instagram Reel, FB settings",
         "High-quality export",
@@ -113,7 +113,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 10: After Effects – Introduction",
-      "icon": "/Images/course/m10.png",
+      "icon": "/Images/course/video/m10.png",
       "points": [
         "Interface & workflow",
         "Compositions & layers",
@@ -124,7 +124,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 11: Text Animation Masterclass",
-      "icon": "/Images/course/m11.png",
+      "icon": "/Images/course/video/m11.png",
       "points": [
         "Write-on text animation",
         "Typewriter effect",
@@ -135,7 +135,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 12: Motion Graphics",
-      "icon": "/Images/course/m12.png",
+      "icon": "/Images/course/video/m12.png",
       "points": [
         "Shape layers",
         "Line animations",
@@ -147,7 +147,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 13: Visual Effects (VFX Essentials)",
-      "icon": "/Images/course/m13.jpg",
+      "icon": "/Images/course/video/m13.jpg",
       "points": [
         "Tracking (point, planar, mocha basics)",
         "Screen replacement",
@@ -159,7 +159,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 14: Advanced After Effects Techniques",
-      "icon": "/Images/course/m14.png",
+      "icon": "/Images/course/video/m14.png",
       "points": [
         "Expressions (wiggle, loop, delay)",
         "3D layers",
@@ -170,7 +170,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 15: Premiere Pro + After Effects Integration",
-      "icon": "/Images/course/m15.png",
+      "icon": "/Images/course/video/m15.png",
       "points": [
         "Dynamic Link workflow",
         "Editing in Premiere, animating in AE",
@@ -180,7 +180,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 16: Content Creation Special Module",
-      "icon": "/Images/course/m16.png",
+      "icon": "/Images/course/video/m16.png",
       "points": [
         "Editing YouTube vlogs",
         "Short-form content (reels/tiktok)",
@@ -192,7 +192,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 17: Real Projects (Portfolio Building)",
-      "icon": "/Images/course/m17.png",
+      "icon": "/Images/course/video/m17.png",
       "points": [
         "3 YouTube videos",
         "5 Instagram reels",
@@ -205,7 +205,7 @@ function AddOn() {
     },
     {
       "title": "MODULE 18: Final Exam + Certification",
-      "icon": "/Images/course/m18.png",
+      "icon": "/Images/course/video/m18.png",
       "points": [
         "Full video project",
         "Motion graphics task",

@@ -9,7 +9,7 @@ function AddOn() {
 [
   {
     "title": "MODULE 1: Marketing Foundation",
-    "icon": "/Images/course/m1.png",
+    "icon": "/Images/course/dmspecialist/4.png",
     "points": [
       "History of Marketing",
       "Traditional vs. Digital Marketing"
@@ -17,7 +17,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 2: Digital Marketing Ecosystem",
-    "icon": "/Images/course/m2.png",
+    "icon": "/Images/course/dmspecialist/2.png",
     "points": [
       "The Current Opportunity",
       "Digital Marketing Channels",
@@ -26,7 +26,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 3: Digital Consumer Behaviour",
-    "icon": "/Images/course/m3.png",
+    "icon": "/Images/course/dmspecialist/3.png",
     "points": [
       "Digital Consumer Journey",
       "Understanding Online Business Goals"
@@ -34,7 +34,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 4: Graphic Designing for Business",
-    "icon": "/Images/course/m4.png",
+    "icon": "/Images/course/dmspecialist/13.png",
     "points": [
       "Graphic Design Fundamentals",
       "Designing Marketing Kits",
@@ -45,7 +45,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 5: Video Marketing for Business",
-    "icon": "/Images/course/m5.png",
+    "icon": "/Images/course/dmspecialist/15.png",
     "points": [
       "Video Creation Strategy",
       "Importance of Video Marketing",
@@ -60,7 +60,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 6: Introduction to Social Media",
-    "icon": "/Images/course/m6.png",
+    "icon": "/Images/course/dmspecialist/6.png",
     "points": [
       "Social Media Marketing Concept",
       "Exploring Social Media Channels",
@@ -72,7 +72,7 @@ function AddOn() {
   },
   {
     "title": "MODULE 7: Facebook & Instagram Advertising",
-    "icon": "/Images/course/m7.png",
+    "icon": "/Images/course/dmspecialist/9.png",
     "points": [
       "Introduction to Facebook & IG Ads Importance",
       "Types of Ads: Image, Video, Carousel, Story etc.",
@@ -131,7 +131,7 @@ function AddOn() {
     <div key={index} className="p-2 lg:p-8 w-full  space-y-6  ">
       
       {/* Icon */}
-    {/* <div className="w-1/2 h-auto ">
+   <div className="w-1/2 h-auto ">
 
   
         <img
@@ -139,7 +139,7 @@ function AddOn() {
           alt={''}
           className="w-full  h-auto object-cover"
         />
-    </div> */}
+    </div> 
 <div className=" text-start">
 
       {/* Title */}
