@@ -65,15 +65,7 @@ app.post("/send-mail", async (req, res) => {
         pass: process.env.PASSWORD,
       },
     });
-  //   const transporter = nodemailer.createTransport({
-  // host: "smtp.gmail.com",
-  // port: 465, // 587 is also valid (TLS)
-  // secure: true, // true for 465, false for 587
-  // auth: {
-  //   user: process.env.EMAIL, // your Gmail address
-  //   pass: process.env.APP_PASSWORD, // App password, NOT your regular password
-  // },
-// });
+
 
 
 
@@ -212,46 +204,6 @@ const mailOptions = {
   </div>
 `,
 
-  
-  // html: `
-  //   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; word-wrap: break-word; overflow-wrap: break-word;">
-  //     <h2 style="color: #007bff; text-align: center; word-wrap: break-word;">New Contact Form Submission</h2>
-  //     <p style="font-size: 16px; word-wrap: break-word;">You have received a new message:</p>
-  //     <table style="width: 100%; border-collapse: collapse; word-wrap: break-word; overflow-wrap: break-word;">
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${name}</td>
-  //       </tr>
-      
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Email:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; word-break: break-all;"><a href="mailto:${email}" style="color: #007bff;">${email}</a></td>
-  //       </tr>
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td>
-  //       </tr>
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Qualification:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${qualification}</td>
-  //       </tr>
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Course:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${interest}</td>
-  //       </tr>
-      
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Leads From:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd;">${hear}</td>
-  //       </tr>
-  //       <tr>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; vertical-align: top;"><strong>Message:</strong></td>
-  //         <td style="padding: 8px; border-bottom: 1px solid #ddd; word-wrap: break-word; overflow-wrap: break-word;">${message}</td>
-  //       </tr>
-  //     </table>
-  //     <p style="text-align: center; margin-top: 20px;"><strong>Digital Paaji</strong></p>
-  //   </div>
-  // `,
 };
 
 
@@ -261,16 +213,7 @@ const mailOptions = {
 
     // WhatsApp API Trigger
     const whatsappUrl = "https://console.authkey.io/restapi/requestjson.php";
-    // const whatsappPayload = {
-    //   country_code: "91",
-    //   mobile: phone, // Send message to the provided phone number
-    //   wid: "6351",
-    //   type: "interactive",
-     
-    //   bodyValues: {
-    //     "1": fname // Use "1" to target the first variable in your template
-    //   }
-    // };
+   
     const whatsappPayload = {
       country_code: "91",
       mobile: phone, // Send message to the provided phone number
