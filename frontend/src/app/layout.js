@@ -9,6 +9,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
         <head>
         <link rel="icon" href="/favicon.webp" sizes="any" />
+        <link
+  rel="preload"
+  as="video"
+  href="/Images/cbanner.mp4"
+  type="video/mp4"
+/>
+
      <title>Digital Paaji Academy</title>
 
         <meta

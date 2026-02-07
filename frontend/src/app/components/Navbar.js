@@ -254,11 +254,11 @@ function Navbar({openPopup}) {
 
 
         {/* Hamburger Icon - Mobile */}
-        <div className="xl:hidden ">
-          <button onClick={toggleMenu} className="text-2xl cursor-pointer text-white">
+       
+          <button onClick={toggleMenu} className="xl:hidden text-2xl cursor-pointer text-white">
             {menuOpen ? <LiaTimesSolid /> : <RxHamburgerMenu />}
           </button>
-        </div>
+       
       </div>
 
      

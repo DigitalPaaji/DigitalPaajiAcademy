@@ -1,18 +1,23 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
 import Link from "next/link";
 import { CiClock2 } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
 import { MdViewModule } from "react-icons/md";
 import { FcOnlineSupport } from "react-icons/fc"; 
 
+// Import Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+
 const courses = [
   {
     link: '/courses/video-editing-course-patiala',
     title: "Video Editing Course",
-    status: "Enhanced Curriculum - Fresh Content Added",
+    status: "Fresh Content Added",
     launch: "Newly Launched",
     duration: "12 Weeks",
     modules: "18 Modules",
@@ -250,85 +255,34 @@ const courses = [
 ];
 
 export default function CoursesHorizontal() {
-  const marqueeRef = useRef(null);
-  const marqueeContentRef = useRef(null);
+  const swiperRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const marquee = marqueeRef.current;
-    const content = marqueeContentRef.current;
-    
-    if (!marquee || !content) return;
-
-    // Duplicate content for seamless loop
-    const clone = content.cloneNode(true);
-    marquee.appendChild(clone);
-
-    // Get total width of content
-    const contentWidth = content.scrollWidth;
-    
-    // Calculate animation duration based on width (slower speed)
-    const duration = contentWidth / 30; // Adjust divisor for speed (higher = slower)
-
-    // Create continuous animation
-    gsap.to(marquee, {
-      x: -contentWidth,
-      duration: duration,
-      ease: "linear",
-      repeat: -1,
-    });
-
-    return () => {
-      gsap.killTweensOf(marquee);
-    };
-  }, []);
-
-  const btnRef = useRef(null);
-  const borderRef = useRef(null);
+    if (swiperRef.current && swiperRef.current.swiper) {
+      const swiper = swiperRef.current.swiper;
+      
+      if (isHovering) {
+        swiper.autoplay.stop();
+      } else {
+        swiper.autoplay.start();
+      }
+    }
+  }, [isHovering]);
 
   const handleMouseEnter = () => {
-    gsap.to(btnRef.current, {
-      y: 2,
-      scale: 0.98,
-      duration: 0.2,
-      ease: "power2.inOut",
-    });
-
-    gsap.fromTo(
-      borderRef.current,
-      {
-        scale: 1,
-        opacity: 0.5,
-      },
-      {
-        scale: 1.1,
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      }
-    );
+    setIsHovering(true);
   };
 
   const handleMouseLeave = () => {
-    gsap.to(btnRef.current, {
-      y: 0,
-      scale: 1,
-      duration: 0.2,
-      ease: "power2.inOut",
-    });
-
-    gsap.to(borderRef.current, {
-      scale: 1,
-      opacity: 0.5,
-      duration: 0.4,
-      ease: "power2.inOut",
-    });
+    setIsHovering(false);
   };
 
   return (
-    <div id="course-corner" className="pt-16 md:pt-20 pb-16 px-4 md:px-8 w-full overflow-hidden ">
+    <div id="course-corner" className="pt-16 lg:pt-24 pb-16 px-4 lg:px-12 2xl:px-24  py-24  w-full overflow-hidden">
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto mb-12 md:mb-16">
-        <div className="w-full px-4 md:px-0">
+      <div className=" mb-12 lg:mb-16">
+        <div className="w-full">
           <h1 className="bungee-shade-regular text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6">
             CAREER HUSTLE? WE'VE GOT THE COURSES
           </h1>
@@ -341,29 +295,24 @@ export default function CoursesHorizontal() {
             </p>
           </div>
           
-          <div className="relative z-20 w-full md:w-48 h-16 mx-auto group">
-<div
-  className={`
-    jsx-c1ef8ad79c2bb3f
-    absolute top-[6px] left-[4px]
-    bg-white border-2 border-white
-    w-full h-full rounded-md
-  `}
- />
-
+          <div className="relative z-20 w-full lg:w-48 h-16 mx-auto group">
+            <div
+              className={`
+                absolute top-[6px] left-[4px]
+                bg-white border-2 border-white
+                w-full h-full rounded-md
+              `}
+            />
             
             <Link
               href="/contact"
-              ref={btnRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
               className="
                 poppins-bold cursor-pointer absolute top-0 left-0 
                 w-full h-full bg-black text-white rounded-md 
                 flex items-center justify-center 
                 transition-all duration-150 
                 group-hover:top-[2px] group-hover:left-[2px]
-                text-lg md:text-xl"
+                text-lg lg:text-xl"
             >
               Enroll Now
             </Link>
@@ -371,97 +320,165 @@ export default function CoursesHorizontal() {
         </div>
       </div>
 
-      {/* Marquee Section */}
-      <div className="relative w-full overflow-hidden">
-        {/* Gradient overlays for smooth edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#e98724c2] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#e98724c2] to-transparent z-10 pointer-events-none" />
-        
-        <div 
-          ref={marqueeRef}
-          className="flex gap-4 md:gap-6 lg:gap-8 w-max"
-        >
+      {/* Swiper Section - Desktop Only */}
+      <div className="hidden lg:block w-full">
+        <div className="relative">
+          {/* Gradient overlays for smooth edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-r from-[#e98724c2] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-l from-[#e98724c2] to-transparent z-10 pointer-events-none" />
+          
           <div 
-            ref={marqueeContentRef}
-            className="flex gap-4 md:gap-6 lg:gap-8 w-max px-4"
+            className="w-full overflow-hidden px-4"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            {courses.map((course, index) => (
-              <Link
-                href={course.link}
-                key={index}
-                className={`
-                  poppins-bold rounded-2xl p-6 md:p-8 shadow-lg transition-all duration-300 
-                  flex-shrink-0 w-[85vw] md:w-[400px] lg:w-[450px] xl:w-[500px]
-                  hover:scale-[1.02] hover:shadow-xl active:scale-[0.99]
-                  ${index % 2 === 0 ? "bg-black text-white" : "bg-white text-black border border-gray-200"}
-                `}
-              >
-                <div className="flex items-center justify-between mb-4">
+            <Swiper
+              ref={swiperRef}
+              modules={[Autoplay]}
+              spaceBetween={24}
+              slidesPerView={'auto'}
+              loop={true}
+              autoplay={{
+                delay: 1,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              speed={6000}
+              grabCursor={true}
+              freeMode={{
+                enabled: true,
+                momentum: true,
+                momentumBounce: false,
+                momentumRatio: 1,
+                momentumVelocityRatio: 1,
+                sticky: true,
+                minimumVelocity: 0.01,
+              }}
+              className="!pb-4"
+            >
+              {courses.map((course, index) => (
+                <SwiperSlide 
+                  key={index} 
+                  className="!w-[85vw] sm:!w-[400px] lg:!w-[420px]  xl:!w-[480px]"
+                >
                   <div
-                    className="px-3 py-1.5 bg-[#f5911e] text-white rounded-md flex items-center gap-2 w-fit"
-                    style={{ fontWeight: "600" }}
+                    className={`
+                      poppins-bold rounded-2xl p-6 md:p-8 shadow-lg transition-all duration-300 
+                      hover:scale-[1.02] hover:shadow-xl active:scale-[0.99] h-full
+                      ${index % 2 === 0 ? "bg-black text-white" : "bg-white text-black border border-gray-200"}
+                    `}
                   >
-                    <p className="w-3 h-3 bg-[#19e906] rounded-full animate-pulse border-2 border-[#d0f7c4c5]"></p>
-                    <span className="text-sm md:text-base">{course.launch}</span>
-                  </div>
-                  <span className="poppins text-sm md:text-base font-semibold text-red-500">
-                    {course.status}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">{course.title}</h3>
-                <p className="text-xs md:text-sm text-gray-400 mb-4">{course.craftedBy}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div
+                        className="px-3 py-1.5 bg-[#f5911e] text-white rounded-md flex items-center gap-2 w-fit"
+                        style={{ fontWeight: "600" }}
+                      >
+                        <p className="w-3 h-3 bg-[#19e906] rounded-full animate-pulse border-2 border-[#d0f7c4c5]"></p>
+                        <span className="text-sm md:text-base">{course.launch}</span>
+                      </div>
+                      <span className="poppins text-sm md:text-base font-semibold text-red-500">
+                        {course.status}
+                      </span>
+                    </div>
+                    
+                    <Link href={course.link} className="text-xl md:text-2xl xl:text-3xl font-bold mb-2 block">
+                      <h3>{course.title}</h3>
+                    </Link>
+                    
+                    <p className="text-xs md:text-sm text-gray-400 mb-4">{course.craftedBy}</p>
 
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="flex items-center gap-2">
-                    <SlCalender className="text-lg" />
-                    <span className="font-semibold text-sm md:text-base">{course.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MdViewModule className="text-lg" />
-                    <span className="font-semibold text-sm md:text-base">{course.modules}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FcOnlineSupport className="text-lg" />
-                    <span className="font-semibold text-sm md:text-base">{course.type}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CiClock2 className="text-lg" />
-                    <span className="font-semibold text-sm md:text-base">{course.classes}</span>
-                  </div>
-                </div>
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <SlCalender className="text-lg" />
+                        <span className="font-semibold text-sm md:text-base">{course.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MdViewModule className="text-lg" />
+                        <span className="font-semibold text-sm md:text-base">{course.modules}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <FcOnlineSupport className="text-lg" />
+                        <span className="font-semibold text-sm md:text-base">{course.type}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CiClock2 className="text-lg" />
+                        <span className="font-semibold text-sm md:text-base">{course.classes}</span>
+                      </div>
+                    </div>
 
-                <div className="max-h-32 md:max-h-36 overflow-y-auto pr-2 styled-scrollbar mb-4">
-                  <ul className="poppins text-sm md:text-base list-disc list-inside space-y-1">
-                    {course.extras.slice(0, 4).map((item, i) => (
-                      <li key={i} className="truncate">{item}</li>
-                    ))}
-                    {course.extras.length > 4 && (
-                      <li className="font-semibold">+ {course.extras.length - 4} more modules</li>
-                    )}
-                  </ul>
-                </div>
+                    <div className="max-h-32 lg:max-h-36 overflow-y-auto pr-2 styled-scrollbar mb-4">
+                      <ul className="poppins text-sm md:text-base list-disc list-inside space-y-1">
+                        {course.extras.map((item, i) => (
+                          <li key={i} className="truncate">{item}</li>
+                        ))}
+                        {/* {course.extras.length > 4 && (
+                          <li className="font-semibold">+ {course.extras.length - 4} more modules</li>
+                        )} */}
+                      </ul>
+                    </div>
 
-                <div className="flex items-center gap-2 text-sm md:text-base">
-                  <span className="text-xl">👨‍🏫</span>
-                  <span className="font-semibold">{course.mentors}</span>
-                </div>
-              </Link>
-            ))}
+                    <div className="flex items-center gap-2 text-sm md:text-base">
+                      <span className="text-xl">👨‍🏫</span>
+                      <span className="font-semibold">{course.mentors}</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>
 
+      {/* Mobile Column Layout */}
+      <div className="block lg:hidden max-w-2xl mx-auto space-y-6">
+        {courses.map((course, index) => (
+          <div
+            key={index}
+            className={`
+              poppins-bold rounded-2xl p-6 shadow-md transition-all
+              ${index % 2 === 0 ? "bg-black text-white" : "bg-white text-black border"}
+            `}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="px-3 py-1 bg-[#f5911e] text-white rounded-md text-sm">
+                {course.launch}
+              </span>
+              <span className="text-sm font-semibold text-red-500">
+                {course.status}
+              </span>
+            </div>
+
+            <Link href={course.link} className="text-xl font-bold mb-2 block">
+              <h3>{course.title}</h3>
+            </Link>
+            
+            <p className="text-xs text-gray-400 mb-3">{course.craftedBy}</p>
+
+            <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
+              <div className="flex items-center gap-2">
+                <SlCalender /> {course.duration}
+              </div>
+              <div className="flex items-center gap-2">
+                <MdViewModule /> {course.modules}
+              </div>
+              <div className="flex items-center gap-2">
+                <FcOnlineSupport /> {course.type}
+              </div>
+              <div className="flex items-center gap-2">
+                <CiClock2 /> {course.classes}
+              </div>
+            </div>
+
+            <ul className="list-disc list-inside text-sm space-y-1">
+              {course.extras.slice(0, 5).map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
       <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
         .styled-scrollbar {
           scrollbar-width: thin;
           scrollbar-color: #888 transparent;

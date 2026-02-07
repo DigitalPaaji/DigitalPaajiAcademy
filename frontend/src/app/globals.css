@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?&family=Laila:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Doodle+Shadow&display=swap');@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 @import "tailwindcss"; 
 
+/* ===== Custom Scrollbar ===== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #969494 #0d0d0ec4; /* thumb track */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 7                                                                               px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0ec4; /* track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #969494;
+  border-radius: 10px;
+  border: 2px solid #0d0d0ec4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #969494;
+}
 
 
 body {
@@ -10,7 +37,6 @@ body {
 
   
 }
-
 
 .protest {
   font-family: "Protest Revolution";
