@@ -12,69 +12,79 @@ import { PiPlayCircleThin } from "react-icons/pi";
 
 
 const frames = [
-  { type: "fashion", url: "https://www.instagram.com/reel/DUYfekBEyH3/" },
-  { type: "fashion", url: "https://www.instagram.com/reel/XXXXXXXXXXX/" },
-    { type: "fashion", url: "https://www.instagram.com/reel/DUYfekBEyH3/" },
-  { type: "fashion", url: "https://www.instagram.com/reel/XXXXXXXXXXX/" },  { type: "fashion", url: "https://www.instagram.com/reel/DUYfekBEyH3/" },
-  { type: "fashion", url: "https://www.instagram.com/reel/XXXXXXXXXXX/" },  { type: "fashion", url: "https://www.instagram.com/reel/DUYfekBEyH3/" },
-  { type: "fashion", url: "https://www.instagram.com/reel/XXXXXXXXXXX/" },
+   { type: "video", src: "/Images/student1.mp4" },
+  { type: "video", src: "/Images/student2.mp4" },
+  { type: "video", src: "/Images/student3.mp4" },
+  { type: "video", src: "/Images/student4.mp4" },
+
 ];
 
-const getInstagramEmbedUrl = (url, isActive) => {
-  const cleanUrl = url.split("?")[0];
 
-  const params = new URLSearchParams({
-    autoplay: isActive ? "1" : "0",
-    muted: "1",          // MUST be muted for autoplay
-    loop: "1",
-  });
-
-  return `${cleanUrl}embed?${params.toString()}`;
-};
 
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Students() {
-  const videoRefs = useRef([])
-  const [isPlaying, setIsPlaying] = useState({})
 
-  const videos = [
-    '/Images/student1.mp4',
-    '/Images/student2.mp4',
-    '/Images/student3.mp4',
-    '/Images/student4.mp4',
-  ]
+  // const [isPlaying, setIsPlaying] = useState({})
 
-  const handlePlayPause = (index)=>{
-    const video = videoRefs.current[index];
-    if(!video) return;
-    if(video.paused){
-      video.play();
-      setIsPlaying((prev)=>({...prev,[index]:true}))
-    }else{
-      video.pause();
-      setIsPlaying((prev)=>({...prev,[index]:false}))
+  // const videos = [
+  //   '/Images/student1.mp4',
+  //   '/Images/student2.mp4',
+  //   '/Images/student3.mp4',
+  //   '/Images/student4.mp4',
+  // ]
 
+  // const handlePlayPause = (index)=>{
+  //   const video = videoRefs.current[index];
+  //   if(!video) return;
+  //   if(video.paused){
+  //     video.play();
+  //     setIsPlaying((prev)=>({...prev,[index]:true}))
+  //   }else{
+  //     video.pause();
+  //     setIsPlaying((prev)=>({...prev,[index]:false}))
+
+  //   }
+  // }
+const swiperRef = useRef(null);
+const videoRefs = useRef([]);
+let resumeTimeout;
+
+const pauseAutoplay = () => {
+  swiperRef.current?.autoplay?.stop();
+};
+
+const resumeAutoplay = () => {
+  clearTimeout(resumeTimeout);
+  resumeTimeout = setTimeout(() => {
+    swiperRef.current?.autoplay?.start();
+  }, 2000);
+};
+
+const handlePlay = (index) => {
+  pauseAutoplay();
+
+  // pause other videos
+  videoRefs.current.forEach((vid, i) => {
+    if (vid && i !== index) {
+      vid.pause();
     }
-  }
+  });
+};
 
-    const [loadedFrames, setLoadedFrames] = useState(new Array(frames.length).fill(false));
-  
-    const handleIframeLoad = (index) => {
-      setLoadedFrames(prev => {
-        const newLoaded = [...prev];
-        newLoaded[index] = true;
-        return newLoaded;
-      });
-    };
+const handlePause = () => {
+  resumeAutoplay();
+};
+
+
   return (
     <div 
     
     className='mx-6 lg:mx-12 xl:mx-24 py-24'>
       {/* Text Row */}
-      <div className='flex flex-col  justify-between items-start mb-16 gap-8'>
-        <h3 className="bungee-shade-regular text-5xl md:text-5xl xl:text-7xl font-bold leading-tight text-center lg:text-left ">
+      <div className='text-center mb-16 space-y-8'>
+        <h3 className="bungee-shade-regular text-5xl md:text-5xl xl:text-7xl font-bold leading-tight">
           Hear from Our Learners
         </h3>
         <p>
@@ -92,30 +102,25 @@ function Students() {
 <section className=" w-full py-20">
 
 
-<div className="relative">
-  <Swiper
-    effect="coverflow"
-    grabCursor={true}
-    centeredSlides={true}
-    slidesPerView={1}
-    spaceBetween={20}
-    loop={true}
-    autoplay={{
-      delay:3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    }}
-    navigation={{
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }}
-    coverflowEffect={{
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    }}
+<div className="relative h-[65vh] md:h-[75vh]">
+ <Swiper
+  effect="coverflow"
+  centeredSlides
+  grabCursor
+  loop
+  slidesPerView={1}
+  spaceBetween={20}
+  onSwiper={(swiper) => (swiperRef.current = swiper)}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+  navigation={{
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }}
+
+
     breakpoints={{
       // Mobile (0px - 639px)
       0: {
@@ -168,7 +173,7 @@ function Students() {
       // Large desktop (1280px+)
       1280: {
         slidesPerView: 3,
-        spaceBetween: 40,
+        spaceBetween: 0,
         coverflowEffect: {
           rotate: 0,
           stretch: -80,
@@ -178,70 +183,33 @@ function Students() {
         }
       },
     }}
-    modules={[EffectCoverflow, Navigation, Autoplay]}
-    className="h-[65vh] md:h-[75vh]"
-  >
-    {frames.map((frame, index) => (
-      <SwiperSlide key={index}>
-        {({ isActive }) => (
-          <div className="relative overflow-hidden h-full">
-            {/* Loading overlay */}
-            {!loadedFrames[index] && (
-              <div className="absolute inset-0 bg-transparent animate-pulse flex items-center justify-center z-10">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 border-4 border-[#cc5f4d]/20 border-t-[#cc5f4d] rounded-full animate-spin mb-4"></div>
-                  <span className="text-[#cc5f4d] font-medium">Loading...</span>
-                </div>
-              </div>
-            )}
+  modules={[EffectCoverflow, Navigation, Autoplay]}
+  className=" "
+>
+{frames.map((frame, index) => (
+  <SwiperSlide key={index}>
+    <div className="relative h-[550px] 2xl:h-[690px] w-fit rounded-xl">
 
-            {/* Video container */}
-            <div
-              className={`transition-all duration-700 overflow-hidden h-full
-                ${
-                  isActive
-                    ? 'scale-100 blur-0 opacity-100'
-                    : 'scale-90 blur-[2px] opacity-90'
-                }
-                ${!loadedFrames[index] ? 'opacity-0' : 'opacity-100'}
-              `}
-            >
-              {/* YouTube embed for Shorts */}
-             {/* Instagram Reel embed */}
-<div className="w-full h-full overflow-hidden bg-transparent flex justify-center items-center">
-  <iframe
-    key={`${frame.url}-${isActive}`} // 🔥 forces reload on active change
-    src={getInstagramEmbedUrl(frame.url, isActive)}
-    loading="lazy"
-    className="w-full h-full border-0 transition-opacity duration-700"
-    onLoad={() => handleIframeLoad(index)}
-    style={{
-      opacity: loadedFrames[index] ? 1 : 0,
-    }}
-    title={`Instagram Reel - ${frame.type} ${index + 1}`}
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-    allowFullScreen
-  />
-</div>
+      <video
+        ref={(el) => (videoRefs.current[index] = el)}
+        src={frame.src}
+        className="w-full h-full object-cover"
+        playsInline
+        controls
+        preload="metadata"
+        onPlay={() => handlePlay(index)}
+        onPause={handlePause}
+        onEnded={handlePause}
+      />
 
+      {/* Gradient mask */}
+      {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" /> */}
 
+    </div>
+  </SwiperSlide>
+))}
+</Swiper>
 
-              {/*
-              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <div className={`transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-[#cc5f4d]/80 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 md:w-8 md:h-8 text-white ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div> */}
-            </div>
-          </div>
-        )}
-      </SwiperSlide>
-    ))}
-  </Swiper>
 
   {/* Navigation buttons - Visible on ALL screen sizes */}
   <div className="swiper-button-prev 
@@ -273,7 +241,7 @@ function Students() {
 
 
 
-      {/* Video Grid */}
+      {/* 
       <div 
       
       className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center justify-items-center  gap-6'>
@@ -300,11 +268,11 @@ function Students() {
               // muted
               playsInline
               loop
-              className='w-full h-full object-cover'
+              className='w-full h-full object-contain'
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
