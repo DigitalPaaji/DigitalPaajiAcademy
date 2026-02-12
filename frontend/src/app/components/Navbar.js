@@ -115,7 +115,7 @@ function Navbar({openPopup}) {
     setIsHovering(false);
   }
   return (
-    <div className="fixed  top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/80 via-black/60 to-black/0 "
+    <div className="fixed  top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/70 via-black/60 to-transparent "
   >
       <div className="text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
      
@@ -222,9 +222,9 @@ function Navbar({openPopup}) {
 
         {/* Enroll Now - Right */}
      {/* Enroll Now - Right */}
-<div className="">
+ <div className="">
   <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 group">
-    {/* Shadow/Base */}
+  
     <div
       className="absolute top-[6px] left-[4px] 
       bg-black border-2 border-[#000000b4] 
@@ -233,7 +233,6 @@ function Navbar({openPopup}) {
    group-hover:top-[4px] group-hover:left-[3px]"
     />
 
-    {/* Actual Button */}
     <Link
     href={"/enrollnow"}
       // onClick={() => openPopup()}
@@ -250,7 +249,8 @@ function Navbar({openPopup}) {
       Enroll Now
     </Link>
   </div>
-</div>
+</div> 
+
 
 
         {/* Hamburger Icon - Mobile */}
