@@ -470,7 +470,7 @@ export default function CoursesHorizontal() {
             </div>
 
             <ul className="list-disc list-inside text-sm space-y-1">
-              {course.extras.slice(0, 5).map((item, i) => (
+              {course.extras.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>

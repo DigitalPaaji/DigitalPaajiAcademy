@@ -47,7 +47,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="poppins mx-6 lg:mx-12 xl:mx-24 py-24 min-h-screen ">
+    <div className="poppins mx-6 lg:mx-12 xl:mx-24 pb-12 min-h-screen ">
       <div className="text-center mb-20">
       <h1 className="bungee-shade-regular text-4xl md:text-5xl xl:text-6xl font-bold ">
           PUNJAB'S BEST DIGITAL MARKETING ACADEMY

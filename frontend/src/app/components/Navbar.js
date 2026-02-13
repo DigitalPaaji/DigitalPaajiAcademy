@@ -12,32 +12,16 @@ function Navbar({openPopup}) {
   const btnRef = useRef(null);
   const borderRef = useRef(null);
   const dropdownRef = useRef(null);
-  //  const pathname = usePathname();
-
-//  const [isOpen, setIsOpen] = useState(false);
-  // const openMenu = () => {
-  //   setIsOpen(true);
-  // };
-  // const closeMenu = () => {
-  //   setIsOpen(false);
-  // };
-
 
   // useEffect(() => {
-  //   if (pathname === '/enroll-now') {
-  //     openPopup();
-  //   }
-  // }, [pathname, openPopup]);
-
-  useEffect(() => {
-    gsap.from(btnRef.current, {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power3.out",
-    });
+  //   gsap.from(btnRef.current, {
+  //     opacity: 0,
+  //     y: 30,
+  //     duration: 1,
+  //     ease: "power3.out",
+  //   });
     
-  }, []);
+  // }, []);
 
   const handleMouseEnter = () => {
     gsap.to(btnRef.current, {
@@ -115,8 +99,7 @@ function Navbar({openPopup}) {
     setIsHovering(false);
   }
   return (
-    <div className="fixed  top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/70 via-black/60 to-transparent "
-  >
+    <div className="fixed  top-0 w-full h-[100px] z-[99999] backdrop-blur-md bg-gradient-to-b from-black/70 via-black/60 to-transparent ">
       <div className="text-black flex items-center justify-between px-6 lg:px-12 xl:px-24 h-[100px]">
      
      
@@ -220,8 +203,9 @@ function Navbar({openPopup}) {
         
         </ul>
 
-        {/* Enroll Now - Right */}
+
      {/* Enroll Now - Right */}
+
  <div className="">
   <div className="relative z-20 w-24 sm:w-28 lg:w-36 h-10 sm:h-12 group">
   
@@ -244,7 +228,7 @@ function Navbar({openPopup}) {
         w-full h-full bg-white text-black rounded-md 
         flex items-center justify-center 
         transition-all duration-150 
-        group-hover:top-[2px] group-hover:left-[2px]"
+        group-hover:top-[2px] group-hover:left-[2px]  animate-fadeUp"
     >
       Enroll Now
     </Link>

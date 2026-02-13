@@ -1,60 +1,60 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+// import gsap from "gsap";
+// import Link from "next/link";
+// import { BsArrowRight } from "react-icons/bs";
 
 function Journey() {
-  const btnRef = useRef(null);
-  const borderRef = useRef(null);
+  // const btnRef = useRef(null);
+  // const borderRef = useRef(null);
 
 
 
-  const handleMouseEnter = () => {
-    // Press-in effect (move down slightly)
-    gsap.to(btnRef.current, {
-      y: 2,
-      scale: 0.98,
-      duration: 0.2,
-      ease: "power2.inOut",
-    });
+  // const handleMouseEnter = () => {
+  //   // Press-in effect (move down slightly)
+  //   gsap.to(btnRef.current, {
+  //     y: 2,
+  //     scale: 0.98,
+  //     duration: 0.2,
+  //     ease: "power2.inOut",
+  //   });
 
-    // Border ripple
-    gsap.fromTo(
-      borderRef.current,
-      {
-        scale: 1,
-        opacity: 0.5,
-      },
-      {
-        scale: 1.1,
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      }
-    );
-  };
+  //   // Border ripple
+  //   gsap.fromTo(
+  //     borderRef.current,
+  //     {
+  //       scale: 1,
+  //       opacity: 0.5,
+  //     },
+  //     {
+  //       scale: 1.1,
+  //       opacity: 1,
+  //       duration: 0.4,
+  //       ease: "power2.out",
+  //     }
+  //   );
+  // };
 
-  const handleMouseLeave = () => {
-    // Reset position and scale
-    gsap.to(btnRef.current, {
-      y: 0,
-      scale: 1,
-      duration: 0.2,
-      ease: "power2.inOut",
-    });
+  // const handleMouseLeave = () => {
+  //   // Reset position and scale
+  //   gsap.to(btnRef.current, {
+  //     y: 0,
+  //     scale: 1,
+  //     duration: 0.2,
+  //     ease: "power2.inOut",
+  //   });
 
-    // Reset border
-    gsap.to(borderRef.current, {
-      scale: 1,
-      opacity: 0.5,
-      duration: 0.4,
-      ease: "power2.inOut",
-    });
-  };
+  //   // Reset border
+  //   gsap.to(borderRef.current, {
+  //     scale: 1,
+  //     opacity: 0.5,
+  //     duration: 0.4,
+  //     ease: "power2.inOut",
+  //   });
+  // };
   return (
-    <div className="px-6 lg:px-12 xl:px-24 pt-24 xl:py-24 ">
+    <div className="px-6 lg:px-12 xl:px-24 pt-12 xl:py-12 ">
       <div className="flex flex-col xl:flex-row items-center justify-center gap-12">
         {/* Left Content */}
         <div className=" w-full xl:w-[50%] text-center md:text-left">

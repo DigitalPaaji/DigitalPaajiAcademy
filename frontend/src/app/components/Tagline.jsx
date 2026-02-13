@@ -36,9 +36,24 @@ function Tagline() {
   return (
     <section
       ref={sectionRef}
-      className=" text-center overflow-hidden   rounded-4xl  px-6 2xl:px-24 py-12 mx-6 lg:mx-12 2xl:mx-24"
+      className=" text-center overflow-hidden   rounded-4xl  px-6 2xl:px-24 py-24 mx-6 lg:mx-12 2xl:mx-24"
     >
-  <img src="/Images/headline.webp" alt="" className="mx-auto w-full object-cover h-[220px] "/>
+<>
+  {/* Mobile image */}
+  <img
+    src="/Images/headline.webp"
+    alt=""
+    className="mx-auto w-full h-auto block xl:hidden "
+  />
+
+  {/* Desktop image */}
+  <img
+    src="/Images/headline1.webp"
+    alt=""
+    className="mx-auto w-full h-auto hidden xl:block"
+  />
+</>
+
       {/* <h1 className="  text-3xl md:text-7xl leading-tight tracking-tight">
         {words.map((word, index) => (
           <span
@@ -53,7 +68,7 @@ function Tagline() {
         ))}
       </h1> */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-12  gap-12 mt-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-12  gap-8 mt-24">
         <div className="cols-span-1 2xl:col-span-4 flex flex-col h-full ">
 
 
@@ -129,7 +144,7 @@ function Tagline() {
 
            
               <video
-  src="/Images/insta.webm"
+  src="/Images/academy.webm"
   loading="lazy"
   autoPlay
   loop

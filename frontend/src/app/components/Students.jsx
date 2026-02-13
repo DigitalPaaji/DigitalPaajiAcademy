@@ -62,7 +62,7 @@ function Students() {
   return (
     <div className='mx-6 lg:mx-12 xl:mx-24'>
       {/* Text Row */}
-      <div className='text-center mb-16 space-y-8'>
+      <div className='text-center space-y-8'>
         <h3 className="bungee-shade-regular text-5xl md:text-5xl xl:text-7xl font-bold leading-tight">
           Hear from Our Learners
         </h3>
@@ -73,8 +73,8 @@ function Students() {
         </p>
       </div>
 
-      <section className="w-full py-20">
-        <div className="relative h-[65vh] md:h-[75vh]">
+      <section className="w-full py-12">
+        <div className="relative">
           <Swiper
             effect="coverflow"
             centeredSlides
