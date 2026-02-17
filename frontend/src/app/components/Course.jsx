@@ -9,7 +9,8 @@ import { FcOnlineSupport } from "react-icons/fc";
 
 // Import Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, FreeMode } from 'swiper/modules';
+
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
@@ -333,29 +334,20 @@ export default function CoursesHorizontal() {
             onMouseLeave={handleMouseLeave}
           >
             <Swiper
-              ref={swiperRef}
-              modules={[Autoplay]}
-              spaceBetween={24}
-              slidesPerView={'auto'}
-              loop={true}
-              autoplay={{
-                delay: 1,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              speed={6000}
-              grabCursor={true}
-              freeMode={{
-                enabled: true,
-                momentum: true,
-                momentumBounce: false,
-                momentumRatio: 1,
-                momentumVelocityRatio: 1,
-                sticky: true,
-                minimumVelocity: 0.01,
-              }}
-              className="!pb-4"
-            >
+  ref={swiperRef}
+  modules={[Autoplay, FreeMode]}
+  spaceBetween={24}
+  slidesPerView="auto"
+  loop={true}
+  speed={10000}
+  freeMode={true}
+  autoplay={{
+    delay: 0,
+    disableOnInteraction: false,
+  }}
+  grabCursor={true}
+  className="!pb-4"
+>
               {courses.map((course, index) => (
                 <SwiperSlide 
                   key={index} 

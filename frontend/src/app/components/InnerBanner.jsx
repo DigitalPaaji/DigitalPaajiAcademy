@@ -28,7 +28,7 @@ function InnerBanner({ heading }) {
         opacity: 1,
         duration: 0.4,
         ease: "power2.out",
-      },
+      }
     );
   };
 
@@ -49,272 +49,644 @@ function InnerBanner({ heading }) {
       ease: "power2.inOut",
     });
   };
+
+  // Function to handle PDF download
+  const handleDownloadPDF = () => {
+    // Replace this with your actual PDF URL
+    const pdfUrl = "/syllabus.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
   return (
-    <div className=" ">
-   <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-24 py-12  flex flex-col lg:flex-row items-center gap-4 xl:gap-12 bg-cover bg-center overflow-hidden">
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 opacity-35 bg-cover bg-center"
-    style={{
-      backgroundImage: "url(/Images/course/bg.png)",
-    }}
-  />
-  
-  {/* Content Section */}
-  <div className="relative w-full lg:w-1/2 z-10 px-2 sm:px-0">
-    {/* Heading */}
-    <h1 className="bungee-shade-regular text-3xl sm:text-4xl md:text-5xl  xl:text-7xl text-[#000000] leading-tight">
-      {heading}
-    </h1>
-    
-    {/* Description */}
-    <div className="text-sm sm:text-base md:text-lg my-4 sm:my-6">
-      <p>
-        At Digital Paaji Academy, our specialized programs in digital
-        marketing, graphic design, video editing, SEO and web development
-        are designed to make you industry-ready. Our hands-on, mentor-led
-        courses give you the tools to succeed.
-      </p>
-    </div>
-    
-    {/* Button */}
-    <div className="relative z-20 w-28 sm:w-32 h-12 sm:h-14 md:h-16 group">
-      {/* Shadow/Base */}
-      <div
-        className="absolute top-[6px] left-[4px] 
-          bg-white border-2 border-white 
-          w-full h-full rounded-md 
-          transition-all duration-150 
-          group-hover:top-[4px] group-hover:left-[3px]"
-      />
-      
-      {/* Actual Button */}
-      <Link
-        href="/enrollnow"
-        ref={btnRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="
-          poppins-bold text-base sm:text-lg md:text-xl cursor-pointer 
-          absolute top-0 left-0 
-          w-full h-full bg-black text-white rounded-md 
-          flex items-center justify-center 
-          transition-all duration-150 
-          group-hover:top-[2px] group-hover:left-[2px]"
-      >
-        Enroll Now
-      </Link>
-    </div>
-  </div>
-  
-  {/* Image Section */}
-  <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-8 lg:mt-0">
-    {/* Badge */}
-    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 lg:left-1/3 lg:translate-x-0 px-4 sm:px-6 py-2 sm:py-3 md:py-4 bg-white text-gray-900 border-2 text-xs sm:text-sm rounded-lg text-center shadow-lg z-20 whitespace-nowrap">
-      <span className="text-base sm:text-lg md:text-xl font-semibold block sm:inline">
-        100% Practical
-      </span>{" "}
-      <span className="block sm:inline text-xs sm:text-sm">
-        Live Projects Training
-      </span>
-    </div>
-    
-    {/* Image */}
-    <img
-      src="/Images/paaji.webp"
-      className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] xl:max-w-[500px] h-auto object-contain"
-      alt="Digital Paaji Academy"
-      loading="lazy"
-    />
-  </div>
-</div>
-  <div className="bg-white">
-  {/* Why Digital Paaji Section */}
-  <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872415] py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24">
-    {/* Header */}
-    <div className="text-center space-y-4 md:space-y-6 max-w-4xl mx-auto">
-      <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-gray-900">
-        Why Digital Paaji?
-      </h3>
-      <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-        We don't just teach tools; we teach design thinking and creative aesthetics for the real world.
-      </p>
-      {/* <p className="poppins text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 pt-2">
-        Real stories, Real results, Real impact
-      </p> */}
-    </div>
-
-    {/* Features Grid - 4 columns on desktop */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16">
-      {/* Feature 1: Project-Based */}
-      <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
-         <img src="/Images/course/portfolio.png" alt="" className="w-16 h-16 mx-auto"/>
-        <h4 className="poppins-bold text-xl md:text-2xl mb-2 text-gray-900">Project-Based</h4>
-        <p className="text-sm md:text-base">
-          Build a stunning portfolio while you learn.
-        </p>
+    <div className="relative">
+      {/* Sticky Download PDF Button */}
+      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
+        <button
+          onClick={handleDownloadPDF}
+          className="group relative flex items-center justify-center gap-1 bg-[#e98724] hover:bg-black border hover:border-[#e98724] border-black  text-black hover:text-white px-4 py-3 rounded-l-lg shadow-xl transition-all duration-300 ease-in-out"
+          // style={{ writingMode: 'vertical-rl' }}
+        >
+          <span className="text-sm font-bold tracking-wider transform ">
+            DOWNLOAD PDF
+          </span>
+          <svg
+            className="w-5 h-5  transform group-hover:animate-bounce"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+        </button>
       </div>
 
-      {/* Feature 2: Expert Mentors */}
-      <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
-                 <img src="/Images/course/mentor.png" alt="" className="w-16 h-16 mx-auto"/>
-     
-        <h4 className="poppins-bold text-xl md:text-2xl mb-2 text-gray-900">Expert Mentors</h4>
-        <p className="text-sm md:text-base">
-          Get taught by designers with 10+ years experience.
-        </p>
+      {/* Mobile/Tablet Download Button - Fixed at bottom */}
+      <div className="fixed top-[100px] right-0 z-50 lg:hidden">
+        <button
+          onClick={handleDownloadPDF}
+          className="group flex items-center gap-2 bg-black  text-white px-2 py-3 rounded-l-lg shadow-xl transition-all duration-300 ease-in-out"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+          <span className="text-sm font-bold">Download Syllabus</span>
+        </button>
       </div>
 
-      {/* Feature 3: Career Support */}
-      <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
-       <img src="/Images/course/career.png" alt="" className="w-16 h-16 mx-auto"/>
-        <h4 className="poppins-bold text-xl md:text-2xl mb-2 text-gray-900">Career Support</h4>
-        <p className="text-sm md:text-base">
-          Mock interviews and resume building assistance.
-        </p>
-      </div>
+      <div className=" ">
+        <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-40 py-12  flex flex-col lg:flex-row items-center gap-4 xl:gap-12 bg-cover bg-center overflow-hidden">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 opacity-35 bg-cover bg-center"
+            style={{
+              backgroundImage: "url(/Images/course/bg.png)",
+            }}
+          />
 
-      {/* Feature 4: Free Tools */}
-      <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
-  <img src="/Images/course/tools.png" alt="" className="w-16 h-16 mx-auto"/>
-        <h4 className="poppins-bold text-xl md:text-2xl mb-2 text-gray-900">Free Tools</h4>
-        <p className="text-sm md:text-base">
-          Exclusive access to resources and design assets.
-        </p>
-      </div>
-    </div>
-  </div>
+          {/* Content Section */}
+          <div className="relative w-full lg:w-1/2 z-10 px-2 sm:px-0">
+            {/* Heading */}
+            <h1 className="bungee-shade-regular text-3xl sm:text-4xl md:text-5xl  xl:text-7xl text-[#000000] leading-tight">
+             Master Graphic Design & Build Your Career in 3 Months
+            </h1>
 
-  {/* Investment Section */}
-  <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 bg-black">
-    <div className="flex items-center justify-center ">
-      {/* Section Header */}
-      <div className=" mb-12 md:mb-16 w-full lg:w-1/2">
-        <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-100">
-          Investment in Your Future
-        </h3>
-        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mt-6">
-          High-quality education shouldn't be overpriced. We offer the most competitive fees in Patiala 
-          with flexible EMI options to help you get started immediately.
-        </p>
-        <div className="poppins text-xl md:text-2xl font-semibold text-gray-200  mt-4 flex items-center justify-start gap-3">
-            <img src="/Images/course/payment.png" alt="" className=" bg-gray-300 p-2 rounded-full w-16 h-16 "/><span>
-              Pay in easy installments
-
-              </span>
-        </div>
-      </div>
-
-      {/* Pricing Card */}
-      <div className="max-w-2xl mx-auto w-full lg:w-1/2">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100 hover:shadow-2xl transition-shadow">
-          <div className="p-8 md:p-10">
-            {/* Best Value Badge */}
-            <div className="inline-block bg-black text-white px-6 py-2 rounded-full text-sm md:text-base font-semibold mb-6">
-              Best Value
+            {/* Description */}
+            <div className="text-sm sm:text-base md:text-lg my-4 sm:my-6">
+              <p>
+               Join Digital Paaji Academy, a leading graphic design training institute in Patiala, to learn Photoshop and Canva with practical projects and expert guidance.
+              </p>
             </div>
-            
-            {/* Regular Price with Strike-through */}
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-gray-500 text-lg md:text-xl">Regular Fee</span>
-              <span className="text-gray-400 line-through text-2xl md:text-3xl">₹24,999</span>
-            </div>
-            
-            {/* Offer Price */}
-            <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">₹19,999</span>
-              <span className="text-lg md:text-xl">?</span>
-            </div>
-            
-            {/* Duration & Format */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="block text-base mb-1">Duration</span>
-                <span className="poppins-bold text-xl md:text-2xl text-gray-900">3 Months</span>
-              </div>
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="block text-base mb-1">Format</span>
-                <span className="poppins-bold text-xl md:text-2xl text-gray-900">Offline</span>
-              </div>
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className="space-y-4">
-              <Link
-                href="/book-demo"
-                className="block w-full bg-black text-white text-center py-4 px-6 rounded-lg poppins-bold text-lg md:text-xl hover:bg-gray-800 transition-colors"
-              >
-                Book a Free Demo & Know the Price
-              </Link>
+
+            {/* Button */}
+            <div className="relative z-20 w-28 sm:w-32 h-12 sm:h-14 md:h-16 group">
+              {/* Shadow/Base */}
+              <div
+                className="absolute top-[6px] left-[4px] 
+            bg-white border-2 border-white 
+            w-full h-full rounded-md 
+            transition-all duration-150 
+            group-hover:top-[4px] group-hover:left-[3px]"
+              />
+
+              {/* Actual Button */}
               <Link
                 href="/enrollnow"
-                className="block w-full bg-white text-black text-center py-4 px-6 rounded-lg poppins-bold text-lg md:text-xl border-2 border-black hover:bg-gray-50 transition-colors"
+                ref={btnRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="
+            poppins-bold text-base sm:text-lg md:text-xl cursor-pointer 
+            absolute top-0 left-0 
+            w-full h-full bg-black text-white rounded-md 
+            flex items-center justify-center 
+            transition-all duration-150 
+            group-hover:top-[2px] group-hover:left-[2px]"
               >
-                Reserve Your Seat Now
+                Enroll Now
               </Link>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-8 lg:mt-0">
+            {/* Badge */}
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 lg:left-1/3 lg:translate-x-0 px-4 sm:px-6 py-2 sm:py-3 md:py-4 bg-white text-gray-900 border-2 text-xs sm:text-sm rounded-lg text-center shadow-lg z-20 whitespace-nowrap">
+              <span className="text-[18px] sm:text-lg md:text-xl font-semibold block sm:inline">
+                100% Practical
+              </span>{" "}
+              <span className="block sm:inline text-xs sm:text-sm">
+                Live Projects Training
+              </span>
+            </div>
+
+            {/* Image */}
+            <img
+              src="/Images/paaji.webp"
+              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] xl:max-w-[500px] h-auto object-contain"
+              alt="Digital Paaji Academy"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div className="bg-white">
+          
+          {/* Why Digital Paaji Section */}
+          <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872415] py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24  2xl:px-40">
+            {/* Header */}
+            <div className="text-center space-y-4 md:space-y-6 max-w-4xl mx-auto">
+              <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-gray-900">
+                Why Digital Paaji?
+              </h3>
+              <p className="text-base text-gray-700 max-w-3xl mx-auto">
+    We don't just teach software tools - we focus on design thinking, creativity, and real-world industry skills. As a trusted graphic design training institute in Patiala, we prepare students to work confidently on real client projects.
+              </p>
+            </div>
+
+            {/* Features Grid - 4 columns on desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16">
+              {/* Feature 1: Project-Based */}
+              <div className="bg-linear-to-br from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
+                <img
+                  src="/Images/course/portfolio.png"
+                  alt=""
+                  className="w-16 h-16 mx-auto"
+                />
+                <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-900">
+                  Project-Based Learning
+                </h4>
+                <p className="text-base text-gray-800">
+                  Build an impressive portfolio while learning. This is an ideal graphic design course after 12th for students who want practical exposure and job-ready skills from day one.
+                </p>
+              </div>
+
+              {/* Feature 2: Expert Mentors */}
+              <div className="bg-linear-to-br from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
+                <img
+                  src="/Images/course/mentor.png"
+                  alt=""
+                  className="w-16 h-16 mx-auto"
+                />
+                <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-900">
+                   Expert Mentors
+                </h4>
+                <p className="text-base text-gray-800">
+                   Learn from professional designers with 8+ years of real industry experience. If you are searching for a graphic design course near me, our trainers provide step-by-step practical guidance.
+                </p>
+              </div>
+
+              {/* Feature 3: Career Support */}
+              <div className="bg-linear-to-br from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
+                <img
+                  src="/Images/course/career.png"
+                  alt=""
+                  className="w-16 h-16 mx-auto"
+                />
+                <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-900">
+                  Career Support
+                </h4>
+                <p className="text-base text-gray-800">
+                  Get mock interview training, resume building support, and career guidance to help you start your design career faster.
+                </p>
+              </div>
+
+              {/* Feature 4: Free Tools */}
+              <div className="bg-linear-to-br from-[#e9872436] via-transparent to-[#e9872428] rounded-xl p-6 md:p-8 text-center ">
+                <img
+                  src="/Images/course/tools.png"
+                  alt=""
+                  className="w-16 h-16 mx-auto"
+                />
+                <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-900">
+                  Free Tools & Resources
+                </h4>
+                <p className="text-base text-gray-800">
+                  Exclusive access to resources and design assets to accelerate your learning journey.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Investment Section with Payment Options */}
+          <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24  2xl:px-40 bg-black">
+            <div className="flex items-center justify-center flex-wrap gap-8 lg:gap-12">
+              {/* Section Header */}
+              <div className="mb-8 md:mb-12 w-full lg:w-1/2">
+                <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-100">
+                Investment in Your Future
+                </h3>
+                <p className="text-base text-gray-300 max-w-3xl mt-6">
+              Graphic design training institute in Patiala programs should be practical, affordable, and career-focused. At Digital Paaji Academy, high-quality education is offered at competitive fees with flexible options. This is also a great graphic design course after 12th and perfect for anyone searching for a graphic design course near me with real industry exposure.
+                </p>
+                
+                {/* Payment Options */}
+                <div className="mt-8 space-y-4">
+                  <div className="poppins text-xl md:text-2xl font-semibold text-gray-200 flex items-center gap-3">
+                    <img
+                      src="/Images/course/payment.png"
+                      alt=""
+                      className="bg-gray-300 p-2 rounded-full w-16 h-16"
+                    />
+                    <span>Pay in easy monthly installments</span>
+                  </div>
+                  
+                  <div className="text-base grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <svg className="w-5 h-5 text-[#e98724]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Flexible EMI options available</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <svg className="w-5 h-5 text-[#e98724]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>100% practical training with live projects</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <svg className="w-5 h-5 text-[#e98724]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Portfolio building support for job placement</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <svg className="w-5 h-5 text-[#e98724]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Career guidance and interview preparation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Card */}
+              <div className="max-w-2xl mx-auto w-full lg:w-fit">
+                <div className="bg-white border-4 border-[#e98724] rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+                  <div className="relative p-8 ">
+                    {/* Best Value Badge */}
+                    <div className="absolute top-0 right-0  bg-black text-white px-6 py-2 rounded-bl-xl text-base font-semibold mb-6">
+                      BEST VALUE
+                    </div>
+
+                    {/* Regular Price with Strike-through */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-gray-600 text-[18px] md:text-lg">
+                        Regular Fee
+                      </span>
+                      <span className="text-gray-700 line-through text-lg md:text-xl">
+                        ₹24,999
+                      </span>
+                    </div>
+
+                    {/* Offer Price */}
+  <div className="flex items-baseline gap-2 mb-6">
+    <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/60 blur-[5px] select-none">
+      ₹19,999
+    </span>
+    <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/70 blur-[3px] select-none">?</span>
+  </div>
+
+                    {/* Duration & Format */}
+                    <div className="grid grid-cols-2 gap-2 py-4 border-y border-gray-300 mb-8">
+                      <div className="text-center space-y-3 ">
+                        <p className=" text-base ">Duration</p>
+                        <p className="poppins text-lg md:text-xl text-gray-900">
+                          3 Months
+                        </p>
+                      </div>
+                      <div className="text-center space-y-3">
+                        <p className=" text-base ">Format</p>
+                        <p className="poppins text-lg md:text-xl text-gray-900">
+                          Offline
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="space-y-4">
+                      <Link
+                        href="/book-demo"
+                        className="block w-full bg-black text-white text-center py-4 px-6 rounded-lg poppins text-lg md:text-xl "
+                      >
+                        Book a Free Demo & Know the Price
+                      </Link>
+                      <Link
+                        href="/enrollnow"
+                        className="block w-full bg-[#e98724] text-black text-center py-4 px-6 rounded-lg poppins text-lg md:text-xl"
+                      >
+                        Reserve Your Seat Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Career Scope Section - NEW */}
+          <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-40 bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872415]">
+            <div className="text-center mb-12">
+              <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900">
+                Career Scope
+              </h3>
+              <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
+                Graphic designing is the backbone of marketing. Every business needs a designer. Our graduates from our graphic design training institute in Patiala are working in leading digital agencies.
+              </p>
+            </div>
+
+            {/* Career Roles Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
+              {[
+                { title: "Graphic Designer", icon: "/Images/course/career.png" },
+                { title: "Social Media Designer", icon: "/Images/course/career.png" },
+                { title: "Brand Identity Designer", icon: "/Images/course/career.png" },
+                { title: "Marketing Designer", icon: "/Images/course/career.png" },
+                { title: "Freelance Designer", icon: "/Images/course/career.png" }
+              ].map((role, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                  <img src={role.icon} alt={role.title} className="w-16 h-16 mx-auto mb-3" />
+                  <h4 className="poppins text-sm md:text-base font-semibold text-gray-900">{role.title}</h4>
+                </div>
+              ))}
+            </div>
+
+            {/* Starting Salary */}
+            <div className="text-center mt-12">
+              <div className="inline-block bg-black text-white px-8 py-4 rounded-xl">
+                <span className="text-lg md:text-xl">Starting Salary: </span>
+                <span className="poppins-bold text-xl md:text-2xl text-[#e98724]">₹ 2.4L - ₹ 4.5L</span>
+              </div>
+            </div>
+          </div>
+
+          {/* What You Will Learn Section */}
+         <div className="bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872415] py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24  2xl:px-40">
+            <div className="text-center">
+              <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
+                What You Will Learn
+              </h3>
+              <p className="text-base text-gray-700 mb-8 max-w-3xl mx-auto">
+                Our curriculum is updated weekly to match current global design trends. As a leading graphic design training institute in Patiala, we focus on practical skills that help students build strong industry-ready careers.
+              </p>
+
+         {/* Features Grid - 4 columns on desktop */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6 md:gap-8 my-12 md:my-16">
+    {/* Feature 1: Project-Based */}
+    <div className="relative group cursor-pointer">
+      {/* Bottom Layer (Shadow/Moving Up) */}
+      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+      
+      {/* Top Layer (Moving Down) - Fixed height with flex column */}
+      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
+        {/* Image with fixed margin */}
+        <div className="flex-shrink-0">
+          <img
+            src="/Images/course/portfolio.png"
+            alt="Project-Based Learning"
+            className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110"
+          />
+        </div>
+        
+        {/* Title - fixed height */}
+        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
+          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">
+          Adobe Photoshop
+          </h4>
+        </div>
+        
+        {/* Description - flex-grow to take remaining space, centered content */}
+        <div className="flex-grow flex items-center justify-center">
+          <p className="text-base text-gray-600">
+           Master image editing, retouching, and composition for web & print with industry-level practical training taught at a leading graphic design training institute in Patiala.
+          </p>
+        </div>
+        
+        {/* Hover Indicator - fixed position at bottom */}
+        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    {/* Feature 2: Expert Mentors */}
+    <div className="relative group cursor-pointer">
+      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
+        <div className="flex-shrink-0">
+          <img src="/Images/course/mentor.png" alt="Expert Mentors" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+        </div>
+        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
+          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">Canva Pro Mastery
+  </h4>
+        </div>
+        <div className="flex-grow flex items-center justify-center">
+          <p className="text-base text-gray-600"> Speed up your workflow for social media management, marketing creatives, and quick edits for modern digital design needs.
+  </p>
+        </div>
+        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    {/* Feature 3: Career Support */}
+    <div className="relative group cursor-pointer">
+      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
+        <div className="flex-shrink-0">
+          <img src="/Images/course/career.png" alt="Career Support" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+        </div>
+        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
+          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">Printing & Packaging
+  </h4>
+        </div>
+        <div className="flex-grow flex items-center justify-center">
+          <p className="text-base text-gray-600"> Understand CMYK, bleeds, and material types for commercial printing and packaging design with Photoshop, ideal for learners searching for a graphic design course in Patiala.
+  </p>
+        </div>
+        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+          </div>
+
+          {/* Who Should Enroll Section */}
+          <div className="text-center py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-40 bg-black">
+            <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-200 mb-12">
+              Who Should Enroll?
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+              {/* Card 1 */}
+              <div className="relative group cursor-pointer">
+                <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+                <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
+                  <img src="/Images/course/portfolio.png" alt="Students" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Students</h4>
+                  <p className="text-base text-gray-300">Perfect for 12th pass students looking to start a creative career</p>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="relative group cursor-pointer">
+                <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+                <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
+                  <img src="/Images/course/portfolio.png" alt="Working Professionals" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Working Professionals</h4>
+                  <p className="text-base text-gray-300">Enhance your skills and switch to a creative career</p>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="relative group cursor-pointer">
+                <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+                <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
+                  <img src="/Images/course/portfolio.png" alt="Freelancers" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Freelancers</h4>
+                  <p className="text-base text-gray-300">Expand your service offerings and increase your income</p>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="relative group cursor-pointer">
+                <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+                <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
+                  <img src="/Images/course/portfolio.png" alt="Business Owners" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Business Owners</h4>
+                  <p className="text-base text-gray-300">Create your own marketing materials and save costs</p>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section - NEW */}
+          <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-40 bg-linear-to-b from-[#e9872436] via-transparent to-[#e9872415]">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 text-center mb-12">
+                Frequently Asked Questions
+              </h3>
+              
+              <div className="space-y-4 text-base">
+                {/* FAQ 1 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">What are the requirements for this course?</span>
+                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600">
+                      There are no strict requirements. Anyone interested in creativity can join this program. Our graphic design training institute in Patiala welcomes beginners, students, and working professionals.
+                    </div>
+                  </details>
+                </div>
+
+                {/* FAQ 2 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">Is placement support provided?</span>
+                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600">
+                      Yes, we provide career guidance, portfolio building, and interview preparation. This makes it a strong graphic design course after 12th for students who want job-ready skills.
+                    </div>
+                  </details>
+                </div>
+
+                {/* FAQ 3 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">Will I get a certificate?</span>
+                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600">
+                      Yes, you will receive a course completion certificate from Digital Paaji Academy after successfully completing the training at our graphic design training institute in Patiala.
+                    </div>
+                  </details>
+                </div>
+
+                {/* FAQ 4 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">Do I need my own laptop?</span>
+                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600">
+                      Having your own laptop is recommended for practice at home, especially if you are doing this graphic design course after 12th to build strong design skills faster.
+                    </div>
+                  </details>
+                </div>
+
+                {/* FAQ 5 */}
+                <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                  <details className="group">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">Are there internships?</span>
+                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600">
+                      Yes, top-performing students are offered paid internships. This is helpful for students searching for a graphic design course near me with real industry exposure and experience.
+                    </div>
+                  </details>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  {/* What You Will Learn Section */}
-  <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 bg-white">
-    <div className="max-w-7xl mx-auto text-center">
-      <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 mb-6">
-        What You Will Learn
-      </h3>
-      <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-        Our curriculum is updated weekly to match current global trends.
-      </p>
-      
-      {/* Download Syllabus Button */}
-      <Link
-        href="/syllabus.pdf"
-        className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg poppins-bold text-lg md:text-xl hover:bg-gray-800 transition-colors group"
-      >
-        <svg className="w-6 h-6 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-        Download Syllabus PDF
-      </Link>
-    </div>
-  </div>
-
-  {/* Who Should Enroll Section */}
-  <div className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24 bg-gray-50">
-    <div className="max-w-7xl mx-auto text-center">
-      <h3 className="bungee-shade-regular text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-gray-900 mb-8">
-        Who Should Enroll?
-      </h3>
-      
-      {/* Add your enrollment criteria here */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <span className="poppins-bold text-2xl">🎨</span>
-          <h4 className="poppins-bold text-xl mt-4 mb-2">Creative Beginners</h4>
-          <p className="text-base">No prior experience needed. Start from scratch.</p>
-        </div>
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <span className="poppins-bold text-2xl">💼</span>
-          <h4 className="poppins-bold text-xl mt-4 mb-2">Working Professionals</h4>
-          <p className="text-base">Upskill or switch to a creative career.</p>
-        </div>
-        <div className="bg-white p-6 rounded-xl shadow-sm">
-          <span className="poppins-bold text-2xl">📱</span>
-          <h4 className="poppins-bold text-xl mt-4 mb-2">Freelancers</h4>
-          <p className="text-base">Expand your service offerings.</p>
-        </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm">
-          <span className="poppins-bold text-2xl">📱</span>
-          <h4 className="poppins-bold text-xl mt-4 mb-2">Freelancers</h4>
-          <p className="text-base">Expand your service offerings.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   );
 }
