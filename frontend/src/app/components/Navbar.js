@@ -5,26 +5,34 @@ import { LiaTimesSolid } from "react-icons/lia";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
-// import { usePathname } from 'next/navigation';
-
 function Navbar({openPopup}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const btnRef = useRef(null);
   const borderRef = useRef(null);
   const dropdownRef = useRef(null);
-// Add these state declarations at the top of your component
+
 
 const [courseMenuOpen, setCourseMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   gsap.from(btnRef.current, {
-  //     opacity: 0,
-  //     y: 30,
-  //     duration: 1,
-  //     ease: "power3.out",
-  //   });
-    
-  // }, []);
+useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [menuOpen]);
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth >= 1280) { // xl breakpoint
+      setMenuOpen(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
 
   const handleMouseEnter = () => {
     gsap.to(btnRef.current, {
@@ -149,19 +157,6 @@ const [courseMenuOpen, setCourseMenuOpen] = useState(false);
             />
           </div>
       </Link>
-
-
-
-
-        {/* <Link href="/">
-          <Image
-            src="/Images/whitelogo.webp"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="w-full h-12 object-cover"
-          />
-        </Link> */}
 
    <ul className="poppins text-white hidden xl:flex space-x-8 font-medium text-base xl:text-md">
   {/* Course Corner with Mega Dropdown */}
@@ -317,24 +312,28 @@ const [courseMenuOpen, setCourseMenuOpen] = useState(false);
           </button>
        
       </div>
-
-     
-
-
-   
 <ul
   ref={dropdownRef}
-  className={`poppins xl:hidden flex-col items-center gap-6 bg-black text-white shadow-md px-6 py-4 text-center text-md font-medium ${menuOpen ? 'flex' : 'hidden'}`}
+  className={`poppins xl:hidden flex flex-col bg-black/95 backdrop-blur-sm border border-[#ff850d]/30 text-white shadow-xl mx-4 md:mx-8  rounded-xl px-4 py-6 text-center text-md font-medium 
+  max-h-[85vh] overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900
+  ${menuOpen ? 'block' : 'hidden'}`}
 >
-  {/* Course Corner with Expandable Submenu */}
-  <li className="w-full">
+
+
+  {/* Course Corner with Expandable Submenu - Enhanced */}
+  <li className="w-full mb-2">
     <button 
       onClick={() => setCourseMenuOpen(!courseMenuOpen)}
-      className="flex items-center justify-center gap-2 w-full hover:text-[#ff850d] transition-colors duration-300"
+      className="cursor-pointer flex items-center justify-between gap-2 w-full p-3 rounded-lg hover:bg-gray-900/20 transition-all duration-300 group"
     >
-      <span>Course Corner</span>
+      <span className="flex items-center gap-2">
+        <svg className="w-5 h-5 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+        <span className="group-hover:text-[#ff850d] transition-colors">Course Corner</span>
+      </span>
       <svg 
-        className={`w-4 h-4 transition-transform duration-300 ${courseMenuOpen ? 'rotate-180' : ''}`} 
+        className={`w-5 h-5 transition-transform duration-300 ${courseMenuOpen ? 'rotate-180' : ''} text-gray-400`} 
         fill="none" 
         stroke="currentColor" 
         viewBox="0 0 24 24"
@@ -343,138 +342,232 @@ const [courseMenuOpen, setCourseMenuOpen] = useState(false);
       </svg>
     </button>
     
-    {/* Expandable Course Menu */}
-    <div className={`overflow-hidden transition-all duration-300 ${courseMenuOpen ? 'max-h-[2000px] mt-4' : 'max-h-0'}`}>
-      <div className="space-y-2 pl-4 border-l-2 border-[#ff850d]/30">
-        {/* Video Editing Course */}
-        <Link 
-          href="/courses/video-editing-course-patiala" 
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Video Editing Course</span>
-          <p className="text-gray-400 text-xs">12 Weeks • 18 Modules</p>
-        </Link>
+    {/* Expandable Course Menu - Grid Layout */}
+    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${courseMenuOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className="mt-2 p-2 bg-black/50 rounded-lg border border-gray-50/20">
+        {/* Course Categories */}
+        <div className="grid grid-cols-1 gap-2">
+          {/* Video Editing */}
+          <Link 
+            href="/courses/video-editing-course-patiala" 
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Video Editing Course</span>
+                <span className="text-gray-400 text-xs">12 Weeks • 18 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Digital Marketing Specialist */}
-        <Link 
-          href="/courses/digital-marketing-specialist-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Digital Marketing Specialist</span>
-          <p className="text-gray-400 text-xs">16 Weeks • 12 Modules</p>
-        </Link>
+          {/* Digital Marketing Specialist */}
+          <Link 
+            href="/courses/digital-marketing-specialist-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Digital Marketing Specialist</span>
+                <span className="text-gray-400 text-xs">16 Weeks • 12 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Graphic Designing Course */}
-        <Link 
-          href="/courses/graphic-designing-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Graphic Designing Course</span>
-          <p className="text-gray-400 text-xs">8 Weeks • 16 Modules</p>
-        </Link>
+          {/* Graphic Designing */}
+          <Link 
+            href="/courses/graphic-designing-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Graphic Designing Course</span>
+                <span className="text-gray-400 text-xs">8 Weeks • 16 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Web Design & Development */}
-        <Link 
-          href="/courses/web-design-and-development-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Web Design & Development</span>
-          <p className="text-gray-400 text-xs">12 Weeks • 16 Modules</p>
-        </Link>
+          {/* Web Design & Development */}
+          <Link 
+            href="/courses/web-design-and-development-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Web Design & Development</span>
+                <span className="text-gray-400 text-xs">12 Weeks • 16 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Digital Marketing Foundation */}
-        <Link 
-          href="/courses/digital-marketing-foundation-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Digital Marketing Foundation</span>
-          <p className="text-gray-400 text-xs">10 Weeks • 12 Modules</p>
-        </Link>
+          {/* Digital Marketing Foundation */}
+          <Link 
+            href="/courses/digital-marketing-foundation-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Digital Marketing Foundation</span>
+                <span className="text-gray-400 text-xs">10 Weeks • 12 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Digital Marketing Master */}
-        <Link 
-          href="/courses/digital-marketing-master-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Digital Marketing Master</span>
-          <p className="text-gray-400 text-xs">24 Weeks • 15 Modules</p>
-        </Link>
+          {/* Digital Marketing Master */}
+          <Link 
+            href="/courses/digital-marketing-master-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Digital Marketing Master</span>
+                <span className="text-gray-400 text-xs">24 Weeks • 15 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Performance Marketing */}
-        <Link 
-          href="/courses/performance-marketing-specialization-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Performance Marketing</span>
-          <p className="text-gray-400 text-xs">8 Weeks • 10 Modules</p>
-        </Link>
+          {/* Performance Marketing */}
+          <Link 
+            href="/courses/performance-marketing-specialization-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Performance Marketing</span>
+                <span className="text-gray-400 text-xs">8 Weeks • 10 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* Social Media Marketing */}
-        <Link 
-          href="/courses/social-media-marketing-mastery-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">Social Media Marketing</span>
-          <p className="text-gray-400 text-xs">8 Weeks • 7 Modules</p>
-        </Link>
+          {/* Social Media Marketing */}
+          <Link 
+            href="/courses/social-media-marketing-mastery-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Social Media Marketing</span>
+                <span className="text-gray-400 text-xs">8 Weeks • 7 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* SEO Mastery */}
-        <Link 
-          href="/courses/search-engine-optimization-mastery-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">SEO Mastery</span>
-          <p className="text-gray-400 text-xs">8 Weeks • 6 Modules</p>
-        </Link>
+          {/* SEO Mastery */}
+          <Link 
+            href="/courses/search-engine-optimization-mastery-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">SEO Mastery</span>
+                <span className="text-gray-400 text-xs">8 Weeks • 6 Modules</span>
+              </div>
+            </div>
+          </Link>
 
-        {/* AI Based Digital Marketing */}
-        <Link 
-          href="/courses/ai-based-digital-marketing-course-patiala"
-          onClick={() => {
-            setMenuOpen(false);
-            setCourseMenuOpen(false);
-          }}
-          className="block py-2 text-left hover:text-[#ff850d] transition-colors duration-300 text-sm"
-        >
-          <span className="font-semibold">AI Based Digital Marketing</span>
-          <p className="text-gray-400 text-xs">48 Weeks • 8 Modules</p>
-        </Link>
+          {/* AI Based Digital Marketing */}
+          <Link 
+            href="/courses/ai-based-digital-marketing-course-patiala"
+            onClick={() => {
+              setMenuOpen(false);
+              setCourseMenuOpen(false);
+            }}
+            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-left">
+                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">AI Based Digital Marketing</span>
+                <span className="text-gray-400 text-xs">48 Weeks • 8 Modules</span>
+              </div>
+            </div>
+          </Link>
+        </div>
 
         {/* View All Courses Link */}
         <Link 
@@ -483,54 +576,67 @@ const [courseMenuOpen, setCourseMenuOpen] = useState(false);
             setMenuOpen(false);
             setCourseMenuOpen(false);
           }}
-          className="block py-2 text-[#ff850d] hover:text-white transition-colors duration-300 text-sm font-semibold mt-2"
+          className="block mt-3 p-3 bg-[#ff850d] hover:bg-[#ff850d]/90 text-black font-semibold text-center rounded-lg transition-all duration-300 hover:scale-[1.02]"
         >
-          View All Courses →
+          Browse All Courses →
         </Link>
       </div>
     </div>
   </li>
 
-  {/* Regular Menu Items */}
-  <li>
+  {/* Regular Menu Items with Icons */}
+  <li className="w-full mb-1">
     <Link 
       href="/about" 
       onClick={() => setMenuOpen(false)}
-      className="hover:text-[#ff850d] transition-colors duration-300"
+      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900/20 transition-all duration-300 group"
     >
-      Paaji Diaries
+      <svg className="w-5 h-5 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+      <span className="group-hover:text-[#ff850d] transition-colors">Paaji Diaries</span>
     </Link>
   </li>
   
-  <li>
+  <li className="w-full mb-1">
     <Link 
       href="/vibe" 
       onClick={() => setMenuOpen(false)}
-      className="hover:text-[#ff850d] transition-colors duration-300"
+      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900/20 transition-all duration-300 group"
     >
-      Vibe Check
+      <svg className="w-5 h-5 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span className="group-hover:text-[#ff850d] transition-colors">Vibe Check</span>
     </Link>
   </li>
   
-  <li>
+  <li className="w-full mb-1">
     <Link 
       href="/contact" 
       onClick={() => setMenuOpen(false)}
-      className="hover:text-[#ff850d] transition-colors duration-300"
+      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900/20 transition-all duration-300 group"
     >
-      Talk to Paaji
+      <svg className="w-5 h-5 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <span className="group-hover:text-[#ff850d] transition-colors">Talk to Paaji</span>
     </Link>
   </li>
   
-  <li>
+  <li className="w-full mb-1">
     <Link 
       href="/result" 
       onClick={() => setMenuOpen(false)}
-      className="hover:text-[#ff850d] transition-colors duration-300"
+      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900/20 transition-all duration-300 group"
     >
-      Student Certificates
+      <svg className="w-5 h-5 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span className="group-hover:text-[#ff850d] transition-colors">Student Certificates</span>
     </Link>
   </li>
+
 </ul>
    
   

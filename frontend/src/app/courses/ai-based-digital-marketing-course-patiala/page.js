@@ -1,6 +1,5 @@
 import React from 'react'
-// import Modules from '../../components/courses/AI'
-import InnerBanner from '@/app/components/InnerBanner'
+import Modules from '../../components/courses/AI'
 
 export const metadata = {
   title: "Best Website Development & Web Design Course in Patiala | DigitalPaajiAcademy",
@@ -11,8 +10,7 @@ export const metadata = {
 function page() {
   return (
     <div className='text-black  pt-[100px]  text-7xl min-h-screen  '>
-<InnerBanner heading='AI Powered Digital Marketing Course' />
-{/* <Modules/> */}
+<Modules/>
 
 
 

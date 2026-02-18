@@ -280,7 +280,7 @@ export default function CoursesHorizontal() {
   };
 
   return (
-    <div id="course-corner" className="pt-16 lg:pt-24 pb-16 px-4 lg:px-12 2xl:px-24  py-24  w-full overflow-hidden">
+    <div id="course-corner" className="pt-24 lg:pt-24 pb-16 px-4 lg:px-12 2xl:px-24  py-24  w-full overflow-hidden">
       {/* Top Section */}
       <div className=" mb-12 lg:mb-16">
         <div className="w-full">

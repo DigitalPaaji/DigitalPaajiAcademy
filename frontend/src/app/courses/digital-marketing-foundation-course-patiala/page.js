@@ -1,6 +1,5 @@
 import React from 'react'
 import Modules from '../../components/courses/Foundation'
-import InnerBanner from '@/app/components/InnerBanner'
 
 export const metadata = {
   title: "Best Website Development & Web Design Course in Patiala | DigitalPaajiAcademy",
@@ -11,7 +10,6 @@ export const metadata = {
 function page() {
   return (
     <div className='text-black  pt-[100px]  text-7xl min-h-screen  '>
-<InnerBanner heading='Digital Maketing Foundation Course' />
 <Modules/>
 
 
