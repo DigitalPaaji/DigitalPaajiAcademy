@@ -314,14 +314,14 @@ function InnerBanner() {
                         Regular Fee
                       </span>
                       <span className="text-gray-700 line-through text-lg md:text-xl">
-                        ₹24,999
+                        ₹11,999
                       </span>
                     </div>
 
                     {/* Offer Price */}
   <div className="flex items-baseline gap-2 mb-6">
     <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/60 blur-[5px] select-none">
-      ₹19,999
+      ₹10,999
     </span>
     <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/70 blur-[3px] select-none">?</span>
   </div>
@@ -331,7 +331,7 @@ function InnerBanner() {
                       <div className="text-center space-y-3 ">
                         <p className=" text-base ">Duration</p>
                         <p className="poppins text-lg md:text-xl text-gray-900">
-                          3 Months
+                          8 Weeks
                         </p>
                       </div>
                       <div className="text-center space-y-3">
@@ -375,16 +375,16 @@ function InnerBanner() {
             </div>
 
             {/* Career Roles Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 place-items-center place-content-center max-w-5xl mx-auto">
               {[
-                { title: "Graphic Designer", icon: "/Images/course/career.png" },
-                { title: "Social Media Designer", icon: "/Images/course/career.png" },
-                { title: "Brand Identity Designer", icon: "/Images/course/career.png" },
-                { title: "Marketing Designer", icon: "/Images/course/career.png" },
-                { title: "Freelance Designer", icon: "/Images/course/career.png" }
+                { title: "Graphic Designer", icon: "/Images/course/gd.png" },
+                { title: "Social Media Designer", icon: "/Images/course/dmspecialist/9.png" },
+                { title: "Brand Identity Designer", icon: "/Images/course/brand.png" },
+                { title: "Marketing Designer", icon: "/Images/course/web/8.png" },
+                { title: "Freelance Designer", icon: "/Images/course/freelance.png" }
               ].map((role, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-                  <img src={role.icon} alt={role.title} className="w-16 h-16 mx-auto mb-3" />
+                  <img src={role.icon} alt={role.title} className="w-16 h-auto mx-auto mb-3" />
                   <h4 className="poppins text-sm md:text-base font-semibold text-gray-900">{role.title}</h4>
                 </div>
               ))}
@@ -404,92 +404,77 @@ function InnerBanner() {
               </p>
 
          {/* Features Grid - 4 columns on desktop */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6 md:gap-8 my-12 md:my-16">
-    {/* Feature 1: Project-Based */}
-    <div className="relative group cursor-pointer">
-      {/* Bottom Layer (Shadow/Moving Up) */}
-      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
-      
-      {/* Top Layer (Moving Down) - Fixed height with flex column */}
-      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
-        {/* Image with fixed margin */}
-        <div className="flex-shrink-0">
-          <img
-            src="/Images/course/portfolio.png"
-            alt="Project-Based Learning"
-            className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110"
-          />
-        </div>
-        
-        {/* Title - fixed height */}
-        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
-          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">
-          Adobe Photoshop
-          </h4>
-        </div>
-        
-        {/* Description - flex-grow to take remaining space, centered content */}
-        <div className="flex-grow flex items-center justify-center">
-          <p className="text-base text-gray-600">
-           Master image editing, retouching, and composition for web & print with industry-level practical training taught at a leading graphic design training institute in Patiala.
-          </p>
-        </div>
-        
-        {/* Hover Indicator - fixed position at bottom */}
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </div>
-      </div>
-    </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-base md:gap-8 mt-12 md:mt-16">
 
-    {/* Feature 2: Expert Mentors */}
-    <div className="relative group cursor-pointer">
-      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
-      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
-        <div className="flex-shrink-0">
-          <img src="/Images/course/mentor.png" alt="Expert Mentors" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
-        </div>
-        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
-          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">Canva Pro Mastery
-  </h4>
-        </div>
-        <div className="flex-grow flex items-center justify-center">
-          <p className="text-base text-gray-600"> Speed up your workflow for social media management, marketing creatives, and quick edits for modern digital design needs.
-  </p>
-        </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    {/* Feature 3: Career Support */}
-    <div className="relative group cursor-pointer">
-      <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
-      <div className="relative bg-white backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 h-[350px] md:h-[390px] 2xl:h-[320px] flex flex-col">
-        <div className="flex-shrink-0">
-          <img src="/Images/course/career.png" alt="Career Support" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
-        </div>
-        <div className="flex-shrink-0 h-[60px] md:h-[70px] flex items-center justify-center">
-          <h4 className="poppins text-xl md:text-2xl text-gray-900 transition-colors duration-300 group-hover:text-[#e98724]">Printing & Packaging
-  </h4>
-        </div>
-        <div className="flex-grow flex items-center justify-center">
-          <p className="text-base text-gray-600"> Understand CMYK, bleeds, and material types for commercial printing and packaging design with Photoshop, ideal for learners searching for a graphic design course in Patiala.
-  </p>
-        </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg className="w-5 h-5 text-[#e98724]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </div>
-      </div>
+  {/* Card 1 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/photoshop.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Adobe Photoshop
+      </h4>
+      <p className="text-gray-600">
+        Master image editing, retouching, and composition for web & print with industry-level practical training taught at a leading graphic design training institute in Patiala.
+      </p>
     </div>
   </div>
+
+  {/* Card 2 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/canva.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Canva Pro Mastery
+      </h4>
+      <p className="text-gray-600">
+        Speed up your workflow for social media management, marketing creatives, and quick edits for modern digital design needs.
+      </p>
+    </div>
+  </div>
+
+  {/* Card 3 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/printing.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Printing & Packaging
+      </h4>
+      <p className="text-gray-600">
+        Understand CMYK, bleeds, and material types for commercial printing and packaging design with Photoshop, ideal for learners searching for a graphic design course in Patiala.
+      </p>
+    </div>
+  </div>
+
+</div>
+<div className="w-full  ">
+  <div className=" inline-block">
+    <button
+      onClick={handleDownloadPDF}
+      className="group relative flex items-center justify-center gap-2 hover:bg-[#e98724] bg-black border border-[#e98724] hover:border-black hover:text-black text-white px-2 lg:px-6 py-3 rounded-lg shadow-xl transition-all duration-300 ease-in-out"
+    >
+      <span className="text-base font-bold tracking-wider">
+        Download All Modules
+      </span>
+      <svg
+        className="w-5 h-5 transform group-hover:animate-bounce"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
             </div>
           </div>
 
@@ -504,7 +489,7 @@ function InnerBanner() {
               <div className="relative group cursor-pointer">
                 <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
                 <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
-                  <img src="/Images/course/portfolio.png" alt="Students" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <img src="/Images/course/student.png" alt="Students" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
                   <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Students</h4>
                   <p className="text-base text-gray-300">Perfect for 12th pass students looking to start a creative career</p>
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -519,7 +504,7 @@ function InnerBanner() {
               <div className="relative group cursor-pointer">
                 <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
                 <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
-                  <img src="/Images/course/portfolio.png" alt="Working Professionals" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <img src="/Images/course/working.png" alt="Working Professionals" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
                   <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Working Professionals</h4>
                   <p className="text-base text-gray-300">Enhance your skills and switch to a creative career</p>
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -534,7 +519,7 @@ function InnerBanner() {
               <div className="relative group cursor-pointer">
                 <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
                 <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
-                  <img src="/Images/course/portfolio.png" alt="Freelancers" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <img src="/Images/course/freelance.png" alt="Freelancers" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
                   <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Freelancers</h4>
                   <p className="text-base text-gray-300">Expand your service offerings and increase your income</p>
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -549,7 +534,7 @@ function InnerBanner() {
               <div className="relative group cursor-pointer">
                 <div className="absolute top-2 left-2 w-full h-full bg-white rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
                 <div className="relative bg-black backdrop-blur-sm rounded-xl p-6 md:p-8 text-center border border-white transition-all duration-300 ease-out group-hover:top-0.5 group-hover:left-1 min-h-[300px] flex flex-col items-center justify-center">
-                  <img src="/Images/course/portfolio.png" alt="Business Owners" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
+                  <img src="/Images/course/owner.png" alt="Business Owners" className="w-16 h-16 mx-auto mb-4 transform transition-transform duration-300 group-hover:scale-110" />
                   <h4 className="poppins text-xl md:text-2xl mb-2 text-gray-200 transition-colors duration-300 group-hover:text-[#e98724]">Business Owners</h4>
                   <p className="text-base text-gray-300">Create your own marketing materials and save costs</p>
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -196,11 +196,7 @@ useEffect(() => {
           <p className="text-gray-400 text-xs mt-1">12 Weeks • 16 Modules</p>
         </Link>
 
-        {/* Digital Marketing Foundation */}
-        <Link href="/courses/digital-marketing-foundation-course-patiala" className="block p-3 hover:bg-[#ff850d]/10 rounded-lg transition-colors duration-300">
-          <h4 className="text-[#ff850d] font-semibold text-sm">Digital Marketing Foundation</h4>
-          <p className="text-gray-400 text-xs mt-1">10 Weeks • 12 Modules</p>
-        </Link>
+
 
         {/* Digital Marketing Master */}
         <Link href="/courses/digital-marketing-master-course-patiala" className="block p-3 hover:bg-[#ff850d]/10 rounded-lg transition-colors duration-300">
@@ -436,27 +432,7 @@ useEffect(() => {
             </div>
           </Link>
 
-          {/* Digital Marketing Foundation */}
-          <Link 
-            href="/courses/digital-marketing-foundation-course-patiala"
-            onClick={() => {
-              setMenuOpen(false);
-              setCourseMenuOpen(false);
-            }}
-            className="block p-3 rounded-lg hover:bg-gray-800/20 transition-all duration-300 group"
-          >
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 bg-[#ff850d]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-[#ff850d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <div className="flex-1 text-left">
-                <span className="font-semibold block group-hover:text-[#ff850d] transition-colors">Digital Marketing Foundation</span>
-                <span className="text-gray-400 text-xs">10 Weeks • 12 Modules</span>
-              </div>
-            </div>
-          </Link>
+     
 
           {/* Digital Marketing Master */}
           <Link 
