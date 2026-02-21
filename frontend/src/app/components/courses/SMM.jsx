@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/smm.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "SMM_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

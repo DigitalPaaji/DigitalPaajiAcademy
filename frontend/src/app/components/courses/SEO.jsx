@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/seo.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "SEO_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -435,11 +435,11 @@ function InnerBanner({ heading }) {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
               {[
-                { title: "SEO Executive", icon: "/Images/course/career.png" },
-                { title: "SEO Analyst", icon: "/Images/course/career.png" },
+                { title: "SEO Executive", icon: "/Images/course/seo.png" },
+                { title: "SEO Analyst", icon: "/Images/course/seo2.png" },
                 {
                   title: "Digital Marketing Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/dm.png",
                 },
                 {
                   title: "Content SEO Specialist",
@@ -487,7 +487,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/seo3.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -554,7 +554,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/seo4.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -577,7 +577,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/seo5.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -600,7 +600,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/seo6.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>

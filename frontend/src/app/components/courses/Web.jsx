@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/wd.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "Web_Design_&_Development_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -423,23 +423,23 @@ Digital Paaji offers industry-focused training with practical projects, making i
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-5xl mx-auto">
               {[
-                { title: "WordPress Developer", icon: "/Images/course/career.png" },
-                { title: "Frontend Developer", icon: "/Images/course/career.png" },
+                { title: "WordPress Developer", icon: "/Images/course/wp.png" },
+                { title: "Frontend Developer", icon: "/Images/course/fd.png" },
                 {
                   title: "Website Maintenance Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/website.png",
                 },
                 {
                   title: "UI Website Designer",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/ui.png",
                 },
                 {
                   title: "Freelance Website Developer",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/seo.png",
                 },
                 {
                   title: "Landing Page Designer",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/working.png",
                 },
               ].map((role, index) => (
                 <div
@@ -449,7 +449,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <img
                     src={role.icon}
                     alt={role.title}
-                    className="w-16 h-16 mx-auto mb-3"
+                    className="w-16 h-auto mx-auto mb-3"
                   />
                   <h4 className="poppins text-sm md:text-base font-semibold text-gray-900">
                     {role.title}
@@ -478,7 +478,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/wd.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -499,7 +499,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/wp.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -522,7 +522,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/canva.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -545,7 +545,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/tools.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -568,7 +568,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/website.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -591,7 +591,7 @@ Digital Paaji offers industry-focused training with practical projects, making i
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/gd.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>

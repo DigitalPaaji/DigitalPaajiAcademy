@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/dmspecialist.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "DM_Specialist_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -435,15 +435,15 @@ function InnerBanner({ heading }) {
               {[
                 {
                   title: "Digital Marketing Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/dm.png",
                 },
                 {
                   title: "SEO Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/seo.png",
                 },
                 {
                   title: "Social Media Manager",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/dmspecialist/9.png",
                 },
                 {
                   title: "Performance Marketing Executive",
@@ -451,19 +451,19 @@ function InnerBanner({ heading }) {
                 },
                 {
                   title: "Google Ads Specialist",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/ads.png",
                 },
                 {
                   title: "Content Marketing Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/idea.png",
                 },
                 {
                   title: "Email Marketing Executive",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/mentor.png",
                 },
                 {
                   title: "Freelance Digital Marketer",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/working.png",
                 },
               ].map((role, index) => (
                 <div
@@ -473,7 +473,7 @@ function InnerBanner({ heading }) {
                   <img
                     src={role.icon}
                     alt={role.title}
-                    className="w-16 h-16 mx-auto mb-3"
+                    className="w-16 h-auto mx-auto mb-3"
                   />
                   <h4 className="poppins text-sm md:text-base font-semibold text-gray-900">
                     {role.title}
@@ -504,7 +504,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/dm2.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -525,7 +525,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/smm.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -548,7 +548,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/google.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -571,7 +571,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/seo.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -594,7 +594,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/canva.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -617,7 +617,7 @@ function InnerBanner({ heading }) {
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/ads.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>

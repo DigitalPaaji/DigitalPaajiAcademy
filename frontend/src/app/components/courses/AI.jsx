@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/ai.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "AI_DM_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -105,15 +105,15 @@ function InnerBanner({ heading }) {
           <div className="relative w-full lg:w-1/2 z-10 px-2 sm:px-0">
             {/* Heading */}
             <h1 className="bungee-shade-regular text-3xl sm:text-4xl md:text-5xl  xl:text-7xl text-[#000000] leading-tight">
-              Master SEO & Career in 1 Months
+             Master AI Based Digital Marketing & Career in 48 Weeks
+
             </h1>
 
             {/* Description */}
             <div className="text-sm sm:text-base md:text-lg my-4 sm:my-6">
               <p>
-                Master practical SEO skills, ranking strategies, and real tools
-                to build a digital career in 3 months with top SEO training
-                institutes in Patiala.
+Join the most advanced Ai digital marketing course designed for future marketers. At our ai based digital marketing institute, you will learn how Artificial Intelligence is transforming modern marketing strategies. This program is also ideal for students looking for Ai digital marketing after 12 to start a high-growth career.
+
               </p>
             </div>
 
@@ -177,13 +177,8 @@ function InnerBanner({ heading }) {
                 Why Digital Paaji?
               </h3>
               <p className="text-base text-gray-700 max-w-3xl mx-auto">
-                Digital Paaji is among the top SEO training institutes in
-                Patiala offering practical, job-focused training. This program
-                is ideal for students searching for an SEO course after 12th or
-                professionals looking to advance their digital marketing skills.
-                Our comprehensive SEO training in Patiala helps students build
-                complete search engine optimization expertise and kickstart
-                their careers in digital marketing.
+             Digital Paaji is a leading AI based digital marketing institute focused on practical implementation of AI tools in real campaigns. Our AI digital marketing course combines marketing fundamentals with automation, AI content tools, and smart advertising strategies. Students searching for AI digital marketing after 12 can build job-ready skills from scratch.
+
               </p>
             </div>
 
@@ -267,13 +262,8 @@ function InnerBanner({ heading }) {
                   Investment in Your Future
                 </h3>
                 <p className="text-base text-gray-300 max-w-3xl mt-6">
-                  Digital marketing is one of the fastest-growing career fields,
-                  and SEO is at its core. Joining our program at one of the
-                  leading SEO training institutes in Patiala helps you build
-                  strong freelancing and job opportunities. Many students who
-                  join an SEO course after 12th gain in-demand skills that lead
-                  to excellent career growth and earning potential in the
-                  digital marketing industry.
+ The demand for AI-powered marketers is growing rapidly. Enrolling in our ai digital marketing course means learning automation, smart analytics, and AI-driven ad strategies. As a trusted Ai based digital marketing institute, we offer career-focused training with flexible EMI options. This program is perfect for anyone planning Ai digital marketing after 12 to secure future-ready opportunities.
+
                 </p>
 
                 {/* Payment Options */}
@@ -424,26 +414,24 @@ function InnerBanner({ heading }) {
                 Career Scope 
               </h3>
               <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
-                SEO offers long-term stable career growth because every business
-                needs online visibility. After completing SEO training, students
-                can work in digital marketing agencies, IT companies, startups,
-                or as freelancers. SEO also allows remote job opportunities and
-                international client work. Starting Salary: ₹1.44 LPA - ₹2.40
-                LPA
+              Graduates from our Ai based digital marketing institute are prepared for agencies, startups, and freelancing. This is an excellent option for students pursuing Ai digital marketing after 12.
+ Starting Salary: ₹3L - ₹7L (Depends on skills & performance)
+After completing this Ai digital marketing course, students can work as:
+
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
               {[
-                { title: "SEO Executive", icon: "/Images/course/career.png" },
-                { title: "SEO Analyst", icon: "/Images/course/career.png" },
+                { title: "AI Marketing Specialist", icon: "/Images/course/seo6.png" },
+                { title: "Performance Marketer", icon: "/Images/course/performance.png" },
                 {
-                  title: "Digital Marketing Executive",
-                  icon: "/Images/course/career.png",
+                  title: "AI Content Strategist",
+                  icon: "/Images/course/seo.png",
                 },
                 {
-                  title: "Content SEO Specialist",
-                  icon: "/Images/course/career.png",
+                  title: "Digital Growth Manager",
+                  icon: "/Images/course/ppc.png",
                 },
               ].map((role, index) => (
                 <div
@@ -470,153 +458,85 @@ function InnerBanner({ heading }) {
                 What You Will Learn
               </h3>
               <p className="text-base text-gray-700 mb-8 max-w-3xl mx-auto">
-                Our curriculum is designed based on real Google algorithm
-                updates and industry best practices. As one of the trusted SEO
-                training institutes in Patiala, we focus on practical ranking
-                strategies that deliver real results. Students gain
-                comprehensive knowledge of on-page SEO, off-page SEO, technical
-                SEO, keyword research, and analytics for complete search engine
-                optimization mastery.
+           Our curriculum blends traditional marketing with AI-powered systems. At our Ai based digital marketing institute, students master automation tools, AI content generation, and smart performance marketing. This Ai digital marketing course ensures you stay ahead of industry trends.
+
               </p>
 
               {/* Features Grid - 4 columns on desktop */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-base md:gap-8 mt-12 md:mt-16">
-                {/* Module 1 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/portfolio.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      Introduction to SEO & Search Engine Fundamentals
-                    </h4>
-                    <p className="text-gray-600">
-                      How search engines work <br />
-                      Google ranking factors & algorithms <br />
-                      SEO terminology and industry overview
-                    </p>
-                  </div>
-                </div>
+    {/* Features Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-base md:gap-8 mt-12 md:mt-16">
 
-                {/* Module 2 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/mentor.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
+  {/* Module 1 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 ease-out group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/dm.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Marketing Foundation
+      </h4>
+      <p className="text-gray-600">
+        Understand branding, funnels, and core digital marketing principles.
+      </p>
+    </div>
+  </div>
 
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      Keyword Research & Strategy
-                    </h4>
+  {/* Module 2 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/dm2.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Kickstart Your Journey in Digital Marketing
+      </h4>
+      <p className="text-gray-600">
+        Learn SEO basics, social media, and performance ads integrated with AI tools.
+      </p>
+    </div>
+  </div>
 
-                    <p className="text-gray-600">
-                      Finding profitable keywords <br />
-                      Search intent & keyword mapping <br />
-                      Competitor keyword analysis
-                    </p>
-                  </div>
-                </div>
+  {/* Module 3 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/seo4.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Digital Consumer Behaviour
+      </h4>
+      <p className="text-gray-600">
+        Study online buying psychology, AI-driven targeting, and customer data analysis.
+      </p>
+    </div>
+  </div>
 
-                {/* Module 3 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/career.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
+  {/* Module 4 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/mentor.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Online Lead Strategy
+      </h4>
+      <p className="text-gray-600">
+        Build automated funnels and generate leads using AI-based systems.
+      </p>
+    </div>
+  </div>
 
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      On-Page SEO & Content Optimization
-                    </h4>
+  {/* Module 5 */}
+  <div className="relative group cursor-pointer">
+    <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
+    <div className="relative bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
+      <img src="/Images/course/seo2.png" className="w-16 h-16 mb-4 group-hover:scale-110 transition" />
+      <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
+        Transform Your Brand with Graphic Design
+      </h4>
+      <p className="text-gray-600">
+        Create AI-assisted creatives and marketing visuals for high-converting campaigns.
+      </p>
+    </div>
+  </div>
 
-                    <p className="text-gray-600">
-                      Title tags & meta optimization <br />
-                      SEO content writing <br />
-                      URL structure & internal linking
-                    </p>
-                  </div>
-                </div>
-
-                {/* Module 4 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/portfolio.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
-
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      Technical SEO
-                    </h4>
-
-                    <p className="text-gray-600">
-                      Website speed optimization <br />
-                      Mobile responsiveness & Core Web Vitals <br />
-                      Sitemaps, robots.txt & architecture
-                    </p>
-                  </div>
-                </div>
-
-                {/* Module 5 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/mentor.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
-
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      Off-Page SEO & Link Building
-                    </h4>
-
-                    <p className="text-gray-600">
-                      Backlink strategies <br />
-                      Guest posting & outreach <br />
-                      Local SEO & Google Business optimization
-                    </p>
-                  </div>
-                </div>
-
-                {/* Module 6 */}
-                <div className="relative group cursor-pointer">
-                  <div className="absolute top-2 left-2 w-full h-full bg-black rounded-xl transition-all duration-500 group-hover:top-1 group-hover:left-1.5" />
-                  <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
-                    <div className="flex-shrink-0">
-                      <img
-                        src="/Images/course/career.png"
-                        className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
-                      />
-                    </div>
-
-                    <h4 className="poppins text-xl xl:text-2xl group-hover:text-[#e98724]">
-                      SEO Tools & Analytics
-                    </h4>
-
-                    <p className="text-gray-600">
-                      Google Search Console & Analytics <br />
-                      SEMrush, Ahrefs & SEO tools <br />
-                      Tracking rankings & ROI
-                    </p>
-                  </div>
-                </div>
-              </div>
+</div>
               <div className="w-full  ">
                 <div className=" inline-block">
                   <button
@@ -800,7 +720,8 @@ function InnerBanner({ heading }) {
                   <details className="group">
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                       <span className="poppins text-lg md:text-xl font-semibold text-gray-900">
-               What are the Requirements for the SEO course?
+Is prior marketing knowledge required?
+
 
                       </span>
                       <span className="text-[#e98724] group-open:rotate-180 transition-transform">
@@ -820,9 +741,8 @@ function InnerBanner({ heading }) {
                       </span>
                     </summary>
                     <div className="px-6 pb-6 text-gray-600">
-                      No prior experience is required. Anyone interested in
-                      learning editing can join this video editing course after
-                      12th or after graduation.
+                   No, our AI based digital marketing institute starts from basics and gradually moves to advanced AI tools.
+
                     </div>
                   </details>
                 </div>
@@ -832,7 +752,8 @@ function InnerBanner({ heading }) {
                   <details className="group">
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                       <span className="poppins text-lg md:text-xl font-semibold text-gray-900">
-                Is this SEO course after 12th suitable for beginners?
+            Is placement support provided?
+
 
                       </span>
                       <span className="text-[#e98724] group-open:rotate-180 transition-transform">
@@ -852,7 +773,8 @@ function InnerBanner({ heading }) {
                       </span>
                     </summary>
                     <div className="px-6 pb-6 text-gray-600">
-                 Yes, this SEO course after 12th is designed for beginners. We provide step-by-step training in on-page SEO, off-page SEO, keyword research, and website optimization to make students industry-ready.
+               Yes, students of our Ai digital marketing course receive portfolio guidance, interview preparation, and career support.
+
 
                     </div>
                   </details>
@@ -863,7 +785,8 @@ function InnerBanner({ heading }) {
                   <details className="group">
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                       <span className="poppins text-lg md:text-xl font-semibold text-gray-900">
-Will I get a certificate after completing the SEO training?
+Will I get a certificate?
+
 
                       </span>
                       <span className="text-[#e98724] group-open:rotate-180 transition-transform">
@@ -883,70 +806,7 @@ Will I get a certificate after completing the SEO training?
                       </span>
                     </summary>
                     <div className="px-6 pb-6 text-gray-600">
-                    Yes, you will receive a recognized and ISO certified course completion certificate after successfully finishing our SEO training and digital marketing course in Patiala.
-
-                    </div>
-                  </details>
-                </div>
-
-                {/* FAQ 4 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">
-                    Do I need my own laptop for the SEO course after 12th?
-
-                      </span>
-                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-gray-600">
-          Yes, having your own laptop is recommended for practice, live projects, keyword research, and SEO tools during the SEO course after 12th.
-
-                    </div>
-                  </details>
-                </div>
-
-                {/* FAQ 5 */}
-                <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                      <span className="poppins text-lg md:text-xl font-semibold text-gray-900">
-     Are there internships in the SEO course in Patiala?
-
-                      </span>
-                      <span className="text-[#e98724] group-open:rotate-180 transition-transform">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 text-gray-600">
-                    Yes, top-performing students get opportunities for internships and live projects through our SEO course in Patiala with real industry exposure.
-
+                    Yes, after successfully completing the program at our Ai based digital marketing institute, you will receive a course completion certificate.
                     </div>
                   </details>
                 </div>

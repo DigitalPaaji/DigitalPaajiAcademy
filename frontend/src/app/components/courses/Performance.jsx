@@ -53,10 +53,10 @@ function InnerBanner({ heading }) {
   // Function to handle PDF download
   const handleDownloadPDF = () => {
     // Replace this with your actual PDF URL
-    const pdfUrl = "/syllabus.pdf";
+    const pdfUrl = "/Images/pdf/pm.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Digital_Paaji_Syllabus.pdf"; // Name of the downloaded file
+    link.download = "Performance_Marketing_Syllabus.pdf"; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -414,7 +414,7 @@ Performance marketing course after 12th students trust Digital Paaji for practic
               </h3>
               <p className="text-base text-gray-700 mt-6 max-w-3xl mx-auto">
               Performance marketing is one of the highest paying fields in digital marketing. Businesses invest heavily in paid ads for sales and lead generation. After completing this course, students can work in digital marketing agencies, advertising agencies, e-commerce companies, or as freelance ad specialists. Many professionals also manage international ad campaigns remotely.
- Starting Salary: ₹3.0 – ₹5.0 LPA
+ Starting Salary: ₹3.0 - ₹5.0 LPA
 
                 LPA
               </p>
@@ -422,15 +422,14 @@ Performance marketing course after 12th students trust Digital Paaji for practic
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
               {[
-                { title: "Performance Marketing Executive", icon: "/Images/course/career.png" },
-                { title: "Paid Ads Specialist", icon: "/Images/course/career.png" },
-                {
-                  title: "PPC Executive",
-                  icon: "/Images/course/career.png",
+                { title: "Performance Marketing Executive", icon: "/Images/course/performance.png" },
+                { title: "Paid Ads Specialist", icon: "/Images/course/ads.png" },
+                { title: "PPC Executive",
+                  icon: "/Images/course/ppc.png",
                 },
                 {
                   title: "Media Buyer",
-                  icon: "/Images/course/career.png",
+                  icon: "/Images/course/dm2.png",
                 },
               ].map((role, index) => (
                 <div
@@ -469,7 +468,7 @@ Performance marketing course after 12th students trust Digital Paaji for practic
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/dm.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -489,7 +488,7 @@ Learn customer psychology, buying triggers, and audience targeting strategies. C
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/wp.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -512,7 +511,7 @@ Learn customer psychology, buying triggers, and audience targeting strategies. C
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/ads.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -535,7 +534,7 @@ Learn customer psychology, buying triggers, and audience targeting strategies. C
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/portfolio.png"
+                        src="/Images/course/tools.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -559,7 +558,7 @@ Online Advertising & Google Ads
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/mentor.png"
+                        src="/Images/course/google.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>
@@ -582,7 +581,7 @@ Online Advertising & Google Ads
                   <div className="relative  bg-white rounded-xl p-6 md:p-8 text-center border border-black transition-all duration-300 group-hover:top-0.5 group-hover:left-1 h-[280px] md:h-[360px] 2xl:h-[320px] flex flex-col gap-2 items-center justify-center">
                     <div className="flex-shrink-0">
                       <img
-                        src="/Images/course/career.png"
+                        src="/Images/course/video.png"
                         className="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition"
                       />
                     </div>

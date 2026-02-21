@@ -1,22 +1,23 @@
 [
-  {
-    "code": "PTA/DM/25/001",
-    "certificate": "/Images/certificates/1.jpg"
-  },
-  {
-    "code": "PTA/DM/25/002",
-    "certificate": "/Images/certificates/2.jpg"
-  },
-  {
-    "code": "PTA/DM/25/003",
-    "certificate": "/Images/certificates/3.jpg"
-  },
-  {
-    "code": "PTA/DM/25/004",
-    "certificate": "/Images/certificates/4.jpg"
-  },
-  {
-    "code": "PTA/GD/25/001",
-    "certificate": "/Images/certificates/5.jpg"
-  }
+  { "code": "PTA/DM/25/001", "certificate": "/Images/certificates/dm001.jpg" },
+  { "code": "PTA/DM/25/002", "certificate": "/Images/certificates/dm002.jpg" },
+  { "code": "PTA/DM/25/003", "certificate": "/Images/certificates/dm003.jpg" },
+  { "code": "PTA/DM/25/004", "certificate": "/Images/certificates/dm004.jpg" },
+  { "code": "PTA/DM/25/005", "certificate": "/Images/certificates/dm005.jpeg" },
+  { "code": "PTA/DM/25/006", "certificate": "/Images/certificates/dm006.jpeg" },
+  { "code": "PTA/DM/25/007", "certificate": "/Images/certificates/dm007.jpeg" },
+  { "code": "PTA/DM/25/008", "certificate": "/Images/certificates/dm008.jpeg" },
+  { "code": "PTA/DM/25/009", "certificate": "/Images/certificates/dm009.jpeg" },
+  { "code": "PTA/DM/25/010", "certificate": "/Images/certificates/dm010.jpeg" },
+  { "code": "PTA/DM/25/011", "certificate": "/Images/certificates/dm011.jpeg" },
+  { "code": "PTA/DM/25/012", "certificate": "/Images/certificates/dm012.jpeg" },
+
+  { "code": "PTA/GD/25/001", "certificate": "/Images/certificates/gd001.jpg" },
+  { "code": "PTA/GD/25/002", "certificate": "/Images/certificates/gd002.jpeg" },
+  { "code": "PTA/GD/25/003", "certificate": "/Images/certificates/gd003.jpeg" },
+   { "code": "PTA/GD/25/004", "certificate": "/Images/certificates/gd004.jpeg" },
+  { "code": "PTA/GD/25/005", "certificate": "/Images/certificates/gd005.jpeg" },
+  { "code": "PTA/GD/25/006", "certificate": "/Images/certificates/gd006.jpeg" },
+
+  { "code": "PTA/SM/25/001", "certificate": "/Images/certificates/sm001.jpeg" }
 ]
